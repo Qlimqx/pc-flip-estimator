@@ -1,4 +1,5 @@
 import type { CpuPricing } from '../types'
+import cpuOverrides from './priceOverrides/cpuOverrides.json'
 
 // Prix recalibrés le 2026-08-24/25 sur la base de recherches réelles
 // (annonces LeBonCoin) sur plusieurs modèles repères : i5-10400F (~55-80€
@@ -29,7 +30,16 @@ import type { CpuPricing } from '../types'
 //
 // tier va de 1 (entrée de gamme / très ancien) à 5 (haut de gamme récent),
 // utilisé uniquement pour le bonus de config équilibrée.
-export const CPUS: CpuPricing[] = [
+//
+// BASE_CPUS est la donnée de référence écrite/vérifiée à la main (voir
+// commentaires ci-dessus). priceOverrides/cpuOverrides.json est généré
+// automatiquement chaque nuit par scripts/update-prices.mjs (API eBay
+// Browse, voir ce script pour la méthodologie et les garde-fous
+// anti-aberration) et vient rafraîchir min/moyen/max/dateMaj sans toucher
+// au reste de la fiche (marque, socket, tier...). CPUS est ce qui est
+// réellement utilisé par l'appli -- BASE_CPUS n'est jamais importé
+// ailleurs.
+const BASE_CPUS: CpuPricing[] = [
   // --- Sandy Bridge / Ivy Bridge / Bulldozer-Piledriver (2011-2013) ---
   {
     id: 'i5-2500k',
@@ -1334,3 +1344,18 @@ export const CPUS: CpuPricing[] = [
     tier: 5,
   },
 ]
+
+interface PriceOverride {
+  min: number
+  moyen: number
+  max: number
+  dateMaj: string
+}
+
+const cpuOverridesTyped = cpuOverrides as Record<string, PriceOverride>
+
+export const CPUS: CpuPricing[] = BASE_CPUS.map((cpu) => {
+  const override = cpuOverridesTyped[cpu.id]
+  if (!override) return cpu
+  return { ...cpu, min: override.min, moyen: override.moyen, max: override.max, dateMaj: override.dateMaj }
+})

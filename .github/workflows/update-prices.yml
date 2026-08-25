@@ -1,0 +1,72 @@
+name: Mise à jour quotidienne des prix
+
+on:
+  schedule:
+    # 04:00 UTC chaque jour -- avant les heures d'usage en France.
+    - cron: '0 4 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Rafraîchir les prix (API eBay Browse)
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: node scripts/update-prices.mjs
+
+      - name: Commit et push si des prix ont changé
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/priceOverrides PRICE_REVIEW.md
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore: mise à jour quotidienne des prix (eBay)"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Vercel redéploie automatiquement sur ce push (repo connecté sur
+      # vercel.com) -- aucune étape de déploiement à faire ici.
+
+  # Rappel hebdomadaire (le lundi) : le pipeline automatique rafraîchit les
+  # chiffres, mais ne remplace pas un vrai contrôle humain -- pour un usage
+  # pro, ouvre une issue récapitulant les gros écarts de la semaine plutôt
+  # que de laisser PRICE_REVIEW.md s'accumuler sans jamais être relu.
+  weekly-manual-review-reminder:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 4 * * *' # ne se déclenche que sur le cron, pas sur un run manuel
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ouvrir une issue de rappel le lundi
+        if: ${{ (github.event_name == 'schedule') }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Ne s'exécute que le lundi (jour 1) -- cron horaire ne permet pas
+          # de filtrer par jour de semaine directement dans le déclencheur,
+          # donc on filtre ici.
+          if [ "$(date -u +%u)" != "1" ]; then
+            echo "Pas lundi, on passe."
+            exit 0
+          fi
+          BODY="Contrôle hebdomadaire recommandé : relire PRICE_REVIEW.md (écarts de prix > 25% remontés par le pipeline automatique cette semaine), et si besoin repasser une vérification manuelle croisée (LeBonCoin) sur quelques modèles clés, comme documenté dans les commentaires d'en-tête de src/data/cpus.ts et src/data/gpus.ts."
+          gh issue create \
+            --title "Vérification manuelle hebdomadaire des prix ($(date -u +%Y-%m-%d))" \
+            --body "$BODY" \
+            --label "price-review"

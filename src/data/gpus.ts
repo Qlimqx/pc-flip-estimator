@@ -1,4 +1,5 @@
 import type { GpuPricing } from '../types'
+import gpuOverrides from './priceOverrides/gpuOverrides.json'
 
 // Prix recalibrés le 2026-08-24 sur la base de recherches réelles (annonces
 // LeBonCoin) sur plusieurs modèles repères : GTX 1650 (~50-100€), GTX 1060
@@ -13,7 +14,13 @@ import type { GpuPricing } from '../types'
 // demande réelle observée (ex : RTX 4060 très recherchée malgré son
 // ancienneté relative, GTX ancienne génération de plus en plus difficile à
 // écouler).
-export const GPUS: GpuPricing[] = [
+//
+// BASE_GPUS est la donnée de référence écrite/vérifiée à la main.
+// priceOverrides/gpuOverrides.json est généré automatiquement chaque nuit
+// par scripts/update-prices.mjs (API eBay Browse) et vient rafraîchir
+// min/moyen/max/dateMaj sans toucher au reste de la fiche. GPUS est ce qui
+// est réellement utilisé par l'appli.
+const BASE_GPUS: GpuPricing[] = [
   // --- Fermi / Kepler / GCN1-2 (2010-2014), valeur résiduelle très faible ---
   {
     id: 'gtx-460',
@@ -1449,3 +1456,18 @@ export const GPUS: GpuPricing[] = [
     tier: 5,
   },
 ]
+
+interface PriceOverride {
+  min: number
+  moyen: number
+  max: number
+  dateMaj: string
+}
+
+const gpuOverridesTyped = gpuOverrides as Record<string, PriceOverride>
+
+export const GPUS: GpuPricing[] = BASE_GPUS.map((gpu) => {
+  const override = gpuOverridesTyped[gpu.id]
+  if (!override) return gpu
+  return { ...gpu, min: override.min, moyen: override.moyen, max: override.max, dateMaj: override.dateMaj }
+})
