@@ -1296,10 +1296,17 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 7 9800X3D',
     marque: 'AMD',
     socket: 'AM5',
-    min: 430,
-    moyen: 465,
-    max: 500,
-    dateMaj: '2026-08-24',
+    // Recalibré le 2026-08-26 : la valeur du 24/08 était déjà périmée 2
+    // jours plus tard -- vérifié en direct, le neuf réel est tombé à
+    // ~496-507€ (TopAchat/Materiel.net), ~422€ chez Amazon (variante
+    // 9850X3D), et même le "neuf scellé" sur LeBonCoin se négocie
+    // maintenant 320-400€. CPU très récent, marché qui bouge vite --
+    // ce genre d'entrée mérite une revérification plus fréquente que la
+    // moyenne.
+    min: 260,
+    moyen: 300,
+    max: 350,
+    dateMaj: '2026-08-26',
     faciliteRevente: 0.97,
     decoteAnciennete: 1.08,
     tier: 5,
