@@ -2,1041 +2,1665 @@
   {
     "id": "core-ultra-5-245k",
     "nom": "Intel Core Ultra 5 245K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 225,
+    "baseMoyen": 255,
+    "baseMax": 285
   },
   {
     "id": "core-ultra-7-265k",
     "nom": "Intel Core Ultra 7 265K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 280,
+    "baseMoyen": 315,
+    "baseMax": 350
   },
   {
     "id": "core-ultra-9-285k",
     "nom": "Intel Core Ultra 9 285K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 385,
+    "baseMoyen": 440,
+    "baseMax": 495
   },
   {
     "id": "fx-6300",
     "nom": "AMD FX-6300",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 7,
+    "baseMoyen": 11,
+    "baseMax": 16
   },
   {
     "id": "fx-8320",
     "nom": "AMD FX-8320",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 8,
+    "baseMoyen": 13,
+    "baseMax": 18
   },
   {
     "id": "fx-8350",
     "nom": "AMD FX-8350",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 9,
+    "baseMoyen": 15,
+    "baseMax": 22
   },
   {
     "id": "fx-9590",
     "nom": "AMD FX-9590",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 10,
+    "baseMoyen": 15,
+    "baseMax": 21
   },
   {
     "id": "i3-10100f",
     "nom": "Intel Core i3-10100F",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 32,
+    "baseMoyen": 42,
+    "baseMax": 52
   },
   {
     "id": "i3-8100",
     "nom": "Intel Core i3-8100",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 22,
+    "baseMoyen": 28,
+    "baseMax": 36
   },
   {
     "id": "i3-9100f",
     "nom": "Intel Core i3-9100F",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 25,
+    "baseMoyen": 32,
+    "baseMax": 40
   },
   {
     "id": "i5-10400f",
     "nom": "Intel Core i5-10400F",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 85,
+    "baseMoyen": 106,
+    "baseMax": 130
   },
   {
     "id": "i5-10600k",
     "nom": "Intel Core i5-10600K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 78,
+    "baseMoyen": 95,
+    "baseMax": 113
   },
   {
     "id": "i5-11400f",
     "nom": "Intel Core i5-11400F",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 62,
+    "baseMoyen": 76,
+    "baseMax": 90
   },
   {
     "id": "i5-11600k",
     "nom": "Intel Core i5-11600K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 88,
+    "baseMoyen": 108,
+    "baseMax": 128
   },
   {
     "id": "i5-12400f",
     "nom": "Intel Core i5-12400F",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 115,
+    "baseMoyen": 135,
+    "baseMax": 155
   },
   {
     "id": "i5-12600k",
     "nom": "Intel Core i5-12600K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 130,
+    "baseMoyen": 155,
+    "baseMax": 180
   },
   {
     "id": "i5-13400f",
     "nom": "Intel Core i5-13400F",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 160,
+    "baseMoyen": 182,
+    "baseMax": 205
   },
   {
     "id": "i5-13500",
     "nom": "Intel Core i5-13500",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 175,
+    "baseMoyen": 200,
+    "baseMax": 225
   },
   {
     "id": "i5-13600k",
     "nom": "Intel Core i5-13600K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 195,
+    "baseMoyen": 222,
+    "baseMax": 248
   },
   {
     "id": "i5-14400f",
     "nom": "Intel Core i5-14400F",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 165,
+    "baseMoyen": 190,
+    "baseMax": 215
   },
   {
     "id": "i5-14600kf",
     "nom": "Intel Core i5-14600KF",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 205,
+    "baseMoyen": 238,
+    "baseMax": 270
   },
   {
     "id": "i5-2500k",
     "nom": "Intel Core i5-2500K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 8,
+    "baseMoyen": 12,
+    "baseMax": 17
   },
   {
     "id": "i5-3570k",
     "nom": "Intel Core i5-3570K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 10,
+    "baseMoyen": 15,
+    "baseMax": 21
   },
   {
     "id": "i5-4460",
     "nom": "Intel Core i5-4460",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 13,
+    "baseMoyen": 20,
+    "baseMax": 28
   },
   {
     "id": "i5-4590",
     "nom": "Intel Core i5-4590",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 15,
+    "baseMoyen": 22,
+    "baseMax": 30
   },
   {
     "id": "i5-6500",
     "nom": "Intel Core i5-6500",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 20,
+    "baseMoyen": 29,
+    "baseMax": 38
   },
   {
     "id": "i5-6600k",
     "nom": "Intel Core i5-6600K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 25,
+    "baseMoyen": 33,
+    "baseMax": 43
   },
   {
     "id": "i5-7500",
     "nom": "Intel Core i5-7500",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 25,
+    "baseMoyen": 33,
+    "baseMax": 42
   },
   {
     "id": "i5-7600k",
     "nom": "Intel Core i5-7600K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 30,
+    "baseMoyen": 40,
+    "baseMax": 50
   },
   {
     "id": "i5-8400",
     "nom": "Intel Core i5-8400",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 38,
+    "baseMoyen": 48,
+    "baseMax": 58
   },
   {
     "id": "i5-8600k",
     "nom": "Intel Core i5-8600K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 45,
+    "baseMoyen": 57,
+    "baseMax": 70
   },
   {
     "id": "i5-9400f",
     "nom": "Intel Core i5-9400F",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 42,
+    "baseMoyen": 53,
+    "baseMax": 64
   },
   {
     "id": "i5-9600k",
     "nom": "Intel Core i5-9600K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 55,
+    "baseMoyen": 68,
+    "baseMax": 82
   },
   {
     "id": "i7-10700k",
     "nom": "Intel Core i7-10700K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 108,
+    "baseMoyen": 132,
+    "baseMax": 156
   },
   {
     "id": "i7-10700kf",
     "nom": "Intel Core i7-10700KF",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 105,
+    "baseMoyen": 128,
+    "baseMax": 152
   },
   {
     "id": "i7-12700k",
     "nom": "Intel Core i7-12700K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 185,
+    "baseMoyen": 212,
+    "baseMax": 240
   },
   {
     "id": "i7-13700k",
     "nom": "Intel Core i7-13700K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 340,
+    "baseMoyen": 400,
+    "baseMax": 460
   },
   {
     "id": "i7-13700kf",
     "nom": "Intel Core i7-13700KF",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 320,
+    "baseMoyen": 380,
+    "baseMax": 440
   },
   {
     "id": "i7-14700k",
     "nom": "Intel Core i7-14700K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 380,
+    "baseMoyen": 445,
+    "baseMax": 505
   },
   {
     "id": "i7-14700kf",
     "nom": "Intel Core i7-14700KF",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 360,
+    "baseMoyen": 420,
+    "baseMax": 480
   },
   {
     "id": "i7-2600k",
     "nom": "Intel Core i7-2600K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 12,
+    "baseMoyen": 18,
+    "baseMax": 25
   },
   {
     "id": "i7-3770k",
     "nom": "Intel Core i7-3770K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 15,
+    "baseMoyen": 22,
+    "baseMax": 30
   },
   {
     "id": "i7-4770k",
     "nom": "Intel Core i7-4770K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 24,
+    "baseMoyen": 32,
+    "baseMax": 42
   },
   {
     "id": "i7-4790k",
     "nom": "Intel Core i7-4790K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 22,
+    "baseMoyen": 33,
+    "baseMax": 44
   },
   {
     "id": "i7-6700k",
     "nom": "Intel Core i7-6700K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 35,
+    "baseMoyen": 48,
+    "baseMax": 60
   },
   {
     "id": "i7-8700",
     "nom": "Intel Core i7-8700",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 55,
+    "baseMoyen": 68,
+    "baseMax": 82
   },
   {
     "id": "i7-8700k",
     "nom": "Intel Core i7-8700K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 62,
+    "baseMoyen": 78,
+    "baseMax": 94
   },
   {
     "id": "i7-9700k",
     "nom": "Intel Core i7-9700K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 92,
+    "baseMoyen": 115,
+    "baseMax": 140
   },
   {
     "id": "i9-10900k",
     "nom": "Intel Core i9-10900K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 148,
+    "baseMoyen": 178,
+    "baseMax": 208
   },
   {
     "id": "i9-11900k",
     "nom": "Intel Core i9-11900K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 158,
+    "baseMoyen": 188,
+    "baseMax": 218
   },
   {
     "id": "i9-12900k",
     "nom": "Intel Core i9-12900K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 230,
+    "baseMoyen": 260,
+    "baseMax": 290
   },
   {
     "id": "i9-12900ks",
     "nom": "Intel Core i9-12900KS",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 245,
+    "baseMoyen": 280,
+    "baseMax": 315
   },
   {
     "id": "i9-13900k",
     "nom": "Intel Core i9-13900K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 420,
+    "baseMoyen": 480,
+    "baseMax": 540
   },
   {
     "id": "i9-13900kf",
     "nom": "Intel Core i9-13900KF",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 400,
+    "baseMoyen": 460,
+    "baseMax": 520
   },
   {
     "id": "i9-14900k",
     "nom": "Intel Core i9-14900K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 440,
+    "baseMoyen": 510,
+    "baseMax": 580
   },
   {
     "id": "i9-14900kf",
     "nom": "Intel Core i9-14900KF",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 420,
+    "baseMoyen": 485,
+    "baseMax": 550
   },
   {
     "id": "i9-9900k",
     "nom": "Intel Core i9-9900K",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 100,
+    "baseMoyen": 125,
+    "baseMax": 150
   },
   {
     "id": "ryzen-3-1300x",
     "nom": "AMD Ryzen 3 1300X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 18,
+    "baseMoyen": 25,
+    "baseMax": 32
   },
   {
     "id": "ryzen-3-3100",
     "nom": "AMD Ryzen 3 3100",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 32,
+    "baseMoyen": 40,
+    "baseMax": 50
   },
   {
     "id": "ryzen-3-3200g",
     "nom": "AMD Ryzen 3 3200G",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 30,
+    "baseMoyen": 38,
+    "baseMax": 48
   },
   {
     "id": "ryzen-3-3300x",
     "nom": "AMD Ryzen 3 3300X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 38,
+    "baseMoyen": 48,
+    "baseMax": 58
   },
   {
     "id": "ryzen-5-1600",
     "nom": "AMD Ryzen 5 1600",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 25,
+    "baseMoyen": 33,
+    "baseMax": 42
   },
   {
     "id": "ryzen-5-2600",
     "nom": "AMD Ryzen 5 2600",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 35,
+    "baseMoyen": 46,
+    "baseMax": 57
   },
   {
     "id": "ryzen-5-2600x",
     "nom": "AMD Ryzen 5 2600X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 42,
+    "baseMoyen": 52,
+    "baseMax": 63
   },
   {
     "id": "ryzen-5-3600",
     "nom": "AMD Ryzen 5 3600",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 58,
+    "baseMoyen": 72,
+    "baseMax": 86
   },
   {
     "id": "ryzen-5-3600x",
     "nom": "AMD Ryzen 5 3600X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 62,
+    "baseMoyen": 76,
+    "baseMax": 90
   },
   {
     "id": "ryzen-5-4600g",
     "nom": "AMD Ryzen 5 4600G",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 58,
+    "baseMoyen": 72,
+    "baseMax": 86
   },
   {
     "id": "ryzen-5-5500",
     "nom": "AMD Ryzen 5 5500",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 78,
+    "baseMoyen": 92,
+    "baseMax": 108
   },
   {
     "id": "ryzen-5-5600",
     "nom": "AMD Ryzen 5 5600",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 95,
+    "baseMoyen": 110,
+    "baseMax": 125
   },
   {
     "id": "ryzen-5-5600g",
     "nom": "AMD Ryzen 5 5600G",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 68,
+    "baseMoyen": 82,
+    "baseMax": 97
   },
   {
     "id": "ryzen-5-5600x",
     "nom": "AMD Ryzen 5 5600X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 100,
+    "baseMoyen": 120,
+    "baseMax": 140
   },
   {
     "id": "ryzen-5-7600",
     "nom": "AMD Ryzen 5 7600",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 145,
+    "baseMoyen": 165,
+    "baseMax": 188
   },
   {
     "id": "ryzen-5-7600x",
     "nom": "AMD Ryzen 5 7600X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 165,
+    "baseMoyen": 188,
+    "baseMax": 212
   },
   {
     "id": "ryzen-5-9600x",
     "nom": "AMD Ryzen 5 9600X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 195,
+    "baseMoyen": 225,
+    "baseMax": 255
   },
   {
     "id": "ryzen-7-1700",
     "nom": "AMD Ryzen 7 1700",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 35,
+    "baseMoyen": 45,
+    "baseMax": 56
   },
   {
     "id": "ryzen-7-1800x",
     "nom": "AMD Ryzen 7 1800X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 42,
+    "baseMoyen": 55,
+    "baseMax": 68
   },
   {
     "id": "ryzen-7-2700",
     "nom": "AMD Ryzen 7 2700",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 48,
+    "baseMoyen": 60,
+    "baseMax": 73
   },
   {
     "id": "ryzen-7-2700x",
     "nom": "AMD Ryzen 7 2700X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 55,
+    "baseMoyen": 68,
+    "baseMax": 82
   },
   {
     "id": "ryzen-7-3700x",
     "nom": "AMD Ryzen 7 3700X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 95,
+    "baseMoyen": 115,
+    "baseMax": 135
   },
   {
     "id": "ryzen-7-3800x",
     "nom": "AMD Ryzen 7 3800X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 108,
+    "baseMoyen": 128,
+    "baseMax": 148
   },
   {
     "id": "ryzen-7-5700x",
     "nom": "AMD Ryzen 7 5700X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 130,
+    "baseMoyen": 150,
+    "baseMax": 170
   },
   {
     "id": "ryzen-7-5800x",
     "nom": "AMD Ryzen 7 5800X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 165,
+    "baseMoyen": 195,
+    "baseMax": 225
   },
   {
     "id": "ryzen-7-5800x3d",
     "nom": "AMD Ryzen 7 5800X3D",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 200,
+    "baseMoyen": 228,
+    "baseMax": 255
   },
   {
     "id": "ryzen-7-7700",
     "nom": "AMD Ryzen 7 7700",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 220,
+    "baseMoyen": 250,
+    "baseMax": 280
   },
   {
     "id": "ryzen-7-7700x",
     "nom": "AMD Ryzen 7 7700X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 205,
+    "baseMoyen": 238,
+    "baseMax": 270
   },
   {
     "id": "ryzen-7-7800x3d",
     "nom": "AMD Ryzen 7 7800X3D",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 285,
+    "baseMoyen": 318,
+    "baseMax": 352
   },
   {
     "id": "ryzen-7-9700x",
     "nom": "AMD Ryzen 7 9700X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 260,
+    "baseMoyen": 295,
+    "baseMax": 330
   },
   {
     "id": "ryzen-7-9800x3d",
     "nom": "AMD Ryzen 7 9800X3D",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 430,
+    "baseMoyen": 465,
+    "baseMax": 500
   },
   {
     "id": "ryzen-9-3900x",
     "nom": "AMD Ryzen 9 3900X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 148,
+    "baseMoyen": 172,
+    "baseMax": 198
   },
   {
     "id": "ryzen-9-3950x",
     "nom": "AMD Ryzen 9 3950X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 182,
+    "baseMoyen": 212,
+    "baseMax": 242
   },
   {
     "id": "ryzen-9-5900x",
     "nom": "AMD Ryzen 9 5900X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 185,
+    "baseMoyen": 210,
+    "baseMax": 235
   },
   {
     "id": "ryzen-9-5950x",
     "nom": "AMD Ryzen 9 5950X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 250,
+    "baseMoyen": 280,
+    "baseMax": 315
   },
   {
     "id": "ryzen-9-7900x",
     "nom": "AMD Ryzen 9 7900X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 280,
+    "baseMoyen": 315,
+    "baseMax": 350
   },
   {
     "id": "ryzen-9-7900x3d",
     "nom": "AMD Ryzen 9 7900X3D",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 310,
+    "baseMoyen": 348,
+    "baseMax": 385
   },
   {
     "id": "ryzen-9-7950x",
     "nom": "AMD Ryzen 9 7950X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 340,
+    "baseMoyen": 385,
+    "baseMax": 430
   },
   {
     "id": "ryzen-9-7950x3d",
     "nom": "AMD Ryzen 9 7950X3D",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 390,
+    "baseMoyen": 435,
+    "baseMax": 480
   },
   {
     "id": "ryzen-9-9900x",
     "nom": "AMD Ryzen 9 9900X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 340,
+    "baseMoyen": 380,
+    "baseMax": 420
   },
   {
     "id": "ryzen-9-9950x",
     "nom": "AMD Ryzen 9 9950X",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 420,
+    "baseMoyen": 470,
+    "baseMax": 520
   },
   {
     "id": "ryzen-9-9950x3d",
     "nom": "AMD Ryzen 9 9950X3D",
-    "category": "cpu"
+    "category": "cpu",
+    "baseMin": 480,
+    "baseMoyen": 540,
+    "baseMax": 600
   },
   {
     "id": "arc-a750",
     "nom": "Intel Arc A750",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 115,
+    "baseMoyen": 140,
+    "baseMax": 165
   },
   {
     "id": "arc-a770",
     "nom": "Intel Arc A770",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 150,
+    "baseMoyen": 180,
+    "baseMax": 210
   },
   {
     "id": "arc-b570",
     "nom": "Intel Arc B570",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 200,
+    "baseMoyen": 230,
+    "baseMax": 260
   },
   {
     "id": "arc-b580",
     "nom": "Intel Arc B580",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 225,
+    "baseMoyen": 258,
+    "baseMax": 290
   },
   {
     "id": "gt-1030",
     "nom": "GT 1030",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 15,
+    "baseMoyen": 22,
+    "baseMax": 30
   },
   {
     "id": "gtx-1050-ti",
     "nom": "GTX 1050 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 32,
+    "baseMoyen": 42,
+    "baseMax": 52
   },
   {
     "id": "gtx-1060-3gb",
     "nom": "GTX 1060 3Go",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 45,
+    "baseMoyen": 58,
+    "baseMax": 70
   },
   {
     "id": "gtx-1060-6gb",
     "nom": "GTX 1060 6Go",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 65,
+    "baseMoyen": 85,
+    "baseMax": 105
   },
   {
     "id": "gtx-1070",
     "nom": "GTX 1070",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 80,
+    "baseMoyen": 100,
+    "baseMax": 120
   },
   {
     "id": "gtx-1070-ti",
     "nom": "GTX 1070 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 92,
+    "baseMoyen": 115,
+    "baseMax": 138
   },
   {
     "id": "gtx-1080",
     "nom": "GTX 1080",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 112,
+    "baseMoyen": 140,
+    "baseMax": 168
   },
   {
     "id": "gtx-1080-ti",
     "nom": "GTX 1080 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 145,
+    "baseMoyen": 180,
+    "baseMax": 215
   },
   {
     "id": "gtx-1630",
     "nom": "GTX 1630",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 28,
+    "baseMoyen": 36,
+    "baseMax": 45
   },
   {
     "id": "gtx-1650",
     "nom": "GTX 1650",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 55,
+    "baseMoyen": 70,
+    "baseMax": 85
   },
   {
     "id": "gtx-1650-super",
     "nom": "GTX 1650 Super",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 65,
+    "baseMoyen": 82,
+    "baseMax": 98
   },
   {
     "id": "gtx-1660",
     "nom": "GTX 1660",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 70,
+    "baseMoyen": 88,
+    "baseMax": 105
   },
   {
     "id": "gtx-1660-super",
     "nom": "GTX 1660 Super",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 82,
+    "baseMoyen": 102,
+    "baseMax": 122
   },
   {
     "id": "gtx-1660-ti",
     "nom": "GTX 1660 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 88,
+    "baseMoyen": 108,
+    "baseMax": 128
   },
   {
     "id": "gtx-460",
     "nom": "GTX 460",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 8,
+    "baseMoyen": 12,
+    "baseMax": 17
   },
   {
     "id": "gtx-560-ti",
     "nom": "GTX 560 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 10,
+    "baseMoyen": 15,
+    "baseMax": 20
   },
   {
     "id": "gtx-570",
     "nom": "GTX 570",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 12,
+    "baseMoyen": 18,
+    "baseMax": 24
   },
   {
     "id": "gtx-580",
     "nom": "GTX 580",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 15,
+    "baseMoyen": 22,
+    "baseMax": 30
   },
   {
     "id": "gtx-660",
     "nom": "GTX 660",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 13,
+    "baseMoyen": 19,
+    "baseMax": 26
   },
   {
     "id": "gtx-670",
     "nom": "GTX 670",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 16,
+    "baseMoyen": 22,
+    "baseMax": 29
   },
   {
     "id": "gtx-680",
     "nom": "GTX 680",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 18,
+    "baseMoyen": 25,
+    "baseMax": 33
   },
   {
     "id": "gtx-750-ti",
     "nom": "GTX 750 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 15,
+    "baseMoyen": 22,
+    "baseMax": 30
   },
   {
     "id": "gtx-760",
     "nom": "GTX 760",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 18,
+    "baseMoyen": 25,
+    "baseMax": 33
   },
   {
     "id": "gtx-770",
     "nom": "GTX 770",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 20,
+    "baseMoyen": 27,
+    "baseMax": 35
   },
   {
     "id": "gtx-780",
     "nom": "GTX 780",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 25,
+    "baseMoyen": 33,
+    "baseMax": 42
   },
   {
     "id": "gtx-780-ti",
     "nom": "GTX 780 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 30,
+    "baseMoyen": 38,
+    "baseMax": 48
   },
   {
     "id": "gtx-950",
     "nom": "GTX 950",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 20,
+    "baseMoyen": 28,
+    "baseMax": 36
   },
   {
     "id": "gtx-960",
     "nom": "GTX 960",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 22,
+    "baseMoyen": 30,
+    "baseMax": 40
   },
   {
     "id": "gtx-970",
     "nom": "GTX 970",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 32,
+    "baseMoyen": 42,
+    "baseMax": 54
   },
   {
     "id": "gtx-980",
     "nom": "GTX 980",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 42,
+    "baseMoyen": 55,
+    "baseMax": 68
   },
   {
     "id": "gtx-980-ti",
     "nom": "GTX 980 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 52,
+    "baseMoyen": 68,
+    "baseMax": 84
   },
   {
     "id": "hd-6870",
     "nom": "Radeon HD 6870",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 8,
+    "baseMoyen": 12,
+    "baseMax": 17
   },
   {
     "id": "hd-7850",
     "nom": "Radeon HD 7850",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 12,
+    "baseMoyen": 18,
+    "baseMax": 25
   },
   {
     "id": "hd-7870",
     "nom": "Radeon HD 7870",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 15,
+    "baseMoyen": 21,
+    "baseMax": 28
   },
   {
     "id": "hd-7950",
     "nom": "Radeon HD 7950",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 18,
+    "baseMoyen": 25,
+    "baseMax": 33
   },
   {
     "id": "hd-7970",
     "nom": "Radeon HD 7970",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 20,
+    "baseMoyen": 28,
+    "baseMax": 37
   },
   {
     "id": "r9-270x",
     "nom": "R9 270X",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 16,
+    "baseMoyen": 23,
+    "baseMax": 30
   },
   {
     "id": "r9-280x",
     "nom": "R9 280X",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 20,
+    "baseMoyen": 28,
+    "baseMax": 37
   },
   {
     "id": "r9-290",
     "nom": "R9 290",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 22,
+    "baseMoyen": 30,
+    "baseMax": 40
   },
   {
     "id": "r9-290x",
     "nom": "R9 290X",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 26,
+    "baseMoyen": 35,
+    "baseMax": 45
   },
   {
     "id": "r9-fury",
     "nom": "R9 Fury",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 35,
+    "baseMoyen": 46,
+    "baseMax": 58
   },
   {
     "id": "r9-fury-x",
     "nom": "R9 Fury X",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 42,
+    "baseMoyen": 55,
+    "baseMax": 68
   },
   {
     "id": "rtx-2060",
     "nom": "RTX 2060",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 95,
+    "baseMoyen": 118,
+    "baseMax": 140
   },
   {
     "id": "rtx-2060-super",
     "nom": "RTX 2060 Super",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 108,
+    "baseMoyen": 132,
+    "baseMax": 156
   },
   {
     "id": "rtx-2070",
     "nom": "RTX 2070",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 115,
+    "baseMoyen": 142,
+    "baseMax": 168
   },
   {
     "id": "rtx-2070-super",
     "nom": "RTX 2070 Super",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 128,
+    "baseMoyen": 158,
+    "baseMax": 186
   },
   {
     "id": "rtx-2080",
     "nom": "RTX 2080",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 138,
+    "baseMoyen": 170,
+    "baseMax": 200
   },
   {
     "id": "rtx-2080-super",
     "nom": "RTX 2080 Super",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 155,
+    "baseMoyen": 190,
+    "baseMax": 225
   },
   {
     "id": "rtx-2080-ti",
     "nom": "RTX 2080 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 188,
+    "baseMoyen": 230,
+    "baseMax": 270
   },
   {
     "id": "rtx-3050",
     "nom": "RTX 3050",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 98,
+    "baseMoyen": 118,
+    "baseMax": 138
   },
   {
     "id": "rtx-3060",
     "nom": "RTX 3060",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 165,
+    "baseMoyen": 195,
+    "baseMax": 225
   },
   {
     "id": "rtx-3060-ti",
     "nom": "RTX 3060 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 190,
+    "baseMoyen": 220,
+    "baseMax": 250
   },
   {
     "id": "rtx-3070",
     "nom": "RTX 3070",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 230,
+    "baseMoyen": 260,
+    "baseMax": 292
   },
   {
     "id": "rtx-3070-ti",
     "nom": "RTX 3070 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 258,
+    "baseMoyen": 290,
+    "baseMax": 322
   },
   {
     "id": "rtx-3080",
     "nom": "RTX 3080",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 345,
+    "baseMoyen": 380,
+    "baseMax": 415
   },
   {
     "id": "rtx-3080-ti",
     "nom": "RTX 3080 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 395,
+    "baseMoyen": 430,
+    "baseMax": 470
   },
   {
     "id": "rtx-3090",
     "nom": "RTX 3090",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 480,
+    "baseMoyen": 520,
+    "baseMax": 565
   },
   {
     "id": "rtx-3090-ti",
     "nom": "RTX 3090 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 535,
+    "baseMoyen": 580,
+    "baseMax": 630
   },
   {
     "id": "rtx-4060",
     "nom": "RTX 4060",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 245,
+    "baseMoyen": 272,
+    "baseMax": 300
   },
   {
     "id": "rtx-4060-ti",
     "nom": "RTX 4060 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 305,
+    "baseMoyen": 340,
+    "baseMax": 375
   },
   {
     "id": "rtx-4070",
     "nom": "RTX 4070",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 475,
+    "baseMoyen": 510,
+    "baseMax": 550
   },
   {
     "id": "rtx-4070-super",
     "nom": "RTX 4070 Super",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 520,
+    "baseMoyen": 560,
+    "baseMax": 600
   },
   {
     "id": "rtx-4070-ti",
     "nom": "RTX 4070 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 580,
+    "baseMoyen": 620,
+    "baseMax": 665
   },
   {
     "id": "rtx-4070-ti-super",
     "nom": "RTX 4070 Ti Super",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 640,
+    "baseMoyen": 680,
+    "baseMax": 725
   },
   {
     "id": "rtx-4080",
     "nom": "RTX 4080",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 740,
+    "baseMoyen": 780,
+    "baseMax": 825
   },
   {
     "id": "rtx-4080-super",
     "nom": "RTX 4080 Super",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 775,
+    "baseMoyen": 820,
+    "baseMax": 865
   },
   {
     "id": "rtx-4090",
     "nom": "RTX 4090",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 2000,
+    "baseMoyen": 2150,
+    "baseMax": 2350
   },
   {
     "id": "rtx-5060",
     "nom": "RTX 5060",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 305,
+    "baseMoyen": 335,
+    "baseMax": 365
   },
   {
     "id": "rtx-5060-ti",
     "nom": "RTX 5060 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 390,
+    "baseMoyen": 425,
+    "baseMax": 460
   },
   {
     "id": "rtx-5070",
     "nom": "RTX 5070",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 560,
+    "baseMoyen": 605,
+    "baseMax": 650
   },
   {
     "id": "rtx-5070-ti",
     "nom": "RTX 5070 Ti",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 870,
+    "baseMoyen": 950,
+    "baseMax": 1050
   },
   {
     "id": "rtx-5080",
     "nom": "RTX 5080",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 1300,
+    "baseMoyen": 1400,
+    "baseMax": 1520
   },
   {
     "id": "rtx-5090",
     "nom": "RTX 5090",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 2450,
+    "baseMoyen": 2650,
+    "baseMax": 2900
   },
   {
     "id": "rx-460",
     "nom": "RX 460",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 22,
+    "baseMoyen": 30,
+    "baseMax": 39
   },
   {
     "id": "rx-470",
     "nom": "RX 470",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 28,
+    "baseMoyen": 37,
+    "baseMax": 47
   },
   {
     "id": "rx-480",
     "nom": "RX 480",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 33,
+    "baseMoyen": 43,
+    "baseMax": 55
   },
   {
     "id": "rx-550",
     "nom": "RX 550",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 20,
+    "baseMoyen": 27,
+    "baseMax": 35
   },
   {
     "id": "rx-5500-xt",
     "nom": "RX 5500 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 60,
+    "baseMoyen": 75,
+    "baseMax": 90
   },
   {
     "id": "rx-560",
     "nom": "RX 560",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 25,
+    "baseMoyen": 33,
+    "baseMax": 42
   },
   {
     "id": "rx-5600-xt",
     "nom": "RX 5600 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 78,
+    "baseMoyen": 96,
+    "baseMax": 115
   },
   {
     "id": "rx-570",
     "nom": "RX 570",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 35,
+    "baseMoyen": 45,
+    "baseMax": 55
   },
   {
     "id": "rx-5700",
     "nom": "RX 5700",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 90,
+    "baseMoyen": 112,
+    "baseMax": 134
   },
   {
     "id": "rx-5700-xt",
     "nom": "RX 5700 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 108,
+    "baseMoyen": 135,
+    "baseMax": 160
   },
   {
     "id": "rx-580",
     "nom": "RX 580",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 45,
+    "baseMoyen": 55,
+    "baseMax": 68
   },
   {
     "id": "rx-590",
     "nom": "RX 590",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 52,
+    "baseMoyen": 65,
+    "baseMax": 78
   },
   {
     "id": "rx-6600",
     "nom": "RX 6600",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 155,
+    "baseMoyen": 185,
+    "baseMax": 215
   },
   {
     "id": "rx-6600-xt",
     "nom": "RX 6600 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 175,
+    "baseMoyen": 205,
+    "baseMax": 235
   },
   {
     "id": "rx-6650-xt",
     "nom": "RX 6650 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 178,
+    "baseMoyen": 210,
+    "baseMax": 240
   },
   {
     "id": "rx-6700-xt",
     "nom": "RX 6700 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 215,
+    "baseMoyen": 245,
+    "baseMax": 275
   },
   {
     "id": "rx-6750-xt",
     "nom": "RX 6750 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 235,
+    "baseMoyen": 265,
+    "baseMax": 295
   },
   {
     "id": "rx-6800",
     "nom": "RX 6800",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 288,
+    "baseMoyen": 320,
+    "baseMax": 355
   },
   {
     "id": "rx-6800-xt",
     "nom": "RX 6800 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 335,
+    "baseMoyen": 370,
+    "baseMax": 405
   },
   {
     "id": "rx-6900-xt",
     "nom": "RX 6900 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 385,
+    "baseMoyen": 420,
+    "baseMax": 460
   },
   {
     "id": "rx-6950-xt",
     "nom": "RX 6950 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 415,
+    "baseMoyen": 450,
+    "baseMax": 490
   },
   {
     "id": "rx-7600",
     "nom": "RX 7600",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 205,
+    "baseMoyen": 230,
+    "baseMax": 258
   },
   {
     "id": "rx-7600-xt",
     "nom": "RX 7600 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 232,
+    "baseMoyen": 260,
+    "baseMax": 290
   },
   {
     "id": "rx-7700-xt",
     "nom": "RX 7700 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 365,
+    "baseMoyen": 400,
+    "baseMax": 435
   },
   {
     "id": "rx-7800-xt",
     "nom": "RX 7800 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 375,
+    "baseMoyen": 410,
+    "baseMax": 448
   },
   {
     "id": "rx-7900-gre",
     "nom": "RX 7900 GRE",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 445,
+    "baseMoyen": 480,
+    "baseMax": 520
   },
   {
     "id": "rx-7900-xt",
     "nom": "RX 7900 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 530,
+    "baseMoyen": 570,
+    "baseMax": 615
   },
   {
     "id": "rx-7900-xtx",
     "nom": "RX 7900 XTX",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 660,
+    "baseMoyen": 700,
+    "baseMax": 745
   },
   {
     "id": "rx-9070",
     "nom": "RX 9070",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 555,
+    "baseMoyen": 600,
+    "baseMax": 645
   },
   {
     "id": "rx-9070-xt",
     "nom": "RX 9070 XT",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 655,
+    "baseMoyen": 700,
+    "baseMax": 750
   },
   {
     "id": "vega-56",
     "nom": "Radeon Vega 56",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 52,
+    "baseMoyen": 68,
+    "baseMax": 84
   },
   {
     "id": "vega-64",
     "nom": "Radeon Vega 64",
-    "category": "gpu"
+    "category": "gpu",
+    "baseMin": 62,
+    "baseMoyen": 80,
+    "baseMax": 98
   }
 ]
