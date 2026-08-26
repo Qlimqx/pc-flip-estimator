@@ -1,1 +1,443 @@
-{}
+{
+  "fx-6300": {
+    "min": 25,
+    "moyen": 40,
+    "max": 68.38,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 8
+  },
+  "fx-8350": {
+    "min": 59,
+    "moyen": 191.41,
+    "max": 282.49,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 8
+  },
+  "i3-10100f": {
+    "min": 41.47,
+    "moyen": 72.5,
+    "max": 114.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 6
+  },
+  "i3-8100": {
+    "min": 12.9,
+    "moyen": 20.5,
+    "max": 49.19,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 26
+  },
+  "i3-9100f": {
+    "min": 26,
+    "moyen": 42.34,
+    "max": 114.65,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 7
+  },
+  "i5-10400f": {
+    "min": 221.58,
+    "moyen": 475,
+    "max": 799,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 13
+  },
+  "i5-10600k": {
+    "min": 70,
+    "moyen": 123.56,
+    "max": 208.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "i5-11400f": {
+    "min": 600,
+    "moyen": 700,
+    "max": 850,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 6
+  },
+  "i5-11600k": {
+    "min": 109,
+    "moyen": 155.32,
+    "max": 287.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "i5-13400f": {
+    "min": 130,
+    "moyen": 149.99,
+    "max": 379.8,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 5
+  },
+  "i5-13500": {
+    "min": 150,
+    "moyen": 254.49,
+    "max": 459,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "i5-2500k": {
+    "min": 16.7,
+    "moyen": 22.45,
+    "max": 81.31,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 10
+  },
+  "i5-3570k": {
+    "min": 20,
+    "moyen": 30,
+    "max": 86.4,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 8
+  },
+  "i5-4460": {
+    "min": 11.97,
+    "moyen": 20,
+    "max": 50,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 22
+  },
+  "i5-4590": {
+    "min": 13.9,
+    "moyen": 25.06,
+    "max": 74.83,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 24
+  },
+  "i5-6500": {
+    "min": 12,
+    "moyen": 25,
+    "max": 59.9,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 23
+  },
+  "i5-6600k": {
+    "min": 19,
+    "moyen": 38.23,
+    "max": 85,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 18
+  },
+  "i5-7500": {
+    "min": 22,
+    "moyen": 37.4,
+    "max": 114.17,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 19
+  },
+  "i5-7600k": {
+    "min": 33.31,
+    "moyen": 48.9,
+    "max": 145.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 13
+  },
+  "i5-8400": {
+    "min": 169,
+    "moyen": 198.3,
+    "max": 423.8,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 12
+  },
+  "i5-8600k": {
+    "min": 45,
+    "moyen": 59.5,
+    "max": 137.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 8
+  },
+  "i5-9400f": {
+    "min": 75,
+    "moyen": 169.95,
+    "max": 397.69,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 7
+  },
+  "i5-9600k": {
+    "min": 59.9,
+    "moyen": 145.58,
+    "max": 300,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 14
+  },
+  "i7-10700k": {
+    "min": 125,
+    "moyen": 190.69,
+    "max": 367.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 5
+  },
+  "i7-10700kf": {
+    "min": 190,
+    "moyen": 242.16,
+    "max": 323.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "i7-13700kf": {
+    "min": 269.99,
+    "moyen": 442.99,
+    "max": 679.16,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "i7-14700k": {
+    "min": 525.82,
+    "moyen": 580,
+    "max": 669.63,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 5
+  },
+  "i7-2600k": {
+    "min": 30.19,
+    "moyen": 66.75,
+    "max": 130,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 6
+  },
+  "i7-3770k": {
+    "min": 70,
+    "moyen": 88,
+    "max": 215.7,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 7
+  },
+  "i7-4770k": {
+    "min": 68.57,
+    "moyen": 157.54,
+    "max": 330.48,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 6
+  },
+  "i7-4790k": {
+    "min": 64.15,
+    "moyen": 90,
+    "max": 194.76,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 7
+  },
+  "i7-6700k": {
+    "min": 89,
+    "moyen": 214.04,
+    "max": 449,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 16
+  },
+  "i7-8700": {
+    "min": 79.99,
+    "moyen": 147.69,
+    "max": 432,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 27
+  },
+  "i7-8700k": {
+    "min": 79.99,
+    "moyen": 112,
+    "max": 340.72,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 15
+  },
+  "i7-9700k": {
+    "min": 141.66,
+    "moyen": 343.31,
+    "max": 534.42,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 11
+  },
+  "i9-10900k": {
+    "min": 472.69,
+    "moyen": 1174.5,
+    "max": 1699,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "i9-14900k": {
+    "min": 560.87,
+    "moyen": 836.38,
+    "max": 863.77,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "i9-9900k": {
+    "min": 249,
+    "moyen": 350,
+    "max": 490.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 10
+  },
+  "ryzen-3-3200g": {
+    "min": 59.87,
+    "moyen": 151.91,
+    "max": 180,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 12
+  },
+  "ryzen-5-1600": {
+    "min": 29,
+    "moyen": 49.99,
+    "max": 105.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 11
+  },
+  "ryzen-5-2600": {
+    "min": 43.25,
+    "moyen": 72.5,
+    "max": 240,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 18
+  },
+  "ryzen-5-2600x": {
+    "min": 60,
+    "moyen": 95.5,
+    "max": 300,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 6
+  },
+  "ryzen-5-3600": {
+    "min": 137.99,
+    "moyen": 399,
+    "max": 710,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 13
+  },
+  "ryzen-5-3600x": {
+    "min": 500,
+    "moyen": 850,
+    "max": 1400,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 12
+  },
+  "ryzen-5-5500": {
+    "min": 219.9,
+    "moyen": 590.82,
+    "max": 1070.32,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 24
+  },
+  "ryzen-5-5600": {
+    "min": 201.94,
+    "moyen": 595,
+    "max": 1100,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 23
+  },
+  "ryzen-5-5600g": {
+    "min": 589.45,
+    "moyen": 699,
+    "max": 1100,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 7
+  },
+  "ryzen-5-5600x": {
+    "min": 480,
+    "moyen": 810,
+    "max": 1500,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 22
+  },
+  "ryzen-5-7600": {
+    "min": 129.5,
+    "moyen": 195.5,
+    "max": 268.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "ryzen-5-7600x": {
+    "min": 1200,
+    "moyen": 1650,
+    "max": 2000,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "ryzen-7-1700": {
+    "min": 50,
+    "moyen": 55.69,
+    "max": 65,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 7
+  },
+  "ryzen-7-2700": {
+    "min": 65,
+    "moyen": 104.5,
+    "max": 262.81,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 10
+  },
+  "ryzen-7-2700x": {
+    "min": 65,
+    "moyen": 90,
+    "max": 153.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 7
+  },
+  "ryzen-7-3700x": {
+    "min": 195.99,
+    "moyen": 500,
+    "max": 800,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 13
+  },
+  "ryzen-7-3800x": {
+    "min": 129.5,
+    "moyen": 175,
+    "max": 233.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 5
+  },
+  "ryzen-7-5700x": {
+    "min": 279.99,
+    "moyen": 738.99,
+    "max": 1200,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 5
+  },
+  "ryzen-7-5800x": {
+    "min": 364.8,
+    "moyen": 875,
+    "max": 1800,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 16
+  },
+  "ryzen-7-7700": {
+    "min": 170,
+    "moyen": 364.8,
+    "max": 398.32,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 7
+  },
+  "ryzen-7-9700x": {
+    "min": 161.37,
+    "moyen": 282.23,
+    "max": 413.99,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 4
+  },
+  "ryzen-9-3900x": {
+    "min": 304.15,
+    "moyen": 759.02,
+    "max": 1350,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 7
+  },
+  "ryzen-9-5900x": {
+    "min": 396.32,
+    "moyen": 930.45,
+    "max": 2000,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 12
+  },
+  "ryzen-9-5950x": {
+    "min": 536.99,
+    "moyen": 918.5,
+    "max": 1775.87,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 6
+  },
+  "ryzen-9-7950x": {
+    "min": 400,
+    "moyen": 535.43,
+    "max": 1058.52,
+    "dateMaj": "2026-08-26",
+    "sampleCount": 6
+  }
+}
