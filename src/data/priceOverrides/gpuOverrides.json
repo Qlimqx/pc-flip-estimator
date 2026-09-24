@@ -3,55 +3,55 @@
     "min": 55,
     "moyen": 70.9,
     "max": 81.82,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 4,
-    "rawCount": 34
+    "rawCount": 33
   },
   "gtx-1060-6gb": {
     "min": 94.3,
     "moyen": 141.1,
     "max": 312.7,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 4,
     "rawCount": 50
   },
   "gtx-1070": {
     "min": 99.5,
-    "moyen": 137.64,
+    "moyen": 132.45,
     "max": 312.7,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 20,
     "rawCount": 50
   },
   "gtx-1080": {
     "min": 104.7,
-    "moyen": 138.5,
+    "moyen": 141.1,
     "max": 260.7,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 12,
+    "dateMaj": "2026-09-24",
+    "sampleCount": 11,
     "rawCount": 50
   },
   "gtx-1660": {
     "min": 112.3,
     "moyen": 125.5,
     "max": 130.27,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 5,
     "rawCount": 50
   },
   "gtx-970": {
-    "min": 42.29,
-    "moyen": 70.38,
+    "min": 45,
+    "moyen": 72.46,
     "max": 167.1,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 26,
+    "dateMaj": "2026-09-24",
+    "sampleCount": 25,
     "rawCount": 50
   },
   "rtx-2060-super": {
     "min": 156.7,
     "moyen": 186.86,
     "max": 463.22,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 9,
     "rawCount": 13
   },
@@ -65,41 +65,41 @@
   },
   "rtx-2080": {
     "min": 146.3,
-    "moyen": 259.66,
+    "moyen": 254.78,
     "max": 618.7,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 13,
+    "dateMaj": "2026-09-24",
+    "sampleCount": 12,
     "rawCount": 50
   },
   "rtx-3060": {
     "min": 208.7,
-    "moyen": 316.55,
+    "moyen": 312.7,
     "max": 751.3,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 8,
+    "dateMaj": "2026-09-24",
+    "sampleCount": 7,
     "rawCount": 50
   },
   "rtx-3060-ti": {
     "min": 177.5,
-    "moyen": 289.24,
-    "max": 565,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 28,
+    "moyen": 300,
+    "max": 435.1,
+    "dateMaj": "2026-09-24",
+    "sampleCount": 26,
     "rawCount": 50
   },
   "rtx-3070": {
-    "min": 271.1,
+    "min": 266.94,
     "moyen": 302.3,
     "max": 750,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 25,
+    "dateMaj": "2026-09-24",
+    "sampleCount": 23,
     "rawCount": 50
   },
   "rtx-3080": {
     "min": 387.44,
     "moyen": 495.6,
-    "max": 837.25,
-    "dateMaj": "2026-09-23",
+    "max": 935.81,
+    "dateMaj": "2026-09-24",
     "sampleCount": 25,
     "rawCount": 50
   },
@@ -113,17 +113,17 @@
   },
   "rtx-4070-ti": {
     "min": 699,
-    "moyen": 1240.5,
+    "moyen": 1262.97,
     "max": 2415.72,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 13,
-    "rawCount": 26
+    "dateMaj": "2026-09-24",
+    "sampleCount": 12,
+    "rawCount": 25
   },
   "rx-470": {
     "min": 26.7,
     "moyen": 39.9,
     "max": 63.1,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 5,
     "rawCount": 20
   },
@@ -131,39 +131,39 @@
     "min": 166.06,
     "moyen": 291.9,
     "max": 566.68,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 13,
     "rawCount": 24
   },
   "rx-6600": {
-    "min": 187,
-    "moyen": 264.77,
+    "min": 206.94,
+    "moyen": 280,
     "max": 650.4,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 15,
+    "dateMaj": "2026-09-24",
+    "sampleCount": 13,
     "rawCount": 50
   },
   "rx-6600-xt": {
     "min": 198.3,
-    "moyen": 255.46,
-    "max": 556.14,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 14,
-    "rawCount": 22
+    "moyen": 268.81,
+    "max": 579.55,
+    "dateMaj": "2026-09-24",
+    "sampleCount": 15,
+    "rawCount": 23
   },
   "rx-6700-xt": {
     "min": 281.5,
     "moyen": 369,
     "max": 867.07,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 15,
     "rawCount": 21
   },
   "rx-6750-xt": {
     "min": 312.7,
-    "moyen": 459.8,
-    "max": 515.68,
-    "dateMaj": "2026-09-23",
+    "moyen": 472.52,
+    "max": 538.72,
+    "dateMaj": "2026-09-24",
     "sampleCount": 6,
     "rawCount": 9
   },
@@ -187,7 +187,7 @@
     "min": 669.7,
     "moyen": 1026.95,
     "max": 2519.7,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 12,
     "rawCount": 50
   },
@@ -200,18 +200,18 @@
     "rawCount": 8
   },
   "rx-6900-xt": {
-    "min": 516.7,
-    "moyen": 669.69,
-    "max": 1314.54,
-    "dateMaj": "2026-09-23",
-    "sampleCount": 9,
-    "rawCount": 13
+    "min": 399.4,
+    "moyen": 663.8,
+    "max": 1025.35,
+    "dateMaj": "2026-09-24",
+    "sampleCount": 10,
+    "rawCount": 14
   },
   "rtx-4090": {
     "min": 2046.7,
     "moyen": 2556.7,
     "max": 4626.83,
-    "dateMaj": "2026-09-23",
+    "dateMaj": "2026-09-24",
     "sampleCount": 7,
     "rawCount": 12
   },
