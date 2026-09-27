@@ -3,7 +3,6 @@ import { CPUS } from '../data/cpus'
 import { GPUS } from '../data/gpus'
 import { MARGIN_TIERS, RECOMMENDED_BUY_TIER } from '../data/margins'
 import { estimateNeufFromOccasion } from '../data/neufRatio'
-import { ASSEMBLED_PC_PREMIUM } from '../data/premium'
 import { SECONDARY_COMPONENT_VALUE } from '../data/secondary'
 import type {
   ComponentBreakdownLine,
@@ -145,21 +144,9 @@ export function estimate(config: PcConfiguration): EstimationResult {
 
   const rawTotal = sumBands([cpuBand, gpuBand, ramBand, storageBand, ...secondaryBands, ...bonusBands])
 
-  const assembledTotal = scaleBand(rawTotal, ASSEMBLED_PC_PREMIUM)
-  breakdown.push({
-    label: 'Prime PC complet assemblé (vs pièces détachées)',
-    band: {
-      min: round2(assembledTotal.min - rawTotal.min),
-      moyen: round2(assembledTotal.moyen - rawTotal.moyen),
-      max: round2(assembledTotal.max - rawTotal.max),
-    },
-    isManual: false,
-    neufEstime: null,
-  })
-
   const ramTier = ramCapacityTier(config.ramCapacite)
   const configBonusPct = computeBalancedConfigBonusPct(cpuTier, gpuTier, ramTier)
-  const revente = clampBandAtZero(scaleBand(assembledTotal, 1 + configBonusPct))
+  const revente = clampBandAtZero(scaleBand(rawTotal, 1 + configBonusPct))
 
   const achatConseille = Object.fromEntries(
     MARGIN_TIERS.map((t) => [t.key, round2(revente.min * (1 - t.pct))]),

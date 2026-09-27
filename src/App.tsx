@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BarcodeGenerator } from './components/BarcodeGenerator'
 import { ConfigForm } from './components/ConfigForm'
 import { HistoryPanel } from './components/HistoryPanel'
 import { ManualOverridePanel } from './components/ManualOverridePanel'
@@ -67,6 +68,7 @@ function App() {
                 <ConfigForm />
               </div>
               <ManualOverridePanel />
+              {cpuChosen && <BarcodeGenerator />}
 
               <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
                 <div className="flex gap-2">
