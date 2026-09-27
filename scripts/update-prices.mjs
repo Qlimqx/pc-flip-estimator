@@ -21,26 +21,51 @@
 // Données corrompues révoquées via `git revert` avant que ça n'atteigne les
 // utilisateurs -- voir l'historique git pour le détail.
 //
+// INCIDENT DU 2026-09-27 (pour mémoire, ne pas régresser) : malgré le
+// filtrage par titre, ~40 fiches CPU/GPU avaient dérivé de 30% à +320% au
+// fil des runs quotidiens (RTX 4060 : 272€ -> 1144€ en un mois), chacune
+// avec une fourchette interne aberrante (jusqu'à 3990-4x entre min et max).
+// Cause : le garde-fou HARD_REJECT_PCT comparait au prix de la veille (déjà
+// dérivé), pas à la donnée de base vérifiée -- une hausse de +30-50%/jour
+// passe sous le seuil de 60% à chaque run individuel mais compose sans
+// limite sur plusieurs jours (effet "grenouille dans l'eau qui chauffe").
+// Le filtre d'outliers (0,4x-2,5x la médiane) était aussi trop permissif :
+// il laissait passer un nuage de points jusqu'à 6x d'écart interne. Données
+// corrompues remises à la base vérifiée via reset des fichiers overrides.
+// Corrigé ici par : (1) ancrage de TOUTE décision (rejet ET flag) sur la
+// donnée de base -- jamais sur l'override de la veille, la dérive ne peut
+// plus s'accumuler d'un run à l'autre ; (2) base reparsée à chaque run
+// directement depuis cpus.ts/gpus.ts (plus de manifest.json statique qui
+// pouvait devenir obsolète si l'agent de vérification IA corrige la base
+// entre-temps) ; (3) filtre d'outliers resserré (0,6x-1,8x) et garde-fou
+// MAX_SPREAD_RATIO qui resserre la fourchette autour de la médiane quand le
+// nuage de points retenu reste anormalement large.
+//
 // Garde-fous (pour un usage pro, une automatisation aveugle est un risque,
 // pas une garantie de fiabilité) :
 // - Filtrage par titre AVANT tout calcul de prix (voir titleMatchesModel /
 //   looksLikeBundle) -- élimine les mauvaises variantes et les PC
 //   complets/laptops à la source, pas juste par un seuil de prix a
 //   posteriori.
-// - Rejette les annonces individuelles restantes hors de [0,4x, 2,5x] de la
+// - Rejette les annonces individuelles restantes hors de [0,6x, 1,8x] de la
 //   médiane du lot filtré (garde-fou statistique en plus du filtrage par
 //   titre, pas à sa place).
+// - Si le nuage retenu reste malgré tout étalé (max/min > MAX_SPREAD_RATIO),
+//   la fourchette écrite n'est pas les extrêmes bruts mais une bande
+//   resserrée autour de la médiane -- un écart énorme entre le plus bas et
+//   le plus haut est un signal de bruit, pas une fourchette de marché
+//   réelle à restituer telle quelle.
 // - Exige au moins MIN_SAMPLES annonces valides après filtrage, sinon
 //   n'écrit rien pour cette fiche ce jour-là (garde la dernière valeur
 //   connue plutôt que d'écraser avec une donnée pauvre) -- attendu pour une
 //   bonne partie des composants anciens/rares, ce n'est pas un
 //   dysfonctionnement.
-// - Compare le nouveau prix moyen à la valeur EFFECTIVE actuelle (override
-//   du jour précédent si présent, sinon la donnée de base vérifiée à la
-//   main -- jamais "rien" même au tout premier run). Un écart >
-//   HARD_REJECT_PCT est REJETÉ (la fiche n'est pas mise à jour) ; un écart
-//   > FLAG_THRESHOLD_PCT est accepté mais consigné dans PRICE_REVIEW.md
-//   pour relecture humaine.
+// - Compare le nouveau prix moyen à la donnée de BASE vérifiée à la main
+//   (jamais à l'override de la veille, voir incident du 2026-09-27) --
+//   reparsée à chaque run depuis cpus.ts/gpus.ts pour rester à jour même si
+//   la base a été corrigée entre-temps. Un écart > HARD_REJECT_PCT est
+//   REJETÉ (la fiche n'est pas mise à jour) ; un écart > FLAG_THRESHOLD_PCT
+//   est accepté mais consigné dans PRICE_REVIEW.md pour relecture humaine.
 
 import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
@@ -51,8 +76,13 @@ const ROOT = path.resolve(__dirname, '..')
 const OVERRIDES_DIR = path.join(ROOT, 'src/data/priceOverrides')
 
 const MIN_SAMPLES = 4
-const OUTLIER_LOW_MULT = 0.4
-const OUTLIER_HIGH_MULT = 2.5
+const OUTLIER_LOW_MULT = 0.6
+const OUTLIER_HIGH_MULT = 1.8
+// Au-delà, le nuage de points retenu (même après filtrage d'outliers) est
+// jugé trop dispersé pour faire confiance aux extrêmes bruts -- la
+// fourchette écrite est resserrée autour de la médiane à la place.
+const MAX_SPREAD_RATIO = 2.2
+const TIGHT_BAND_HALF_WIDTH_PCT = 0.15
 const FLAG_THRESHOLD_PCT = 0.25
 const HARD_REJECT_PCT = 0.6
 const REQUEST_DELAY_MS = 250 // reste raisonnable vis-à-vis des quotas eBay
@@ -176,10 +206,19 @@ async function priceEntry(nom, token) {
   const filtered = filterOutliers(prices)
   if (filtered.length < MIN_SAMPLES) return null
   const sorted = [...filtered].sort((a, b) => a - b)
+  const moyen = round2(median(filtered))
+  const rawMin = sorted[0]
+  const rawMax = sorted[sorted.length - 1]
+  // Même après le filtre d'outliers, un nuage encore trop étalé n'est pas
+  // une vraie fourchette de marché -- on resserre autour de la médiane
+  // plutôt que d'écrire des extrêmes bruités (voir incident du 2026-09-27).
+  const spreadTooWide = rawMin > 0 && rawMax / rawMin > MAX_SPREAD_RATIO
+  const min = spreadTooWide ? round2(moyen * (1 - TIGHT_BAND_HALF_WIDTH_PCT)) : round2(rawMin)
+  const max = spreadTooWide ? round2(moyen * (1 + TIGHT_BAND_HALF_WIDTH_PCT)) : round2(rawMax)
   return {
-    min: round2(sorted[0]),
-    moyen: round2(median(filtered)),
-    max: round2(sorted[sorted.length - 1]),
+    min,
+    moyen,
+    max,
     dateMaj: new Date().toISOString().slice(0, 10),
     sampleCount: filtered.length,
     rawCount: listings.length,
@@ -198,11 +237,48 @@ async function loadJson(file, fallback) {
   }
 }
 
+/**
+ * Reparse BASE_CPUS/BASE_GPUS directement depuis les fichiers source à
+ * chaque run -- pas de manifest.json statique qui pourrait devenir obsolète
+ * si l'agent de vérification IA corrige la base entre deux runs de ce
+ * script (voir incident du 2026-09-27). Les objets de ces tableaux ne
+ * s'imbriquent pas, donc un simple `{[^{}]*}` suffit à isoler chaque entrée.
+ */
+async function parseBaseArray(filePath, arrayName, category) {
+  const src = await readFile(filePath, 'utf8')
+  const startIdx = src.indexOf(`const ${arrayName}`)
+  if (startIdx === -1) throw new Error(`${arrayName} introuvable dans ${filePath}`)
+  const endIdx = src.indexOf('\nexport', startIdx)
+  const slice = src.slice(startIdx, endIdx === -1 ? undefined : endIdx)
+  const blocks = slice.match(/\{[^{}]*\}/g) ?? []
+  const entries = []
+  for (const block of blocks) {
+    const id = block.match(/id:\s*'([^']+)'/)?.[1]
+    const nom = block.match(/nom:\s*'([^']+)'/)?.[1]
+    const baseMin = block.match(/\bmin:\s*([\d.]+)/)?.[1]
+    const baseMoyen = block.match(/\bmoyen:\s*([\d.]+)/)?.[1]
+    const baseMax = block.match(/\bmax:\s*([\d.]+)/)?.[1]
+    if (!id || !nom || baseMin === undefined || baseMoyen === undefined || baseMax === undefined) continue
+    entries.push({
+      id,
+      nom,
+      category,
+      baseMin: Number(baseMin),
+      baseMoyen: Number(baseMoyen),
+      baseMax: Number(baseMax),
+    })
+  }
+  return entries
+}
+
 async function main() {
   const token = await getEbayToken()
-  const manifest = await loadJson(path.join(OVERRIDES_DIR, 'manifest.json'), [])
+  const manifest = [
+    ...(await parseBaseArray(path.join(ROOT, 'src/data/cpus.ts'), 'BASE_CPUS', 'cpu')),
+    ...(await parseBaseArray(path.join(ROOT, 'src/data/gpus.ts'), 'BASE_GPUS', 'gpu')),
+  ]
   if (manifest.length === 0) {
-    throw new Error('manifest.json est vide ou introuvable -- rien à mettre à jour.')
+    throw new Error('Aucune entrée trouvée dans BASE_CPUS/BASE_GPUS -- rien à mettre à jour.')
   }
 
   const cpuOverrides = await loadJson(path.join(OVERRIDES_DIR, 'cpuOverrides.json'), {})
@@ -223,33 +299,35 @@ async function main() {
       continue
     }
 
-    // Comparaison à la valeur EFFECTIVE actuelle : l'override d'hier s'il
-    // existe, sinon la donnée de base vérifiée à la main -- jamais "rien",
-    // même au tout premier run (c'est exactement ce qui manquait lors de
-    // l'incident du 2026-08-26).
+    // La décision (rejet / flag) est ancrée sur la donnée de BASE vérifiée à
+    // la main -- jamais sur l'override de la veille (voir incident du
+    // 2026-09-27 : comparer à la veille laisse une dérive de +30-50%/jour
+    // s'accumuler sans limite sur plusieurs jours, chaque saut individuel
+    // restant sous le seuil). currentEffective ne sert plus qu'à l'affichage
+    // (ce qui est réellement visible dans l'app aujourd'hui).
     const currentEffective = overrides[id]?.moyen ?? baseMoyen
-    const changePct = Math.abs(result.moyen - currentEffective) / currentEffective
+    const changePctFromBase = Math.abs(result.moyen - baseMoyen) / baseMoyen
 
-    if (changePct > HARD_REJECT_PCT) {
+    if (changePctFromBase > HARD_REJECT_PCT) {
       rejected.push({
         id,
         nom,
         category,
         valeurActuelle: currentEffective,
         valeurProposee: result.moyen,
-        changePct: round2(changePct * 100),
+        changePct: round2(changePctFromBase * 100),
       })
       continue
     }
 
-    if (changePct > FLAG_THRESHOLD_PCT) {
+    if (changePctFromBase > FLAG_THRESHOLD_PCT) {
       flagged.push({
         id,
         nom,
         category,
         ancienMoyen: currentEffective,
         nouveauMoyen: result.moyen,
-        changePct: round2(changePct * 100),
+        changePct: round2(changePctFromBase * 100),
       })
     }
 
