@@ -106,6 +106,12 @@ function App() {
           <HistoryPanel />
         )}
       </main>
+
+      <footer className="border-t border-slate-800 py-6">
+        <p className="mx-auto max-w-6xl px-4 text-center text-xs text-slate-600">
+          © {new Date().getFullYear()} Florian Schmit — Tous droits réservés
+        </p>
+      </footer>
     </div>
   )
 }
