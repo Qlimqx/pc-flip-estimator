@@ -3,7 +3,7 @@
     "min": 19.39,
     "moyen": 31.3,
     "max": 42.29,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 8,
     "rawCount": 50
   },
@@ -11,47 +11,47 @@
     "min": 42.3,
     "moyen": 46.45,
     "max": 69.55,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 4,
     "rawCount": 12
   },
   "i5-6500": {
-    "min": 21.37,
-    "moyen": 25.14,
-    "max": 28.91,
-    "dateMaj": "2026-09-27",
-    "sampleCount": 11,
+    "min": 19.82,
+    "moyen": 23.32,
+    "max": 26.82,
+    "dateMaj": "2026-09-28",
+    "sampleCount": 10,
     "rawCount": 50
   },
   "i5-6600k": {
-    "min": 24,
-    "moyen": 35,
-    "max": 42.3,
-    "dateMaj": "2026-09-27",
-    "sampleCount": 7,
+    "min": 30.65,
+    "moyen": 36.06,
+    "max": 41.47,
+    "dateMaj": "2026-09-28",
+    "sampleCount": 9,
     "rawCount": 18
   },
   "ryzen-5-2600x": {
     "min": 54.3,
     "moyen": 72.46,
     "max": 110.93,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 5,
     "rawCount": 16
   },
   "i5-7500": {
-    "min": 41.44,
-    "moyen": 48.75,
-    "max": 56.06,
-    "dateMaj": "2026-09-27",
+    "min": 41.34,
+    "moyen": 48.63,
+    "max": 55.92,
+    "dateMaj": "2026-09-28",
     "sampleCount": 8,
-    "rawCount": 40
+    "rawCount": 41
   },
   "i5-7600k": {
     "min": 42.9,
     "moyen": 56.29,
     "max": 82.2,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 6,
     "rawCount": 17
   },
@@ -59,7 +59,7 @@
     "min": 13.9,
     "moyen": 19.72,
     "max": 26.46,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 12,
     "rawCount": 50
   },
@@ -67,7 +67,7 @@
     "min": 27.74,
     "moyen": 42.3,
     "max": 42.59,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 7,
     "rawCount": 10
   },
@@ -75,7 +75,7 @@
     "min": 41.52,
     "moyen": 48.85,
     "max": 56.18,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 6,
     "rawCount": 31
   },
@@ -83,7 +83,7 @@
     "min": 47.5,
     "moyen": 52.13,
     "max": 63.09,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 4,
     "rawCount": 8
   },
@@ -91,23 +91,23 @@
     "min": 77.66,
     "moyen": 114.12,
     "max": 160.85,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 4,
     "rawCount": 18
   },
   "i7-8700": {
     "min": 78.7,
-    "moyen": 90.05,
+    "moyen": 97.24,
     "max": 118.36,
-    "dateMaj": "2026-09-27",
-    "sampleCount": 4,
+    "dateMaj": "2026-09-28",
+    "sampleCount": 5,
     "rawCount": 50
   },
   "i5-9600k": {
     "min": 70.62,
     "moyen": 83.08,
     "max": 95.54,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 6,
     "rawCount": 14
   },
@@ -123,7 +123,7 @@
     "min": 104.7,
     "moyen": 130.7,
     "max": 208.69,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 7,
     "rawCount": 21
   },
@@ -131,15 +131,15 @@
     "min": 121.38,
     "moyen": 195.18,
     "max": 244.05,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 4,
     "rawCount": 7
   },
   "ryzen-7-5800x": {
     "min": 186.86,
     "moyen": 207.17,
-    "max": 308.51,
-    "dateMaj": "2026-09-27",
+    "max": 324.43,
+    "dateMaj": "2026-09-28",
     "sampleCount": 4,
     "rawCount": 24
   },
@@ -147,16 +147,32 @@
     "min": 339.21,
     "moyen": 376.56,
     "max": 398.32,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 4,
     "rawCount": 9
   },
   "ryzen-7-9700x": {
-    "min": 274.24,
+    "min": 273.97,
     "moyen": 410.02,
     "max": 516.7,
-    "dateMaj": "2026-09-27",
+    "dateMaj": "2026-09-28",
     "sampleCount": 4,
-    "rawCount": 7
+    "rawCount": 6
+  },
+  "i7-6700k": {
+    "min": 63.75,
+    "moyen": 75,
+    "max": 86.25,
+    "dateMaj": "2026-09-28",
+    "sampleCount": 7,
+    "rawCount": 21
+  },
+  "ryzen-9-3900x": {
+    "min": 174.56,
+    "moyen": 205.36,
+    "max": 236.16,
+    "dateMaj": "2026-09-28",
+    "sampleCount": 5,
+    "rawCount": 11
   }
 }
