@@ -1,11 +1,12 @@
 const STORAGE_KEY = 'pc-flip-estimator:ean-sequence'
 
 /**
- * Préfixe "usage interne" (plage 20-29, réservée par GS1 pour un usage
- * restreint en magasin) -- aucun risque de collision avec un vrai code
- * produit du commerce, pas besoin d'enregistrement GS1 pour ce cas d'usage.
+ * Préfixe "usage interne" (plage 040-049, circulation restreinte GS1) --
+ * aucun risque de collision avec un vrai code produit du commerce. Volontairement
+ * pas 20-29 : les logiciels de caisse y voient souvent un code à prix/poids
+ * variable et n'en lisent qu'une partie (Athena ne retrouvait pas l'article).
  */
-const EAN_PREFIX = '20'
+const EAN_PREFIX = '04'
 
 /**
  * Alloue et persiste (localStorage) le prochain code EAN-13, jamais
