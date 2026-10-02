@@ -3,7 +3,7 @@
     "min": 19.39,
     "moyen": 31.3,
     "max": 42.29,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 8,
     "rawCount": 50
   },
@@ -11,7 +11,7 @@
     "min": 42.3,
     "moyen": 46.45,
     "max": 69.55,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 4,
     "rawCount": 12
   },
@@ -19,23 +19,23 @@
     "min": 22.03,
     "moyen": 25.92,
     "max": 29.81,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 10,
     "rawCount": 50
   },
   "i5-6600k": {
-    "min": 24,
-    "moyen": 35,
-    "max": 42.3,
-    "dateMaj": "2026-10-01",
-    "sampleCount": 7,
+    "min": 30.65,
+    "moyen": 36.06,
+    "max": 41.47,
+    "dateMaj": "2026-10-02",
+    "sampleCount": 9,
     "rawCount": 18
   },
   "ryzen-5-2600x": {
     "min": 54.3,
     "moyen": 72.46,
     "max": 110.93,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 5,
     "rawCount": 16
   },
@@ -59,7 +59,7 @@
     "min": 13.9,
     "moyen": 19.72,
     "max": 26.46,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 12,
     "rawCount": 50
   },
@@ -67,7 +67,7 @@
     "min": 27.74,
     "moyen": 42.3,
     "max": 42.59,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 7,
     "rawCount": 10
   },
@@ -75,15 +75,15 @@
     "min": 40.38,
     "moyen": 47.5,
     "max": 54.62,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 7,
-    "rawCount": 27
+    "rawCount": 28
   },
   "i5-8600k": {
     "min": 47.5,
     "moyen": 52.13,
     "max": 63.09,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 4,
     "rawCount": 8
   },
@@ -91,7 +91,7 @@
     "min": 77.66,
     "moyen": 114.12,
     "max": 160.85,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 4,
     "rawCount": 18
   },
@@ -99,7 +99,7 @@
     "min": 78.7,
     "moyen": 95,
     "max": 118.36,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 5,
     "rawCount": 50
   },
@@ -107,7 +107,7 @@
     "min": 70.62,
     "moyen": 83.08,
     "max": 95.54,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 6,
     "rawCount": 13
   },
@@ -115,23 +115,23 @@
     "min": 73.49,
     "moyen": 84.05,
     "max": 144.21,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 6,
     "rawCount": 42
   },
   "ryzen-7-3700x": {
-    "min": 111.09,
-    "moyen": 130.7,
-    "max": 150.3,
-    "dateMaj": "2026-10-01",
-    "sampleCount": 7,
+    "min": 112.86,
+    "moyen": 132.78,
+    "max": 152.7,
+    "dateMaj": "2026-10-02",
+    "sampleCount": 8,
     "rawCount": 21
   },
   "ryzen-7-3800x": {
     "min": 121.38,
     "moyen": 195.18,
     "max": 244.05,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 4,
     "rawCount": 6
   },
@@ -152,18 +152,18 @@
     "rawCount": 9
   },
   "ryzen-7-9700x": {
-    "min": 343.94,
-    "moyen": 421.22,
+    "min": 275.45,
+    "moyen": 410.87,
     "max": 516.7,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 4,
-    "rawCount": 7
+    "rawCount": 6
   },
   "i7-6700k": {
     "min": 45.4,
     "moyen": 57.83,
     "max": 75,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 6,
     "rawCount": 21
   },
@@ -177,17 +177,17 @@
   },
   "ryzen-9-5900x": {
     "min": 271.1,
-    "moyen": 324.54,
+    "moyen": 321.06,
     "max": 425.91,
-    "dateMaj": "2026-09-30",
+    "dateMaj": "2026-10-02",
     "sampleCount": 4,
-    "rawCount": 12
+    "rawCount": 13
   },
   "ryzen-5-1600": {
     "min": 32.11,
     "moyen": 37.1,
     "max": 67.26,
-    "dateMaj": "2026-10-01",
+    "dateMaj": "2026-10-02",
     "sampleCount": 5,
     "rawCount": 15
   }
