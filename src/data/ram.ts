@@ -33,6 +33,12 @@ export const RAM_TYPE_LABELS: Record<RamType, string> = {
 // Les analystes (Gartner, TrendForce) annoncent que la pénurie devrait durer
 // au moins jusqu'en 2028 -- ces tarifs sont donc probablement encore amenés
 // à bouger, à revérifier périodiquement plutôt que de les considérer figés.
+//
+// Re-vérifié le 2026-10-07 : la DDR4 reste stable (presse -- Cowcotland --
+// évoque même "un peu de calme") mais la DDR5 continue de grimper (kits
+// 32Go neufs à 450-600€ chez Materiel.net/Grosbill, TrendForce prévoit
+// encore +10-15% sur la DRAM au T4 2026) -- ddr4 inchangé, ddr5 ajusté de
+// 11 à 13€/Go.
 export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
   ddr3: {
     // DDR3 est aussi "touchée" par la pénurie selon la presse (marché de
@@ -52,7 +58,7 @@ export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
     decoteAnciennete: 1.0,
   },
   ddr5: {
-    prixParGo: 11,
+    prixParGo: 13,
     plancher: 60,
     faciliteRevente: 0.85,
     decoteAnciennete: 1.1,

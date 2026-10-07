@@ -28,6 +28,13 @@ export const STORAGE_TYPE_LABELS: Record<StorageType, string> = {
 // laissé inchangé. Comme pour la RAM, la pénurie NAND est annoncée pour
 // durer jusqu'en 2028 selon les analystes -- ces tarifs sont à revérifier
 // périodiquement.
+//
+// Re-vérifié le 2026-10-07 : la pénurie NAND s'est nettement aggravée
+// (puce NAND TLC 1Tb passée de 4,80$ en juillet à 10,70$ en octobre selon
+// tech-insider.org/hwbusters.com ; un cadre Kioxia déclare que "l'ère du
+// SSD 1To bon marché est terminée" -- club386.com ; Sandisk a relevé ses
+// prix jusqu'à 2,8x selon Tom's Hardware) -- ssd et nvme ajustés à la
+// hausse en conséquence, hdd inchangé.
 export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
   hdd: {
     prixParGo: 0.018,
@@ -36,13 +43,13 @@ export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
     decoteAnciennete: 0.85,
   },
   ssd: {
-    prixParGo: 0.125,
+    prixParGo: 0.16,
     plancher: 35,
     faciliteRevente: 0.7,
     decoteAnciennete: 1.0,
   },
   nvme: {
-    prixParGo: 0.115,
+    prixParGo: 0.145,
     plancher: 40,
     faciliteRevente: 0.8,
     decoteAnciennete: 1.05,

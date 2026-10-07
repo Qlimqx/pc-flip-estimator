@@ -3395,3 +3395,33 @@ coup d'œil avant de faire confiance au chiffre pour une décision d'achat.
 - **RTX 3060 Ti** (gpu) : 300€ → 300€ (+36.36%)
 - **RTX 3080** (gpu) : 498.15€ → 529.65€ (+39.38%)
 - **RX 6900 XT** (gpu) : 663.8€ → 669.69€ (+59.45%)
+
+## 2026-10-07
+
+### Vérifié par agent IA le 2026-10-07
+
+Vérification manuelle (recherche web réelle : LeBonCoin, eBay.fr/.de, LDLC, TopAchat, Materiel.net, Rue du Commerce, Grosbill, presse tech) des entrées listées sous "### Rejetés" de la section 2026-10-06 (priorité 1, limitée au matériel récent — RTX/RX moderne et CPU 10e génération Intel+/Ryzen 3000+, le matériel pré-RTX/pré-10e-gen rejeté restant hors du périmètre quotidien car déjà couvert par les garde-fous anti-dérive du pipeline eBay) et de 5 entrées supplémentaires du cycle de rotation "matériel récent" (priorité 2, curseur à l'index 0).
+
+**Constat général sur le pipeline eBay** : les sections "Rejetés" des 2026-10-05 et 2026-10-06 montrent le pipeline rejetant quasiment TOUTE la gamme GPU chaque nuit avec des écarts proposés énormes et croissants (ex: RTX 5090 proposé à 6836€ puis 7586€, RTX 4060 à 1027€ deux nuits de suite) -- l'ancrage sur la base a l'air de bien fonctionner (rejets corrects, pas de corruption des données), mais l'ampleur et la récurrence de ces rejets sur la quasi-totalité du catalogue GPU suggère un biais systématique côté scraping eBay (probablement des annonces neuves/bundles/vendeurs pro mal filtrées) plutôt qu'un vrai mouvement de marché -- à signaler pour investigation côté `scripts/update-prices.mjs`, hors du périmètre de cet agent (données uniquement).
+
+**Entrées corrigées (14) :**
+
+- `rtx-3050` (gpu) : 98/118/138€ → 150/185/220€ (sources : prix neuf remonté à 240-300€ sous l'effet de la pénurie mémoire 2026 ; occasion LeBonCoin ~220€ ; Guru3D, PCGuide)
+- `rtx-3060` (gpu) : 165/195/225€ → 200/235/275€ (sources : occasion LeBonCoin 230-250€ ; hausse documentée du 12GB neuf, Guru3D/PCGuide)
+- `rtx-3080-ti` (gpu) : 395/430/470€ → 415/480/545€ (sources : FE proche de l'ancien max, mais SKUs premium EVGA FTW3/AORUS Master à 545-650€ tirant la moyenne vers le haut)
+- `rtx-3090` (gpu) : 480/520/565€ → 600/730/870€ (sources : LeBonCoin cartes seules 650-825€ ; demande soutenue IA locale/LLM pour le 24Go VRAM documentée par plusieurs trackers indépendants ; contexte pénurie mémoire 2026 — RTX 5090 neuf x2-3, MSI +15-30%)
+- `rtx-4080-super` (gpu) : 775/820/865€ → 820/900/1000€ (sources : 4 annonces occasion indépendantes convergeant vers ~945€ médiane ; pénurie spécifique documentée par cowcotland.com/news/90162 et techradar.com/fr-fr)
+- `rtx-5060-ti` (gpu) : 390/425/460€ → 450/510/580€ (sources : neuf 16GB remonté à 609-740€ en UE sous l'effet de la pénurie DRAM ciblant les cartes à forte VRAM)
+- `rtx-5080` (gpu) : 1300/1400/1520€ → 900/980/1100€ (sources : les valeurs précédentes correspondaient en réalité au prix NEUF actuel (1313-1380€, jusqu'à 1700€) et non à l'occasion ; vraies annonces d'occasion LeBonCoin KFA2 ~1050€, eBay 900-1000€, comparatif DE ~950€)
+- `rtx-5090` (gpu) : 2450/2650/2900€ → 3200/3600/4000€ (sources : prix plancher neuf France passé de 2399€ en janvier à 5490€ en octobre ; gpupricehistory ~4818€ fin juillet ; pénurie DRAM/HBM pour l'IA bien documentée)
+- `ryzen-5-3600x` (cpu) : 62/76/90€ → 48/60/75€ (sources : LeBonCoin ~65€, eBay.de multi-vendeurs 45-66€)
+- `i7-10700kf` (cpu) : 105/128/152€ → 140/170/200€ (sources : eBay multi-vendeurs SKU KF exact 169-189€ ; Rueducommerce.fr neuf 269€ confirmé par 3dtested.com, sanity check 0.7×269=188€)
+- `ryzen-3-3100` (cpu) : 32/40/50€ → 28/35/44€ (sources : eBay multi-vendeurs 30-36€, LeBonCoin 30-40€)
+- `i5-10600k` (cpu) : 78/95/113€ → 100/125/150€ (sources : eBay.de multi-vendeurs SKU K exact 127-140€ ; PCcomponentes neuf i5-10600KF 176€ sept 2026, sanity check 0.7×176=123€)
+- `ddr5` (ram.ts, prixParGo) : 11€/Go → 13€/Go (sources : kits DDR5 32Go neufs à 450-600€ chez Materiel.net/Grosbill ; TrendForce prévoit encore +10-15% sur la DRAM au T4 2026)
+- `ssd` et `nvme` (storage.ts, prixParGo) : SSD SATA 0.125€/Go → 0.16€/Go, NVMe 0.115€/Go → 0.145€/Go (sources : puce NAND TLC 1Tb passée de 4,80$ à 10,70$ entre juillet et octobre 2026 selon tech-insider.org/hwbusters.com ; un cadre Kioxia déclare que "l'ère du SSD 1To bon marché est terminée" — club386.com ; hausses Sandisk jusqu'à 2,8x selon Tom's Hardware)
+
+**Entrées confirmées correctes (26, aucun changement) :**
+
+rtx-2060, rtx-2070-super, rtx-2080-super (données françaises insuffisantes pour trancher, à revérifier), rtx-2080-ti, rx-5700-xt, rtx-3070-ti, rx-6700-xt, rx-6750-xt, rx-7800-xt, rtx-4060, rtx-4060-ti, rtx-4070, rtx-4070-super, rtx-4070-ti, rtx-4080, rtx-5070, rx-9070-xt, i3-10100f, ryzen-3-3200g, i9-14900k, ryzen-3-3300x, i5-10400f, i5-11400f, ddr3, ddr4, hdd
+
