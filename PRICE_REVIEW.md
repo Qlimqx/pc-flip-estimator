@@ -3519,3 +3519,30 @@ rtx-2060, rtx-2070-super, rtx-2080-super (données françaises insuffisantes pou
 - **RTX 3080** (gpu) : 529.65€ → 531.5€ (+39.87%)
 - **RX 6900 XT** (gpu) : 669.69€ → 663.8€ (+58.05%)
 - **RTX 4080 Super** (gpu) : 900€ → 1332.7€ (+48.08%)
+
+## 2026-10-08
+
+### Vérifié par agent IA le 2026-10-08
+
+Vérification manuelle (recherche web réelle : LeBonCoin, eBay.fr/.de/.com, LDLC, TopAchat, Materiel.net, Amazon.fr, Grosbill, comparateur-gamer.fr, PCcomponentes, resaleprices.com) des entrées listées sous "### Rejetés" de la section 2026-10-07 la plus récente (priorité 1, ciblée sur les entrées jamais revérifiées depuis la mise en place du pipeline eBay + 2 spot-checks sur du matériel ancien chroniquement rejeté) et de 17 entrées du cycle de rotation "matériel récent" (priorité 2, curseur avancé de l'index 8 à l'index 25).
+
+**Constat sur le pipeline eBay** : la section "Rejetés" du 2026-10-07 liste 62 entrées, dont ~40 sont du matériel pré-RTX/pré-10e-génération (GTX 460 à 1080 Ti, RX 400-500, séries 2xxx anciennes) rejeté quotidiennement de façon quasi identique depuis début août 2026 -- pattern déjà documenté à plusieurs reprises dans ce fichier, confirmé une fois de plus aujourd'hui par le spot-check sur `gtx-1080-ti` (voir plus bas) : aucune des sources indépendantes trouvées ne corrobore les montants proposés par eBay (410-465€ pour un produit dont le marché réel tourne autour de 145-250€). Ces entrées anciennes n'ont pas été individuellement re-recherchées aujourd'hui (recherche web coûteuse pour un résultat déjà établi de façon répétée), conformément à la consigne de concentrer le budget quotidien sur le matériel volatil -- le pipeline continue de les rejeter correctement (garde-fou anti-dérive fonctionnel).
+
+**Anomalie override à signaler (hors périmètre de correction, donnée uniquement)** : `ryzen-5-3600` a un override actif (`priceOverrides/cpuOverrides.json`, moyen=89.4€, dateMaj 2026-10-07) sensiblement supérieur à la base corrigée aujourd'hui (58€, voir recherche LeBonCoin ci-dessous) -- écart +54%, sous le seuil de rejet (60%) donc accepté nuit après nuit. De même, `ryzen-9-5900x` a un override actif à 326.26€ (dateMaj 2026-10-06), au-dessus de la base corrigée aujourd'hui (280€, écart +16%, cette fois sous le seuil de flag). Dans les deux cas l'override masque la base vérifiée dans l'app (le merge override remplace entièrement min/moyen/max/dateMaj, voir gpus.ts/cpus.ts) -- à surveiller si l'écart se creuse, possible signal que le filtrage par titre d'eBay laisse encore passer des annonces non représentatives (vendeurs pro, kits) sur ces deux références précises.
+
+**Entrées corrigées (6) :**
+
+- `ryzen-9-5900x` (cpu) : 185/210/235€ → 245/280/315€ (sources : LeBonCoin 4 annonces indépendantes CPU seul 270-300€ ; eBay.de ~285€ ; jamais revérifié depuis le 2026-08-24)
+- `i9-9900k` (cpu) : 100/125/150€ → 160/205/250€ (sources : LeBonCoin 220-250€ ; eBay.com ventes réalisées ~183-184€, 203 ventes confirmées ; le montant proposé par le pipeline eBay, 380-440€, reste non corroboré et doit continuer à être rejeté)
+- `i7-10700k` (cpu) : 108/132/156€ → 115/140/170€ (sources : LeBonCoin 140€ ; eBay FR 189€ ; eBay Italie 169€)
+- `i9-10900k` (cpu) : 148/178/208€ → 190/225/260€ (sources : eBay.de variante 10900KF 240-285€ ; eBay UK 10900K ~220€ ; repère LeBonCoin i9-9900K 250€ pour comparaison de gamme)
+- `ryzen-5-3600` (cpu) : 58/72/86€ → 40/58/75€ (sources : LeBonCoin 4 annonces CPU seul moyenne ~57.5€ ; Grosbill neuf 64€, sanity check 0.7×64=45€)
+- `ryzen-5-5600g` (cpu) : 68/82/97€ → 100/120/145€ (sources : comparateur-gamer.fr/PCcomponentes neuf 172-177€ + achatmoinscher.com/Techinn/Fnac/Amazon neuf 185-196€ ; LeBonCoin occasion 110-120€ ; sanity check 0.7×185=130€)
+
+**Entrées confirmées correctes (13, aucun changement) :**
+
+`gtx-1080-ti` (spot-check matériel ancien chroniquement rejeté : marché réel 145-250€ selon eBay/resaleprices.com/Rakuten, le rejet pipeline à 410-465€ est bien du bruit), `ryzen-5-4600g`, `ryzen-7-3700x`, `ryzen-7-3800x` (confiance faible, pas d'annonce LeBonCoin directe trouvée pour le CPU seul, à revérifier), `ryzen-9-3900x`, `ryzen-9-3950x`, `ryzen-5-5500`, `ryzen-5-5600` (à surveiller, légère pression baissière ~100-105€ vs 110€ actuel), `ryzen-5-5600x`, `ryzen-7-5700x`, `i5-11600k`, `i5-12400f` (à surveiller, proche du seuil des 30%, demande soutenue car socket LGA1700 toujours actuel), `i9-11900k`.
+
+**RAM/stockage** : formules DDR5/SSD/NVMe recalibrées hier (2026-10-07) toujours cohérentes avec le marché (pénurie DRAM/NAND confirmée par Cowcotland, ComputerBase, SK Hynix, Kingston -- tendance identique, pas de nouveau choc détecté dans les dernières 24-48h). Aucun changement.
+
+**Note rotation priorité 2** : `i7-10700kf` (index 9 de la liste tournante) a été sauté car déjà corrigé hier (2026-10-07) via la priorité 1 -- pas de nouvelle recherche redondante.
