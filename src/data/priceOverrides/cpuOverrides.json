@@ -3,7 +3,7 @@
     "min": 21.39,
     "moyen": 31.9,
     "max": 42.29,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 7,
     "rawCount": 50
   },
@@ -16,18 +16,18 @@
     "rawCount": 11
   },
   "i5-6500": {
-    "min": 20.43,
-    "moyen": 28.1,
-    "max": 42.3,
-    "dateMaj": "2026-10-08",
-    "sampleCount": 8,
+    "min": 22.03,
+    "moyen": 25.92,
+    "max": 29.81,
+    "dateMaj": "2026-10-09",
+    "sampleCount": 10,
     "rawCount": 50
   },
   "i5-6600k": {
     "min": 30.2,
     "moyen": 35.53,
     "max": 40.86,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 8,
     "rawCount": 17
   },
@@ -35,17 +35,17 @@
     "min": 54.3,
     "moyen": 72.46,
     "max": 110.93,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 5,
     "rawCount": 16
   },
   "i5-7500": {
-    "min": 41.44,
-    "moyen": 48.75,
-    "max": 56.06,
-    "dateMaj": "2026-10-08",
-    "sampleCount": 8,
-    "rawCount": 42
+    "min": 29,
+    "moyen": 37.1,
+    "max": 60.5,
+    "dateMaj": "2026-10-09",
+    "sampleCount": 9,
+    "rawCount": 44
   },
   "i5-7600k": {
     "min": 42.9,
@@ -56,18 +56,18 @@
     "rawCount": 17
   },
   "i3-8100": {
-    "min": 14.9,
-    "moyen": 20.42,
+    "min": 13.9,
+    "moyen": 20.21,
     "max": 26.46,
-    "dateMaj": "2026-10-08",
-    "sampleCount": 11,
+    "dateMaj": "2026-10-09",
+    "sampleCount": 12,
     "rawCount": 50
   },
   "i3-9100f": {
     "min": 27.74,
     "moyen": 41.28,
     "max": 42.59,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 7,
     "rawCount": 10
   },
@@ -75,7 +75,7 @@
     "min": 40.38,
     "moyen": 47.5,
     "max": 54.62,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 9,
     "rawCount": 25
   },
@@ -83,7 +83,7 @@
     "min": 47.5,
     "moyen": 52.13,
     "max": 63.09,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 4,
     "rawCount": 8
   },
@@ -99,7 +99,7 @@
     "min": 78.7,
     "moyen": 90,
     "max": 118.36,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 5,
     "rawCount": 50
   },
@@ -107,23 +107,23 @@
     "min": 71.32,
     "moyen": 83.9,
     "max": 96.49,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 7,
-    "rawCount": 13
+    "rawCount": 14
   },
   "ryzen-5-3600": {
-    "min": 73.49,
-    "moyen": 89.4,
-    "max": 144.21,
-    "dateMaj": "2026-10-08",
-    "sampleCount": 5,
-    "rawCount": 43
+    "min": 71.44,
+    "moyen": 84.05,
+    "max": 96.66,
+    "dateMaj": "2026-10-09",
+    "sampleCount": 6,
+    "rawCount": 44
   },
   "ryzen-7-3700x": {
     "min": 104.23,
     "moyen": 122.62,
     "max": 141.01,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 8,
     "rawCount": 20
   },
@@ -131,15 +131,15 @@
     "min": 121.38,
     "moyen": 195.18,
     "max": 244.05,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 4,
-    "rawCount": 7
+    "rawCount": 6
   },
   "ryzen-7-5800x": {
     "min": 176.09,
     "moyen": 207.17,
     "max": 238.25,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 6,
     "rawCount": 36
   },
@@ -169,9 +169,9 @@
   },
   "ryzen-9-3900x": {
     "min": 198.3,
-    "moyen": 231.87,
+    "moyen": 229.26,
     "max": 414.7,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 4,
     "rawCount": 9
   },
@@ -187,23 +187,23 @@
     "min": 32.11,
     "moyen": 37.1,
     "max": 67.26,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 5,
     "rawCount": 14
   },
   "ryzen-5-2600": {
-    "min": 60.27,
-    "moyen": 70.9,
-    "max": 81.54,
-    "dateMaj": "2026-10-08",
-    "sampleCount": 8,
-    "rawCount": 35
+    "min": 42.3,
+    "moyen": 52.7,
+    "max": 89.1,
+    "dateMaj": "2026-10-09",
+    "sampleCount": 7,
+    "rawCount": 36
   },
   "i7-10700kf": {
     "min": 190,
     "moyen": 248.31,
     "max": 337.17,
-    "dateMaj": "2026-10-08",
+    "dateMaj": "2026-10-09",
     "sampleCount": 4,
     "rawCount": 5
   }
