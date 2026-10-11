@@ -39,6 +39,17 @@ export const RAM_TYPE_LABELS: Record<RamType, string> = {
 // 32Go neufs à 450-600€ chez Materiel.net/Grosbill, TrendForce prévoit
 // encore +10-15% sur la DRAM au T4 2026) -- ddr4 inchangé, ddr5 ajusté de
 // 11 à 13€/Go.
+//
+// Re-vérifié le 2026-10-11 : la DDR4 a fini par décrocher elle aussi. Kit de
+// référence Cowcotland DDR4 3200 CL16 32Go stable à 209,90€ depuis fin août ;
+// confirmé indépendamment par Corsair Vengeance LPX 32Go à 209,99€
+// (Amazon.fr/Dealabs) et par des kits premium Crucial/G.Skill 32Go à
+// 258-268€ (comparateur-gamer.fr/PCcomponentes, PowerPlanet) -- soit
+// ~6,5-8,4€/Go, bien au-dessus du prix implicite précédent (4,7€/Go =
+// 150,40€ pour 32Go, un écart de +40 à +80% selon la source). ddr4 ajusté de
+// 4,7 à 6,5€/Go (aligné sur le bas de la fourchette, cohérent avec la
+// logique déjà utilisée pour la DDR5) ; ddr5 et SSD/NVMe inchangés (dans la
+// tolérance au vu du marché observé ce jour).
 export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
   ddr3: {
     // DDR3 est aussi "touchée" par la pénurie selon la presse (marché de
@@ -52,7 +63,7 @@ export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
     decoteAnciennete: 0.75,
   },
   ddr4: {
-    prixParGo: 4.7,
+    prixParGo: 6.5,
     plancher: 25,
     faciliteRevente: 0.75,
     decoteAnciennete: 1.0,

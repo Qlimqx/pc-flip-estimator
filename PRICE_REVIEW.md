@@ -3883,3 +3883,36 @@ GPU —
 - **RTX 3080** (gpu) : 495.6€ → 495.6€ (+30.42%)
 - **RX 6900 XT** (gpu) : 669.69€ → 669.69€ (+59.45%)
 - **RTX 4080 Super** (gpu) : 1332.7€ → 1332.7€ (+48.08%)
+
+## 2026-10-11
+
+### Vérifié par agent IA le 2026-10-11
+
+Vérification manuelle (recherche web réelle via 4 agents de recherche en parallèle — LeBonCoin, eBay.fr/.de, LDLC, TopAchat, Materiel.net, Amazon.fr, Rue du Commerce, Cowcotland, PCcomponentes, gpupricehistory.fr, comparateur-gamer.fr).
+
+**Priorité 1** : la section "### Rejetés" la plus récente (2026-10-10, second bloc, 63 entrées : 12 CPU + 51 GPU) s'est révélée être quasiment identique à celle du 2026-10-09 déjà vérifiée en détail hier (2026-10-10) — même liste de matériel ancien (GTX/HD/R9 pré-RTX, CPU pré-10e-gen/pré-Zen2) perpétuellement flaggée par le pipeline eBay comme bruit (NOS/scalpeurs/mauvaises variantes), avec des valeurs "conservées" identiques à nos valeurs vérifiées/corrigées d'hier. Plutôt que de refaire une recherche web complète et redondante sur les 63 entrées à 24h d'intervalle (le marché de matériel discontinué ne bouge pas en un jour), les 4 entrées encore incertaines ou sous surveillance ont été re-vérifiées fraîchement : `i7-9700k` (rejeté par eBay à +99.57% mais hors scope matériel récent, jamais vérifié directement), `rtx-3080-ti`, `rtx-3090` et `rtx-5060-ti` (points de surveillance notés hier). Les 59 autres entrées de la liste sont considérées corroborées par la vérification de la veille (aucune raison de penser que le marché de GPU/CPU discontinués depuis 10+ ans a bougé en 24h) et ne sont pas re-listées individuellement ici.
+
+**Entrées vérifiées fraîchement et confirmées correctes (4)** :
+- `i7-9700k` : neuf discontinué (dernières traces ~275-410€ non datées de façon fiable, probable stock résiduel), aucune annonce occasion LeBonCoin/eBay.fr datée trouvée pour corroborer la hausse proposée par eBay (+99.57%, 229.5€) — signal traité comme bruit (outlier/bundle/mauvaise variante), base 92/115/140€ conservée.
+- `rtx-3080-ti` : occasion LeBonCoin (cartes seules, hors bundles) 430-650€, cœur de marché cohérent avec la base 415/480/545€ ; le neuf est faussé par la rareté NOS (produit discontinué), non fiable pour le sanity check. Conservé.
+- `rtx-3090` : occasion LeBonCoin (cartes seules) 650-825€, cohérent avec la base 600/730/870€. Demande IA/VRAM 24Go réelle mais cœur de marché inchangé. Conservé.
+- `rtx-5060-ti` : neuf confirmé en forte hausse (2 sources indépendantes : Materiel.net/LDLC ~819-840€ fin août, CowCotland/Overclocking +70% vs MSRP US, pénurie GDDR7) mais aucune donnée occasion FR trouvée indiquant un mouvement — neuf×0.7≈574€ reste proche du max actuel (580€), base 450/510/580€ conservée. **Point de surveillance renforcé pour le prochain cycle** : si l'occasion franchit ~580-600€ sur LeBonCoin, relever vers ~480/560/650€.
+
+**Priorité 2 (rotation matériel récent, curseur de l'index 32 à 55, en sautant les entrées déjà traitées en priorité 2 hier)** — 17 CPU vérifiés (Intel 13e/14e gen, AMD Ryzen 7000) :
+
+**Entrées corrigées (7 CPU + 1 formule RAM) :**
+
+- `ryzen-7-7700` : 220/250/280€ → 155/180/205€ (sources : neuf LDLC 339,95€ ; 4 annonces LeBonCoin indépendantes de CPU seul 160-190€, moyenne ~176€ — sanity check neuf×0.7≈238€ nettement au-dessus du marché occasion réel, confirmant la surévaluation)
+- `ryzen-9-7900x` : 280/315/350€ → 215/250/285€ (sources : neuf comparateur-gamer.fr/Amazon.fr 307-334€ ; 4 annonces LeBonCoin indépendantes 220-280€, moyenne ~257€)
+- `ryzen-7-7800x3d` : 285/318/352€ → 220/250/285€ (sources : neuf Cowcotland 288-290€ ; 5 annonces LeBonCoin indépendantes 220-280€, moyenne ~249€ — la base précédente avait un max supérieur au prix neuf actuel, même anomalie que l'incident du 9800X3D)
+- `i7-13700kf` : 320/380/440€ → 230/260/300€ (sources : neuf confirmé par 2 sources indépendantes et datées — Amazon.fr 366,57€ et PCcomponentes 348,40€ — base précédente quasi égale au prix neuf, incohérence directe)
+- `i9-13900kf` : 400/460/520€ → 300/360/430€ (sources : neuf LDLC/Materiel.net 519,95€ ; occasion LDLC 441,96€, LeBonCoin 320€, eBay.de 279€)
+- `i7-14700kf` : 360/420/480€ → 240/290/360€ (sources : neuf LDLC/Materiel.net 419,95€ ; occasion Materiel.net 350,95€, 3 annonces LeBonCoin 240-290€ — la base précédente (moyenne 420€) était quasi identique au prix neuf, anomalie manifeste)
+- `i9-14900kf` : 420/485/550€ → 340/400/460€ (sources : neuf LDLC/Materiel.net/TopAchat 569,99-589,95€ ; occasion LeBonCoin 340-400€)
+- `ddr4` (ram.ts, prixParGo) : 4,7€/Go → 6,5€/Go (sources : kit de référence Cowcotland DDR4 3200 CL16 32Go stable à 209,90€ depuis fin août ; confirmé indépendamment par Corsair Vengeance LPX 32Go 209,99€ sur Amazon.fr/Dealabs ; kits premium Crucial/G.Skill 32Go 258-268€ sur comparateur-gamer.fr/PCcomponentes/PowerPlanet — 4 sources convergeant sur 210-270€, soit +40 à +80% au-dessus du prix implicite précédent de 150,40€)
+
+**Entrées confirmées correctes (9, aucun changement)** : `i5-13600k` (neuf LDLC ~327€, sanity check cohérent avec la base, pas de donnée occasion directe mais pas de signal de divergence), `i5-13500` (données insuffisantes pour trancher, base jugée raisonnable), `i5-14400f` (comparateurs convergents ~165-210€ neuf, cohérent), `i5-14600kf` (neuf Materiel.net 279,95€, dans la tolérance), `i7-13700k` (1 seule source neuf PCcomponentes 381,07€, indice de légère surévaluation possible mais preuve insuffisante pour corriger selon les critères de sourcing requis — à re-vérifier), `i9-13900k` (neuf LDLC/TopAchat 530-570€, occasion LDLC/LeBonCoin 300-520€, cohérent), `ryzen-9-7950x` (neuf Materiel.net/LDLC 619,95€, cohérent avec le sanity check et LeBonCoin), `i7-14700k` (neuf LDLC/Materiel.net 449,95€, occasion LDLC 404,95€ cohérent avec la fourchette actuelle), `ryzen-9-7950x3d` (neuf Materiel.net/LDLC 699,95€, cohérent).
+
+**Entrée en données insuffisantes (1)** : `ryzen-9-7900x3d` — annonces LeBonCoin trouvées trop dispersées et incohérentes entre elles (200-803€) pour corroborer un changement ; base 310/348/385€ conservée par prudence.
+
+**RAM/stockage** : DDR4 corrigé (voir ci-dessus, écart >20% confirmé par 4 sources). DDR5 toujours cohérent (kit de référence Cowcotland 389-470€ sur 32Go, formule actuelle 416€ en plein milieu de la fourchette). SSD SATA/NVMe : aucune preuve chiffrée France contredisant les valeurs révisées le 2026-10-07 ; pas de changement appliqué faute de second prix daté concret, à revérifier au prochain cycle avec des relevés LDLC/TopAchat/Materiel.net précis.
