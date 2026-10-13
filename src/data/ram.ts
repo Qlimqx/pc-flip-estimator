@@ -50,6 +50,16 @@ export const RAM_TYPE_LABELS: Record<RamType, string> = {
 // 4,7 à 6,5€/Go (aligné sur le bas de la fourchette, cohérent avec la
 // logique déjà utilisée pour la DDR5) ; ddr5 et SSD/NVMe inchangés (dans la
 // tolérance au vu du marché observé ce jour).
+//
+// Corrigé le 2026-10-13 : le calibrage du 10-11 avait en fait utilisé le
+// prix NEUF au Go (kits Cowcotland/Corsair/Crucial-GSkill) comme s'il
+// s'agissait du prix OCCASION, sans appliquer de décote -- erreur de
+// méthode. Revérifié sur 5 annonces LeBonCoin/eBay.fr indépendantes de
+// barrettes/kits 16Go desktop occasion réelles : 30€, 39€, ~56€, 60€, ~65€
+// (médiane ~56€, soit ~3,5-4€/Go), très loin des 104€ (6,5€/Go) actuels.
+// ddr4 ramené à 4€/Go -- cohérent avec l'estimation d'origine du 08-24
+// (~4,7€/Go), légèrement révisé à la baisse par les données les plus
+// récentes.
 export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
   ddr3: {
     // DDR3 est aussi "touchée" par la pénurie selon la presse (marché de
@@ -63,7 +73,7 @@ export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
     decoteAnciennete: 0.75,
   },
   ddr4: {
-    prixParGo: 6.5,
+    prixParGo: 4,
     plancher: 25,
     faciliteRevente: 0.75,
     decoteAnciennete: 1.0,

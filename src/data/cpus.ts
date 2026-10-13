@@ -1244,10 +1244,16 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core Ultra 5 245K',
     marque: 'Intel',
     socket: 'LGA1851',
-    min: 225,
-    moyen: 255,
-    max: 285,
-    dateMaj: '2026-08-25',
+    // Recalibré le 2026-10-13 : la base d'août dépassait le prix du NEUF
+    // actuel (~195-275€ comparateurs FR/DE, dont un "plus bas prix jamais
+    // vu" à 190,80€ pour le 245KF) -- incohérence manifeste pour une
+    // fourchette d'occasion. Aucune annonce LeBonCoin directe trouvée ;
+    // repositionné via sanity-check neuf x0,7 (confiance modérée, à
+    // reconfirmer avec une recherche LeBonCoin ciblée).
+    min: 170,
+    moyen: 200,
+    max: 235,
+    dateMaj: '2026-10-13',
     faciliteRevente: 0.6,
     decoteAnciennete: 1.02,
     tier: 4,
@@ -1257,10 +1263,15 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 7 9700X',
     marque: 'AMD',
     socket: 'AM5',
-    min: 260,
-    moyen: 295,
-    max: 330,
-    dateMaj: '2026-08-25',
+    // Recalibré le 2026-10-13 : 6 annonces LeBonCoin indépendantes (CPU
+    // seul) groupées à 150-290€, médiane ~200€, cohérent avec le neuf
+    // actuel (~350-360€ LDLC) x0,7 ≈ 248€. L'override eBay actif depuis le
+    // 02/10 à moyen=410,87€ (jamais vérifié depuis) est indéfendable --
+    // supérieur au neuf lui-même.
+    min: 165,
+    moyen: 205,
+    max: 245,
+    dateMaj: '2026-10-13',
     faciliteRevente: 0.82,
     decoteAnciennete: 1.06,
     tier: 5,
@@ -1270,10 +1281,13 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core Ultra 7 265K',
     marque: 'Intel',
     socket: 'LGA1851',
-    min: 280,
-    moyen: 315,
-    max: 350,
-    dateMaj: '2026-08-24',
+    // Recalibré le 2026-10-13 : LeBonCoin (220€, 200€) et eBay UK (vente
+    // conclue ~301€) convergent vers ~240€, contre moyen=315€ en base --
+    // écart ~24%, hors tolérance.
+    min: 220,
+    moyen: 255,
+    max: 290,
+    dateMaj: '2026-10-13',
     faciliteRevente: 0.65,
     decoteAnciennete: 1.02,
     tier: 5,
@@ -1283,10 +1297,13 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 9 9900X',
     marque: 'AMD',
     socket: 'AM5',
-    min: 340,
-    moyen: 380,
-    max: 420,
-    dateMaj: '2026-08-25',
+    // Recalibré le 2026-10-13 : LeBonCoin "vrai occasion bon état" 300€
+    // (x2, Perpignan/Strasbourg), cohérent avec neuf LDLC (439,95€) x0,7
+    // ≈ 308€ -- vs moyen=380€ en base, écart ~20%, hors tolérance.
+    min: 270,
+    moyen: 310,
+    max: 350,
+    dateMaj: '2026-10-13',
     faciliteRevente: 0.75,
     decoteAnciennete: 1.07,
     tier: 5,

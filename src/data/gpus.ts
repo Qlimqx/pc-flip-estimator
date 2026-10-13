@@ -936,10 +936,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 6700 XT',
     marque: 'AMD',
     vramGo: 12,
-    min: 215,
-    moyen: 245,
-    max: 275,
-    dateMaj: '2026-08-24',
+    // Recalibré le 2026-10-13 : cluster LeBonCoin (PowerColor ~250€, FE
+    // ~285€, Nitro+ ~350€) centré ~290€, légèrement au-dessus de la base
+    // d'août sous l'effet de la hausse GDDR6 -- ajustement modéré.
+    min: 245,
+    moyen: 280,
+    max: 315,
+    dateMaj: '2026-10-13',
     faciliteRevente: 0.65,
     decoteAnciennete: 0.98,
     tier: 4,
@@ -1302,10 +1305,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 4080',
     marque: 'NVIDIA',
     vramGo: 16,
-    min: 740,
-    moyen: 780,
-    max: 825,
-    dateMaj: '2026-08-24',
+    // Recalibré le 2026-10-13 : jamais retouché depuis le 24/08 malgré la
+    // pénurie GDDR/DRAM qui pousse les prix neufs et occasion à la hausse
+    // sur ce segment. 2 annonces d'occasion réelles pour la carte EXACTE
+    // (non-Super) : eBay.de 790€ (particulier FR), LeBonCoin (Gainward
+    // Phantom) 1250€ ; tracker eBay gpupoet en hausse continue depuis août.
+    min: 800,
+    moyen: 950,
+    max: 1150,
+    dateMaj: '2026-10-13',
     faciliteRevente: 0.75,
     decoteAnciennete: 1.02,
     tier: 5,
