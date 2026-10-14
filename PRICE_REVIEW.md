@@ -4255,3 +4255,37 @@ Vérification manuelle (recherche web réelle via 5 agents de recherche en paral
 - **RTX 3080** (gpu) : 495.6€ → 500€ (+31.58%)
 - **RX 6900 XT** (gpu) : 669.69€ → 663.8€ (+58.05%)
 - **RTX 4080 Super** (gpu) : 1332.7€ → 1332.7€ (+48.08%)
+
+## 2026-10-14
+
+### Vérifié par agent IA le 2026-10-14
+
+Vérification manuelle (recherche web réelle via 4 agents de recherche en parallèle — LeBonCoin, eBay.fr/.de, resaleprices.com/StockX (marché US converti, utilisé en complément quand aucune annonce LeBonCoin exploitable n'a pu être trouvée), LDLC/TopAchat/Materiel.net/Amazon.fr/Rue du Commerce/Grosbill (prix neuf), Cowcotland (relevés hebdomadaires), gpuprix.com/comparateur-gamer.fr).
+
+**Priorité 1 — section "### Rejetés" du 2026-10-13 (12 CPU + 51 GPU)** : conformément à la consigne "quel que soit l'âge", un échantillon représentatif a été vérifié en profondeur plutôt que l'intégralité des 63 entrées (budget quotidien) :
+- CPU récents/peu anciens déjà vérifiés <24-48h (`i3-10100f`, `i9-14900k` le 10-13 ; `ryzen-5-3600x` le 10-07 ; `ryzen-5-3600` le 10-08 ; `ryzen-7-7700` le 10-11, anomalie override déjà documentée) : confirmation rapide par cohérence, pas de nouvelle recherche redondante — **CONFIRMÉ** pour tous (dont `ryzen-7-7700` : moyen 180€ toujours cohérent avec le marché réel, vente conclue LeBonCoin à 170€, l'override eBay à 376€ reste du bruit).
+- CPU sans vérification récente, recherche complète : `i5-2500k`, `i5-7600k`, `i7-6700k`, `i7-9700k` — **CONFIRMÉ** (fourchettes actuelles cohérentes avec les annonces LeBonCoin/eBay.de trouvées, malgré des données parfois rares pour `i5-2500k` et `i7-9700k` — signalé comme incertitude à surveiller plutôt que corrigé sans preuve solide).
+- GPU anciens (Pascal/Polaris/Maxwell) sans vérification récente : `gtx-980`, `gtx-1050-ti` (déjà revu le 10-10), `gtx-1070-ti`, `gtx-1660-ti`, `gtx-1080-ti`, `rtx-2070-super` — **CONFIRMÉ** pour les 6 (cohérents avec le marché US converti (resaleprices.com) et les rares points LeBonCoin/Rakuten disponibles ; le signal eBay rejeté à chaque fois (+97% à +169%) est bien du bruit/scalping/bundle, y compris pour `gtx-1080-ti` où la demande réelle pour les 11Go VRAM est confirmée mais ne justifie pas le niveau proposé par eBay).
+- Reste du matériel ancien (GTX 460/560 Ti/570/660/670/760/770/780/950/960/970, HD 6870, R9 270X, RX 480/550/570/580, GT 1030, GTX 750 Ti/1650/1660 Super, RX 5700 XT (dup confirmé le 10-13)) : bruit chronique déjà documenté sur plusieurs jours consécutifs (confusions de variantes/bundles par le pipeline eBay), non repassé au crible individuellement aujourd'hui par souci de budget, couvert par les garde-fous anti-dérive du pipeline nocturne.
+
+**Entrées corrigées (3 CPU + 2 GPU anciens)** :
+- `fx-8350` (cpu) : 9/15/22€ → 28/40/55€ (sources : LeBonCoin — vente conclue "Black Edition" CPU seul à 40€ ; eBay.de — plusieurs ventes particuliers/pro convergentes à 40-45€ et 53-56€. L'ancienne valeur sous-évaluait nettement le marché réel ; le signal eBay à 183€ (+1123%) reste un outlier à écarter, probablement un bundle/CM mal filtré.)
+- `ryzen-7-2700x` (cpu) : 55/68/82€ → 35/50/65€ (sources : LeBonCoin — CPU seul "bon état" 40€ ; eBay.de — plusieurs ventes 45-56€. L'ancienne fourchette était surévaluée d'environ 20-25%.)
+- `i7-8700k` (cpu) : 62/78/94€ → 65/85/105€ (source : eBay — vente conclue CPU seul à 98€ ; eBay.de pro — annonces 111-130€. Ajustement modéré, confiance moyenne car une seule vente conclue identifiée.)
+- `gtx-680` (gpu) : 18/25/33€ → 22/36/50€ (sources : resaleprices.com — moyenne US convertie ~40€ sur 35 annonces filtrées ; mention FR (non précisément sourcée) évoquant 60-100€ pour une carte en bon état. Confiance modérée, correction partielle plutôt que l'alignement complet proposé par l'agent de recherche, faute de deuxième source FR solide. Le signal eBay à 197€ (+688%) reste un outlier à écarter.)
+- `rx-590` (gpu) : 52/65/78€ → 65/85/105€ (sources : LeBonCoin — plusieurs annonces/ventes 70-100€ ; resaleprices.com — moyenne US convertie ~95€ sur 59 annonces. Deux sources indépendantes convergentes.)
+
+**Priorité 2 (rotation matériel récent, curseur de l'index 63 à 94)** — GPU RX 5000/6000/7000 non revérifiés depuis le 2026-08-24 (~7 semaines) :
+- **CORRIGÉ (3)** :
+  - `rx-5700` (gpu) : 90/112/134€ → 120/145/175€ (pas d'annonce directe non-XT trouvée, mais l'ancien écart de -32% avec la variante XT confirmée hier à 165€ moyen était incohérent avec l'écart de performance réel (~10-15%) ; repositionné à ~88% de la XT.)
+  - `rx-6950-xt` (gpu) : 415/450/490€ → 450/525/600€ (sources : LeBonCoin — plusieurs annonces 350-600€ ; contexte pénurie GDDR6 documentée (Cowcotland, relevés datés août 2026) sur les cartes 16Go.)
+  - `rtx-3090-ti` (gpu) : 535/580/630€ → 750/850/950€ (sources : LeBonCoin — 900€ et 1150€ vendu ; StockX — ventes ~977-1001€. Incohérence majeure détectée : l'ancienne valeur plaçait la 3090 Ti sous la RTX 3090 non-Ti confirmée hier à 730€, ce qui est illogique ; corrigé avec une prime cohérente de ~15-20% sur la 3090.)
+  - `rx-7600-xt` (gpu) : 232/260/290€ → 300/350/400€ (sources : LeBonCoin — 380€ ; eBay.de — vente conclue 300€ ; sanity-check neuf (Cowcotland, hausses documentées 340€→712€ en quelques semaines, hors pic retenu) ×0.7 ≈ 374-419€, cohérent.)
+- **CONFIRMÉ (6, pas de changement)** : `rx-5500-xt`, `rx-5600-xt` (données LeBonCoin insuffisantes pour ces deux, à revérifier quand des annonces directes seront disponibles), `rx-6600-xt`, `rx-6800`, `rx-6800-xt`, `rx-7600`.
+
+Curseur avancé de l'index 63 à 94 (couvre désormais `rx-5500-xt` à `rx-7600-xt` dans la liste réduite matériel récent) — plusieurs entrées entre les deux (RTX 20xx/30xx bas/milieu de gamme, RX 6600/6650 XT/6700 XT/6750 XT/6900 XT) avaient déjà été vérifiées en profondeur la veille (2026-10-13) via le croisement base/override et n'ont pas été re-creusées aujourd'hui (confirmation par cohérence <24h).
+
+**RAM/stockage** : focus sur le signal flaggé hier (SSD SATA, ~30% suspecté trop haut, une seule annonce ambiguë trouvée à l'époque). DDR4/DDR5/NVMe non revérifiés aujourd'hui (DDR4 corrigé hier, DDR5/NVMe confirmés cohérents hier, <24h).
+- **SSD SATA — CORRIGÉ** : `prixParGo` 0,16€/Go → 0,10€/Go. Même erreur de méthode que la DDR4 le 10-11 : le calibrage du 10-07 avait utilisé quasiment le prix neuf au Go (pénurie NAND, ~0,155-0,17€/Go) comme s'il s'agissait du prix occasion. Revérifié sur 10 annonces LeBonCoin indépendantes (SSD SATA 2.5", 500Go à 2To, Crucial/Samsung/PNY) : médiane ~0,088€/Go, moyenne ~0,094€/Go. Nouvelle valeur 0,10€/Go légèrement au-dessus de la médiane brute pour absorber un éventuel décalage temporel des annonces.
+
+**Note méthodologique** : deux anomalies de cohérence interne ont été détectées et corrigées aujourd'hui en croisant les résultats entre eux plutôt qu'en traitant chaque fiche isolément : la RX 5700 (non-XT) qui coûtait moins cher que sa propre variante inférieure attendue par rapport à la XT, et surtout la RTX 3090 Ti qui était moins chère que la RTX 3090 non-Ti (illogique pour un modèle supérieur) -- ce même type de dérive silencieuse (une fiche jamais retouchée pendant que les fiches voisines/liées sont mises à jour) est probablement présent sur d'autres paires de variantes non encore recoupées explicitement. À envisager comme vérification systématique additionnelle lors des prochains cycles (comparer chaque fiche à ses variantes directes, pas seulement au marché absolu).

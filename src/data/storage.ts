@@ -35,6 +35,13 @@ export const STORAGE_TYPE_LABELS: Record<StorageType, string> = {
 // SSD 1To bon marché est terminée" -- club386.com ; Sandisk a relevé ses
 // prix jusqu'à 2,8x selon Tom's Hardware) -- ssd et nvme ajustés à la
 // hausse en conséquence, hdd inchangé.
+//
+// Corrigé le 2026-10-14 : le calibrage du 10-07 avait, comme pour la DDR4
+// le 10-11, utilisé quasiment le prix NEUF au Go (~0,155-0,17€/Go pendant
+// la pénurie) comme tarif OCCASION, sans décote suffisante. Revérifié sur
+// 10 annonces LeBonCoin indépendantes de SSD SATA 2.5" occasion (500Go à
+// 2To, Crucial/Samsung/PNY) : médiane ~0,088€/Go, moyenne ~0,094€/Go --
+// ssd ramené à 0,10€/Go (nvme non revérifié aujourd'hui, laissé inchangé).
 export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
   hdd: {
     prixParGo: 0.018,
@@ -43,7 +50,7 @@ export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
     decoteAnciennete: 0.85,
   },
   ssd: {
-    prixParGo: 0.16,
+    prixParGo: 0.1,
     plancher: 35,
     faciliteRevente: 0.7,
     decoteAnciennete: 1.0,
