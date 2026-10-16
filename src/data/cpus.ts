@@ -492,12 +492,15 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i5-10400F',
     marque: 'Intel',
     socket: 'LGA1200',
-    // Moyenne LeBonCoin (~65€) / Amazon occasion marketplace (146,66€) --
-    // voir le commentaire d'en-tête du fichier.
-    min: 85,
-    moyen: 106,
-    max: 130,
-    dateMaj: '2026-08-24',
+    // Recorrigé le 2026-10-16 : 4 annonces LeBonCoin CPU seul (40/60/70/95€,
+    // moyenne ~65€) + sanity-check neuf (Materiel.net/DropReference ~110-
+    // 126€) x0,7 ~ 77-88€, cohérents entre eux -- l'ancienne valeur (106€)
+    // surpondérait le marketplace Amazon pro (146,66€, hors norme occasion
+    // particulier) au détriment de LeBonCoin.
+    min: 45,
+    moyen: 65,
+    max: 90,
+    dateMaj: '2026-10-16',
     faciliteRevente: 0.6,
     decoteAnciennete: 0.92,
     tier: 2,
@@ -598,10 +601,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i5-10600K',
     marque: 'Intel',
     socket: 'LGA1200',
-    min: 100,
-    moyen: 125,
-    max: 150,
-    dateMaj: '2026-10-07',
+    // Recorrigé le 2026-10-16 : annonces LeBonCoin CPU seul convergentes
+    // (75/75/90/90/120€) + eBay.fr pro (~82€), moyenne occasion observée
+    // ~95-100€ contre 125€ en base -- le plafond de 150€ ne correspond à
+    // aucune annonce réelle (hors blister neuf, hors norme occasion).
+    min: 75,
+    moyen: 100,
+    max: 130,
+    dateMaj: '2026-10-16',
     faciliteRevente: 0.55,
     decoteAnciennete: 0.92,
     tier: 3,

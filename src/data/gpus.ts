@@ -1442,10 +1442,16 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 5080',
     marque: 'NVIDIA',
     vramGo: 16,
-    min: 900,
-    moyen: 980,
-    max: 1100,
-    dateMaj: '2026-10-07',
+    // Recorrigé le 2026-10-16 : neuf LDLC passé de 1749,95€ (13/09) à
+    // 1849,95€ min (09/10 et 12/10, 2 relevés materiel-gamer.com) suite à la
+    // pénurie GDDR/DRAM ; 1 annonce LeBonCoin occasion réelle (KFA2 1-Click
+    // OC, "quasi neuve") à 1050€ ; sanity-check neufx0,7 ~ 1295€, cohérent
+    // avec la fourchette corrigée. L'ancienne base (980€, maj 10-07) était
+    // devenue stale face à cette hausse neuf réelle et documentée.
+    min: 1000,
+    moyen: 1200,
+    max: 1400,
+    dateMaj: '2026-10-16',
     faciliteRevente: 0.85,
     decoteAnciennete: 1.07,
     tier: 5,
@@ -1455,10 +1461,17 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 5090',
     marque: 'NVIDIA',
     vramGo: 32,
-    min: 4000,
-    moyen: 4600,
-    max: 5300,
-    dateMaj: '2026-10-12',
+    // Recorrigé le 2026-10-16 : neuf LDLC passé de 5499€ (13/09) à
+    // 6599,95-8499,95€ (09/10 et 12/10, 2 relevés materiel-gamer.com),
+    // confirmé par Cowcotland (~5999,90€ sur la même période) -- hausse
+    // neuf réelle liée à la pénurie GDDR/DRAM. Pas d'annonce occasion
+    // directe trouvée (carte haut de gamme rare en revente) ; sanity-check
+    // neufx0,7 ~ 4600-5950€ utilisé comme repère prudent plutôt que les
+    // 8336€ proposés par eBay (non corroborés).
+    min: 4600,
+    moyen: 5300,
+    max: 6000,
+    dateMaj: '2026-10-16',
     faciliteRevente: 0.85,
     decoteAnciennete: 1.08,
     tier: 5,

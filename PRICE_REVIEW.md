@@ -4501,3 +4501,35 @@ Vérification manuelle (recherche web réelle via 4 agents de recherche en paral
 - **RTX 3080** (gpu) : 500€ → 500€ (+31.58%)
 - **RX 6900 XT** (gpu) : 669.69€ → 663.8€ (+58.05%)
 - **RTX 4080 Super** (gpu) : 1332.7€ → 1332.7€ (+48.08%)
+
+## 2026-10-16
+
+### Vérifié par agent IA le 2026-10-16
+
+Vérification manuelle (recherche web réelle via 4 agents de recherche en parallèle — LeBonCoin, eBay.fr/.de, LDLC/TopAchat/Materiel.net/Amazon.fr/comparateur-gamer.fr/Cowcotland/materiel-gamer.com), portant sur 22 entrées CPU/GPU + un contrôle léger RAM/stockage.
+
+**Constat méthodologique important** : la section "### Rejetés" du 2026-10-15 (la plus récente au moment du run) contenait ~60 entrées, bien au-delà du budget quotidien (~20-25). Plus frappant : plusieurs GPU récents (`rtx-4060`, `rtx-4070-super`, `rx-7900-xt`, `rx-7900-xtx`) venaient d'être vérifiés et corrigés **le jour même** (section précédente) par un agent IA avec des sources solides, et le pipeline eBay a quand même re-proposé des écarts de +190% à +210% quelques heures plus tard sur ces mêmes cartes. Combiné au fait que la quasi-totalité du catalogue (matériel ancien ET récent) a été flaguée avec des pourcentages extrêmes (+60% à +620%) la même nuit, ceci ressemble à un problème de qualité des données côté pipeline eBay (bundles PC complets, variantes mal filtrées, devise non convertie) plutôt qu'à un mouvement de marché généralisé. En conséquence, un échantillon représentatif a été vérifié en profondeur plutôt que l'intégralité des 60 entrées, en priorisant le matériel à forte valeur et/ou jamais retouché depuis le recalibrage de base du 24/08.
+
+**Priorité 1 (échantillon du "### Rejetés" du 2026-10-15, 10 entrées)** :
+- **Confirmées correctes (8)** : `i9-14900k`, `i7-8700k`, `ryzen-7-7700` (base — voir anomalie d'override ci-dessous), `i3-10100f`, `ryzen-5-3600x`, `ryzen-5-3600`, `rtx-4080`, `rtx-3090`, `rx-9070-xt` — dans tous les cas, aucune annonce LeBonCoin/eBay.fr réelle ne corrobore le chiffre eBay rejeté ; confusions probables avec bundles ou variantes voisines (Super/Ti/KF/X3600XT).
+- **Corrigées (2)** : voir ci-dessous (`rtx-5080`, `rtx-5090` — signal de hausse réelle confirmé côté neuf, pas par le chiffre eBay lui-même qui reste rejeté à juste titre).
+
+**Priorité 2 (rotation matériel récent, curseur de l'index 0 à 7 sur la liste réduite [116], CPU uniquement : `i3-10100f` à `i5-10600k`)** :
+- **Confirmées correctes (5)** : `ryzen-3-3200g`, `ryzen-3-3100`, `ryzen-3-3300x`, `ryzen-5-3600x`, `i5-11400f` — annonces LeBonCoin CPU seul convergentes avec la base actuelle.
+- **Corrigées (2)** :
+  - `i5-10400f` (cpu) : 85/106/130€ → 45/65/90€ (sources : 4 annonces LeBonCoin CPU seul — 40€, 60€, 70€, 95€ — moyenne ~65€ ; sanity-check neuf Materiel.net/DropReference ~110-126€ ×0,7 ≈ 77-88€. L'ancienne valeur moyennait LeBonCoin avec un prix Amazon marketplace pro à 146,66€ non représentatif du marché particulier.)
+  - `i5-10600k` (cpu) : 100/125/150€ → 75/100/130€ (sources : 5 annonces LeBonCoin CPU seul convergentes 75-120€ + eBay.fr pro ~82€ ; le plafond de 150€ ne correspondait à aucune annonce réelle hors blister neuf.)
+
+**Autres corrections (2, hors rotation, signal haussier neuf réel confirmé)** :
+- `rtx-5080` (gpu) : 900/980/1100€ → 1000/1200/1400€ (sources : LDLC/materiel-gamer.com — neuf passé de 1749,95€ (13/09) à 1849,95€ min (09/10 et 12/10) ; 1 annonce LeBonCoin occasion réelle, KFA2 1-Click OC "quasi neuve", à 1050€ ; sanity-check neuf×0,7 ≈ 1295€, cohérent. **Bénéfice collatéral** : corrige aussi l'incohérence de hiérarchie signalée le 2026-10-14/15 entre RTX 5070 Ti (950€) et RTX 5080 — l'écart est maintenant cohérent (950€ < 1200€).)
+- `rtx-5090` (gpu) : 4000/4600/5300€ → 4600/5300/6000€ (sources : LDLC/materiel-gamer.com — neuf passé de 5499€ (13/09) à 6599,95-8499,95€ (09/10 et 12/10) ; confirmé indépendamment par Cowcotland (~5999,90€ sur la même période). Pas d'annonce occasion directe trouvée (carte flagship rare en revente) ; correction basée sur le sanity-check neuf×0,7 standard (≈4600-5950€) plutôt que sur le chiffre eBay rejeté (8336€, non corroboré) ou sur un ratio non standard proposé initialement par la recherche (0,8) — écarté pour rester fidèle à la méthodologie définie.)
+
+**Confirmées correctes, échantillon GPU complémentaire (5)** : `rtx-4070-ti`, `rtx-2080-ti`, `rtx-2060`, `rtx-2080-super`, `rtx-3060-ti` (aucune annonce LeBonCoin/eBay ne corrobore les écarts eBay rejetés de +93% à +169% ; prix neuf de ces cartes discontinues souvent non fiable/non exploitable pour sanity-check).
+
+**Anomalie d'override confirmée (hors scope de correction directe)** : `ryzen-7-7700` — la BASE_CPUS est correcte (180€ moyen, reconfirmée aujourd'hui par 4 sources LeBonCoin/eBay.de convergentes 160-210€) mais l'override actif dans `priceOverrides/cpuOverrides.json` sert en live 376,56€, soit +109% au-dessus de la base. Même anomalie que celle déjà documentée sur `ryzen-5-3600` (2026-10-13/15). Hors scope de cet agent (ne touche jamais `priceOverrides/*.json`).
+
+**RAM/stockage** : contrôle léger effectué, **aucun changement** faute de données suffisamment probantes.
+- **DDR5** : signaux contradictoires — plusieurs annonces LeBonCoin trouvées sont en fait étiquetées "neuf" (donc hors occasion), un seul point de donnée occasion fiable (kit 32Go CL30 négocié ~190€, témoignage isolé) et un prix neuf aberrant (Powerplanet 885,95€ pour un kit 2x16Go, incohérent avec les autres relevés 330-470€). Pas assez de données occasion propres (hors "neuf"/scalper) pour justifier une correction aujourd'hui — à revérifier avec une méthodologie plus stricte (filtrer uniquement les annonces explicitement "occasion").
+- **NVMe** : aucune annonce LeBonCoin occasion datée d'octobre 2026 trouvée ; données neuf (Kingston NV3 1To 80€→160€, SN850X 2To 130€→300€+) suggèrent une hausse neuf continue mais pas de preuve directe sur l'occasion. Valeur actuelle (0,145€/Go) non contredite — inchangée, mais signalée comme "à revérifier en priorité" la semaine prochaine (recommandation déjà faite le 10-15, toujours valable).
+
+**Curseur de rotation Priorité 2** : avancé de l'index 0 à l'index 8 (prochain cycle reprendra sur `ryzen-5-4600g`).
