@@ -60,6 +60,17 @@ export const RAM_TYPE_LABELS: Record<RamType, string> = {
 // ddr4 ramené à 4€/Go -- cohérent avec l'estimation d'origine du 08-24
 // (~4,7€/Go), légèrement révisé à la baisse par les données les plus
 // récentes.
+//
+// Corrigé le 2026-10-17 : la ddr5 souffrait du même bug neuf/occasion déjà
+// corrigé pour la ddr4 le 10-13 (13€/Go venait des kits neufs 32Go à
+// 450-600€ chez Materiel.net/Grosbill, jamais revérifié depuis contre
+// l'occasion réelle). Revérifié sur plusieurs annonces LeBonCoin/eBay.fr de
+// kits DDR5 32Go occasion : Crucial 290€, G.Skill Trident Z5 (équivalent
+// 32Go) ~275€, Forgeon 2x16 6000 CL30 239€ (eBay.fr), fourchette de
+// négociation 190-240€ rapportée sur Hardware.fr -- médiane ~265€, soit
+// ~7€/Go une fois la décote bon-état/facilité (×1,177) retirée, contre
+// 13€/Go actuels (+86% d'écart). ddr4/SSD/NVMe inchangés (dans la
+// tolérance ou données insuffisantes pour trancher, voir storage.ts).
 export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
   ddr3: {
     // DDR3 est aussi "touchée" par la pénurie selon la presse (marché de
@@ -79,7 +90,7 @@ export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
     decoteAnciennete: 1.0,
   },
   ddr5: {
-    prixParGo: 13,
+    prixParGo: 7,
     plancher: 60,
     faciliteRevente: 0.85,
     decoteAnciennete: 1.1,

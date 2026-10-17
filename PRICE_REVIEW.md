@@ -4627,3 +4627,26 @@ Vérification manuelle (recherche web réelle via 4 agents de recherche en paral
 - **RX 6900 XT** (gpu) : 663.8€ → 669.69€ (+59.45%)
 - **RTX 4080 Super** (gpu) : 1332.7€ → 1332.7€ (+48.08%)
 - **RTX 5090** (gpu) : 5300€ → 8336.7€ (+57.3%)
+
+## 2026-10-17
+
+### Vérifié par agent IA le 2026-10-17
+
+Vérification manuelle (recherche web réelle via 4 agents de recherche en parallèle — LeBonCoin, eBay.fr/.de, LDLC/TopAchat/Materiel.net/Amazon.fr/Rue du Commerce/comparateur-gamer.fr) portant sur 23 entrées CPU/GPU (section "### Rejetés" du 2026-10-16 + rotation Priorité 2) + un contrôle RAM/stockage.
+
+**Priorité 1 (section "### Rejetés" du 2026-10-16, les 13 CPU + échantillon de 3 GPU sur les ~60 entrées flaguées)** :
+- **Confirmées correctes (15)** : `i5-2500k`, `fx-8350`, `ryzen-5-1600`, `i7-6700k`, `ryzen-7-2700x`, `i7-8700k` (reconfirmé, voir note ci-dessous), `ryzen-5-3600x` (reconfirmé), `i9-9900k`, `ryzen-5-3600` (reconfirmé), `ryzen-7-7700` (reconfirmé — anomalie d'override toujours présente, hors scope), `i9-14900k` (reconfirmé), `i3-10100f` (reconfirmé), `gtx-1080-ti`, `rtx-3070-ti`, `gtx-980-ti` — dans tous les cas, aucune annonce LeBonCoin/eBay réelle ne corrobore l'écart eBay rejeté (+68% à +358%) ; confusions probables avec bundles, vendeurs pro "ask" non vendus, variantes voisines ou devises non converties.
+- **Corrigée (1)** : `i7-9700k` : 92/115/140€ → 95/140/185€ (sources : eBay.de, plusieurs ventes réelles CPU seul 129€ et 149-150€ port inclus, offre acceptée UK ~120€ ; prix neuf résiduel toujours affiché 275€ mi-2026 chez comparateur-gamer.fr/Amazon.fr, implicite occasion ×0,7 ≈192€, cohérent avec la hausse). L'ancienne moyenne de 115€ était tirée vers le bas par rapport au marché actuel.
+
+**Note méthodologique** : 6 des CPU ci-dessus (`i3-10100f`, `ryzen-5-3600x`, `ryzen-5-3600`, `ryzen-7-7700`, `i9-14900k`, plus `i7-8700k` du lot du 10-16) avaient déjà été vérifiés et confirmés corrects la veille (2026-10-16) avec sources solides, puis re-flagués par le pipeline eBay la nuit suivante avec les mêmes écarts extrêmes (+68% à +358%). Ceci confirme une fois de plus (voir incident du 2026-09-27) qu'il s'agit très probablement d'un problème récurrent de qualité des données côté pipeline eBay (bundles, vendeurs pro, devises) plutôt que d'un vrai mouvement de marché — aucune correction supplémentaire appliquée sur ces 6 entrées, confirmation rapide uniquement (pas de nouvelle recherche web approfondie, pour ne pas dupliquer l'effort de la veille).
+
+**Priorité 2 (rotation matériel récent, curseur de l'index 8 à 17 sur la liste réduite [114], `ryzen-5-3600` à l'index 12 sauté car déjà traité en Priorité 1)** :
+- **Confirmées correctes (9)** : `ryzen-5-4600g`, `i7-10700kf`, `i7-10700k`, `i9-10900k`, `ryzen-7-3700x`, `ryzen-7-3800x`, `ryzen-9-3900x`, `ryzen-9-3950x`, `ryzen-5-5500` — annonces LeBonCoin/eBay CPU seul convergentes avec la base actuelle dans tous les cas ; prix neuf majoritairement discontinués (CPU 2019-2021).
+
+**RAM/stockage** : contrôle effectué, **une correction appliquée**.
+- **DDR4** : aucun changement — annonces LeBonCoin DDR4 16Go occasion (39€, 60€, 75€, 100€) cohérentes avec la formule actuelle (4€/Go, moyen ≈67€ pour un kit 16Go bon état).
+- **DDR5** : **corrigé** — `prixParGo` 13€/Go → 7€/Go. La DDR5 portait le même bug neuf/occasion déjà corrigé pour la DDR4 le 2026-10-13 (le tarif de 13€/Go avait été calibré sur des kits NEUFS 32Go à 450-600€, jamais revérifié depuis contre l'occasion réelle). Sources : plusieurs annonces LeBonCoin/eBay.fr de kits DDR5 32Go occasion — Crucial 290€, G.Skill Trident Z5 (équivalent 32Go) ~275€, Forgeon 2x16 6000 CL30 239€ (eBay.fr), fourchette de négociation 190-240€ rapportée sur Hardware.fr ; médiane ~265€, soit ~7€/Go une fois la décote bon-état/facilité-revente (×1,177) retirée — contre 13€/Go actuels (+86% d'écart). Détail dans `src/data/ram.ts`.
+- **SSD SATA / HDD** : aucun changement — cohérent avec le dernier calibrage du 2026-10-14.
+- **SSD NVMe** : aucun changement — données occasion insuffisantes trouvées pour trancher avec confiance (beaucoup de résultats neufs non datés), mais signal suspect (prix neuf proche ou inférieur au prix occasion calculé) à revérifier en priorité lors d'un prochain run avec une recherche LeBonCoin plus ciblée.
+
+**Curseur de rotation Priorité 2** : avancé de l'index 8 à l'index 18 (prochain cycle reprendra sur `ryzen-5-5600`).
