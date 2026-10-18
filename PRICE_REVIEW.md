@@ -4738,3 +4738,27 @@ Vérification manuelle (recherche web réelle via 4 agents de recherche en paral
 - **RX 6900 XT** (gpu) : 669.69€ → 663.8€ (+58.05%)
 - **RTX 4080 Super** (gpu) : 1332.7€ → 1332.7€ (+48.08%)
 - **RTX 5090** (gpu) : 8336.7€ → 8336.7€ (+57.3%)
+
+## 2026-10-18
+
+### Vérifié par agent IA le 2026-10-18
+
+Vérification manuelle (recherche web réelle via 4 agents de recherche en parallèle — LeBonCoin, eBay.fr/.de, LDLC/TopAchat/Materiel.net/Amazon.fr/Rue du Commerce/comparateur-gamer.fr/ledenicheur.fr) portant sur 24 entrées CPU/GPU (section "### Rejetés" du 2026-10-17 + rotation Priorité 2) + un contrôle RAM/stockage.
+
+**Priorité 1 (section "### Rejetés" du 2026-10-17, échantillon sur les ~60 entrées flaguées — liste quasi identique à celle du 10-16/10-17, cf. note méthodologique ci-dessous)** :
+- **Confirmées correctes (7)** : `gtx-570`, `gtx-980`, `rtx-2080-ti`, `rtx-4080`, `rx-9070-xt`, `rtx-5080`, et reconfirmation rapide de `i9-14900k` et `i7-8700k` (déjà vérifiés le 2026-10-17, cf. note) — aucune annonce LeBonCoin/eBay réelle ne corrobore les écarts eBay rejetés (+108% à +620%) ; confusions probables avec bundles, lots mining/pro, variantes voisines ou devises non converties.
+- **Corrigée (1)** : `rtx-3090` : 600/730/870€ → 650/900/1300€ (sources : LeBonCoin — EVGA FTW3 Ultra "très bon état" 1190€, ASUS ROG STRIX OC "état neuf" 919€, 2 Founders Edition 799-800€, Zotac Trinity OC 1300€ ; eBay.de vendeurs FR — ASUS TUF Gaming vendue ~680€ (08/2026)). Demande réelle IA/LLM local (24Go VRAM) qui tire les transactions réelles (680-1300€) au-dessus de l'ancienne fourchette. Le chiffre eBay rejeté (3204€, +339%) restait lui-même largement exagéré, mais la direction du flag (valeur trop basse) était correcte cette fois.
+
+**Note méthodologique** : la section "Rejetés" du pipeline eBay reste quasi identique jour après jour (mêmes ~60 références, mêmes écarts extrêmes sur du matériel ancien GTX/HD/R9 et sur plusieurs CPU déjà réexaminés 2-3 jours consécutifs). `i9-14900k` et `i7-8700k` avaient déjà été vérifiés en détail hier (10-17) avec sources solides concluant à aucun changement ; confirmation rapide uniquement aujourd'hui (pas de nouvelle recherche approfondie, pour ne pas dupliquer l'effort). Ceci confirme une nouvelle fois (incident du 2026-09-27) qu'il s'agit d'un problème récurrent de qualité des données côté pipeline eBay plutôt que d'un vrai mouvement de marché, SAUF exception ponctuelle comme `rtx-3090` ci-dessus où une vraie vérification web a confirmé un mouvement réel — d'où l'intérêt de continuer à échantillonner largement plutôt que d'ignorer systématiquement cette liste.
+
+**Priorité 2 (rotation matériel récent, curseur de l'index 18 à 32 sur la liste réduite [116])** :
+- **Confirmées correctes (14)** : `ryzen-5-5600`, `ryzen-5-5600g`, `ryzen-5-5600x`, `ryzen-7-5700x`, `i5-11600k`, `i5-12400f` (confiance plus faible — pas d'annonce occasion directe trouvée, mais écart implicite au ratio neuf×0,7 reste <30%), `i9-11900k`, `ryzen-9-5900x`, `ryzen-7-5800x3d`, `ryzen-9-5950x` (confiance plus faible — aucune annonce occasion directe trouvée, signal d'écart ~17-19% mais insuffisant pour corriger sans source positive), `i5-13400f` (même réserve que ryzen-9-5950x), `i5-12600k`, `i7-12700k`, `i9-12900k`.
+- **Corrigée (1)** : `ryzen-7-5800x` : 165/195/225€ → 140/160/185€ (sources : 4 annonces LeBonCoin CPU seul indépendantes — 150€ neuf, 180€ bon état, 160€ bon état, 140€ très bon état, moyenne ~157€ — corroborées par le prix neuf actuel ~218-233€ (Amazon/Alternate/Cdiscount) ×0,7 ≈154-163€). L'ancienne moyenne de 195€ (vérifiée le 08-25) était ~19% au-dessus du marché actuel.
+
+**RAM/stockage** : contrôle effectué (focus NVMe, flaggé suspect hier), **une correction appliquée**.
+- **DDR4** : aucun changement — spot-check LeBonCoin (60€, 39€ pour kits 16Go) cohérent avec la formule actuelle (4€/Go).
+- **DDR5** : aucun changement — spot-check LeBonCoin (Crucial 32Go 290€, G.Skill Trident Z5 32Go-équiv 479€ sur un kit plus haute fréquence) cohérent avec la formule actuelle (7€/Go, corrigée hier).
+- **SSD SATA** : non revérifié aujourd'hui (dernier calibrage du 2026-10-14, hors priorité).
+- **NVMe** : **corrigé** — `prixParGo` 0,145€/Go → 0,095€/Go. L'ancien tarif se retrouvait au niveau ou au-dessus des SSD NVMe NEUFS d'entrée de gamme actuels (Crucial E100 129,99€/1To, Netac NV3000 ~108-115€/1To), confirmant l'anomalie flaguée hier. Sources : 5 annonces LeBonCoin/eBay.fr/eBay.de indépendantes de NVMe M.2 occasion 500Go-1To — Samsung PM981a 99,99€, WD SN570 ~95€, WD SN560 79,99€, Kingston 500Go 45€, Samsung 960 EVO 500Go 50€ (médiane ~0,095€/Go). Les annonces occasion n'ont pas suivi la hausse de la pénurie NAND sur le neuf.
+
+**Curseur de rotation Priorité 2** : avancé de l'index 18 à l'index 33 (prochain cycle reprendra sur `i9-12900ks`).

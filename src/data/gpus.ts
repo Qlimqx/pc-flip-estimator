@@ -1069,10 +1069,17 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 3090',
     marque: 'NVIDIA',
     vramGo: 24,
-    min: 600,
-    moyen: 730,
-    max: 870,
-    dateMaj: '2026-10-07',
+    // Corrigé le 2026-10-18 : demande IA/LLM local (24Go VRAM) qui tire les
+    // prix réels au-dessus de l'ancienne base. LeBonCoin (plusieurs annonces
+    // indépendantes) : EVGA FTW3 Ultra "très bon état" 1190€, ASUS ROG STRIX
+    // OC "état neuf" 919€, 2 Founders Edition à 799-800€, Zotac Trinity OC
+    // 1300€ ; eBay.de (vendeurs FR) : ASUS TUF Gaming vendue ~680€ (08/2026).
+    // Transactions réelles regroupées 680-1300€, nettement au-dessus de
+    // l'ancienne fourchette 600/730/870€.
+    min: 650,
+    moyen: 900,
+    max: 1300,
+    dateMaj: '2026-10-18',
     faciliteRevente: 0.65,
     decoteAnciennete: 0.97,
     tier: 5,

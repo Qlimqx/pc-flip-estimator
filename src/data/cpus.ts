@@ -852,13 +852,17 @@ const BASE_CPUS: CpuPricing[] = [
   {
     id: 'ryzen-7-5800x',
     nom: 'AMD Ryzen 7 5800X',
-    // Vérifié en direct : ~160-250€ sur LeBonCoin, majorité 185-210€.
+    // Corrigé le 2026-10-18 : 4 annonces LeBonCoin CPU seul indépendantes
+    // (150€ neuf, 180€ bon état, 160€ bon état, 140€ très bon état, moyenne
+    // ~157€), corroborées par le prix neuf actuel (~218-233€ Amazon/
+    // Alternate/Cdiscount) x0,7 ≈154-163€. L'ancienne moyenne de 195€
+    // (vérifiée le 08-25) était ~19% au-dessus du marché actuel.
     marque: 'AMD',
     socket: 'AM4',
-    min: 165,
-    moyen: 195,
-    max: 225,
-    dateMaj: '2026-08-25',
+    min: 140,
+    moyen: 160,
+    max: 185,
+    dateMaj: '2026-10-18',
     faciliteRevente: 0.85,
     decoteAnciennete: 1.0,
     tier: 4,

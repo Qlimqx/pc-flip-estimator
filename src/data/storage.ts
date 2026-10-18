@@ -42,6 +42,18 @@ export const STORAGE_TYPE_LABELS: Record<StorageType, string> = {
 // 10 annonces LeBonCoin indépendantes de SSD SATA 2.5" occasion (500Go à
 // 2To, Crucial/Samsung/PNY) : médiane ~0,088€/Go, moyenne ~0,094€/Go --
 // ssd ramené à 0,10€/Go (nvme non revérifié aujourd'hui, laissé inchangé).
+//
+// Corrigé le 2026-10-18 : nvme flaggé suspect le 10-17 (prix neuf proche ou
+// inférieur au prix occasion calculé). Revérifié sur 5 annonces LeBonCoin/
+// eBay.fr/eBay.de indépendantes de NVMe M.2 occasion 500Go-1To (Samsung
+// PM981a 99,99€, WD SN570 ~95€, WD SN560 79,99€, Kingston 500Go 45€,
+// Samsung 960 EVO 500Go 50€) : médiane ~0,095€/Go, contre 0,145€/Go actuel
+// -- l'ancien tarif se retrouvait au niveau ou au-dessus des SSD NVMe NEUFS
+// d'entrée de gamme actuels (Crucial E100 129,99€/1To, Netac NV3000
+// ~108-115€/1To), confirmant l'anomalie. Les annonces occasion n'ont pas
+// suivi la hausse de la pénurie NAND sur le neuf. nvme ramené à 0,095€/Go
+// (ddr4/ddr5/ssd inchangés, re-sondés ce jour et toujours dans la
+// tolérance).
 export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
   hdd: {
     prixParGo: 0.018,
@@ -56,7 +68,7 @@ export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
     decoteAnciennete: 1.0,
   },
   nvme: {
-    prixParGo: 0.145,
+    prixParGo: 0.095,
     plancher: 40,
     faciliteRevente: 0.8,
     decoteAnciennete: 1.05,
