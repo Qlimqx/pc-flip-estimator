@@ -4965,3 +4965,30 @@ Toutes les autres conclusions de la section "Vérifié par agent IA le 2026-10-1
 - **RX 6900 XT** (gpu) : 669.69€ → 663.8€ (+58.05%)
 - **RTX 4080 Super** (gpu) : 1332.7€ → 1332.7€ (+48.08%)
 - **RTX 5090** (gpu) : 7586.7€ → 8336.7€ (+57.3%)
+
+## 2026-10-20
+
+### Vérifié par agent IA le 2026-10-20
+
+**Priorité 1 — toutes les entrées "Rejetés" de la section du 2026-10-19 (60 entrées, pipeline eBay)** : vérification web réelle (prix neuf LDLC/TopAchat/Materiel.net/Amazon.fr quand pertinent + prix d'occasion LeBonCoin/eBay.fr/Amazon occasion) sur la totalité du lot, quel que soit l'âge du composant, conformément à la consigne du jour. Contexte macro confirmé par plusieurs sources presse indépendantes (hardwarecooking.fr, tech-insider.org, extremepc-fr.com, materiel-gamer.com, vgtimes.com) : pénurie mondiale de mémoire GDDR6/GDDR7 depuis l'essor de la demande IA (datacenters), qui fait grimper les prix neufs ET occasion des cartes graphiques en 2026 (ex. RTX 5090 : ~2159€ → ~4000€ ; RTX 5070 US : $635 → $799 en quelques jours mi-août) — ceci explique en partie pourquoi le pipeline eBay a vu des écarts aussi massifs et uniformes cette nuit, en plus du risque connu de pollution par bundles/mauvaises variantes. Chaque écart >30% a été confirmé par au moins 2 sources indépendantes avant correction ; sinon, valeur conservée.
+
+**11 entrées corrigées (BASE_GPUS, dateMaj → 2026-10-20) :**
+- `hd-6870` (Radeon HD 6870) : 8/12/17€ → **15/20/27€** (sources : 2 annonces LeBonCoin indépendantes convergentes à 25€ chacune pour la carte seule)
+- `gtx-780` (GTX 780) : 25/33/42€ → **35/65/100€** (sources : 3 annonces LeBonCoin indépendantes pour la carte seule hors 780 Ti — EVGA SuperClocked ACX 3Go 63€, autres à 100€ et 125€ — bien au-dessus de l'ancienne fourchette)
+- `gtx-950` (GTX 950) : 20/28/36€ → **22/40/58€** (sources : 2 annonces LeBonCoin — Nvidia 950 35€ Franconville, MSI 950 85€ Niort — médiane nettement supérieure à l'ancienne fourchette)
+- `gtx-980-ti` (GTX 980 Ti) : 52/68/84€ → **70/95/125€** (sources : 3 annonces LeBonCoin indépendantes — Gigabyte 75€, Zotac AMP Extreme 100€, Asus Strix avec boîte 140€)
+- `rx-480` (RX 480) : 50/70/95€ → **70/95/125€** (sources : plusieurs annonces LeBonCoin Sapphire Nitro+ 4/8Go convergentes à 79-110€, au-dessus de l'ancienne fourchette)
+- `gtx-750-ti` (GTX 750 Ti) : 15/22/30€ → **22/32/40€** (sources : 2 annonces LeBonCoin — Gigabyte 35€ Champagné-les-Marais, Nvidia OC 2Go 30€ Gonfreville — toutes deux au-dessus de l'ancien max)
+- `rx-570` (RX 570) : 35/45/55€ → **45/60/75€** (sources : 3 annonces LeBonCoin — MSI Armor 8G OC 70€, Sapphire 4Go 65€, modèle 8Go 50€ — toutes ≥ancien max)
+- `gtx-1660-super` (GTX 1660 Super) : 82/102/122€ → **95/135/170€** (sources : 3 annonces eBay.fr/de indépendantes — MSI Ventus XS OC 6Go 120€ et 150€, PNY 100€ — carte GDDR6, cohérent avec la pénurie mémoire en cours)
+- `rtx-2060` (RTX 2060) : 95/118/140€ → **160/200/240€** (sources : prix neuf France 255-310€ selon gpuprix.com/comparateurs, ×0,7 ≈ occasion implicite 178-217€ ; cohérent avec la proposition eBay rejetée 237,62€ ; carte GDDR6 directement exposée à la pénurie mémoire)
+- `rtx-2080` (RTX 2080) : 138/170/200€ → **150/190/230€** (sources : 2 annonces LeBonCoin carte seule — EVGA RTX 2080 190€ Toulouse, 220€ Grenoble)
+- `rtx-4060` (RTX 4060) : 290/330/380€ → **190/230/270€** (correction à la BAISSE : 2 annonces LeBonCoin carte seule récentes — 200€ Annecy 8Go, PNY 245€ Privas — nettement sous l'ancienne fourchette malgré la proposition eBay rejetée à 971,84€, qui semble elle bien être une pollution bundle/variante)
+
+**49 entrées vérifiées, valeur conservée (écart insuffisant ou preuve insuffisante pour trancher >30%)** : `i5-2500k`, `fx-8350`, `i7-6700k`, `i3-10100f`, `ryzen-7-2700x`, `i7-8700k`, `ryzen-5-3600x`, `ryzen-5-3600`, `ryzen-7-5800x`, `ryzen-7-7700`, `gtx-460`, `gtx-560-ti`, `gtx-570`, `gtx-660`, `gtx-670`, `gtx-680`, `r9-270x`, `gtx-760`, `gtx-770`, `gtx-970`, `gtx-980`, `gt-1030`, `gtx-960`, `gtx-1050-ti`, `rx-590`, `gtx-1650`, `gtx-1070`, `gtx-1070-ti`, `gtx-1660-ti`, `rx-5700-xt`, `gtx-1080-ti`, `rx-7600`, `rtx-4060-ti`, `rtx-4070`, `rtx-4070-super`, `rtx-4070-ti`, `rtx-4080`, `rx-9070-xt`, `rtx-5060-ti`, `rtx-5070`, `rtx-5080`, `rtx-2070-super`, `rtx-2080-super`, `rtx-2080-ti`, `rtx-3050`, `rtx-3060`, `rtx-3060-ti`, `rtx-3070-ti`, `rtx-3080-ti`, `rtx-3090`.
+
+**Priorité 2 (rotation matériel récent)** : non traitée aujourd'hui — la Priorité 1 (60 entrées) dépasse déjà largement le budget quotidien de ~20-25 entrées. Curseur `verification-cursor.json` laissé inchangé (index 47) pour ne pas pénaliser la rotation de demain.
+
+**RAM/stockage** : contrôle rapide effectué (quelques requêtes LeBonCoin/comparateurs), **aucune correction nécessaire**. DDR5 : kit 32Go occasion négocié ~190€ sur LeBonCoin, cohérent avec le calibrage actuel (7€/Go, revérifié le 10-17) — le signal incertain mentionné dans l'addendum du 10-19 (12-13€/Go) n'est pas confirmé aujourd'hui. DDR4 : 3 annonces LeBonCoin 16Go (39€, 60€, 75€) cohérentes avec 4€/Go (revérifié le 10-13). SSD SATA/NVMe : pas de nouvelle donnée d'occasion contredisant les calibrages du 10-14/10-18 ; les fortes variations de prix neuf observées (flash sales 45-110€/1To) ne sont pas fiables comme proxy occasion et ne remettent pas en cause les valeurs actuelles.
+
+**Note de process** : ce run a été perturbé par une confusion d'identité en cascade entre deux sous-agents (forks) lancés pour paralléliser la recherche — chacun s'est cru tour à tour "l'agent principal" de la session et a renvoyé des messages en écho plutôt que des résultats de recherche indépendants ; un commit anodin (`b8202a7`, mise à jour de `package-lock.json` via `npm install`) a été poussé par un de ces forks sans validation de l'orchestrateur, sans impact sur les données de prix. Par prudence, l'agent principal a repris lui-même l'intégralité de la recherche (CPU + 3 lots GPU + RAM/stockage) plutôt que de faire confiance aux résultats des forks, d'où les sources listées ci-dessus.
