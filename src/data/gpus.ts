@@ -261,10 +261,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 780',
     marque: 'NVIDIA',
     vramGo: 3,
-    min: 25,
-    moyen: 33,
-    max: 42,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-10-21 : 2 annonces LeBonCoin indépendantes pour la
+    // carte seule (hors variante Ti/3Go confondue) à 40€ et 63€, nettement
+    // au-dessus de l'ancien moyen (33€) -- pas de prix neuf (discontinuée).
+    min: 30,
+    moyen: 42,
+    max: 55,
+    dateMaj: '2026-10-21',
     faciliteRevente: 0.2,
     decoteAnciennete: 0.7,
     tier: 1,
@@ -395,10 +398,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 480',
     marque: 'AMD',
     vramGo: 8,
-    min: 50,
-    moyen: 70,
-    max: 95,
-    dateMaj: '2026-10-09',
+    // Corrigé le 2026-10-21 : 8 annonces LeBonCoin indépendantes pour la
+    // variante 8Go (79/110/120/120/180/180/250/275€), médiane des prix
+    // demandés ~150€ -- vente réelle estimée ~100-130€ une fois la marge
+    // de négociation habituelle retirée, nettement au-dessus de l'ancien
+    // moyen (70€).
+    min: 75,
+    moyen: 115,
+    max: 160,
+    dateMaj: '2026-10-21',
     faciliteRevente: 0.35,
     decoteAnciennete: 0.8,
     tier: 1,
@@ -475,10 +483,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GT 1030',
     marque: 'NVIDIA',
     vramGo: 2,
-    min: 25,
-    moyen: 38,
-    max: 50,
-    dateMaj: '2026-10-10',
+    // Corrigé le 2026-10-21 : toujours vendue neuve (~95-130€, comparateur-
+    // gamer.fr + Amazon.fr) -- l'ancien moyen (38€) tombait sous 40% du
+    // neuf, ratio anormalement bas pour une occasion. Sanity-check
+    // neufx0,7 ~66-91€ ; annonce LeBonCoin directe à 115€, eBay UK ~45€ --
+    // repositionné au milieu de cette fourchette.
+    min: 45,
+    moyen: 60,
+    max: 80,
+    dateMaj: '2026-10-21',
     faciliteRevente: 0.2,
     decoteAnciennete: 0.7,
     tier: 1,
@@ -501,10 +514,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 960',
     marque: 'NVIDIA',
     vramGo: 4,
-    min: 22,
-    moyen: 30,
-    max: 40,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-10-21 : 6 annonces LeBonCoin indépendantes (2Go/4Go)
+    // à 30/35/40/47/50/60€, médiane ~43€, nettement au-dessus de l'ancien
+    // moyen (30€).
+    min: 28,
+    moyen: 42,
+    max: 55,
+    dateMaj: '2026-10-21',
     faciliteRevente: 0.3,
     decoteAnciennete: 0.78,
     tier: 1,
@@ -514,10 +530,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 1050 Ti',
     marque: 'NVIDIA',
     vramGo: 4,
-    min: 40,
-    moyen: 55,
-    max: 72,
-    dateMaj: '2026-10-10',
+    // Corrigé le 2026-10-21 : 3 annonces LeBonCoin pour la carte seule
+    // (dont MSI Gaming X) à 60/70/90€, médiane ~70€, au-dessus de l'ancien
+    // moyen (55€).
+    min: 55,
+    moyen: 70,
+    max: 85,
+    dateMaj: '2026-10-21',
     faciliteRevente: 0.4,
     decoteAnciennete: 0.82,
     tier: 1,

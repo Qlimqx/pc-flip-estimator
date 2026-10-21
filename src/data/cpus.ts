@@ -1151,10 +1151,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i9-13900K',
     marque: 'Intel',
     socket: 'LGA1700',
-    min: 420,
-    moyen: 480,
-    max: 540,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-10-21 : neuf actuel ~536-544€ (plusieurs revendeurs),
+    // cohérent avec le sibling i9-13900KF (300/360/430€, vérifié le 10-11)
+    // une fois le premium K/KF (~1,12x) appliqué -- l'ancien moyen (480€)
+    // était ~18% trop haut.
+    min: 340,
+    moyen: 405,
+    max: 485,
+    dateMaj: '2026-10-21',
     faciliteRevente: 0.65,
     decoteAnciennete: 1.0,
     tier: 5,
@@ -1190,10 +1194,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i7-14700K',
     marque: 'Intel',
     socket: 'LGA1700',
-    min: 380,
-    moyen: 445,
-    max: 505,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-10-21 : neuf actuel ~416-445€ (achatmoinscher/
+    // Alternate/Amazon) et sibling i7-14700KF (240/290/360€, vérifié le
+    // 10-11) convergent vers ~335€ moyen -- l'ancien moyen (445€) était
+    // ~25% trop haut.
+    min: 280,
+    moyen: 335,
+    max: 405,
+    dateMaj: '2026-10-21',
     faciliteRevente: 0.72,
     decoteAnciennete: 1.02,
     tier: 5,

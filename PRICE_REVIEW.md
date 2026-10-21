@@ -5089,3 +5089,42 @@ Build (`npm run build`) et lint (`npm run lint`) relancés avec succès après c
 - **RX 6900 XT** (gpu) : 663.8€ → 669.69€ (+59.45%)
 - **RTX 4080 Super** (gpu) : 1332.7€ → 1332.7€ (+48.08%)
 - **RTX 5090** (gpu) : 8336.7€ → 7586.7€ (+43.15%)
+
+## 2026-10-21
+
+### Vérifié par agent IA le 2026-10-21
+
+Vérification manuelle (recherche web réelle via 5 agents de recherche en parallèle — LeBonCoin, eBay.fr/.de/UK, LDLC/TopAchat/Materiel.net/Amazon.fr/achatmoinscher/Alternate, comparateur-gamer.fr/PriceDropChecker) portant sur le backlog Priorité 1 laissé en suspens après l'incident du 2026-10-20 (lots C/E compromis) + une rotation Priorité 2 CPU + un contrôle RAM/stockage.
+
+**Priorité 1** : les 60 entrées de la section "### Rejetés" du 2026-10-20 ci-dessus recoupent très largement les 41 entrées déjà vérifiées hier (lots A/B/D/F, toutes confirmées "valeur conservée" le 2026-10-20) — non re-vérifiées une seconde fois aujourd'hui pour éviter la recherche redondante. Le vrai backlog non traité restant était les 20 GPU des lots C/E compromis (jamais vérifiés de façon fiable) + `i9-9900k` (nouveau dans la liste des rejetés) : ces 21 entrées ont été vérifiées aujourd'hui.
+
+**5 entrées corrigées (BASE_GPUS) :**
+- `gtx-780` : 25/33/42€ → **30/42/55€** (sources : 2 annonces LeBonCoin indépendantes carte seule, 40€ et 63€)
+- `rx-480` : 50/70/95€ → **75/115/160€** (sources : 8 annonces LeBonCoin indépendantes variante 8Go, 79-275€, médiane demandée ~150€, vente réelle estimée ~100-130€)
+- `gt-1030` : 25/38/50€ → **45/60/80€** (sources : toujours vendue neuve ~95-130€ chez comparateur-gamer.fr et Amazon.fr — l'ancien moyen tombait sous 40% du neuf ; annonce LeBonCoin 115€, eBay UK ~45€)
+- `gtx-960` : 22/30/40€ → **28/42/55€** (sources : 6 annonces LeBonCoin indépendantes 2Go/4Go, 30-60€, médiane ~43€)
+- `gtx-1050-ti` : 40/55/72€ → **55/70/85€** (sources : 3 annonces LeBonCoin carte seule dont MSI Gaming X, 60/70/90€, médiane ~70€)
+
+**15 entrées vérifiées, valeur conservée (preuve insuffisante pour corriger, ou cohérente avec le marché)** :
+- `gtx-950`, `gtx-970`, `gtx-980` (données trop fines/non datées pour trancher)
+- `gtx-980-ti` (override eBay actif à 106,78€ moyen, cohérent avec la recherche ~100-125€ — base non modifiée car sans effet runtime, override hors périmètre)
+- `gtx-750-ti` (1 seule annonce, insuffisant)
+- `rtx-2070-super`, `rtx-2080-super`, `rtx-2080-ti`, `rtx-3050` (cohérent avec le marché)
+- `rtx-2080` (signal faible +14,7%, sous le seuil de tolérance de 15%, sourcing non daté — conservé)
+- `rtx-3060`, `rtx-3060-ti`, `rtx-3070-ti`, `rtx-3080-ti` (médiane LeBonCoin quasi identique à la base actuelle)
+- `rtx-3090` (médiane observée aujourd'hui ~737€, ~18% sous le moyen actuel de 900€ mais données non datées/insuffisantes pour une 2e source solide — **à revérifier en priorité au prochain run**, signal de refroidissement de la demande IA depuis la correction du 10-18)
+- `i9-9900k` (médiane ~230€ vs 205€ actuel, +12%, dans la tolérance)
+
+**Priorité 2 (rotation matériel récent, curseur avancé de l'index 47 à 52)** — 5 CPU vérifiés : `i9-13900k`, `ryzen-9-7950x`, `i7-14700kf`, `i7-14700k`, `ryzen-9-7950x3d`.
+
+**2 entrées corrigées (BASE_CPUS) :**
+- `i9-13900k` : 420/480/540€ → **340/405/485€** (sources : neuf actuel ~536-544€ chez plusieurs revendeurs ; cross-check avec le sibling i9-13900KF vérifié le 10-11, premium K/KF ~1,12x)
+- `i7-14700k` : 380/445/505€ → **280/335/405€** (sources : neuf actuel ~416-445€ chez achatmoinscher/Alternate/Amazon ; cross-check avec le sibling i7-14700KF vérifié le 10-11)
+
+**3 entrées vérifiées, valeur conservée** : `ryzen-9-7950x` (eBay.de ~359-399€, cohérent), `i7-14700kf` (déjà fraîche depuis le 10-11), `ryzen-9-7950x3d` (2 annonces LeBonCoin 350€/450€, moyenne ~400€, dans la tolérance).
+
+**RAM/stockage** : contrôle léger effectué, **aucune correction nécessaire**. DDR5 32Go occasion LeBonCoin toujours dans la fourchette 290-480€ (cohérent avec le calibrage 7€/Go actuel). Presse tech confirme une pénurie DRAM qui s'aggrave (hausse spot DDR4 +172%, DDR5 +76% selon Goldman Sachs/Barclays, report de la demande vers la DDR4) mais ce sont des prix contractuels/puces, pas encore traduits en données d'occasion concrètes trouvées aujourd'hui — tendance à surveiller mais pas de changement appliqué sans donnée occasion directe. NAND/SSD : contexte de pénurie confirmé par la presse (Kingston +246% depuis T1 2025) mais aucune annonce LeBonCoin datée trouvée aujourd'hui pour trancher — calibrage du 10-18 laissé inchangé.
+
+**Méthodologie process** : conformément à la leçon de l'incident du 2026-09-27/2026-10-20, toute la recherche a été effectuée par des sous-agents avec un mandat strictement limité à la recherche (WebSearch/WebFetch, aucune écriture de fichier ni commit autorisé) ; toutes les décisions finales et toutes les écritures dans `cpus.ts`/`gpus.ts` ont été faites directement par l'agent orchestrateur après recoupement des rapports.
+
+Build (`npm run build`), lint (`npm run lint`) et tests (`npx vitest run`, 12/12) relancés avec succès après ces ajustements.
