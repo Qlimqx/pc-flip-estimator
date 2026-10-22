@@ -5213,3 +5213,43 @@ Build (`npm run build`), lint (`npm run lint`) et tests (`npx vitest run`, 12/12
 - **RX 6900 XT** (gpu) : 669.69€ → 663.8€ (+58.05%)
 - **RTX 4080 Super** (gpu) : 1332.7€ → 1332.7€ (+48.08%)
 - **RTX 5090** (gpu) : 7586.7€ → 8336.7€ (+57.3%)
+
+## 2026-10-22
+
+### Vérifié par agent IA le 2026-10-22
+
+Vérification manuelle (recherche web réelle via 4 agents de recherche en parallèle — LeBonCoin, eBay.fr/.de, LDLC/TopAchat/Materiel.net/Amazon.fr/achatmoinscher/Cybertek/comparateur-gamer.fr) portant sur la totalité des 9 CPU + un échantillon de 16 GPU de la section "### Rejetés" du 2026-10-21 ci-dessus (Priorité 1), une rotation Priorité 2 CPU (curseur avancé de l'index 52 à 57), et un contrôle RAM/stockage. Les très vieux GPU bas de gamme (<30€, GTX 4xx-9xx, Radeon HD/R9, risque financier marginal, déjà protégés par le seuil de rejet à 60% du pipeline eBay) n'ont pas été repassés au crible aujourd'hui pour rester dans le budget journalier -- ils resteront visibles dans les prochains "Rejetés" et seront traités par rotation.
+
+**Priorité 1 -- 9 CPU vérifiés (tous les rejetés CPU du 2026-10-21) :**
+
+**2 entrées corrigées (BASE_CPUS) :**
+- `ryzen-7-2700x` : 35/50/65€ → **28/38/48€** (sources : LeBonCoin Benfeld 40€, eBay.de vente conclue 34€, eBay.de annonce active ~45€ -- 3 sources convergentes ~34-45€, nettement sous la moyenne de 50€)
+- `i7-8700k` : 65/85/105€ → **90/115/140€** (sources : 4 ventes/annonces eBay.de indépendantes toutes ≥98€ -- 98€, ~100.78€, ~130.24€, ~132.82€ -- modèle abandonné en neuf par Intel, devenu plus rare et donc plus cher en occasion)
+
+**7 entrées vérifiées, valeur conservée** : `i5-2500k` (8-30€ selon état, cohérent), `i7-6700k` (LeBonCoin 60-65€ cohérent avec moyenne 58€), `i3-10100f` (LeBonCoin 40€ cohérent), `ryzen-5-3600x` (LeBonCoin 75€ = max base), `ryzen-5-3600` (LeBonCoin 60-75€ cohérent), `ryzen-7-5800x` (LeBonCoin 150-180€ cohérent, prix neuf encore élevé AM4), `ryzen-7-7700` (LeBonCoin 160-190€ encadre bien la base).
+
+**Priorité 1 -- 16 GPU vérifiés sur la liste "Rejetés" du 2026-10-21 (11 récents RTX/RX + 5 anciens dont RTX 3090 en revérification prioritaire) :**
+
+**1 entrée corrigée (BASE_GPUS) :**
+- `rtx-4070-ti` : 580/620/665€ → **650/720/800€** (sources : 2 annonces LeBonCoin indépendantes carte seule -- Lille 700€, Mamers baissée de 800€ à 700€ -- + guide de marché pc4games 650-750€, convergent vers 700-800€ contre 580-665€ actuels)
+
+**15 entrées vérifiées, valeur conservée** :
+- `rtx-2060`, `rtx-4060-ti`, `rtx-4070`, `rtx-4070-super`, `rtx-4080`, `rtx-5060-ti`, `rtx-5070`, `rx-9070-xt` (cohérent avec LeBonCoin/prix neuf actuel)
+- `rtx-4060` (signal faible de légère surestimation, 1 seule source -- **à revérifier au prochain run**)
+- `rtx-5080` (cohérent mais tendance haussière nette +11,2%/mois sur l'occasion observée par un tracker spécialisé, liée à l'inflation du neuf due à la pénurie DRAM/GDDR -- **à revérifier au prochain run**, risque de dépassement du seuil)
+- `rtx-3090` (médiane LeBonCoin observée aujourd'hui ~800-825€ hors outliers, ~8-11% sous le moyen actuel de 900€ -- 2e run consécutif qui pointe vers une baisse (après ~737€ le 2026-10-21), toujours sous le seuil de preuve strict de 2 sources bien datées -- **à revérifier en priorité au prochain run**, ajustement probable vers ~820-850€ si confirmé)
+- `gtx-1080-ti`, `rx-5700-xt`, `gtx-1070` (annonces LeBonCoin cohérentes avec la base)
+- `gtx-1660-ti` (données limitées -- peu d'annonces datées trouvées -- conservé par défaut, confiance faible)
+
+**Priorité 2 (rotation matériel récent, curseur avancé de l'index 52 à 57)** -- 5 CPU vérifiés : `i9-14900kf`, `i9-14900k`, `ryzen-5-9600x`, `core-ultra-5-245k`, `ryzen-7-9700x`.
+
+**1 entrée corrigée (BASE_CPUS)** :
+- `ryzen-5-9600x` : 195/225/255€ → **140/175/210€** (anomalie de sanity-check détectée : le prix neuf actuel multi-sources datées -- Comparateur-Gamer 197€ le 18/10/2026, RiverPrice/Amazon.fr moyenne 200,10€ -- est tombé SOUS le prix d'occasion stocké en base, ce qui est économiquement incohérent, signal similaire à l'incident du 9800X3D du 2026-08-26 ; faute d'annonces LeBonCoin françaises datées de 2026 pour ce modèle peu répandu, la correction s'appuie sur le ratio neuf/occasion observé historiquement sur 3 annonces eBay.de du même modèle (~165-192€ occasion quand le neuf scellé particulier valait ~183€) appliqué au prix neuf actuel -- **à affiner avec des données LeBonCoin directes dès qu'elles seront disponibles**)
+
+**3 entrées vérifiées, valeur conservée** : `i9-14900kf` (LeBonCoin 340€/400€ quasi exact), `i9-14900k` (eBay.de ~370€ cohérent), `core-ultra-5-245k` (Cybertek/Grosbill reconditionné 180-189€ cohérent), `ryzen-7-9700x` (LeBonCoin 179€ dans la fourchette).
+
+**RAM/stockage** : contrôle léger effectué par recherche web directe, **aucune correction nécessaire**. DDR5 32Go occasion annoncée sur LeBonCoin entre ~150€ et 440€ (asking price, médiane grossière ~235-265€), cohérent avec le calibrage 7€/Go actuel (≈264€ en "bon état" une fois la décote appliquée). DDR4 32Go neuf médian ~300-307€ (comparateur-gamer, +6,8%/30j), cohérent avec le calibrage occasion 4€/Go. NVMe/SSD : pénurie NAND confirmée en forte accélération (Kingston +246% depuis T1 2025, dont 70% sur les 60 derniers jours), mais aucune annonce LeBonCoin occasion datée trouvée aujourd'hui pour justifier un ajustement -- calibrage du 10-18 laissé inchangé.
+
+**Méthodologie process** : recherche effectuée par 4 sous-agents parallèles avec mandat strictement limité à la recherche (WebSearch/WebFetch, aucune écriture de fichier ni commit autorisé) + une vérification complémentaire directe par l'agent orchestrateur sur `ryzen-5-9600x` ; toutes les décisions finales et toutes les écritures dans `cpus.ts`/`gpus.ts` ont été faites directement par l'agent orchestrateur après recoupement des rapports. WebFetch direct vers leboncoin.fr/ebay.fr a échoué dans l'environnement des sous-agents (DNS non résolu) -- toute la recherche s'est appuyée sur les extraits WebSearch, une limite méthodologique à garder en tête pour les prochains runs.
+
+Build (`npx tsc -b && vite build`), lint (`npm run lint`) et tests (`npx vitest run`, 12/12) relancés avec succès après ces ajustements.
