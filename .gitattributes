@@ -1,0 +1,5 @@
+# Fichiers en ajout seul modifiés par plusieurs automatisations (agent
+# quotidien, routine de vérification IA, anciens scripts) : en cas de fusion
+# concurrente, on garde les deux versions au lieu de bloquer sur un conflit.
+PRICE_REVIEW.md merge=union
+agent-data/history/*.jsonl merge=union

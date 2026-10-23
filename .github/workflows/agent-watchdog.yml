@@ -1,0 +1,36 @@
+name: Chien de garde de l'agent quotidien
+
+# Contrôle, après 10 h (heure de Paris), que l'agent a terminé avant 10 h.
+# Sinon : alerte (issue « agent-alerte ») et relance de l'agent pour reprise.
+# Le lundi : rappel hebdomadaire de relecture humaine des prix.
+
+on:
+  schedule:
+    - cron: '7 10 * * *'
+      timezone: 'Europe/Paris'
+    - cron: '37 11 * * *'
+      timezone: 'Europe/Paris'
+  workflow_dispatch: {}
+
+concurrency:
+  group: agent-watchdog
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+  actions: write # relancer daily-agent.yml
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Contrôler l'agent
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/agent/watchdog.mjs

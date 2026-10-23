@@ -9,6 +9,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "test": "vitest run",
+    "agent": "node scripts/agent/run.mjs",
+    "agent:dry-run": "node scripts/agent/run.mjs --dry-run",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -35,6 +38,7 @@
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2",
     "vite": "^8.2.2",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.11",
+    "yaml": "^2.8.1"
   }
 }

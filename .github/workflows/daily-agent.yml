@@ -1,0 +1,136 @@
+name: Agent quotidien (prix et catalogue)
+run-name: Agent quotidien — ${{ github.event_name }}${{ github.event.schedule && format(' ({0})', github.event.schedule) || '' }}
+
+# L'agent doit avoir terminé AVANT 10 h, heure de Paris, chaque jour.
+#
+# GitHub ne garantit PAS l'heure des déclencheurs `schedule` (retards de
+# plusieurs heures mesurés sur ce dépôt, exécutions parfois ignorées). Le
+# respect de l'échéance repose donc sur trois mécanismes, pas sur un seul :
+#   1. des déclencheurs redondants, tous en heure de Paris (le champ
+#      `timezone` gère l'heure d'été/d'hiver) et sur des minutes creuses ;
+#   2. un déclencheur par `push` : la routine cloud Claude (horloge externe,
+#      ponctuelle) commite chaque matin agent-data/trigger.txt ;
+#   3. l'agent lui-même est idempotent (le premier déclencheur qui passe fait
+#      le travail, les suivants s'arrêtent aussitôt), a une échéance de
+#      travail à 09:45 Paris et signale tout dépassement ;
+# plus un chien de garde (agent-watchdog.yml) qui alerte et relance si rien
+# n'est terminé à 10 h.
+
+on:
+  schedule:
+    - cron: '23 5 * * *'
+      timezone: 'Europe/Paris'
+    - cron: '47 6 * * *'
+      timezone: 'Europe/Paris'
+    - cron: '13 8 * * *'
+      timezone: 'Europe/Paris'
+  push:
+    branches: [main]
+    paths: ['agent-data/trigger.txt']
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Simulation : appelle les sources mais n''écrit rien'
+        type: boolean
+        default: false
+      force:
+        description: 'Forcer même si le rapport du jour est déjà définitif'
+        type: boolean
+        default: false
+
+# Un seul run à la fois (jamais deux écritures simultanées sur les données).
+# cancel-in-progress: false -> un run en cours n'est jamais interrompu.
+concurrency:
+  group: daily-agent
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Sauvegarde de l'état avant toute modification (14 jours).
+      - name: Sauvegarde avant exécution
+        run: tar czf "${RUNNER_TEMP}/avant-agent.tgz" src/data agent-data PRICE_REVIEW.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-avant-agent-${{ github.run_id }}
+          path: ${{ runner.temp }}/avant-agent.tgz
+          retention-days: 14
+
+      - name: Agent
+        id: agent
+        continue-on-error: true
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          AGENT_WEBHOOK_URL: ${{ secrets.AGENT_WEBHOOK_URL }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          args=""
+          if [ "$DRY_RUN" = "true" ]; then args="$args --dry-run"; fi
+          if [ "$FORCE" = "true" ]; then args="$args --force"; fi
+          node scripts/agent/run.mjs $args
+
+      - name: Résumé du run
+        if: always()
+        run: |
+          if [ -f agent-data/latest.md ]; then cat agent-data/latest.md >> "$GITHUB_STEP_SUMMARY"; fi
+
+      # On ne publie JAMAIS des données qui casseraient le site ou les tests.
+      - name: Valider (tests et build) avant publication
+        if: steps.agent.outcome != 'cancelled'
+        run: |
+          npm test
+          npm run build
+
+      - name: Publier les données (commit + push)
+        if: steps.agent.outcome != 'cancelled' && inputs.dry_run != true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data agent-data PRICE_REVIEW.md
+          if git diff --cached --quiet; then
+            echo "Aucune donnée à publier."
+            exit 0
+          fi
+          DAY=$(node -e "import('./scripts/agent/lib/time.mjs').then((m) => console.log(m.parisYmd(new Date())))")
+          STATUS=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('agent-data/reports/${DAY}.json','utf8')).status)}catch{console.log('inconnu')}")
+          git commit -m "chore(agent): vérification quotidienne des prix ${DAY} (${STATUS})"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Publié (tentative ${attempt})."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 7))
+          done
+          echo "::error::Impossible de publier après 5 tentatives (conflit ou réseau)."
+          exit 1
+
+      - name: Alerte (issue) si le run n'est pas terminé proprement
+        if: always() && inputs.dry_run != true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AGENT_OUTCOME: ${{ steps.agent.outcome }}
+        run: node scripts/agent/alert.mjs
+
+      - name: Échec si l'agent a échoué
+        if: steps.agent.outcome == 'failure'
+        run: |
+          echo "::error::L'agent a terminé en statut partiel ou en échec (voir le rapport)."
+          exit 1

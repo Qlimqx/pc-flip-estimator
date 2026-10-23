@@ -1,5 +1,6 @@
 import type { CpuPricing } from '../types'
 import cpuOverrides from './priceOverrides/cpuOverrides.json'
+import addedCpus from './agent/addedCpus.json'
 
 // Prix recalibrés le 2026-08-24/25 sur la base de recherches réelles
 // (annonces LeBonCoin) sur plusieurs modèles repères : i5-10400F (~55-80€
@@ -1400,7 +1401,14 @@ interface PriceOverride {
 
 const cpuOverridesTyped = cpuOverrides as Record<string, PriceOverride>
 
-export const CPUS: CpuPricing[] = BASE_CPUS.map((cpu) => {
+// Composants ajoutés par l'agent quotidien (scripts/agent/) après preuves
+// multiples ; un identifiant déjà présent dans BASE_CPUS l'emporte toujours
+// (la base écrite/relue à la main prime sur la copie de l'agent).
+const AGENT_CPUS = (addedCpus as unknown as CpuPricing[]).filter(
+  (added) => !BASE_CPUS.some((base) => base.id === added.id),
+)
+
+export const CPUS: CpuPricing[] = [...BASE_CPUS, ...AGENT_CPUS].map((cpu) => {
   const override = cpuOverridesTyped[cpu.id]
   if (!override) return cpu
   return { ...cpu, min: override.min, moyen: override.moyen, max: override.max, dateMaj: override.dateMaj }

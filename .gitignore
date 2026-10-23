@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Agent quotidien : verrou local et sauvegardes de run (publiées en artefact par le workflow)
+.agent-lock
+.agent-backup
+*.agent-tmp

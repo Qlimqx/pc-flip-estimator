@@ -1,6 +1,5 @@
 import { CONDITION_MULTIPLIER } from '../data/condition'
-import { RAM_TYPE_PRICING } from '../data/ram'
-import { STORAGE_TYPE_PRICING } from '../data/storage'
+import { EFFECTIVE_RAM_PRICING, EFFECTIVE_STORAGE_PRICING } from '../data/agent/effectiveRates'
 import type { Condition, PriceBand, RamCapacity, RamType, StorageCapacity, StorageType } from '../types'
 import { round2, scaleBand } from './priceBand'
 
@@ -50,7 +49,7 @@ export function estimateRamValue(
   type: RamType,
   condition: Condition,
 ): PriceBand {
-  const pricing = RAM_TYPE_PRICING[type]
+  const pricing = EFFECTIVE_RAM_PRICING[type]
   const base = ramOrStorageBaseBand(capacite, pricing.prixParGo, pricing.plancher)
   return adjustComponentBand(base, condition, pricing.decoteAnciennete, pricing.faciliteRevente)
 }
@@ -60,7 +59,7 @@ export function estimateStorageDriveValue(
   type: StorageType,
   condition: Condition,
 ): PriceBand {
-  const pricing = STORAGE_TYPE_PRICING[type]
+  const pricing = EFFECTIVE_STORAGE_PRICING[type]
   const base = ramOrStorageBaseBand(capacite, pricing.prixParGo, pricing.plancher)
   return adjustComponentBand(base, condition, pricing.decoteAnciennete, pricing.faciliteRevente)
 }

@@ -75,81 +75,24 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
 const OVERRIDES_DIR = path.join(ROOT, 'src/data/priceOverrides')
 
-const MIN_SAMPLES = 4
-const OUTLIER_LOW_MULT = 0.6
-const OUTLIER_HIGH_MULT = 1.8
-// Au-delà, le nuage de points retenu (même après filtrage d'outliers) est
-// jugé trop dispersé pour faire confiance aux extrêmes bruts -- la
-// fourchette écrite est resserrée autour de la médiane à la place.
-const MAX_SPREAD_RATIO = 2.2
-const TIGHT_BAND_HALF_WIDTH_PCT = 0.15
+import {
+  MIN_SAMPLES,
+  filterOutliers,
+  looksLikeBundle,
+  median,
+  round2,
+  titleMatchesModel,
+  MAX_SPREAD_RATIO,
+  TIGHT_BAND_HALF_WIDTH_PCT,
+} from './lib/pricing.mjs'
+
 const FLAG_THRESHOLD_PCT = 0.25
 const HARD_REJECT_PCT = 0.6
 const REQUEST_DELAY_MS = 250 // reste raisonnable vis-à-vis des quotas eBay
 
-// Suffixes qui, accolés à un modèle, désignent une variante différente --
-// ex: chercher "Ryzen 5 5600" ne doit pas matcher "5600G"/"5600X"/"5600H".
-// Couvre les suffixes AMD (desktop/APU/mobile/3D-cache) et GPU (Ti/Super/XT)
-// au cas où un modèle les utilise en toute fin de recherche.
-const SUFFIX_QUALIFIERS = new Set(['g', 'ge', 'gt', 'h', 'x', 'xt', 'xtx', 'x3d', 'ti', 'super'])
-
-// Titres qui trahissent un PC complet / laptop plutôt qu'un composant seul
-// -- vérifié en direct contre le vrai bruit remonté par l'API (voir
-// l'incident ci-dessus).
-const BUNDLE_KEYWORDS = [
-  'pc gamer',
-  'pc gaming',
-  'ordinateur',
-  'unité centrale',
-  'unite centrale',
-  'tour de pc',
-  'portable',
-  'laptop',
-  'ideapad',
-  'thinkcentre',
-  'thinkpad',
-  'macbook',
-  'victus',
-  'nitro',
-  'magicbook',
-  'zephyrus',
-  'legion',
-]
-
-function round2(v) {
-  return Math.round(v * 100) / 100
-}
-
-function median(values) {
-  const sorted = [...values].sort((a, b) => a - b)
-  const mid = Math.floor(sorted.length / 2)
-  return sorted.length % 2 !== 0 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2
-}
-
-function filterOutliers(prices) {
-  if (prices.length === 0) return []
-  const med = median(prices)
-  return prices.filter((p) => p >= med * OUTLIER_LOW_MULT && p <= med * OUTLIER_HIGH_MULT)
-}
-
-function looksLikeBundle(title) {
-  const t = title.toLowerCase()
-  return BUNDLE_KEYWORDS.some((kw) => t.includes(kw))
-}
-
-function titleMatchesModel(title, model) {
-  const titleNorm = title.toLowerCase()
-  const modelNorm = model.toLowerCase().trim()
-  const start = titleNorm.indexOf(modelNorm)
-  if (start === -1) return false
-  const tail = titleNorm.slice(start + modelNorm.length)
-  // Suffixe collé directement (ex: "5600g", "5600x3d") -> mauvaise variante.
-  if (tail && /^[a-z0-9]/.test(tail)) return false
-  // Suffixe séparé par un espace (ex: "5070 Ti") -> mauvaise variante.
-  const nextWord = tail.match(/^\s+([a-z0-9]+)/)
-  if (nextWord && SUFFIX_QUALIFIERS.has(nextWord[1])) return false
-  return true
-}
+// La logique de prix pure (filtrage par titre, outliers, médiane, fourchette)
+// vit dans scripts/lib/pricing.mjs, partagée avec l'agent quotidien
+// (scripts/agent/). Ce script reste utilisable en lancement manuel.
 
 async function getEbayToken() {
   const clientId = process.env.EBAY_CLIENT_ID

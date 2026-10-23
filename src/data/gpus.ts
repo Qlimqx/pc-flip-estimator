@@ -1,5 +1,6 @@
 import type { GpuPricing } from '../types'
 import gpuOverrides from './priceOverrides/gpuOverrides.json'
+import addedGpus from './agent/addedGpus.json'
 
 // Prix recalibrés le 2026-08-24 sur la base de recherches réelles (annonces
 // LeBonCoin) sur plusieurs modèles repères : GTX 1650 (~50-100€), GTX 1060
@@ -1513,7 +1514,13 @@ interface PriceOverride {
 
 const gpuOverridesTyped = gpuOverrides as Record<string, PriceOverride>
 
-export const GPUS: GpuPricing[] = BASE_GPUS.map((gpu) => {
+// Composants ajoutés par l'agent quotidien (scripts/agent/) après preuves
+// multiples ; un identifiant déjà présent dans BASE_GPUS l'emporte toujours.
+const AGENT_GPUS = (addedGpus as unknown as GpuPricing[]).filter(
+  (added) => !BASE_GPUS.some((base) => base.id === added.id),
+)
+
+export const GPUS: GpuPricing[] = [...BASE_GPUS, ...AGENT_GPUS].map((gpu) => {
   const override = gpuOverridesTyped[gpu.id]
   if (!override) return gpu
   return { ...gpu, min: override.min, moyen: override.moyen, max: override.max, dateMaj: override.dateMaj }

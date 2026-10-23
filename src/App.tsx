@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BarcodeGenerator } from './components/BarcodeGenerator'
 import { ConfigForm } from './components/ConfigForm'
+import { AgentStatus } from './components/AgentStatus'
 import { HistoryPanel } from './components/HistoryPanel'
 import { ManualOverridePanel } from './components/ManualOverridePanel'
 import { ResultsPanel } from './components/ResultsPanel'
@@ -108,6 +109,7 @@ function App() {
       </main>
 
       <footer className="border-t border-slate-800 py-6">
+        <AgentStatus />
         <p className="mx-auto max-w-6xl px-4 text-center text-xs text-slate-600">
           © {new Date().getFullYear()} Florian Schmit — Tous droits réservés
         </p>
