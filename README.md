@@ -33,21 +33,24 @@ plutôt qu'une fiche par capacité.
 
 ## Mise à jour automatique des prix
 
-Un job GitHub Actions (`.github/workflows/update-prices.yml`) interroge
-l'API eBay Browse chaque nuit à 4h UTC et rafraîchit les prix dans
-`src/data/priceOverrides/{cpu,gpu}Overrides.json` -- ces fichiers sont
-fusionnés par-dessus la donnée de base (`BASE_CPUS`/`BASE_GPUS`) au moment
-de l'import, sans jamais modifier la donnée écrite/vérifiée à la main. Le
-commit automatique déclenche un redéploiement Vercel (repo connecté).
+Un **agent quotidien** (`scripts/agent/`, workflow
+`.github/workflows/daily-agent.yml`) vérifie chaque jour les prix du
+catalogue via l'API eBay Browse, mesure les tarifs RAM/stockage, détecte les
+composants manquants (ajout automatique seulement sur preuves multiples),
+contrôle la cohérence des données et publie un rapport
+(`agent-data/reports/`). Il doit avoir terminé avant 10 h, heure de Paris :
+déclencheurs redondants, reprise après interruption, chien de garde.
+**Tout est décrit dans [`docs/AGENT.md`](docs/AGENT.md)** (fonctionnement,
+garanties et limites, lancement manuel, dépannage).
 
-Garde-fous contre une automatisation qui corromprait la base silencieusement
-(voir `scripts/update-prices.mjs` pour le détail) : rejet des annonces
-aberrantes avant calcul, minimum d'annonces valides exigé (sinon la fiche
-n'est pas touchée ce jour-là), et tout écart de prix moyen > 25% par rapport
-à la veille est consigné dans `PRICE_REVIEW.md` pour relecture humaine. Un
-second job hebdomadaire (le lundi) ouvre une issue GitHub rappelant de
-relire ces écarts -- l'automatisation rafraîchit les chiffres, elle ne
-remplace pas un contrôle humain périodique.
+Les prix rafraîchis sont écrits dans `src/data/priceOverrides/{cpu,gpu}Overrides.json`
+-- fusionnés par-dessus la donnée de base (`BASE_CPUS`/`BASE_GPUS`) à
+l'import, sans jamais modifier la donnée écrite/vérifiée à la main. Le commit
+automatique déclenche un redéploiement Vercel. Garde-fous : rejet des
+annonces aberrantes avant calcul, ancrage sur la donnée de base (rejet > 60 %,
+relecture > 25 %), saut de prix confirmé sur deux jours, écriture
+transactionnelle. L'ancien pipeline (`scripts/update-prices.mjs`) reste
+disponible en lancement manuel uniquement.
 
 ### Configuration requise
 
@@ -58,8 +61,8 @@ remplace pas un contrôle humain périodique.
    Actions → New repository secret, ajoute `EBAY_CLIENT_ID` et
    `EBAY_CLIENT_SECRET`.
 3. Le workflow tourne automatiquement à partir de là. Pour un déclenchement
-   manuel immédiat : onglet Actions → "Mise à jour quotidienne des prix" →
-   Run workflow.
+   manuel immédiat : onglet Actions → "Agent quotidien (prix et catalogue)" →
+   Run workflow (case `dry_run` pour une simulation sans écriture).
 
 Sans ces secrets configurés, le job échoue proprement (message d'erreur
 explicite) sans toucher aux données existantes -- l'appli continue de

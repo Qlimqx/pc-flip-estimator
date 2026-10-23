@@ -16,7 +16,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 /** Décide s'il faut alerter : renvoie { title, body } ou null. Fonction pure. */
 export function buildAlert({ day, report, agentOutcome, runUrl }) {
   if (report && FINAL_STATUSES.has(report.status)) {
-    if (!report.finishedBeforeTenParis) {
+    // Un lancement manuel tardif (test, relance volontaire) n'est pas un incident.
+    if (!report.finishedBeforeTenParis && report.trigger !== 'workflow_dispatch') {
       return {
         title: `Agent prix ${day} : terminé APRÈS 10 h (Paris)`,
         body: `Le rapport indique une fin à ${report.finishedParis}. ${runUrl ? `Exécution : ${runUrl}` : ''}`,

@@ -145,7 +145,9 @@ describe('alertes', () => {
     const base = { startedParis: 'a', finishedParis: 'b', counts: { unprocessed: 3 } }
     expect(buildAlert({ day, report: { ...base, status: 'partiel' } }).title).toMatch(/Partiel/)
     expect(buildAlert({ day, report: { ...base, status: 'echec', fatal: 'eBay refusé' } }).body).toMatch(/eBay refusé/)
-    expect(buildAlert({ day, report: { status: 'termine', finishedBeforeTenParis: false, finishedParis: 'x' } }).title).toMatch(/APRÈS 10 h/)
+    expect(buildAlert({ day, report: { status: 'termine', trigger: 'schedule', finishedBeforeTenParis: false, finishedParis: 'x' } }).title).toMatch(/APRÈS 10 h/)
+    // un lancement manuel tardif n'est pas un incident
+    expect(buildAlert({ day, report: { status: 'termine', trigger: 'workflow_dispatch', finishedBeforeTenParis: false, finishedParis: 'x' } })).toBeNull()
     expect(buildAlert({ day, report: null, agentOutcome: 'failure' }).title).toMatch(/sans rapport/)
     expect(buildAlert({ day, report: null, agentOutcome: 'success' })).toBeNull()
   })
