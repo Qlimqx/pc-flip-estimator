@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url'
 import { genuineListings, summarizePrices, round2 } from '../lib/pricing.mjs'
 import { CATEGORIES, checkEntries, findDuplicates, itemKey, loadCatalogue, normalizeKey } from './lib/catalogue.mjs'
 import { confirmOnWikipedia, evaluateCandidate, MAX_ADDS_PER_RUN, tallyCandidates } from './lib/discovery.mjs'
-import { createEbayClient } from './lib/ebay.mjs'
+import { EBAY_CATEGORIES, createEbayClient } from './lib/ebay.mjs'
 import { checkFormCoverage } from './lib/forms.mjs'
 import { notify } from './lib/notify.mjs'
 import {
@@ -54,19 +54,19 @@ const LIMITS = [
 ]
 
 const DISCOVERY_QUERIES = [
-  'Intel Core i3 processeur',
-  'Intel Core i5 processeur',
-  'Intel Core i7 processeur',
-  'Intel Core i9 processeur',
-  'Intel Core Ultra processeur',
-  'AMD Ryzen 3 processeur',
-  'AMD Ryzen 5 processeur',
-  'AMD Ryzen 7 processeur',
-  'AMD Ryzen 9 processeur',
-  'NVIDIA GeForce RTX carte graphique',
-  'NVIDIA GeForce GTX carte graphique',
-  'AMD Radeon RX carte graphique',
-  'Intel Arc carte graphique',
+  ['Intel Core i3 processeur', 'cpu'],
+  ['Intel Core i5 processeur', 'cpu'],
+  ['Intel Core i7 processeur', 'cpu'],
+  ['Intel Core i9 processeur', 'cpu'],
+  ['Intel Core Ultra processeur', 'cpu'],
+  ['AMD Ryzen 3 processeur', 'cpu'],
+  ['AMD Ryzen 5 processeur', 'cpu'],
+  ['AMD Ryzen 7 processeur', 'cpu'],
+  ['AMD Ryzen 9 processeur', 'cpu'],
+  ['NVIDIA GeForce RTX carte graphique', 'gpu'],
+  ['NVIDIA GeForce GTX carte graphique', 'gpu'],
+  ['AMD Radeon RX carte graphique', 'gpu'],
+  ['Intel Arc carte graphique', 'gpu'],
 ]
 const DISCOVERY_SORTS = [null, 'newlyListed']
 
@@ -367,12 +367,13 @@ export async function runAgent(opts = {}) {
       async (entry) => {
         const key = itemKey(entry)
         const st = (state.items[key] ??= {})
-        const used = await ebay.search(entry.nom, { condition: 'used' })
+        const categoryId = EBAY_CATEGORIES[entry.category]
+        const used = await ebay.search(entry.nom, { condition: 'used', categoryId })
         let candidate = null
         let newStats = null
         if (used.ok) {
           candidate = summarizePrices(genuineListings(used.items, entry.nom).map((i) => i.price))
-          const neu = await ebay.search(entry.nom, { condition: 'new' })
+          const neu = await ebay.search(entry.nom, { condition: 'new', categoryId })
           if (neu.ok) newStats = summarizePrices(genuineListings(neu.items, entry.nom).map((i) => i.price))
         }
         const overrides = catalogue.overrides[entry.category]
@@ -461,8 +462,8 @@ export async function runAgent(opts = {}) {
       const ramBase = parseRates(await readFile(path.join(root, 'src/data/ram.ts'), 'utf8'), Object.keys(RAM_PROBES))
       const stBase = parseRates(await readFile(path.join(root, 'src/data/storage.ts'), 'utf8'), Object.keys(STORAGE_PROBES))
       const groups = [
-        { prefix: 'ram', probes: RAM_PROBES, base: ramBase, over: ramOver, query: ramQuery, filter: filterRamListings, digits: 2 },
-        { prefix: 'stockage', probes: STORAGE_PROBES, base: stBase, over: storageOver, query: storageQuery, filter: filterStorageListings, digits: 3 },
+        { prefix: 'ram', probes: RAM_PROBES, base: ramBase, over: ramOver, query: ramQuery, filter: filterRamListings, digits: 2, category: () => EBAY_CATEGORIES.ram },
+        { prefix: 'stockage', probes: STORAGE_PROBES, base: stBase, over: storageOver, query: storageQuery, filter: filterStorageListings, digits: 3, category: (t) => (t === 'hdd' ? EBAY_CATEGORIES.hdd : EBAY_CATEGORIES.ssd) },
       ]
       const rsCutoff = new Date(deadlineAt.getTime() - 4 * 60000)
       for (const g of groups) {
@@ -477,7 +478,7 @@ export async function runAgent(opts = {}) {
           const byCap = {}
           let failed = false
           for (const cap of caps) {
-            const res = await ebay.search(g.query(type, cap), { condition: 'used' })
+            const res = await ebay.search(g.query(type, cap), { condition: 'used', categoryId: g.category(type) })
             if (!res.ok) {
               failed = true
               break
@@ -526,13 +527,13 @@ export async function runAgent(opts = {}) {
 
     // --- 5. composants manquants ---
     if (now() < new Date(deadlineAt.getTime() - 3 * 60000) && !ebay.stats.circuitOpen) {
-      const knownKeys = new Set(catalogue.entries.map((e) => `${e.category}:${normalizeKey(e.nom)}`))
+      const knownKeys = new Map(catalogue.entries.map((e) => [`${e.category}:${normalizeKey(e.nom)}`, e.nom]))
       const seenItems = new Map()
       let discoveryFailed = 0
-      for (const q of DISCOVERY_QUERIES) {
+      for (const [q, queryCategory] of DISCOVERY_QUERIES) {
         for (const sort of DISCOVERY_SORTS) {
           if (now() >= new Date(deadlineAt.getTime() - 3 * 60000)) break
-          const res = await ebay.search(q, { condition: 'used', sort })
+          const res = await ebay.search(q, { condition: 'used', sort, categoryId: EBAY_CATEGORIES[queryCategory] })
           if (!res.ok) {
             discoveryFailed += 1
             continue

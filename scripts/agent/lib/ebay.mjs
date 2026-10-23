@@ -13,6 +13,18 @@
 const TOKEN_URL = 'https://api.ebay.com/identity/v1/oauth2/token'
 const SEARCH_URL = 'https://api.ebay.com/buy/browse/v1/item_summary/search'
 
+// Catégories feuilles de la marketplace EBAY_FR (arbre de catégories 71, relevées
+// via l'API Taxonomy le 2026-10-23). Filtrer par catégorie écarte la grande
+// majorité des PC complets, portables et accessoires que la recherche par
+// mot-clé seul remontait (cause des rejets massifs du pipeline historique).
+export const EBAY_CATEGORIES = {
+  cpu: '164', // CPU, processeurs
+  gpu: '27386', // Cartes : graphiques, vidéo
+  ram: '170083', // Mémoire (RAM)
+  ssd: '175669', // Solid-state Drives (SSD)
+  hdd: '56083', // Disques durs internes
+}
+
 export const CONDITIONS = {
   used: '3000|4000|5000|6000',
   new: '1000',
@@ -97,7 +109,7 @@ export function createEbayClient({
    * Recherche d'annonces. Ne lève jamais : renvoie { ok, items, total, error?, kind? }.
    * `ok: true` avec `items: []` signifie vraiment « aucune annonce ».
    */
-  async function search(query, { condition = 'used', limit = 50, offset = 0, sort = null } = {}) {
+  async function search(query, { condition = 'used', limit = 50, offset = 0, sort = null, categoryId = null } = {}) {
     if (stats.circuitOpen) return { ok: false, items: [], total: 0, error: 'source déclarée indisponible pour ce run', kind: 'circuit-open' }
     const url = new URL(SEARCH_URL)
     url.searchParams.set('q', query)
@@ -105,6 +117,7 @@ export function createEbayClient({
     url.searchParams.set('limit', String(limit))
     if (offset) url.searchParams.set('offset', String(offset))
     if (sort) url.searchParams.set('sort', sort)
+    if (categoryId) url.searchParams.set('category_ids', String(categoryId))
 
     let lastError = null
     for (let attempt = 0; attempt <= maxRetries; attempt += 1) {

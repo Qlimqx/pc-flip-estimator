@@ -405,3 +405,18 @@ describe('agent : notification', () => {
     expect(failing.res.report.notification.sent).toBe(false)
   })
 })
+
+describe('agent : filtrage par catégorie eBay', () => {
+  it('chaque recherche de CPU/GPU/RAM/stockage est restreinte à sa catégorie', async () => {
+    const root = await makeRepo()
+    const ebay = fakeEbay({ table: standardTable(1.05) })
+    await run(root, ebay)
+    const byQuery = (q) => ebay.calls.filter((c) => c.query === q)
+    expect(byQuery('AMD Ryzen 5 5600').every((c) => c.categoryId === '164')).toBe(true)
+    expect(byQuery('RTX 3060').every((c) => c.categoryId === '27386')).toBe(true)
+    expect(ebay.calls.filter((c) => /RAM/.test(c.query)).every((c) => c.categoryId === '170083')).toBe(true)
+    expect(ebay.calls.filter((c) => /NVMe|SATA/.test(c.query)).every((c) => c.categoryId === '175669')).toBe(true)
+    expect(ebay.calls.filter((c) => /HDD/.test(c.query)).every((c) => c.categoryId === '56083')).toBe(true)
+    expect(ebay.calls.every((c) => c.categoryId)).toBe(true)
+  })
+})

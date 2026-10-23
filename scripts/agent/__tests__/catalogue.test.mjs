@@ -4,7 +4,7 @@ import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { checkEntries, findDuplicates, loadCatalogue, normalizeKey, parseBaseSource } from '../lib/catalogue.mjs'
 import { checkFormCoverage } from '../lib/forms.mjs'
-import { consensusVram, evaluateCandidate, extractModels, inheritSocket, makeId, tallyCandidates, confirmOnWikipedia } from '../lib/discovery.mjs'
+import { consensusVram, evaluateCandidate, extractModels, inheritSocket, makeId, nearDuplicateOf, tallyCandidates, confirmOnWikipedia } from '../lib/discovery.mjs'
 import { filterRamListings, filterStorageListings, parseRates, ratePerGo } from '../lib/ramstorage.mjs'
 import { REAL_ROOT, around, listings, makeRepo } from './helpers.mjs'
 
@@ -105,10 +105,21 @@ describe('extraction des modèles', () => {
   })
 
   it('un modèle présent sous une autre graphie n\'est pas candidat (pas de doublon)', () => {
-    const known = new Set(['cpu:i514400f'])
+    const known = new Map([['cpu:i514400f', 'Intel Core i5-14400F']])
     const items = [{ id: '1', title: 'i5 14400F boxed', seller: 'a' }, { id: '2', title: 'Core i7-13700K', seller: 'b' }]
     const tally = tallyCandidates(items, known)
     expect(tally.map((c) => c.nom)).toEqual(['Intel Core i7-13700K'])
+  })
+
+  it('une variante de capacité d\'un composant existant est un doublon possible, pas un nouveau modèle', async () => {
+    const known = new Map([['gpu:gtx10606go', 'GTX 1060 6Go'], ['gpu:rtx3060', 'RTX 3060']])
+    expect(nearDuplicateOf('gpu:gtx1060', known)).toBe('GTX 1060 6Go')
+    expect(nearDuplicateOf('gpu:rtx3060ti', known)).toBeNull() // Ti = modèle distinct
+    const [c] = tallyCandidates([{ id: '1', title: 'Carte GTX 1060', seller: 'a' }], known)
+    expect(c.nearDuplicateOf).toBe('GTX 1060 6Go')
+    const v = await evaluateCandidate(c, { search: async () => ({ ok: true, items: [] }), confirm: async () => ({ ok: true, confirmed: true }), entries: [], today: 'x' })
+    expect(v.verdict).toBe('verifier')
+    expect(v.reasons[0]).toMatch(/doublon possible/)
   })
 
   it('hérite le socket seulement si les voisins s\'accordent', () => {

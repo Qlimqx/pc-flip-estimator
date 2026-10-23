@@ -98,9 +98,31 @@ export function summarizePrices(rawPrices) {
   }
 }
 
-/** Annonces d'un composant seul dont le titre correspond exactement au modèle. */
+/**
+ * Graphies sous lesquelles un vendeur écrit couramment le modèle :
+ * « Intel Core i5-12400F » -> « i5-12400F », « i5 12400F », « Core i5-12400F » ;
+ * « AMD Ryzen 5 5600 » -> « Ryzen 5 5600 ». Le contrôle de suffixe de
+ * titleMatchesModel s'applique à chaque graphie (5600 ne matche pas 5600X).
+ */
+export function modelVariants(model) {
+  const variants = new Set([model])
+  const noBrand = model.replace(/^(intel|amd|nvidia|geforce|radeon)\s+/i, '')
+  variants.add(noBrand)
+  const noCore = noBrand.replace(/^core\s+(?=i[3579])/i, '')
+  variants.add(noCore)
+  for (const v of [...variants]) {
+    if (/i[3579]-\d/i.test(v)) variants.add(v.replace(/(i[3579])-(\d)/i, '$1 $2'))
+  }
+  return [...variants]
+}
+
+/** Annonces d'un composant seul dont le titre correspond exactement au modèle (sous l'une de ses graphies). */
 export function genuineListings(listings, model) {
+  const variants = modelVariants(model)
   return listings.filter(
-    (item) => typeof item.title === 'string' && titleMatchesModel(item.title, model) && !looksLikeBundle(item.title),
+    (item) =>
+      typeof item.title === 'string' &&
+      variants.some((v) => titleMatchesModel(item.title, v)) &&
+      !looksLikeBundle(item.title),
   )
 }

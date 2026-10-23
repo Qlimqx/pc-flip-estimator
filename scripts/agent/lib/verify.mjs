@@ -48,7 +48,11 @@ export function decidePrice({ entry, effectiveMoyen, candidate, sourceOk, newPri
     }
   }
 
-  if (newPrice && newPrice.sampleCount >= 4 && candidate.moyen > newPrice.moyen * USED_OVER_NEW_TOLERANCE) {
+  // Le prix neuf n'est un garde-fou que s'il est plausible : un « neuf » à moins de
+  // la moitié de la référence d'occasion est quasi sûrement un accessoire ou une
+  // annonce mal classée, pas le composant.
+  const newReliable = newPrice && newPrice.sampleCount >= 4 && newPrice.moyen >= entry.baseMoyen * 0.5
+  if (newReliable && candidate.moyen > newPrice.moyen * USED_OVER_NEW_TOLERANCE) {
     return {
       action: 'keep',
       status: 'rejete',

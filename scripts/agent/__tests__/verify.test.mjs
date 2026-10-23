@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest'
-import { filterOutliers, genuineListings, looksLikeBundle, summarizePrices, titleMatchesModel } from '../../lib/pricing.mjs'
+import { filterOutliers, genuineListings, looksLikeBundle, modelVariants, summarizePrices, titleMatchesModel } from '../../lib/pricing.mjs'
 import { decidePrice } from '../lib/verify.mjs'
 
 const entry = { baseMoyen: 100 }
@@ -14,6 +14,13 @@ describe('filtrage par titre (garde-fous hérités des incidents)', () => {
     expect(titleMatchesModel('RTX 4070 Ti Super', 'RTX 4070')).toBe(false)
     expect(looksLikeBundle('PC Gamer RTX 3080 Ryzen 5 5600')).toBe(true)
     expect(genuineListings([{ title: 'PC Gamer AMD Ryzen 5 5600' }, { title: 'AMD Ryzen 5 5600' }], 'AMD Ryzen 5 5600')).toHaveLength(1)
+  })
+
+  it('reconnaît les graphies courantes d\'un modèle sans confondre les variantes', () => {
+    expect(modelVariants('Intel Core i5-12400F')).toEqual(expect.arrayContaining(['i5-12400F', 'i5 12400F', 'Core i5-12400F']))
+    const titles = ['Processeur i5 12400F LGA1700', 'Core i5-12400 (sans F)', 'Intel i5-12400F boxed', 'PC Gamer i5-12400F RTX']
+    expect(genuineListings(titles.map((title) => ({ title })), 'Intel Core i5-12400F')).toHaveLength(2)
+    expect(genuineListings([{ title: 'Ryzen 5 5600X' }, { title: 'Ryzen 5 5600 AM4' }], 'AMD Ryzen 5 5600')).toHaveLength(1)
   })
 
   it('exige 4 annonces valides et écarte les outliers', () => {
@@ -70,6 +77,11 @@ describe('décision de prix', () => {
   it('source indisponible ou données insuffisantes : valeur conservée', () => {
     expect(decidePrice({ entry, effectiveMoyen: 100, candidate: null, sourceOk: false, today: 'x' }).status).toBe('source-indisponible')
     expect(decidePrice({ entry, effectiveMoyen: 100, candidate: null, sourceOk: true, today: 'x' }).status).toBe('donnees-insuffisantes')
+  })
+
+  it('ignore un prix « neuf » implausible (moins de la moitié de la référence : accessoire mal classé)', () => {
+    const d = decidePrice({ entry, effectiveMoyen: 100, candidate: cand(110), sourceOk: true, newPrice: { moyen: 40, sampleCount: 8 }, today: 'x' })
+    expect(d.action).toBe('update')
   })
 
   it('refuse un prix d\'occasion supérieur au prix neuf', () => {

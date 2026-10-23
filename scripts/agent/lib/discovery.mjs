@@ -17,6 +17,7 @@
 
 import { genuineListings, round2, summarizePrices, median } from '../../lib/pricing.mjs'
 import { nearestNeighbor, normalizeKey } from './catalogue.mjs'
+import { EBAY_CATEGORIES } from './ebay.mjs'
 
 export const MIN_LISTINGS = 6
 export const MIN_SELLERS = 3
@@ -137,8 +138,28 @@ export async function confirmOnWikipedia(modelCore, { fetchImpl = globalThis.fet
   return { ok: reachable, confirmed: false }
 }
 
-/** Compte, par modèle absent du catalogue, les annonces vues dans des titres. */
-export function tallyCandidates(items, knownKeys) {
+/**
+ * Variante d'un composant déjà au catalogue : « GTX 1060 » face à « GTX 1060 6Go »
+ * (la clé du catalogue prolonge celle du candidat par une capacité). Un suffixe de
+ * gamme (Ti, Super, XT, F, K…) désigne au contraire un modèle distinct.
+ */
+export function nearDuplicateOf(key, known) {
+  const [category, bare] = key.split(':')
+  for (const [otherKey, nom] of known) {
+    const [otherCategory, otherBare] = otherKey.split(':')
+    if (otherCategory !== category || otherBare === bare) continue
+    const [shorter, longer] = bare.length < otherBare.length ? [bare, otherBare] : [otherBare, bare]
+    if (longer.startsWith(shorter) && /^\d+(go|gb)$/.test(longer.slice(shorter.length))) return nom
+  }
+  return null
+}
+
+/**
+ * Compte, par modèle absent du catalogue, les annonces vues dans des titres.
+ * `known` : Map « catégorie:clé normalisée » -> nom du composant du catalogue.
+ */
+export function tallyCandidates(items, known) {
+  const knownKeys = known instanceof Map ? known : new Map([...known].map((k) => [k, k]))
   const tally = new Map()
   for (const item of items) {
     if (typeof item.title !== 'string') continue
@@ -152,7 +173,12 @@ export function tallyCandidates(items, knownKeys) {
       tally.set(key, entry)
     }
   }
-  return [...tally.values()].map((c) => ({ ...c, listingCount: c.ids.size, sellerCount: c.sellers.size }))
+  return [...tally.values()].map((c) => ({
+    ...c,
+    listingCount: c.ids.size,
+    sellerCount: c.sellers.size,
+    nearDuplicateOf: nearDuplicateOf(c.key, knownKeys),
+  }))
 }
 
 const GENERATION = (entry) => {
@@ -198,11 +224,15 @@ export function consensusVram(titles) {
  */
 export async function evaluateCandidate(candidate, { search, confirm, entries, today }) {
   const reasons = []
+  if (candidate.nearDuplicateOf) {
+    return { verdict: 'verifier', reasons: [`variante proche d'un composant déjà au catalogue (« ${candidate.nearDuplicateOf} ») : doublon possible`] }
+  }
   if (candidate.listingCount < MIN_LISTINGS) reasons.push(`seulement ${candidate.listingCount} annonce(s) (minimum ${MIN_LISTINGS})`)
   if (candidate.sellerCount < MIN_SELLERS) reasons.push(`seulement ${candidate.sellerCount} vendeur(s) distinct(s) (minimum ${MIN_SELLERS})`)
   if (reasons.length) return { verdict: 'verifier', reasons }
 
-  const used = await search(candidate.nom, { condition: 'used' })
+  const categoryId = EBAY_CATEGORIES[candidate.category]
+  const used = await search(candidate.nom, { condition: 'used', categoryId })
   if (!used.ok) return { verdict: 'verifier', reasons: [`recherche ciblée impossible : ${used.error}`], retryable: true }
   const genuine = genuineListings(used.items, candidate.nom)
   const stats = summarizePrices(genuine.map((i) => i.price))
@@ -210,7 +240,7 @@ export async function evaluateCandidate(candidate, { search, confirm, entries, t
     return { verdict: 'verifier', reasons: [`prix d'occasion inexploitable : ${genuine.length} annonce(s) valide(s) sur ${used.items.length} (minimum 4)`] }
   }
 
-  const neu = await search(candidate.nom, { condition: 'new' })
+  const neu = await search(candidate.nom, { condition: 'new', categoryId })
   const newStats = neu.ok ? summarizePrices(genuineListings(neu.items, candidate.nom).map((i) => i.price)) : null
   if (newStats && stats.moyen > newStats.moyen * 1.05) {
     return { verdict: 'verifier', reasons: [`prix d'occasion (${stats.moyen} €) supérieur au prix neuf demandé (${newStats.moyen} €)`] }
