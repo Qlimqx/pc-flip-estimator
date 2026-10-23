@@ -26,6 +26,9 @@ export function evaluateWatchdog({ now, report, activeRuns }) {
     if (report.finishedBeforeTenParis) {
       return { level: 'ok', relaunch: false, message: `Agent terminé à ${report.finishedParis} (statut ${report.status}).` }
     }
+    if (report.trigger === 'workflow_dispatch') {
+      return { level: 'ok', relaunch: false, message: `Exécution manuelle tardive (fin ${report.finishedParis}) : pas un incident.` }
+    }
     return {
       level: 'en-retard',
       relaunch: false,

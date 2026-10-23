@@ -123,6 +123,8 @@ describe('chien de garde', () => {
     const v = evaluateWatchdog({ now: at('11:40'), report: report({ finishedBeforeTenParis: false }), activeRuns: 0 })
     expect(v).toMatchObject({ level: 'en-retard', relaunch: false })
     expect(v.title).toMatch(/APRÈS 10 h/)
+    // un lancement manuel tardif n'est pas un incident
+    expect(evaluateWatchdog({ now: at('11:40'), report: report({ finishedBeforeTenParis: false, trigger: 'workflow_dispatch' }), activeRuns: 0 }).level).toBe('ok')
   })
   it('aucun rapport à 10 h : alerte et relance', () => {
     expect(evaluateWatchdog({ now: at('10:07'), report: null, activeRuns: 0 })).toMatchObject({ level: 'absent', relaunch: true })
