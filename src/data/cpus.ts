@@ -152,10 +152,10 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i5-4590',
     marque: 'Intel',
     socket: 'LGA1150',
-    min: 15,
-    moyen: 22,
-    max: 30,
-    dateMaj: '2026-08-25',
+    min: 35,
+    moyen: 50,
+    max: 65,
+    dateMaj: '2026-10-23',
     faciliteRevente: 0.3,
     decoteAnciennete: 0.8,
     tier: 1,
@@ -178,10 +178,10 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i7-4770K',
     marque: 'Intel',
     socket: 'LGA1150',
-    min: 24,
-    moyen: 32,
-    max: 42,
-    dateMaj: '2026-08-25',
+    min: 42,
+    moyen: 48,
+    max: 60,
+    dateMaj: '2026-10-23',
     faciliteRevente: 0.32,
     decoteAnciennete: 0.8,
     tier: 2,
@@ -497,10 +497,13 @@ const BASE_CPUS: CpuPricing[] = [
     // 126€) x0,7 ~ 77-88€, cohérents entre eux -- l'ancienne valeur (106€)
     // surpondérait le marketplace Amazon pro (146,66€, hors norme occasion
     // particulier) au détriment de LeBonCoin.
-    min: 45,
-    moyen: 65,
-    max: 90,
-    dateMaj: '2026-10-16',
+    // Léger ajustement le 2026-10-23 : neuf actuel Grosbill (tray) 102-105€
+    // + agrégateur occasion FR ~89€, impliquant une occasion plutôt vers
+    // 71-75€ qu'avant.
+    min: 55,
+    moyen: 75,
+    max: 95,
+    dateMaj: '2026-10-23',
     faciliteRevente: 0.6,
     decoteAnciennete: 0.92,
     tier: 2,
