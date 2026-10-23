@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "id": "i3-7100",
+    "nom": "Intel Core i3-7100",
+    "marque": "Intel",
+    "min": 9.49,
+    "moyen": 11.16,
+    "max": 12.83,
+    "dateMaj": "2026-10-23",
+    "faciliteRevente": 0.2,
+    "decoteAnciennete": 0.65,
+    "tier": 1,
+    "socket": "LGA1151",
+    "agent": {
+      "ajouteLe": "2026-10-23",
+      "confiance": "moyenne",
+      "sources": [
+        "eBay Browse FR (annonces d'occasion, prix demandés)",
+        "en.wikipedia.org"
+      ],
+      "attributsEstimes": [
+        "tier",
+        "faciliteRevente",
+        "decoteAnciennete",
+        "socket"
+      ],
+      "voisinReference": "i5-2500k",
+      "echantillons": 17,
+      "prixNeufIndicatif": null,
+      "annoncesVues": 6,
+      "vendeursDistincts": 6
+    }
+  },
+  {
+    "id": "i3-6100",
+    "nom": "Intel Core i3-6100",
+    "marque": "Intel",
+    "min": 9.18,
+    "moyen": 10.8,
+    "max": 12.42,
+    "dateMaj": "2026-10-23",
+    "faciliteRevente": 0.2,
+    "decoteAnciennete": 0.65,
+    "tier": 1,
+    "socket": "LGA1151",
+    "agent": {
+      "ajouteLe": "2026-10-23",
+      "confiance": "moyenne",
+      "sources": [
+        "eBay Browse FR (annonces d'occasion, prix demandés)",
+        "en.wikipedia.org"
+      ],
+      "attributsEstimes": [
+        "tier",
+        "faciliteRevente",
+        "decoteAnciennete",
+        "socket"
+      ],
+      "voisinReference": "i3-7100",
+      "echantillons": 24,
+      "prixNeufIndicatif": null,
+      "annoncesVues": 6,
+      "vendeursDistincts": 6
+    }
+  }
+]

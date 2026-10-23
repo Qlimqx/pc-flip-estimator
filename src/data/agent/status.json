@@ -1,4 +1,10 @@
 {
-  "date": null,
-  "status": "jamais-execute"
+  "date": "2026-10-23",
+  "status": "termine_avec_avertissements",
+  "finishedAt": "2026-10-23 20:31 (Paris)",
+  "catalogue": 210,
+  "verified": 96,
+  "updated": 33,
+  "added": 2,
+  "warnings": 2
 }
