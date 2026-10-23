@@ -1,0 +1,19 @@
+# SONDE TEMPORAIRE : mesure le retard réel des déclencheurs planifiés GitHub (minutes hors pointe).
+# Aucun effet sur les données. À supprimer après la mesure.
+name: probe-schedule
+run-name: probe ${{ github.event.schedule || 'manuel' }}
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+    - cron: '47 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "schedule='${{ github.event.schedule }}' now=$(date -u +%FT%TZ)"
