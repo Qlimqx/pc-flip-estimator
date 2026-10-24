@@ -5546,3 +5546,45 @@ Vérification manuelle (recherche web réelle via 6 agents de recherche en paral
 - **Intel Core i3-8100** (cpu) : 19.95€ → 20€ (-29% vs référence)
 - **RX 480** (gpu) : 146.3€ → 146.3€ (27% vs référence)
 - **Intel Core i5-4590** (cpu) : 35€ → 33.45€ (-33% vs référence)
+
+## 2026-10-24
+
+### Vérifié par agent IA le 2026-10-24
+
+Vérification manuelle (recherche web réelle via 3 agents de recherche en parallèle — LeBonCoin via WebSearch, eBay.fr/.de, LDLC/TopAchat/Materiel.net/Amazon.fr, Cowcotland/Clubic/Pause Hardware pour le contexte pénurie DRAM/NAND) ciblant en priorité les composants non encore revérifiés depuis le calibrage initial du 2026-08-24/25, complétée par une rotation Priorité 2 et un contrôle RAM/stockage.
+
+**Note de méthode sur le choix du périmètre** : la section "### Rejetés" la plus récente ("## 2026-10-23 (agent quotidien)", ~56 entrées CPU+GPU) recoupe à ~80% les entrées déjà vérifiées avec sources réelles dans les sections "Vérifié par agent IA" du 2026-10-22 et du 2026-10-23 ci-dessus (même matériel ancien rejeté nuit après nuit par le pipeline eBay pour la même raison structurelle : bruit de scraping, pas de dérive réelle du marché FR en 24-48h). Plutôt que de re-dépenser le budget du jour à re-rechercher à l'identique des conclusions déjà sourcées il y a 24-48h, j'ai concentré la recherche fraîche d'aujourd'hui sur : (a) les entrées de cette liste "Rejetés" qui n'avaient PAS encore été vérifiées avec des sources réelles (recherche de l'historique des sections précédentes), et (b) les entrées explicitement flaguées "à revérifier au prochain run" dans les notes des jours précédents. Les ~45 entrées restantes de la liste "Rejetés" du 2026-10-23, déjà vérifiées à fond les 2026-10-22/23 (voir sections ci-dessus, sources citées), ne sont PAS re-listées individuellement ici pour éviter la redondance, mais restent considérées comme à jour.
+
+**Priorité 1 -- 5 CPU anciens non revérifiés depuis le calibrage initial du 08-24/25, tous présents dans la liste "Rejetés" du 2026-10-23 :**
+
+**5 entrées corrigées (BASE_CPUS)** :
+- `i7-4790k` : 22/33/44€ → **30/58/100€** (6 annonces LeBonCoin "i7-4790K" processeur seul convergentes : 30€, 38€, 60€, 70€, 80€, 100€ — cluster central 60-80€ ; corroboré par eBay.de 55€ et eBay.co.uk ~61€)
+- `i7-3770k` : 15/22/30€ → **35/48/60€** (5 annonces LeBonCoin "i7-3770K" seul : Vienne 60€ ×2, Taillan-Médoc 40€, Manduel 50€, Paris 8e 40€ ; corroboré qualitativement par forum.hardware.fr où un vendeur à 115€ est jugé "cher" par la communauté)
+- `i5-3570k` : 10/15/21€ → **20/30/45€** (6 annonces LeBonCoin individuelles distinctes : Pessac 20€, Toulon 20€, Chambray-lès-Tours 25€, Bron 35€, Hesdigneul-lès-Béthune 45€)
+- `fx-6300` : 7/11/16€ → **15/22/30€** (annonces LeBonCoin : Bourgoin-Jallieu 15€, Téteghem-Coudekerque-Village 20€, Chadrac 20€, 2×30€ ; corroboré par FX-6350 à 45€ et FX-6300 Black Edition+ventirad à 50€)
+- `ryzen-7-3800x` : 108/128/148€ → **70/98/130€** (6-7 annonces LeBonCoin "Ryzen 7 3800X" seul, hors 3700X/3800XT : 70€, 95€, 100€, 130€ ×2 ; corroboré par forum CowcotLand, vente à 60€ sans ventirad)
+
+**Constat notable** : ces 4 CPU très anciens (4790K, 3770K, 3570K, FX-6300) étaient sous-évalués de façon systématique (+70% à +130% par rapport au marché LeBonCoin observé aujourd'hui) depuis leur calibrage initial du 08-24/25, jamais revérifiés individuellement depuis. Ce n'est PAS le même phénomène que la pollution eBay documentée pour les vieux GPU (bruit de scraping côté pipeline automatique) : ici, la base elle-même était restée figée sur une estimation initiale par interpolation jamais recoupée avec des annonces réelles. À garder en tête pour prioriser d'autres très vieux CPU/GPU jamais individuellement revérifiés depuis le 08-24/25 lors des prochaines rotations.
+
+**2 CPU flagués "à revérifier" dans les notes précédentes, revérifiés aujourd'hui, valeur conservée** :
+- `ryzen-5-1600` : conservé 25/33/42€ (8 annonces LeBonCoin convergentes, cluster central 30-35€, cohérent)
+- `ryzen-9-3900x` : conservé 148/172/198€ (signal contradictoire du run précédent résolu : 8 annonces LeBonCoin FR "processeur seul" 100-250€, moyenne 172,5€ quasi identique à la base ; le point à 250€ n'est pas un outlier isolé mais fait partie d'une distribution normale du marché FR, plus cher que les points eBay internationaux non-FR utilisés par erreur comme référence précédemment)
+
+**Priorité 1/2 combinées -- 9 GPU ciblés (gap de vérification + flagués par les notes des jours précédents + rotation matériel récent, curseur avancé de l'index 63 à 75)** :
+
+**2 entrées corrigées (BASE_GPUS)** :
+- `rx-5600-xt` : 78/96/115€ → **95/120/145€** (2 sources indépendantes convergentes : eBay.de annonce active vendeuse basée en France, MSI MECH OC 6Go bon état, 125€ ; eBay.de Allemagne, MSI MECH 6Go sans boîte, vente conclue 119€ après offre acceptée)
+- `gtx-1650` (standard, hors Super) : 55/70/85€ → **60/82/105€** (4 sources convergentes au-dessus de 75€ : LeBonCoin Pessac ~100€, eBay France Lanester 85€, eBay.de ~77-89€ ×2 ; signal de hausse modérée probablement lié à la raréfaction générale des vieilles cartes bas de gamme dans le contexte de pénurie mémoire)
+
+**7 entrées vérifiées, valeur de base conservée** :
+- `rx-560` (25/33/42€, non revérifié depuis 08-25) : cohérent, points occasion 25,81-48,57€ encadrent bien la fourchette
+- `gtx-1660` standard (70/88/105€, non revérifié depuis 08-24) : cohérent, cluster occasion 65-90€ sous les variantes Super/Ti observées à 100-115€
+- `rtx-5080` (1000/1200/1400€) : cohérent, sanity-check neuf actuel (1600-1829€, hausse confirmée Heise/LDLC/tracker eBay) ×0,7 ≈ 1120-1280€, encadre bien le moyen stocké ; 1 point LeBonCoin à 1050€ (carte "quasi neuve") cohérent ; tendance haussière à surveiller
+- `rtx-3090` (650/900/1300€) : cohérent, 4 annonces LeBonCoin carte seule 800-1300€ + tracker eBay international ~1100-1150€ ; tendance haussière confirmée (demande IA/LLM 24Go VRAM), un point LeBonCoin à 1400€ dépasse déjà le max — à revérifier en priorité au prochain run
+- `rtx-4060` (200/240/280€, corrigé le 10-23) : confirmé, 3 annonces FR/localisées indépendantes 200-250€ ; l'override eBay rejeté à 364€ (+52%) est confirmé comme une anomalie (probablement bundle ou modèle haut de gamme mal filtré)
+- `rx-9070-xt` (655/700/750€, non revérifié depuis 08-24 malgré rejets eBay systématiques à +80-140%) : confirmé, prix neuf actuel 749-769€ (hausse confirmée par pénurie GDDR) rend le sanity-check neuf×0,7 inapplicable (l'occasion récente reste proche du neuf en période de pénurie) ; 1 point occasion UK ~693€ cohérent ; les rejets eBay à +80-140% restent implausibles et confirmés comme pollution de données
+- `rx-5500-xt`, `rx-5700`, `rtx-2060`, `rtx-2060-super`, `rtx-2070`, `rtx-3070`, `rx-6800` (rotation Priorité 2) : tous cohérents avec la base actuelle, écarts <15-20% sur les sources trouvées (confiance variable, faible à élevée selon la carte — voir détail dans les rapports de recherche, `rx-6800` en particulier n'a aucune annonce directe de la variante non-XT, estimation indirecte seulement)
+
+**RAM/stockage** : contrôle par recherche web directe. Presse confirme une accélération de la pénurie DRAM (DDR4 spot +172% depuis janvier 2026 selon Clubic, +24% sur 3 mois en contrats selon Pause Hardware) et NAND, mais les annonces LeBonCoin occasion trouvées aujourd'hui restent dans la tolérance du calibrage actuel : DDR4 16Go occasion 60-75€ (HyperX Fury, G.Skill Ripjaws V) soit ~3,75-4,7€/Go contre 4€/Go stocké ; DDR5 32Go neuf référence Cowcotland 427-470€ (août-sept 2026), cohérent avec le contexte déjà intégré au calibrage 7€/Go du 10-17. Aucune donnée occasion NVMe/SSD datée trouvée (comme les jours précédents). **Aucune correction nécessaire** — à noter : le pipeline eBay automatisé (`daily-agent`) a lui-même flagué ddr4/ssd/nvme en "en-attente-confirmation" (sauts de +36 à +57% mesurés le 10-23 sur ses propres annonces eBay demandées) ; mes recherches LeBonCoin directes d'aujourd'hui ne confirment pas une hausse de cette ampleur sur le marché occasion FR réel, mais le sujet reste à surveiller de près étant donné l'accélération confirmée de la pénurie.
+
+**Méthodologie process** : recherche effectuée par 3 sous-agents parallèles (mandat strictement limité à WebSearch/WebFetch, aucune écriture de fichier ni commit autorisé), complétée par le contrôle RAM/stockage effectué directement par l'agent orchestrateur. Toutes les décisions finales et toutes les écritures dans `cpus.ts`/`gpus.ts`/`verification-cursor.json` ont été faites directement par l'agent orchestrateur après recoupement des rapports. `npm install` (dépendances absentes au démarrage de la session), build (`tsc -b && vite build`), lint (`oxlint`) et tests (`npx vitest run`, 117/117) passés avec succès après ces ajustements.
