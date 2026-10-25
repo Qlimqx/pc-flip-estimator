@@ -155,8 +155,19 @@ export async function runAgent(opts = {}) {
   const ramStorage = []
   const requestResults = []
   let fatal = null
+  let stateRef = null
   let catalogue = null
   let ebay = null
+
+  // Totaux cumulés du jour (reprises comprises) : un relancement qui n'a plus rien à
+  // vérifier ne doit pas afficher « 0 vérifié » alors que le catalogue l'a été ce matin.
+  const dayTotals = () => {
+    const items = Object.entries(stateRef?.items ?? {}).filter(([k]) => /^(cpu|gpu):/.test(k))
+    return {
+      verifiedToday: items.filter(([, v]) => v.lastVerifiedOn === day).length,
+      changedToday: items.filter(([, v]) => v.lastChangedOn === day).length,
+    }
+  }
 
   const finish = async (extra = {}) => {
     const finishedAt = now()
@@ -209,6 +220,7 @@ export async function runAgent(opts = {}) {
         missingDetected: manualReview.filter((m) => m.kind === 'composant-manquant').length,
         absentOrObsolete: absentOrObsolete.length,
         anomalies: anomalies.length,
+        ...dayTotals(),
       },
       sources,
       warnings: statusWarnings,
@@ -296,6 +308,7 @@ export async function runAgent(opts = {}) {
     }
     const state = await readJsonStrict(path.join(root, stateRel), { version: 1, items: {}, missing: {}, rates: {} })
     state.items ??= {}
+    stateRef = state
     state.missing ??= {}
     state.rates ??= {}
     const ramOver = await readJsonStrict(path.join(root, ramOverRel), {})

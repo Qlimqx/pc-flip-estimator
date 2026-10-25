@@ -110,8 +110,8 @@ export function publicStatus(r) {
     status: r.status,
     finishedAt: r.finishedParis,
     catalogue: r.counts.catalogue,
-    verified: r.counts.verified,
-    updated: r.counts.updated,
+    verified: r.counts.verifiedToday ?? r.counts.verified,
+    updated: r.counts.changedToday ?? r.counts.updated,
     added: r.counts.added,
     warnings: r.warnings.length,
   }

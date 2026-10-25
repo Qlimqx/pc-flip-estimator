@@ -480,3 +480,14 @@ describe('workflow : publication des archives', () => {
     expect(yml).toContain('docs/price-review-archive')
   })
 })
+
+describe('agent : statut public cumulé du jour', () => {
+  it('un relancement forcé sans rien à vérifier n\'affiche pas « 0 vérifié »', async () => {
+    const root = await makeRepo()
+    await run(root, fakeEbay({ table: standardTable(1.05) }))
+    await run(root, fakeEbay({ table: standardTable(1.05) }), { force: true, iso: '2026-10-24T06:00:00Z' })
+    const status = await readJson(root, 'src/data/agent/status.json')
+    expect(status.verified).toBe(6)
+    expect(status.updated).toBe(6)
+  })
+})
