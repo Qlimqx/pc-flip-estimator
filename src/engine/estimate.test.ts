@@ -51,7 +51,7 @@ describe('estimate -- config milieu de gamme DDR4 (exemple de la spec)', () => {
       ramType: 'ddr4',
       disques: [{ id: '1', type: 'nvme', capacite: 1000 }],
       condition: 'bon',
-      prixAchat: 550,
+      prixAchat: 525,
     })
 
     const result = estimate(config)
@@ -63,6 +63,14 @@ describe('estimate -- config milieu de gamme DDR4 (exemple de la spec)', () => {
     // erreur de calibration. On garde une fourchette large plutôt qu'une
     // valeur pile, le but étant de couvrir une éventuelle repasse de
     // calibration plutôt qu'un chiffre figé.
+    //
+    // prixAchat abaissé de 550€ à 525€ le 2026-10-25 : le Ryzen 5 5600
+    // (hors X/G) était sous-évalué de ~30% en base depuis le calibrage
+    // initial du 08-24 (72/85/100€ vs 95/110/125€ avant, cf. cpus.ts,
+    // sources LeBonCoin + eBay.co.uk vente conclue) -- à 550€ d'achat, la
+    // marge réelle tombe désormais à ~15,9% ("marge faible"), sous le
+    // seuil "bonne affaire" (17,5%). 525€ restaure une marge ~21%,
+    // cohérente avec l'intention originale de l'exemple.
     expect(result.revente.moyen).toBeGreaterThan(550)
     expect(result.revente.moyen).toBeLessThan(1300)
     expect(result.benefice).not.toBeNull()

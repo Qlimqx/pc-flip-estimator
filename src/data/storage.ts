@@ -54,6 +54,18 @@ export const STORAGE_TYPE_LABELS: Record<StorageType, string> = {
 // suivi la hausse de la pénurie NAND sur le neuf. nvme ramené à 0,095€/Go
 // (ddr4/ddr5/ssd inchangés, re-sondés ce jour et toujours dans la
 // tolérance).
+//
+// Corrigé le 2026-10-25 : le neuf mainstream a continué de grimper sous
+// l'effet de la pénurie NAND (Samsung 990 EVO Plus 1To ~179€, Samsung 990
+// 1To ~225€ -- comparateur-gamer.fr) pendant que nvme était resté figé au
+// niveau du 10-18, se retrouvant sous le bas de gamme neuf actuel (Crucial
+// P5 Plus 1To ~110€), ce qui est incohérent pour un tarif censé rester
+// sous le neuf. Faute d'annonce LeBonCoin NVMe directe exploitable ce
+// jour, extrapolation prudente via le ratio occasion/neuf observé sur la
+// DDR5 (~65-70%) : nvme relevé à 0,11€/Go et le plancher à 45€ -- à
+// confirmer par une recherche LeBonCoin directe au prochain cycle (confiance
+// plus faible que d'habitude, pas de donnée occasion directe collectée ce
+// jour). ddr4/ddr5/ssd : voir ram.ts, corrigé le même jour pour la ddr5.
 export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
   hdd: {
     prixParGo: 0.018,
@@ -68,8 +80,8 @@ export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
     decoteAnciennete: 1.0,
   },
   nvme: {
-    prixParGo: 0.095,
-    plancher: 40,
+    prixParGo: 0.11,
+    plancher: 45,
     faciliteRevente: 0.8,
     decoteAnciennete: 1.05,
   },
