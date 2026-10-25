@@ -35,3 +35,38 @@ export function buildRequestUrl(kind: RequestKind, query: string): string {
   })
   return `${REPO_URL}/issues/new?${params.toString()}`
 }
+
+export type SendResult =
+  | { ok: true; message: string }
+  | { ok: false; message: string; fallback: boolean }
+
+/**
+ * Envoie la demande à la fonction du site (POST /api/request-component), qui crée
+ * l'issue pour l'agent sans que le visiteur ait besoin d'un compte GitHub.
+ * `fallback: true` = l'envoi direct est indisponible (non configuré, réseau, absent
+ * en développement local) : l'interface propose alors le lien GitHub.
+ */
+export async function sendComponentRequest(
+  kind: RequestKind,
+  name: string,
+  fetchImpl: typeof fetch = (...args) => fetch(...args),
+): Promise<SendResult> {
+  try {
+    const res = await fetchImpl('/api/request-component', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ kind, name: name.trim(), website: '' }),
+    })
+    let data: { ok?: boolean; message?: string; error?: string } = {}
+    try {
+      data = await res.json()
+    } catch {
+      return { ok: false, message: 'Réponse inattendue du serveur.', fallback: true }
+    }
+    if (res.ok && data.ok) return { ok: true, message: data.message ?? 'Demande envoyée.' }
+    const fallback = res.status === 404 || res.status >= 500 || data.error === 'not-configured' || data.error === 'upstream'
+    return { ok: false, message: data.message ?? 'Envoi impossible.', fallback }
+  } catch {
+    return { ok: false, message: 'Envoi impossible (réseau).', fallback: true }
+  }
+}

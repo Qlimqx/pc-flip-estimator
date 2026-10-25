@@ -526,7 +526,7 @@ export async function runAgent(opts = {}) {
         }
         const verdict = await evaluateCandidate(
           { ...cand, requested: true, listingCount: 0, sellerCount: 0, nearDuplicateOf: nearDuplicateOf(key, known) },
-          { search: (q, o) => ebay.search(q, o), confirm: confirmRequest, entries: catalogue.entries, today: day, neufRatio: neufRatios[cand.category] ?? null, userPrice: parseUserPrice(req.body) },
+          { search: (q, o) => ebay.search(q, o), confirm: confirmRequest, entries: catalogue.entries, today: day, neufRatio: neufRatios[cand.category] ?? null, userPrice: req.fromSite ? null : parseUserPrice(req.body) },
         )
         st.attempts += 1
         if (verdict.verdict === 'ajouter') {

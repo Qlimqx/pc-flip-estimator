@@ -52,12 +52,21 @@ Les attributs qu'aucune source ne fournit (`tier`, `faciliteRevente`, `decoteAnc
 
 ### Demander l'ajout d'un composant depuis l'application
 
-Si un processeur ou une carte graphique est absent de la liste (ex. « Ryzen 5 5700 »), le champ de recherche l'indique (« … n'est pas dans la liste ») et propose **Demander son ajout** : un lien ouvre une issue GitHub préremplie (libellé `composant-demande`). Au prochain run, l'agent :
+Si un processeur ou une carte graphique est absent de la liste (ex. « Ryzen 5 5700 »), le champ de recherche l'indique (« … n'est pas dans la liste ») et propose **Demander son ajout**. Le clic envoie la demande **directement depuis le site, sans compte GitHub** : la fonction Vercel `api/request-component.js` valide le nom (même extraction de modèle que l'agent, caractères limités, champ piège anti-robot, une instance limitée à 8 demandes / 10 min, plafond de 30 demandes ouvertes, pas de doublon) puis crée une issue GitHub `[Demande] …` (libellés `composant-demande` + `depuis-le-site`) avec un jeton réservé aux issues. Le texte du visiteur n'est jamais recopié : seul le nom canonique reconnu est écrit.
 
-1. lit les issues ouvertes portant ce libellé (**seulement celles du propriétaire / membres / collaborateurs** : le dépôt est public, les demandes d'inconnus sont ignorées) ;
+**Activation (une seule fois, par vous)** — le jeton ne peut pas être créé automatiquement :
+1. GitHub → *Settings* → *Developer settings* → *Personal access tokens* → *Fine-grained tokens* → *Generate new token* : *Repository access* = **uniquement** `Qlimqx/pc-flip-estimator`, permission **Issues : Read and write** (rien d'autre), expiration au choix (noter la date de renouvellement).
+2. Vercel → projet → *Settings* → *Environment Variables* : `GITHUB_REQUEST_TOKEN` = ce jeton (Production). Facultatif : `GITHUB_REPO` (défaut `Qlimqx/pc-flip-estimator`).
+3. *Redeploy* le projet.
+
+Tant que la variable est absente, la fonction répond « non activé » et le site propose à la place le lien GitHub préremplie (repli).
+
+Au prochain run, l'agent :
+
+1. lit les issues ouvertes portant ce libellé (**seulement celles du propriétaire / membres / collaborateurs** : le dépôt est public, les demandes d'inconnus sont ignorées ; les issues créées par la fonction du site comptent comme du propriétaire, d'où les contrôles ci-dessus et les preuves ci-dessous) ;
 2. reconstruit le nom du modèle par extraction (le texte libre n'est jamais recopié dans les données) ;
 3. applique les mêmes preuves que pour la découverte (annonces d'occasion exploitables, cohérence avec le neuf, confirmation indépendante) — seul le minimum d'annonces vues dans la découverte générale est levé, puisque la demande vaut intérêt ;
-   Prix d'une demande, par ordre de priorité : (a) annonces d'occasion exploitables (confiance « moyenne »/« faible » selon le nombre) ; (b) sinon **prix neuf demandé × ratio occasion/neuf** de `neufRatio.ts` ; (c) sinon le **prix indicatif saisi dans l'issue** (« Prix d'occasion indicatif : 120 € »). (b) et (c) donnent une confiance « faible », marquée dans la fiche (`prixEstimeDepuisNeuf`, `prixSaisiParDemandeur`) et ne s'appliquent jamais à la découverte automatique ; un prix issu d'annonces n'est jamais remplacé par un prix saisi. La confirmation indépendante (Wikipédia) reste exigée dans tous les cas.
+   Prix d'une demande, par ordre de priorité : (a) annonces d'occasion exploitables (confiance « moyenne »/« faible » selon le nombre) ; (b) sinon **prix neuf demandé × ratio occasion/neuf** de `neufRatio.ts` ; (c) sinon, pour une issue ouverte **à la main** sur GitHub, le **prix indicatif saisi dans l'issue** (« Prix d'occasion indicatif : 120 € »). (b) et (c) donnent une confiance « faible », marquée dans la fiche (`prixEstimeDepuisNeuf`, `prixSaisiParDemandeur`) et ne s'appliquent jamais à la découverte automatique, et (c) est ignoré pour les demandes venant du site (publiques) ; un prix issu d'annonces n'est jamais remplacé par un prix saisi. La confirmation indépendante (Wikipédia) reste exigée dans tous les cas.
 4. après **publication** des données, commente l'issue et la **ferme** si le composant est ajouté ou déjà présent. Si le modèle n'est pas confirmé, l'issue reste ouverte avec la raison (commentée une seule fois) et l'agent réessaie chaque jour pendant 7 jours, puis ferme avec explication.
 
 Le composant demandé apparaît dans la recherche dès le déploiement qui suit le run (en pratique le matin même).

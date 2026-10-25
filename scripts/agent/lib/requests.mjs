@@ -25,7 +25,14 @@ export async function loadRequests(env = process.env, gh = ghCli) {
   const out = await gh(['api', `repos/{owner}/{repo}/issues?labels=${REQUEST_LABEL}&state=open&per_page=30`])
   const requests = JSON.parse(out || '[]')
     .filter((i) => !i.pull_request)
-    .map((i) => ({ number: i.number, title: i.title, body: i.body ?? '', authorAssociation: i.author_association }))
+    .map((i) => ({
+      number: i.number,
+      title: i.title,
+      body: i.body ?? '',
+      authorAssociation: i.author_association,
+      // Demandes envoyées depuis le site (publiques) : le prix éventuellement saisi n'est jamais retenu.
+      fromSite: (i.labels ?? []).some((l) => (typeof l === 'string' ? l : l?.name) === 'depuis-le-site'),
+    }))
   return { requests, note: null }
 }
 

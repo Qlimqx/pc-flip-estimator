@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
-import { buildRequestUrl, type RequestKind } from '../lib/componentRequest'
+import type { RequestKind } from '../lib/componentRequest'
+import { RequestAdd } from './RequestAdd'
 import type { ComponentPricing } from '../types'
 
 interface Props {
@@ -82,28 +83,13 @@ export function ComponentAutocomplete({ label, items, selectedId, onSelect, plac
           {open && query.trim() !== '' && results.length === 0 && (
             <div className="absolute z-10 mt-1 w-full rounded-lg border border-slate-700 bg-slate-900 p-3 text-sm shadow-lg">
               <p className="text-slate-300">« {query.trim()} » n'est pas dans la liste.</p>
-              <a
-                href={buildRequestUrl(kind, query)}
-                target="_blank"
-                rel="noreferrer"
-                onMouseDown={(e) => e.preventDefault()}
-                className="mt-1 inline-block text-emerald-400 underline hover:text-emerald-300"
-              >
-                Demander son ajout
-              </a>
+              <RequestAdd kind={kind} query={query} className="mt-1 inline-block" />
               <span className="text-slate-500"> — l'agent le vérifie et l'ajoute avec son prix le lendemain.</span>
             </div>
           )}
           <p className="mt-1 text-xs text-slate-500">
             Modèle absent ?{' '}
-            <a
-              href={buildRequestUrl(kind, query)}
-              target="_blank"
-              rel="noreferrer"
-              className="text-slate-400 underline hover:text-slate-200"
-            >
-              Demander son ajout
-            </a>
+            <RequestAdd kind={kind} query={query} />
           </p>
         </>
       )}

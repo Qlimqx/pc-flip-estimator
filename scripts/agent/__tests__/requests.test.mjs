@@ -47,7 +47,7 @@ describe('lecture d\'une demande', () => {
       ])
     }
     const { requests } = await loadRequests({ GH_TOKEN: 't' }, gh)
-    expect(requests).toEqual([{ number: 1, title: 'x', body: '', authorAssociation: 'OWNER' }])
+    expect(requests).toEqual([{ number: 1, title: 'x', body: '', authorAssociation: 'OWNER', fromSite: false }])
   })
 })
 
@@ -203,5 +203,22 @@ describe('prix indicatif saisi par le demandeur', () => {
     const [added] = await readJson(ok.root, 'src/data/agent/addedCpus.json')
     expect(added.moyen).toBeLessThan(150) // ~120 mesuré sur annonces, pas 500
     expect(added.agent.prixSaisiParDemandeur).toBe(false)
+  })
+})
+
+describe('demandes envoyées depuis le site', () => {
+  it("le prix saisi dans le corps n'est jamais retenu (demandes publiques)", async () => {
+    const t = table()
+    t[NEW_CPU] = { used: [], new: [] }
+    const body = "Prix d'occasion indicatif : 120 €"
+    const site = await run([issue(40, '[Demande] Processeur Ryzen 5 5700', { body, fromSite: true })], { ebay: fakeEbay({ table: t }) })
+    expect(site.res.report.requests[0].outcome).toBe('a-verifier')
+    const owner = await run([issue(41, '[Demande] Processeur Ryzen 5 5700', { body })], { ebay: fakeEbay({ table: t }) })
+    expect(owner.res.report.requests[0].outcome).toBe('ajoute')
+  })
+
+  it("repère le libellé depuis-le-site dans la réponse de l'API GitHub", async () => {
+    const gh = async () => JSON.stringify([{ number: 1, title: 'x', body: '', author_association: 'OWNER', labels: [{ name: 'composant-demande' }, { name: 'depuis-le-site' }] }])
+    expect((await loadRequests({ GH_TOKEN: 't' }, gh)).requests[0].fromSite).toBe(true)
   })
 })
