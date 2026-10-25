@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-23",
+  "date": "2026-10-25",
   "status": "termine_avec_avertissements",
-  "finishedAt": "2026-10-23 20:31 (Paris)",
+  "finishedAt": "2026-10-25 19:09 (Paris)",
   "catalogue": 210,
-  "verified": 96,
-  "updated": 33,
-  "added": 2,
-  "warnings": 2
+  "verified": 102,
+  "updated": 40,
+  "added": 0,
+  "warnings": 3
 }
