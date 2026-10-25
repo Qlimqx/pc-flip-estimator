@@ -20,8 +20,13 @@ export const MAX_ATTEMPTS = 7 // au-delà, la demande est close avec explication
 /** Liste les demandes ouvertes ; vide si le CLI `gh` n'est pas utilisable. */
 export async function loadRequests(env = process.env, gh = ghCli) {
   if (!env.GH_TOKEN && !env.GITHUB_TOKEN) return { requests: [], note: 'pas de jeton GitHub : demandes non lues' }
-  const out = await gh(['issue', 'list', '--label', REQUEST_LABEL, '--state', 'open', '--json', 'number,title,body,authorAssociation', '--limit', '30'])
-  return { requests: JSON.parse(out || '[]'), note: null }
+  // API REST (le CLI `gh issue list` n'expose pas author_association). Les pull requests
+  // apparaissent aussi dans /issues : écartées.
+  const out = await gh(['api', `repos/{owner}/{repo}/issues?labels=${REQUEST_LABEL}&state=open&per_page=30`])
+  const requests = JSON.parse(out || '[]')
+    .filter((i) => !i.pull_request)
+    .map((i) => ({ number: i.number, title: i.title, body: i.body ?? '', authorAssociation: i.author_association }))
+  return { requests, note: null }
 }
 
 /** Extrait le modèle demandé : { model } ou { error }. */

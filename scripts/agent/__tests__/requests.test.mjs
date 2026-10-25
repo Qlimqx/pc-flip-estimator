@@ -39,10 +39,15 @@ describe('lecture d\'une demande', () => {
   it('ne lit les demandes que si un jeton GitHub est disponible', async () => {
     expect((await loadRequests({})).requests).toEqual([])
     const gh = async (args) => {
-      expect(args).toEqual(expect.arrayContaining(['--label', 'composant-demande']))
-      return JSON.stringify([issue(1, 'x')])
+      expect(args[0]).toBe('api')
+      expect(args[1]).toContain('labels=composant-demande')
+      return JSON.stringify([
+        { number: 1, title: 'x', body: null, author_association: 'OWNER' },
+        { number: 2, title: 'pr', body: '', author_association: 'OWNER', pull_request: {} },
+      ])
     }
-    expect((await loadRequests({ GH_TOKEN: 't' }, gh)).requests).toHaveLength(1)
+    const { requests } = await loadRequests({ GH_TOKEN: 't' }, gh)
+    expect(requests).toEqual([{ number: 1, title: 'x', body: '', authorAssociation: 'OWNER' }])
   })
 })
 
