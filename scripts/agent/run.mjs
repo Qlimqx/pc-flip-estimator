@@ -486,6 +486,7 @@ export async function runAgent(opts = {}) {
       } catch (err) {
         warnings.push(`demandes d'ajout illisibles : ${err.message}`)
       }
+      const neufRatios = parseNeufRatios(await readText(path.join(root, 'src/data/neufRatio.ts'), ''))
       const known = new Map(catalogue.entries.map((e) => [`${e.category}:${normalizeKey(e.nom)}`, e.nom]))
       const confirmRequest = injectedConfirm ?? ((core) => confirmOnWikipedia(core, { fetchImpl }))
       let handled = 0
@@ -512,7 +513,7 @@ export async function runAgent(opts = {}) {
         }
         const verdict = await evaluateCandidate(
           { ...cand, requested: true, listingCount: 0, sellerCount: 0, nearDuplicateOf: nearDuplicateOf(key, known) },
-          { search: (q, o) => ebay.search(q, o), confirm: confirmRequest, entries: catalogue.entries, today: day },
+          { search: (q, o) => ebay.search(q, o), confirm: confirmRequest, entries: catalogue.entries, today: day, neufRatio: neufRatios[cand.category] ?? null },
         )
         st.attempts += 1
         if (verdict.verdict === 'ajouter') {
@@ -707,6 +708,16 @@ export async function runAgent(opts = {}) {
       throw err2
     }
   }
+}
+
+/** Ratios occasion/neuf de l'application (src/data/neufRatio.ts) : { cpu: 0.7, gpu: 0.7, ... }. */
+export function parseNeufRatios(src) {
+  const out = {}
+  for (const key of ['cpu', 'gpu']) {
+    const m = src.match(new RegExp(`\\b${key}:\\s*([\\d.]+)`))
+    if (m && Number(m[1]) > 0 && Number(m[1]) <= 1) out[key] = Number(m[1])
+  }
+  return out
 }
 
 const round3 = (v, digits) => Math.round(v * 10 ** digits) / 10 ** digits

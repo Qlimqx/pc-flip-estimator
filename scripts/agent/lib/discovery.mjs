@@ -222,7 +222,7 @@ export function consensusVram(titles) {
  * Évalue un candidat et décide : ajout automatique ou liste de vérification.
  * `search` : (query, opts) => résultat du client eBay ; `confirm` : confirmOnWikipedia.
  */
-export async function evaluateCandidate(candidate, { search, confirm, entries, today }) {
+export async function evaluateCandidate(candidate, { search, confirm, entries, today, neufRatio = null }) {
   const reasons = []
   if (candidate.nearDuplicateOf) {
     return { verdict: 'verifier', reasons: [`variante proche d'un composant déjà au catalogue (« ${candidate.nearDuplicateOf} ») : doublon possible`] }
@@ -237,14 +237,28 @@ export async function evaluateCandidate(candidate, { search, confirm, entries, t
   const used = await search(candidate.nom, { condition: 'used', categoryId })
   if (!used.ok) return { verdict: 'verifier', reasons: [`recherche ciblée impossible : ${used.error}`], retryable: true }
   const genuine = genuineListings(used.items, candidate.nom)
-  const stats = summarizePrices(genuine.map((i) => i.price))
-  if (!stats) {
-    return { verdict: 'verifier', reasons: [`prix d'occasion inexploitable : ${genuine.length} annonce(s) valide(s) sur ${used.items.length} (minimum 4)${used.items.length ? ` ; titres vus : ${used.items.slice(0, 3).map((i) => `« ${String(i.title).slice(0, 60)} »`).join(', ')}` : ''}`] }
-  }
+  let stats = summarizePrices(genuine.map((i) => i.price))
+  const usedTitles = used.items.length
+    ? ` ; titres vus : ${used.items.slice(0, 3).map((i) => `« ${String(i.title).slice(0, 60)} »`).join(', ')}`
+    : ''
 
   const neu = await search(candidate.nom, { condition: 'new', categoryId })
   const newStats = neu.ok ? summarizePrices(genuineListings(neu.items, candidate.nom).map((i) => i.price)) : null
-  if (newStats && stats.moyen > newStats.moyen * 1.05) {
+
+  // Repli réservé aux composants DEMANDÉS par l'utilisateur et sans annonce d'occasion
+  // exploitable : prix d'occasion estimé = prix neuf demandé × ratio occasion/neuf de
+  // l'application (src/data/neufRatio.ts). Confiance « faible », signalé dans la fiche.
+  let estimatedFromNew = false
+  if (!stats && candidate.requested && newStats && neufRatio) {
+    const moyen = round2(newStats.moyen * neufRatio)
+    stats = { min: round2(moyen * 0.85), moyen, max: round2(moyen * 1.15), sampleCount: newStats.sampleCount, spreadTightened: true }
+    estimatedFromNew = true
+  }
+  if (!stats) {
+    return { verdict: 'verifier', reasons: [`prix d'occasion inexploitable : ${genuine.length} annonce(s) valide(s) sur ${used.items.length} (minimum 4)${usedTitles}`] }
+  }
+
+  if (!estimatedFromNew && newStats && stats.moyen > newStats.moyen * 1.05) {
     return { verdict: 'verifier', reasons: [`prix d'occasion (${stats.moyen} €) supérieur au prix neuf demandé (${newStats.moyen} €)`] }
   }
 
@@ -281,8 +295,9 @@ export async function evaluateCandidate(candidate, { search, confirm, entries, t
   }
   record.agent = {
     ajouteLe: today,
-    confiance: stats.sampleCount >= 8 ? 'moyenne' : 'faible',
-    sources: ['eBay Browse FR (annonces d\'occasion, prix demandés)', wiki.source],
+    confiance: !estimatedFromNew && stats.sampleCount >= 8 ? 'moyenne' : 'faible',
+    sources: [estimatedFromNew ? `eBay Browse FR (annonces NEUVES, prix demandés) × ratio occasion/neuf ${neufRatio}` : 'eBay Browse FR (annonces d\'occasion, prix demandés)', wiki.source],
+    prixEstimeDepuisNeuf: estimatedFromNew,
     attributsEstimes: estimated,
     voisinReference: neighbor.id,
     echantillons: stats.sampleCount,

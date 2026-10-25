@@ -141,3 +141,36 @@ describe('réponses sur les issues', () => {
     expect(buildRequestComment({ outcome: 'a-verifier', nom: 'X', reason: 'r' })).toMatch(/réessaie chaque jour/)
   })
 })
+
+describe('repli pour une demande sans annonce d\'occasion exploitable', () => {
+  const noUsed = () => {
+    const t = table()
+    t[NEW_CPU] = { used: [], new: listings(NEW_CPU, around(170)) }
+    return t
+  }
+
+  it('estime le prix d\'occasion depuis le neuf, confiance faible et signalé dans la fiche', async () => {
+    const { res, root } = await run([issue(20, '[Demande] Processeur Ryzen 5 5700')], { ebay: fakeEbay({ table: noUsed() }) })
+    expect(res.report.requests[0]).toMatchObject({ outcome: 'ajoute' })
+    const [added] = await readJson(root, 'src/data/agent/addedCpus.json')
+    expect(added.moyen).toBeCloseTo(170 * 0.7, 0) // ratio occasion/neuf de neufRatio.ts
+    expect(added.agent).toMatchObject({ confiance: 'faible', prixEstimeDepuisNeuf: true })
+    expect(added.agent.sources.join(' ')).toMatch(/NEUVES/)
+  })
+
+  it('jamais pour la découverte automatique : sans annonce d\'occasion, pas d\'ajout', async () => {
+    const { evaluateCandidate } = await import('../lib/discovery.mjs')
+    const v = await evaluateCandidate(
+      { category: 'cpu', marque: 'AMD', nom: NEW_CPU, modelCore: 'Ryzen 5 5700', listingCount: 9, sellerCount: 6 },
+      { search: async (_q, { condition }) => ({ ok: true, items: condition === 'new' ? listings(NEW_CPU, around(170)) : [] }), confirm: CONFIRMED, entries: [], today: 'x', neufRatio: 0.7 },
+    )
+    expect(v.verdict).toBe('verifier')
+  })
+
+  it('sans annonce neuve non plus : reste en vérification', async () => {
+    const t = noUsed()
+    t[NEW_CPU].new = []
+    const { res } = await run([issue(21, '[Demande] Processeur Ryzen 5 5700')], { ebay: fakeEbay({ table: t }) })
+    expect(res.report.requests[0].outcome).toBe('a-verifier')
+  })
+})

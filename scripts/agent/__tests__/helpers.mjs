@@ -39,6 +39,7 @@ export async function makeRepo({ cpus = CPU_FIXTURE, gpus = GPU_FIXTURE, cpuOver
     'src/components/StorageList.tsx',
     'src/data/ram.ts',
     'src/data/storage.ts',
+    'src/data/neufRatio.ts',
   ]) {
     await mkdir(path.dirname(path.join(root, rel)), { recursive: true })
     await cp(path.join(REAL_ROOT, rel), path.join(root, rel))
