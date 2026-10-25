@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "runId": "2026-10-25-181006",
+  "runId": "2026-10-25-181136",
   "trigger": "workflow_dispatch",
-  "runUrl": "https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40219921959",
+  "runUrl": "https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40220052374",
   "dryRun": false,
   "status": "termine_avec_avertissements",
-  "startedAt": "2026-10-25T18:10:06.362Z",
-  "finishedAt": "2026-10-25T18:10:20.170Z",
-  "startedParis": "2026-10-25 19:10 (Paris)",
-  "finishedParis": "2026-10-25 19:10 (Paris)",
-  "durationSec": 14,
-  "deadlineParis": "2026-10-25 19:35 (Paris)",
+  "startedAt": "2026-10-25T18:11:36.649Z",
+  "finishedAt": "2026-10-25T18:11:51.814Z",
+  "startedParis": "2026-10-25 19:11 (Paris)",
+  "finishedParis": "2026-10-25 19:11 (Paris)",
+  "durationSec": 15,
+  "deadlineParis": "2026-10-25 19:36 (Paris)",
   "windowEndParis": "2026-10-25 09:45 (Paris)",
   "startedInWindow": false,
   "finishedBeforeTenParis": false,
@@ -45,15 +45,29 @@
     }
   ],
   "warnings": [
-    "demandes d'ajout illisibles : Command failed: gh issue list --label composant-demande --state open --json number,title,body,authorAssociation --limit 30\nUnknown JSON field: \"authorAssociation\"\nAvailable fields:\n  assignees\n  author\n  blockedBy\n  blocking\n  body\n  closed\n  closedAt\n  closedByPullRequestsReferences\n  comments\n  createdAt\n  id\n  isPinned\n  issueType\n  labels\n  milestone\n  number\n  parent\n  projectCards\n  projectItems\n  reactionGroups\n  state\n  stateReason\n  subIssues\n  subIssuesSummary\n  title\n  updatedAt\n  url\n",
     "exécution démarrée après 09:45 (Paris) : la contrainte de fin avant 10 h n'était plus garantie"
   ],
   "errors": [],
   "fatal": null,
   "added": [],
   "ramStorage": [],
-  "requests": [],
+  "requests": [
+    {
+      "number": 6,
+      "demande": "[Demande] Processeur Ryzen 5 5700",
+      "notify": true,
+      "nom": "AMD Ryzen 5 5700",
+      "outcome": "a-verifier",
+      "reason": "prix d'occasion inexploitable : 0 annonce(s) valide(s) sur 26 (minimum 4)"
+    }
+  ],
   "manualReview": [
+    {
+      "kind": "demande-non-aboutie",
+      "key": "cpu:ryzen55700",
+      "nom": "AMD Ryzen 5 5700",
+      "reason": "demande #6 : prix d'occasion inexploitable : 0 annonce(s) valide(s) sur 26 (minimum 4)"
+    },
     {
       "kind": "composant-manquant",
       "key": "cpu:i34130",

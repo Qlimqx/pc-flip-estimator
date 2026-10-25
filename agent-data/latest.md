@@ -2,9 +2,9 @@
 
 **Statut : Terminé avec avertissements**
 
-- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40219921959))
-- Début : 2026-10-25 19:10 (Paris) · Fin : 2026-10-25 19:10 (Paris) · Durée : 14 s
-- Échéance de travail : 2026-10-25 19:35 (Paris) · Terminé avant 10 h (Paris) : NON
+- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40220052374))
+- Début : 2026-10-25 19:11 (Paris) · Fin : 2026-10-25 19:11 (Paris) · Durée : 15 s
+- Échéance de travail : 2026-10-25 19:36 (Paris) · Terminé avant 10 h (Paris) : NON
 
 ## Bilan
 
@@ -30,41 +30,15 @@
 
 ## Avertissements
 
-- demandes d'ajout illisibles : Command failed: gh issue list --label composant-demande --state open --json number,title,body,authorAssociation --limit 30
-Unknown JSON field: "authorAssociation"
-Available fields:
-  assignees
-  author
-  blockedBy
-  blocking
-  body
-  closed
-  closedAt
-  closedByPullRequestsReferences
-  comments
-  createdAt
-  id
-  isPinned
-  issueType
-  labels
-  milestone
-  number
-  parent
-  projectCards
-  projectItems
-  reactionGroups
-  state
-  stateReason
-  subIssues
-  subIssuesSummary
-  title
-  updatedAt
-  url
-
 - exécution démarrée après 09:45 (Paris) : la contrainte de fin avant 10 h n'était plus garantie
+
+## Demandes d'ajout (issues « composant-demande »)
+
+- #6 **AMD Ryzen 5 5700** : a-verifier — prix d'occasion inexploitable : 0 annonce(s) valide(s) sur 26 (minimum 4)
 
 ## À vérifier manuellement
 
+- **AMD Ryzen 5 5700** [demande-non-aboutie] : demande #6 : prix d'occasion inexploitable : 0 annonce(s) valide(s) sur 26 (minimum 4)
 - **Intel Core i3-4130** [composant-manquant] : 5 annonce(s), 5 vendeur(s) — seulement 5 annonce(s) (minimum 6)
 - **Intel Core i5-6400** [composant-manquant] : 5 annonce(s), 5 vendeur(s) — seulement 5 annonce(s) (minimum 6)
 - **GTX 1060** [composant-manquant] : 5 annonce(s), 4 vendeur(s) — variante proche d'un composant déjà au catalogue (« GTX 1060 3Go ») : doublon possible
