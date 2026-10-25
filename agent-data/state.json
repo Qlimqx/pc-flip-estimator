@@ -1965,7 +1965,7 @@
     },
     "cpu:i911900f": {
       "firstSeen": "2026-10-23",
-      "lastSeen": "2026-10-23",
+      "lastSeen": "2026-10-25",
       "listingCount": 4
     },
     "cpu:i910900f": {
@@ -2000,12 +2000,12 @@
     }
   },
   "rates": {},
-  "updatedAt": "2026-10-25T18:17:27.850Z",
+  "updatedAt": "2026-10-25T19:18:23.222Z",
   "requests": {
     "6": {
       "firstSeen": "2026-10-25",
-      "attempts": 4,
-      "lastReason": "prix d'occasion inexploitable : 0 annonce(s) valide(s) sur 26 (minimum 4) ; titres vus : « Processeur AMD Ryzen 5 7600 - Socket AM5 - CPU », « Processeur AMD Ryzen 5 2600 - Socket AM4 - CPU », « Processeur AMD Ryzen 5 4650G PRO - Socket AM4 - CPU »"
+      "attempts": 5,
+      "lastReason": "modèle non confirmé par une source indépendante (Wikipédia)"
     }
   }
 }

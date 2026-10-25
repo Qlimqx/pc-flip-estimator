@@ -2,9 +2,9 @@
 
 **Statut : Terminé avec avertissements**
 
-- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40220497799))
-- Début : 2026-10-25 19:17 (Paris) · Fin : 2026-10-25 19:17 (Paris) · Durée : 15 s
-- Échéance de travail : 2026-10-25 19:42 (Paris) · Terminé avant 10 h (Paris) : NON
+- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40225361166))
+- Début : 2026-10-25 20:18 (Paris) · Fin : 2026-10-25 20:18 (Paris) · Durée : 13 s
+- Échéance de travail : 2026-10-25 20:43 (Paris) · Terminé avant 10 h (Paris) : NON
 
 ## Bilan
 
@@ -34,18 +34,18 @@
 
 ## Demandes d'ajout (issues « composant-demande »)
 
-- #6 **AMD Ryzen 5 5700** : a-verifier — prix d'occasion inexploitable : 0 annonce(s) valide(s) sur 26 (minimum 4) ; titres vus : « Processeur AMD Ryzen 5 7600 - Socket AM5 - CPU », « Processeur AMD Ryzen 5 2600 - Socket AM4 - CPU », « Processeur AMD Ryzen 5 4650G PRO - Socket AM4 - CPU »
+- #6 **AMD Ryzen 5 5700** : a-verifier — modèle non confirmé par une source indépendante (Wikipédia)
 
 ## À vérifier manuellement
 
-- **AMD Ryzen 5 5700** [demande-non-aboutie] : demande #6 : prix d'occasion inexploitable : 0 annonce(s) valide(s) sur 26 (minimum 4) ; titres vus : « Processeur AMD Ryzen 5 7600 - Socket AM5 - CPU », « Processeur AMD Ryzen 5 2600 - Socket AM4 - CPU », « Processeur AMD Ryzen 5 4650G PRO - Socket AM4 - CPU »
+- **AMD Ryzen 5 5700** [demande-non-aboutie] : demande #6 : modèle non confirmé par une source indépendante (Wikipédia)
 - **Intel Core i3-4130** [composant-manquant] : 5 annonce(s), 5 vendeur(s) — seulement 5 annonce(s) (minimum 6)
 - **Intel Core i5-6400** [composant-manquant] : 5 annonce(s), 5 vendeur(s) — seulement 5 annonce(s) (minimum 6)
 - **GTX 1060** [composant-manquant] : 5 annonce(s), 4 vendeur(s) — variante proche d'un composant déjà au catalogue (« GTX 1060 3Go ») : doublon possible
 - **Intel Core i5-6600** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **Intel Core i7-7700** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **Intel Core i7-7700K** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
-- **Intel Core i9-10900** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
+- **Intel Core i9-11900F** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **Intel Core i9-10900F** [composant-manquant] : 4 annonce(s), 3 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **AMD Ryzen 3 2200G** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **AMD Ryzen 3 1200** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
