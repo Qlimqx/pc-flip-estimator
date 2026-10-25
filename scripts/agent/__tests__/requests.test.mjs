@@ -174,3 +174,34 @@ describe('repli pour une demande sans annonce d\'occasion exploitable', () => {
     expect(res.report.requests[0].outcome).toBe('a-verifier')
   })
 })
+
+describe('prix indicatif saisi par le demandeur', () => {
+  it('lit un prix plausible dans le corps de l\'issue et ignore le gabarit vide', async () => {
+    const { parseUserPrice } = await import('../lib/requests.mjs')
+    expect(parseUserPrice("Prix d'occasion indicatif : 120 €")).toBe(120)
+    expect(parseUserPrice('prix occasion ~ 99,5 eur')).toBe(99.5)
+    expect(parseUserPrice("Prix d'occasion indicatif (facultatif, utilisé seulement si aucune annonce n'est exploitable) : … €")).toBeNull()
+    expect(parseUserPrice('prix : 3 €')).toBeNull() // hors bornes
+    expect(parseUserPrice('')).toBeNull()
+  })
+
+  it('sans aucune annonce, le prix saisi permet l\'ajout (confiance faible, signalé) mais reste soumis à Wikipédia', async () => {
+    const t = table()
+    t[NEW_CPU] = { used: [], new: [] }
+    const body = "Prix d'occasion indicatif : 120 €"
+    const ok = await run([issue(30, '[Demande] Processeur Ryzen 5 5700', { body })], { ebay: fakeEbay({ table: t }) })
+    expect(ok.res.report.requests[0].outcome).toBe('ajoute')
+    const [added] = await readJson(ok.root, 'src/data/agent/addedCpus.json')
+    expect(added).toMatchObject({ moyen: 120, min: 102, max: 138 })
+    expect(added.agent).toMatchObject({ confiance: 'faible', prixSaisiParDemandeur: true })
+    const refused = await run([issue(31, '[Demande] Processeur Ryzen 5 5700', { body })], { ebay: fakeEbay({ table: t }), confirm: NOT_CONFIRMED })
+    expect(refused.res.report.requests[0].outcome).toBe('a-verifier')
+  })
+
+  it('n\'écrase jamais un prix issu d\'annonces par le prix saisi', async () => {
+    const ok = await run([issue(32, '[Demande] Processeur Ryzen 5 5700', { body: 'Prix : 500 €' })])
+    const [added] = await readJson(ok.root, 'src/data/agent/addedCpus.json')
+    expect(added.moyen).toBeLessThan(150) // ~120 mesuré sur annonces, pas 500
+    expect(added.agent.prixSaisiParDemandeur).toBe(false)
+  })
+})

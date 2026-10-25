@@ -222,7 +222,7 @@ export function consensusVram(titles) {
  * Évalue un candidat et décide : ajout automatique ou liste de vérification.
  * `search` : (query, opts) => résultat du client eBay ; `confirm` : confirmOnWikipedia.
  */
-export async function evaluateCandidate(candidate, { search, confirm, entries, today, neufRatio = null }) {
+export async function evaluateCandidate(candidate, { search, confirm, entries, today, neufRatio = null, userPrice = null }) {
   const reasons = []
   if (candidate.nearDuplicateOf) {
     return { verdict: 'verifier', reasons: [`variante proche d'un composant déjà au catalogue (« ${candidate.nearDuplicateOf} ») : doublon possible`] }
@@ -254,11 +254,17 @@ export async function evaluateCandidate(candidate, { search, confirm, entries, t
     stats = { min: round2(moyen * 0.85), moyen, max: round2(moyen * 1.15), sampleCount: newStats.sampleCount, spreadTightened: true }
     estimatedFromNew = true
   }
+  // Dernier repli, toujours réservé aux demandes : le prix indicatif donné par le demandeur.
+  let pricedByUser = false
+  if (!stats && candidate.requested && userPrice) {
+    stats = { min: round2(userPrice * 0.85), moyen: round2(userPrice), max: round2(userPrice * 1.15), sampleCount: 0, spreadTightened: true }
+    pricedByUser = true
+  }
   if (!stats) {
     return { verdict: 'verifier', reasons: [`prix d'occasion inexploitable : ${genuine.length} annonce(s) valide(s) sur ${used.items.length} (minimum 4)${usedTitles}`] }
   }
 
-  if (!estimatedFromNew && newStats && stats.moyen > newStats.moyen * 1.05) {
+  if (!estimatedFromNew && !pricedByUser && newStats && stats.moyen > newStats.moyen * 1.05) {
     return { verdict: 'verifier', reasons: [`prix d'occasion (${stats.moyen} €) supérieur au prix neuf demandé (${newStats.moyen} €)`] }
   }
 
@@ -295,9 +301,10 @@ export async function evaluateCandidate(candidate, { search, confirm, entries, t
   }
   record.agent = {
     ajouteLe: today,
-    confiance: !estimatedFromNew && stats.sampleCount >= 8 ? 'moyenne' : 'faible',
-    sources: [estimatedFromNew ? `eBay Browse FR (annonces NEUVES, prix demandés) × ratio occasion/neuf ${neufRatio}` : 'eBay Browse FR (annonces d\'occasion, prix demandés)', wiki.source],
+    confiance: !estimatedFromNew && !pricedByUser && stats.sampleCount >= 8 ? 'moyenne' : 'faible',
+    sources: [pricedByUser ? 'prix indicatif saisi par le demandeur (aucune annonce exploitable)' : estimatedFromNew ? `eBay Browse FR (annonces NEUVES, prix demandés) × ratio occasion/neuf ${neufRatio}` : 'eBay Browse FR (annonces d\'occasion, prix demandés)', wiki.source],
     prixEstimeDepuisNeuf: estimatedFromNew,
+    prixSaisiParDemandeur: pricedByUser,
     attributsEstimes: estimated,
     voisinReference: neighbor.id,
     echantillons: stats.sampleCount,

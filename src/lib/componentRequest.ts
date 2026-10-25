@@ -28,6 +28,8 @@ export function buildRequestUrl(kind: RequestKind, query: string): string {
       `Composant demandé : **${name || '(à préciser)'}**`,
       `Catégorie : ${KIND_LABEL[kind]}`,
       '',
+      "Prix d'occasion indicatif (facultatif, utilisé seulement si aucune annonce n'est exploitable) : … €",
+      '',
       "L'agent quotidien vérifiera ce modèle (annonces, prix, source indépendante) et l'ajoutera au catalogue s'il est confirmé. Cette issue sera commentée et fermée une fois traitée.",
     ].join('\n'),
   })

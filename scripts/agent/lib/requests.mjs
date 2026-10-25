@@ -42,6 +42,17 @@ export function parseRequest({ title = '', body = '' }) {
   return { model: models[0] }
 }
 
+/**
+ * Prix d'occasion indicatif saisi par le demandeur dans le corps de l'issue
+ * (« Prix d'occasion indicatif : 120 € »). Bornes 5–5000 € ; sinon ignoré.
+ */
+export function parseUserPrice(body = '') {
+  const m = String(body).match(/prix[^\n\d]{0,60}?(\d{1,4}(?:[.,]\d{1,2})?)\s*(?:€|eur)/i)
+  if (!m) return null
+  const v = Number(m[1].replace(',', '.'))
+  return Number.isFinite(v) && v >= 5 && v <= 5000 ? v : null
+}
+
 /** Texte du commentaire laissé sur l'issue, selon l'issue de la demande. */
 export function buildRequestComment(r) {
   switch (r.outcome) {

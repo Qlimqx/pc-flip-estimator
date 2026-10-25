@@ -25,7 +25,7 @@ import { confirmOnWikipedia, evaluateCandidate, MAX_ADDS_PER_RUN, nearDuplicateO
 import { EBAY_CATEGORIES, createEbayClient } from './lib/ebay.mjs'
 import { checkFormCoverage } from './lib/forms.mjs'
 import { notify } from './lib/notify.mjs'
-import { MAX_ATTEMPTS, MAX_REQUESTS_PER_RUN, TRUSTED_ASSOCIATIONS, loadRequests, parseRequest } from './lib/requests.mjs'
+import { MAX_ATTEMPTS, MAX_REQUESTS_PER_RUN, TRUSTED_ASSOCIATIONS, loadRequests, parseRequest, parseUserPrice } from './lib/requests.mjs'
 import {
   RAM_PROBES,
   STORAGE_PROBES,
@@ -513,7 +513,7 @@ export async function runAgent(opts = {}) {
         }
         const verdict = await evaluateCandidate(
           { ...cand, requested: true, listingCount: 0, sellerCount: 0, nearDuplicateOf: nearDuplicateOf(key, known) },
-          { search: (q, o) => ebay.search(q, o), confirm: confirmRequest, entries: catalogue.entries, today: day, neufRatio: neufRatios[cand.category] ?? null },
+          { search: (q, o) => ebay.search(q, o), confirm: confirmRequest, entries: catalogue.entries, today: day, neufRatio: neufRatios[cand.category] ?? null, userPrice: parseUserPrice(req.body) },
         )
         st.attempts += 1
         if (verdict.verdict === 'ajouter') {
