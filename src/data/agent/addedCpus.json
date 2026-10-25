@@ -67,9 +67,9 @@
     "id": "ryzen-7-5700",
     "nom": "AMD Ryzen 7 5700",
     "marque": "AMD",
-    "min": 127.5,
-    "moyen": 150,
-    "max": 172.5,
+    "min": 85,
+    "moyen": 100,
+    "max": 115,
     "dateMaj": "2026-10-25",
     "faciliteRevente": 0.85,
     "decoteAnciennete": 1,
@@ -94,7 +94,8 @@
       "echantillons": 0,
       "prixNeufIndicatif": null,
       "annoncesVues": 0,
-      "vendeursDistincts": 0
+      "vendeursDistincts": 0,
+      "note": "Prix d'occasion fixé à 100 € par le propriétaire le 2026-10-25 (aucune annonce eBay exploitable)."
     }
   }
 ]
