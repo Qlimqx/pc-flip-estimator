@@ -2,9 +2,9 @@
 
 **Statut : Terminé avec avertissements**
 
-- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40220145567))
-- Début : 2026-10-25 19:12 (Paris) · Fin : 2026-10-25 19:13 (Paris) · Durée : 14 s
-- Échéance de travail : 2026-10-25 19:37 (Paris) · Terminé avant 10 h (Paris) : NON
+- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40220287331))
+- Début : 2026-10-25 19:14 (Paris) · Fin : 2026-10-25 19:14 (Paris) · Durée : 15 s
+- Échéance de travail : 2026-10-25 19:39 (Paris) · Terminé avant 10 h (Paris) : NON
 
 ## Bilan
 
