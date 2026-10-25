@@ -2,15 +2,15 @@
 
 **Statut : Terminé avec avertissements**
 
-- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40225361166))
-- Début : 2026-10-25 20:18 (Paris) · Fin : 2026-10-25 20:18 (Paris) · Durée : 13 s
-- Échéance de travail : 2026-10-25 20:43 (Paris) · Terminé avant 10 h (Paris) : NON
+- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40225499194))
+- Début : 2026-10-25 20:19 (Paris) · Fin : 2026-10-25 20:20 (Paris) · Durée : 14 s
+- Échéance de travail : 2026-10-25 20:44 (Paris) · Terminé avant 10 h (Paris) : NON
 
 ## Bilan
 
 | Indicateur | Valeur |
 |---|---|
-| Composants du catalogue analysés | 210 |
+| Composants du catalogue analysés | 211 |
 | Prix vérifiés (données reçues) | 0 |
 | Prix mis à jour | 0 (dont 0 à relire) |
 | En attente de confirmation (saut > 15 %) | 0 |
@@ -18,7 +18,7 @@
 | Rejetés (écart aberrant, valeur conservée) | 0 |
 | Source indisponible | 0 |
 | Non traités | 0 |
-| Composants ajoutés | 0 |
+| Composants ajoutés | 1 |
 | Composants manquants détectés mais non ajoutés | 12 |
 | Prix absents ou obsolètes (> 45 jours) | 88 |
 | Anomalies de cohérence | 0 |
@@ -32,13 +32,16 @@
 
 - exécution démarrée après 09:45 (Paris) : la contrainte de fin avant 10 h n'était plus garantie
 
+## Composants ajoutés
+
+- **AMD Ryzen 7 5700** (cpu) : 150 € (127.5 €–172.5 €), confiance faible, 0 annonces / 0 vendeurs, attributs estimés : tier, faciliteRevente, decoteAnciennete, socket
+
 ## Demandes d'ajout (issues « composant-demande »)
 
-- #6 **AMD Ryzen 5 5700** : a-verifier — modèle non confirmé par une source indépendante (Wikipédia)
+- #7 **AMD Ryzen 7 5700** : ajoute — 150 €, fourchette 127.5–172.5 €, 0 annonces
 
 ## À vérifier manuellement
 
-- **AMD Ryzen 5 5700** [demande-non-aboutie] : demande #6 : modèle non confirmé par une source indépendante (Wikipédia)
 - **Intel Core i3-4130** [composant-manquant] : 5 annonce(s), 5 vendeur(s) — seulement 5 annonce(s) (minimum 6)
 - **Intel Core i5-6400** [composant-manquant] : 5 annonce(s), 5 vendeur(s) — seulement 5 annonce(s) (minimum 6)
 - **GTX 1060** [composant-manquant] : 5 annonce(s), 4 vendeur(s) — variante proche d'un composant déjà au catalogue (« GTX 1060 3Go ») : doublon possible

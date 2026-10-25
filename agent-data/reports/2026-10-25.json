@@ -1,23 +1,23 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "runId": "2026-10-25-191809",
+  "runId": "2026-10-25-191953",
   "trigger": "workflow_dispatch",
-  "runUrl": "https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40225361166",
+  "runUrl": "https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40225499194",
   "dryRun": false,
   "status": "termine_avec_avertissements",
-  "startedAt": "2026-10-25T19:18:09.808Z",
-  "finishedAt": "2026-10-25T19:18:23.223Z",
-  "startedParis": "2026-10-25 20:18 (Paris)",
-  "finishedParis": "2026-10-25 20:18 (Paris)",
-  "durationSec": 13,
-  "deadlineParis": "2026-10-25 20:43 (Paris)",
+  "startedAt": "2026-10-25T19:19:53.519Z",
+  "finishedAt": "2026-10-25T19:20:07.785Z",
+  "startedParis": "2026-10-25 20:19 (Paris)",
+  "finishedParis": "2026-10-25 20:20 (Paris)",
+  "durationSec": 14,
+  "deadlineParis": "2026-10-25 20:44 (Paris)",
   "windowEndParis": "2026-10-25 09:45 (Paris)",
   "startedInWindow": false,
   "finishedBeforeTenParis": false,
   "staleDays": 45,
   "counts": {
-    "catalogue": 210,
+    "catalogue": 211,
     "verified": 0,
     "updated": 0,
     "updatedToReview": 0,
@@ -27,11 +27,11 @@
     "sourceUnavailable": 0,
     "ramStorageUnavailable": 0,
     "unprocessed": 0,
-    "added": 0,
+    "added": 1,
     "missingDetected": 12,
     "absentOrObsolete": 88,
     "anomalies": 0,
-    "verifiedToday": 102,
+    "verifiedToday": 103,
     "changedToday": 20
   },
   "sources": [
@@ -51,25 +51,74 @@
   ],
   "errors": [],
   "fatal": null,
-  "added": [],
+  "added": [
+    {
+      "category": "cpu",
+      "id": "ryzen-7-5700",
+      "nom": "AMD Ryzen 7 5700",
+      "marque": "AMD",
+      "min": 127.5,
+      "moyen": 150,
+      "max": 172.5,
+      "dateMaj": "2026-10-25",
+      "faciliteRevente": 0.85,
+      "decoteAnciennete": 1,
+      "tier": 3,
+      "socket": "AM4",
+      "agent": {
+        "ajouteLe": "2026-10-25",
+        "confiance": "faible",
+        "sources": [
+          "prix indicatif saisi par le demandeur (aucune annonce exploitable)",
+          "en.wikipedia.org"
+        ],
+        "prixEstimeDepuisNeuf": false,
+        "prixSaisiParDemandeur": true,
+        "attributsEstimes": [
+          "tier",
+          "faciliteRevente",
+          "decoteAnciennete",
+          "socket"
+        ],
+        "voisinReference": "ryzen-7-5700x",
+        "echantillons": 0,
+        "prixNeufIndicatif": null,
+        "annoncesVues": 0,
+        "vendeursDistincts": 0
+      },
+      "ajouteLe": "2026-10-25",
+      "confiance": "faible",
+      "sources": [
+        "prix indicatif saisi par le demandeur (aucune annonce exploitable)",
+        "en.wikipedia.org"
+      ],
+      "prixEstimeDepuisNeuf": false,
+      "prixSaisiParDemandeur": true,
+      "attributsEstimes": [
+        "tier",
+        "faciliteRevente",
+        "decoteAnciennete",
+        "socket"
+      ],
+      "voisinReference": "ryzen-7-5700x",
+      "echantillons": 0,
+      "prixNeufIndicatif": null,
+      "annoncesVues": 0,
+      "vendeursDistincts": 0
+    }
+  ],
   "ramStorage": [],
   "requests": [
     {
-      "number": 6,
-      "demande": "[Demande] Processeur Ryzen 5 5700",
+      "number": 7,
+      "demande": "[Demande] Processeur Ryzen 7 5700",
       "notify": true,
-      "nom": "AMD Ryzen 5 5700",
-      "outcome": "a-verifier",
-      "reason": "modèle non confirmé par une source indépendante (Wikipédia)"
+      "nom": "AMD Ryzen 7 5700",
+      "outcome": "ajoute",
+      "detail": "150 €, fourchette 127.5–172.5 €, 0 annonces"
     }
   ],
   "manualReview": [
-    {
-      "kind": "demande-non-aboutie",
-      "key": "cpu:ryzen55700",
-      "nom": "AMD Ryzen 5 5700",
-      "reason": "demande #6 : modèle non confirmé par une source indépendante (Wikipédia)"
-    },
     {
       "kind": "composant-manquant",
       "key": "cpu:i34130",

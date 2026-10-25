@@ -208,3 +208,4 @@
 {"date":"2026-10-25","key":"stockage:hdd","min":0.0455,"moyen":0.0455,"max":0.0455,"n":30,"neuf":null,"decision":"rejete"}
 {"date":"2026-10-25","key":"stockage:ssd","min":0.1572,"moyen":0.1572,"max":0.1572,"n":65,"neuf":null,"decision":"mis-a-jour-a-verifier"}
 {"date":"2026-10-25","key":"stockage:nvme","min":0.1331,"moyen":0.1331,"max":0.1331,"n":33,"neuf":null,"decision":"mis-a-jour"}
+{"date":"2026-10-25","key":"cpu:ryzen-7-5700","min":127.5,"moyen":150,"max":172.5,"n":0,"neuf":null,"decision":"ajoute"}
