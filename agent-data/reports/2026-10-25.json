@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "runId": "2026-10-25-181436",
+  "runId": "2026-10-25-181712",
   "trigger": "workflow_dispatch",
-  "runUrl": "https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40220287331",
+  "runUrl": "https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40220497799",
   "dryRun": false,
   "status": "termine_avec_avertissements",
-  "startedAt": "2026-10-25T18:14:36.276Z",
-  "finishedAt": "2026-10-25T18:14:51.034Z",
-  "startedParis": "2026-10-25 19:14 (Paris)",
-  "finishedParis": "2026-10-25 19:14 (Paris)",
+  "startedAt": "2026-10-25T18:17:12.774Z",
+  "finishedAt": "2026-10-25T18:17:27.851Z",
+  "startedParis": "2026-10-25 19:17 (Paris)",
+  "finishedParis": "2026-10-25 19:17 (Paris)",
   "durationSec": 15,
-  "deadlineParis": "2026-10-25 19:39 (Paris)",
+  "deadlineParis": "2026-10-25 19:42 (Paris)",
   "windowEndParis": "2026-10-25 09:45 (Paris)",
   "startedInWindow": false,
   "finishedBeforeTenParis": false,
@@ -30,7 +30,9 @@
     "added": 0,
     "missingDetected": 12,
     "absentOrObsolete": 88,
-    "anomalies": 0
+    "anomalies": 0,
+    "verifiedToday": 102,
+    "changedToday": 20
   },
   "sources": [
     {

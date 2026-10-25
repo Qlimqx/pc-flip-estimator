@@ -2000,11 +2000,11 @@
     }
   },
   "rates": {},
-  "updatedAt": "2026-10-25T18:14:51.033Z",
+  "updatedAt": "2026-10-25T18:17:27.850Z",
   "requests": {
     "6": {
       "firstSeen": "2026-10-25",
-      "attempts": 3,
+      "attempts": 4,
       "lastReason": "prix d'occasion inexploitable : 0 annonce(s) valide(s) sur 26 (minimum 4) ; titres vus : « Processeur AMD Ryzen 5 7600 - Socket AM5 - CPU », « Processeur AMD Ryzen 5 2600 - Socket AM4 - CPU », « Processeur AMD Ryzen 5 4650G PRO - Socket AM4 - CPU »"
     }
   }
