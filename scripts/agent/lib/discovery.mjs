@@ -239,7 +239,7 @@ export async function evaluateCandidate(candidate, { search, confirm, entries, t
   const genuine = genuineListings(used.items, candidate.nom)
   const stats = summarizePrices(genuine.map((i) => i.price))
   if (!stats) {
-    return { verdict: 'verifier', reasons: [`prix d'occasion inexploitable : ${genuine.length} annonce(s) valide(s) sur ${used.items.length} (minimum 4)`] }
+    return { verdict: 'verifier', reasons: [`prix d'occasion inexploitable : ${genuine.length} annonce(s) valide(s) sur ${used.items.length} (minimum 4)${used.items.length ? ` ; titres vus : ${used.items.slice(0, 3).map((i) => `« ${String(i.title).slice(0, 60)} »`).join(', ')}` : ''}`] }
   }
 
   const neu = await search(candidate.nom, { condition: 'new', categoryId })
