@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 import type { RequestKind } from '../lib/componentRequest'
+import { searchComponents } from '../lib/searchComponents'
 import { RequestAdd } from './RequestAdd'
 import type { ComponentPricing } from '../types'
 
@@ -21,11 +22,7 @@ export function ComponentAutocomplete({ label, items, selectedId, onSelect, plac
 
   const selected = items.find((i) => i.id === selectedId) ?? null
 
-  const results = useMemo(() => {
-    const q = query.trim().toLowerCase()
-    if (!q) return items.slice(0, 8)
-    return items.filter((i) => i.nom.toLowerCase().includes(q)).slice(0, 8)
-  }, [items, query])
+  const { results, approximate } = useMemo(() => searchComponents(items, query), [items, query])
 
   function handleBlur() {
     // Laisse le temps au clic sur une option de se déclencher avant de fermer.
@@ -62,6 +59,11 @@ export function ComponentAutocomplete({ label, items, selectedId, onSelect, plac
           />
           {open && results.length > 0 && (
             <ul className="absolute z-10 mt-1 max-h-64 w-full overflow-auto rounded-lg border border-slate-700 bg-slate-900 shadow-lg">
+              {approximate && (
+                <li className="px-3 py-1.5 text-xs text-amber-400">
+                  Aucun « {query.trim()} » exact — modèles proches :
+                </li>
+              )}
               {results.map((item) => (
                 <li key={item.id}>
                   <button

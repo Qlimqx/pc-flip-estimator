@@ -62,39 +62,5 @@
       "annoncesVues": 6,
       "vendeursDistincts": 6
     }
-  },
-  {
-    "id": "ryzen-7-5700",
-    "nom": "AMD Ryzen 7 5700",
-    "marque": "AMD",
-    "min": 127.5,
-    "moyen": 150,
-    "max": 172.5,
-    "dateMaj": "2026-10-25",
-    "faciliteRevente": 0.85,
-    "decoteAnciennete": 1,
-    "tier": 3,
-    "socket": "AM4",
-    "agent": {
-      "ajouteLe": "2026-10-25",
-      "confiance": "faible",
-      "sources": [
-        "prix indicatif saisi par le demandeur (aucune annonce exploitable)",
-        "en.wikipedia.org"
-      ],
-      "prixEstimeDepuisNeuf": false,
-      "prixSaisiParDemandeur": true,
-      "attributsEstimes": [
-        "tier",
-        "faciliteRevente",
-        "decoteAnciennete",
-        "socket"
-      ],
-      "voisinReference": "ryzen-7-5700x",
-      "echantillons": 0,
-      "prixNeufIndicatif": null,
-      "annoncesVues": 0,
-      "vendeursDistincts": 0
-    }
   }
 ]
