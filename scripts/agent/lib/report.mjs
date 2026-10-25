@@ -85,6 +85,12 @@ export function renderMarkdown(r) {
   }
   out.push(
     ...section(
+      'Demandes d\'ajout (issues « composant-demande »)',
+      (r.requests ?? []).map((q) => `- #${q.number} **${q.nom}** : ${q.outcome}${q.reason ? ` — ${q.reason}` : ''}${q.detail ? ` — ${q.detail}` : ''}`),
+    ),
+  )
+  out.push(
+    ...section(
       'À vérifier manuellement',
       r.manualReview.map((m) => `- **${m.nom ?? m.key}** [${m.kind}] : ${m.reason}`),
     ),

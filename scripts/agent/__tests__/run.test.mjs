@@ -5,7 +5,7 @@ import { mkdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { runAgent } from '../run.mjs'
-import { CPU_FIXTURE, DATA_FILES, GPU_FIXTURE, around, fakeClock, fakeEbay, listings, makeRepo, read, readJson, snapshot } from './helpers.mjs'
+import { CPU_FIXTURE, DATA_FILES, GPU_FIXTURE, REAL_ROOT, around, fakeClock, fakeEbay, listings, makeRepo, read, readJson, snapshot } from './helpers.mjs'
 
 const CATALOG = [
   ...CPU_FIXTURE.map((e) => ({ ...e, prefix: 'Processeur' })),
@@ -418,5 +418,65 @@ describe('agent : filtrage par catégorie eBay', () => {
     expect(ebay.calls.filter((c) => /NVMe|SATA/.test(c.query)).every((c) => c.categoryId === '175669')).toBe(true)
     expect(ebay.calls.filter((c) => /HDD/.test(c.query)).every((c) => c.categoryId === '56083')).toBe(true)
     expect(ebay.calls.every((c) => c.categoryId)).toBe(true)
+  })
+})
+
+describe('agent : rotation de PRICE_REVIEW.md', () => {
+  const REJ = '### Rejetés (écart trop important, valeur inchangée)'
+  const old = (date) => `## ${date}\n\n${REJ}\n\n- **Vieux ${date}** (cpu) : 10€ conservé, eBay proposait 30€ (+200%)\n\n`
+  const seedReview = (root, ...dates) =>
+    writeFile(path.join(root, 'PRICE_REVIEW.md'), `# Écarts de prix à vérifier\n\nintro\n${dates.map(old).join('')}`)
+
+  it('archive les sections de plus de 30 jours et épingle le « Rejetés » du jour en tête', async () => {
+    const root = await makeRepo()
+    await seedReview(root, '2026-08-30', '2026-09-23', '2026-10-20') // run du 2026-10-24 : 08-30 et 09-23 (31 jours) partent, 10-20 reste
+    const { res } = await run(root, fakeEbay({ table: standardTable(1.05, { 'ryzen-5-5600': 3 }) }))
+    expect(res.exitCode).toBe(0)
+
+    const review = await read(root, 'PRICE_REVIEW.md')
+    expect(review).not.toContain('Vieux 2026-08-30')
+    expect(review).not.toContain('Vieux 2026-09-23')
+    expect(review).toContain('## 2026-10-20')
+    expect(review.indexOf('<!-- price-review:rejetes-recent -->')).toBeLessThan(review.indexOf('## 2026-10-20'))
+    const pinned = review.slice(0, review.indexOf('<!-- /price-review:rejetes-recent -->'))
+    expect(pinned).toContain('## 2026-10-24 (agent quotidien)')
+    expect(pinned).toContain(REJ)
+    expect(pinned).toContain('AMD Ryzen 5 5600')
+
+    expect(await read(root, 'docs/price-review-archive/2026-08.md')).toContain('Vieux 2026-08-30')
+    expect(await read(root, 'docs/price-review-archive/2026-09.md')).toContain('Vieux 2026-09-23')
+  })
+
+  it('fait la rotation même un jour sans nouveau rejet, et une 2e exécution du jour ne change rien', async () => {
+    const root = await makeRepo()
+    await seedReview(root, '2026-08-30', '2026-10-20')
+    await run(root, fakeEbay({ table: standardTable(1.05) }))
+    expect(await read(root, 'PRICE_REVIEW.md')).not.toContain('Vieux 2026-08-30')
+    const archive = await read(root, 'docs/price-review-archive/2026-08.md')
+    const review = await read(root, 'PRICE_REVIEW.md')
+
+    await run(root, fakeEbay({ table: standardTable(1.05) }), { force: true })
+    expect(await read(root, 'PRICE_REVIEW.md')).toBe(review)
+    expect(await read(root, 'docs/price-review-archive/2026-08.md')).toBe(archive)
+  })
+
+  it('une archive illisible n\'arrête pas l\'agent : avertissement, PRICE_REVIEW.md intact, données publiées', async () => {
+    const root = await makeRepo()
+    await seedReview(root, '2026-08-30', '2026-10-20')
+    await mkdir(path.join(root, 'docs/price-review-archive/2026-08.md'), { recursive: true }) // un dossier à la place du fichier
+    const before = await read(root, 'PRICE_REVIEW.md')
+    const { res } = await run(root, fakeEbay({ table: standardTable(1.05) }))
+    expect(res.status).toBe('termine_avec_avertissements')
+    expect(res.report.warnings.join(' ')).toMatch(/rotation de PRICE_REVIEW\.md impossible/)
+    expect(await read(root, 'PRICE_REVIEW.md')).toBe(before)
+    expect((await readJson(root, 'src/data/priceOverrides/cpuOverrides.json'))['ryzen-5-7600']).toBeDefined()
+  })
+})
+
+describe('workflow : publication des archives', () => {
+  it('daily-agent.yml publie docs/price-review-archive avec PRICE_REVIEW.md', async () => {
+    const { readFile } = await import('node:fs/promises')
+    const yml = await readFile(path.join(REAL_ROOT, '.github/workflows/daily-agent.yml'), 'utf8')
+    expect(yml).toContain('docs/price-review-archive')
   })
 })

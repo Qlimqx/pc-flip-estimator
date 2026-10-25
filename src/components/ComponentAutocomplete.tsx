@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from 'react'
+import { buildRequestUrl, type RequestKind } from '../lib/componentRequest'
 import type { ComponentPricing } from '../types'
 
 interface Props {
@@ -7,10 +8,12 @@ interface Props {
   selectedId: string | null
   onSelect: (id: string | null) => void
   placeholder?: string
+  /** Type de composant, pour proposer l'ajout d'un modèle absent de la liste. */
+  kind: RequestKind
 }
 
 /** Champ de recherche/autocomplétion générique, utilisé pour le CPU et le GPU. */
-export function ComponentAutocomplete({ label, items, selectedId, onSelect, placeholder }: Props) {
+export function ComponentAutocomplete({ label, items, selectedId, onSelect, placeholder, kind }: Props) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -76,6 +79,32 @@ export function ComponentAutocomplete({ label, items, selectedId, onSelect, plac
               ))}
             </ul>
           )}
+          {open && query.trim() !== '' && results.length === 0 && (
+            <div className="absolute z-10 mt-1 w-full rounded-lg border border-slate-700 bg-slate-900 p-3 text-sm shadow-lg">
+              <p className="text-slate-300">« {query.trim()} » n'est pas dans la liste.</p>
+              <a
+                href={buildRequestUrl(kind, query)}
+                target="_blank"
+                rel="noreferrer"
+                onMouseDown={(e) => e.preventDefault()}
+                className="mt-1 inline-block text-emerald-400 underline hover:text-emerald-300"
+              >
+                Demander son ajout
+              </a>
+              <span className="text-slate-500"> — l'agent le vérifie et l'ajoute avec son prix le lendemain.</span>
+            </div>
+          )}
+          <p className="mt-1 text-xs text-slate-500">
+            Modèle absent ?{' '}
+            <a
+              href={buildRequestUrl(kind, query)}
+              target="_blank"
+              rel="noreferrer"
+              className="text-slate-400 underline hover:text-slate-200"
+            >
+              Demander son ajout
+            </a>
+          </p>
         </>
       )}
     </div>

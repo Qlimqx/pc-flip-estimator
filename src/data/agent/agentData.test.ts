@@ -11,9 +11,22 @@ describe('données de l\'agent intégrées au catalogue', () => {
     expect(new Set(GPUS.map((g) => g.id)).size).toBe(GPUS.length)
   })
 
-  it('sans surcharge, les tarifs RAM/stockage sont ceux de la référence', () => {
-    expect(EFFECTIVE_RAM_PRICING).toEqual(RAM_TYPE_PRICING)
-    expect(EFFECTIVE_STORAGE_PRICING).toEqual(STORAGE_TYPE_PRICING)
+  it('sans surcharge, les tarifs sont ceux de la référence', () => {
+    expect(mergeRates(RAM_TYPE_PRICING, {})).toEqual(RAM_TYPE_PRICING)
+    expect(mergeRates(STORAGE_TYPE_PRICING, {})).toEqual(STORAGE_TYPE_PRICING)
+  })
+
+  it("les tarifs effectifs (avec les surcharges de l'agent) ne diffèrent de la référence que par le prix au Go", () => {
+    // Indépendant du contenu courant de ramOverrides.json / storageOverrides.json,
+    // que l'agent réécrit chaque jour : ce test ne doit jamais bloquer la publication.
+    for (const type of Object.keys(RAM_TYPE_PRICING) as Array<keyof typeof RAM_TYPE_PRICING>) {
+      expect({ ...EFFECTIVE_RAM_PRICING[type], prixParGo: 0 }).toEqual({ ...RAM_TYPE_PRICING[type], prixParGo: 0 })
+      expect(EFFECTIVE_RAM_PRICING[type].prixParGo).toBeGreaterThan(0)
+    }
+    for (const type of Object.keys(STORAGE_TYPE_PRICING) as Array<keyof typeof STORAGE_TYPE_PRICING>) {
+      expect({ ...EFFECTIVE_STORAGE_PRICING[type], prixParGo: 0 }).toEqual({ ...STORAGE_TYPE_PRICING[type], prixParGo: 0 })
+      expect(EFFECTIVE_STORAGE_PRICING[type].prixParGo).toBeGreaterThan(0)
+    }
   })
 
   it('une surcharge ne change que le prix au Go et ignore les valeurs invalides', () => {

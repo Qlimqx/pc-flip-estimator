@@ -50,6 +50,17 @@ Jamais sur une supposition. Il faut **tout** :
 
 Les attributs qu'aucune source ne fournit (`tier`, `faciliteRevente`, `decoteAnciennete`, `socket`) sont **hérités d'un composant voisin** et listés dans `agent.attributsEstimes` de la fiche. Tout composant qui échoue à une preuve va dans « À vérifier manuellement » avec la raison exacte. Si un humain ajoute plus tard le même modèle dans `BASE_*`, la copie de l'agent est retirée automatiquement.
 
+### Demander l'ajout d'un composant depuis l'application
+
+Si un processeur ou une carte graphique est absent de la liste (ex. « Ryzen 5 5700 »), le champ de recherche l'indique (« … n'est pas dans la liste ») et propose **Demander son ajout** : un lien ouvre une issue GitHub préremplie (libellé `composant-demande`). Au prochain run, l'agent :
+
+1. lit les issues ouvertes portant ce libellé (**seulement celles du propriétaire / membres / collaborateurs** : le dépôt est public, les demandes d'inconnus sont ignorées) ;
+2. reconstruit le nom du modèle par extraction (le texte libre n'est jamais recopié dans les données) ;
+3. applique les mêmes preuves que pour la découverte (annonces d'occasion exploitables, cohérence avec le neuf, confirmation indépendante) — seul le minimum d'annonces vues dans la découverte générale est levé, puisque la demande vaut intérêt ;
+4. après **publication** des données, commente l'issue et la **ferme** si le composant est ajouté ou déjà présent. Si le modèle n'est pas confirmé, l'issue reste ouverte avec la raison (commentée une seule fois) et l'agent réessaie chaque jour pendant 7 jours, puis ferme avec explication.
+
+Le composant demandé apparaît dans la recherche dès le déploiement qui suit le run (en pratique le matin même).
+
 ### Données et idempotence
 
 | Fichier | Rôle |
@@ -61,8 +72,22 @@ Les attributs qu'aucune source ne fournit (`tier`, `faciliteRevente`, `decoteAnc
 | `src/data/agent/added{Cpus,Gpus}.json` | Composants ajoutés (fusionnés par `cpus.ts` / `gpus.ts` ; la base l'emporte en cas d'identifiant identique). |
 | `src/data/agent/{ram,storage}Overrides.json` | Tarifs €/Go rafraîchis (appliqués par `effectiveRates.ts`). |
 | `src/data/agent/status.json` | Affiché en pied de page de l'application. |
+| `PRICE_REVIEW.md` | Écarts de prix à relire (sections `## AAAA-MM-JJ` / `### Rejetés`), lu par la routine IA. Voir la rotation ci-dessous. |
+| `docs/price-review-archive/AAAA-MM.md` | Sections de `PRICE_REVIEW.md` de plus de 30 jours, un fichier par mois. |
 
 Date de collecte (`lastVerifiedOn`, `dateMaj`) et date de dernière modification de valeur (`lastChangedOn`) sont distinguées. Aucun composant n'est supprimé parce qu'il est arrêté.
+
+### Rotation de `PRICE_REVIEW.md`
+
+Trois écrivains y ajoutent des sections (ancien pipeline, routine IA, agent) ; sans rotation il grossit sans fin. À chaque run, l'agent (`scripts/agent/lib/rotate-review.mjs`, dans la même transaction que le reste) :
+
+- déplace les sections **datées de plus de 30 jours** (`## AAAA-MM-JJ…`, tous suffixes confondus) vers `docs/price-review-archive/AAAA-MM.md`, selon le mois de la section ; les sections sans date reconnaissable ne sont jamais déplacées ;
+- n'altère aucune section : titres et blocs `### Rejetés` restent tels quels, ordre et fins de ligne (CRLF) conservés ;
+- **épingle une copie du `### Rejetés` le plus récent** juste après le préambule, entre `<!-- price-review:rejetes-recent -->` et `<!-- /price-review:rejetes-recent -->` (commentaires invisibles). La routine cloud « verification prix quotidienne » le trouve donc toujours en tête, même si l'agent est resté en panne plus de 30 jours. L'original garde sa place chronologique ; la copie est recalculée à chaque rotation, jamais empilée ;
+- ne duplique jamais une section déjà archivée (reprise après interruption sans risque) ;
+- reste **non bloquante** : si l'archivage échoue, `PRICE_REVIEW.md` n'est pas touché et le rapport indique un avertissement.
+
+Lancement manuel (simulation d'abord) : `npm run review:rotate -- --dry-run`, puis `npm run review:rotate`. Options : `--keep N` (jours conservés, 30 par défaut) et `--today AAAA-MM-JJ`.
 
 ### Statuts
 

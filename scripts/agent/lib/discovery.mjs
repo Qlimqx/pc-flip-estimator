@@ -227,8 +227,10 @@ export async function evaluateCandidate(candidate, { search, confirm, entries, t
   if (candidate.nearDuplicateOf) {
     return { verdict: 'verifier', reasons: [`variante proche d'un composant déjà au catalogue (« ${candidate.nearDuplicateOf} ») : doublon possible`] }
   }
-  if (candidate.listingCount < MIN_LISTINGS) reasons.push(`seulement ${candidate.listingCount} annonce(s) (minimum ${MIN_LISTINGS})`)
-  if (candidate.sellerCount < MIN_SELLERS) reasons.push(`seulement ${candidate.sellerCount} vendeur(s) distinct(s) (minimum ${MIN_SELLERS})`)
+  // Une demande explicite de l'utilisateur dispense du minimum d'annonces vues dans la
+  // découverte générale, pas des preuves de prix ni de la confirmation indépendante.
+  if (!candidate.requested && candidate.listingCount < MIN_LISTINGS) reasons.push(`seulement ${candidate.listingCount} annonce(s) (minimum ${MIN_LISTINGS})`)
+  if (!candidate.requested && candidate.sellerCount < MIN_SELLERS) reasons.push(`seulement ${candidate.sellerCount} vendeur(s) distinct(s) (minimum ${MIN_SELLERS})`)
   if (reasons.length) return { verdict: 'verifier', reasons }
 
   const categoryId = EBAY_CATEGORIES[candidate.category]

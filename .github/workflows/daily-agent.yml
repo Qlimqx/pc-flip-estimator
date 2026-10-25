@@ -78,6 +78,7 @@ jobs:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
           AGENT_WEBHOOK_URL: ${{ secrets.AGENT_WEBHOOK_URL }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # lecture des demandes d'ajout (issues)
           DRY_RUN: ${{ inputs.dry_run }}
           FORCE: ${{ inputs.force }}
         run: |
@@ -104,6 +105,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data agent-data PRICE_REVIEW.md
+          # archives de la rotation de PRICE_REVIEW.md (dossier créé à la 1re rotation)
+          if [ -d docs/price-review-archive ]; then git add docs/price-review-archive; fi
           if git diff --cached --quiet; then
             echo "Aucune donnée à publier."
             exit 0
@@ -121,6 +124,13 @@ jobs:
           done
           echo "::error::Impossible de publier après 5 tentatives (conflit ou réseau)."
           exit 1
+
+      # Répond aux demandes d'ajout APRÈS publication (jamais avant).
+      - name: Répondre aux demandes d'ajout
+        if: steps.agent.outcome != 'cancelled' && inputs.dry_run != true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/agent/answer-requests.mjs
 
       - name: Alerte (issue) si le run n'est pas terminé proprement
         if: always() && inputs.dry_run != true

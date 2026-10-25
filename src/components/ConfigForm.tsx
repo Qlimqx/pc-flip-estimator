@@ -22,6 +22,7 @@ export function ConfigForm() {
     <div className="space-y-5">
       <ComponentAutocomplete
         label="Processeur"
+        kind="cpu"
         items={CPUS}
         selectedId={config.cpu.id}
         onSelect={setCpu}
@@ -30,6 +31,7 @@ export function ConfigForm() {
 
       <ComponentAutocomplete
         label="Carte graphique (laisser vide si iGPU)"
+        kind="gpu"
         items={GPUS}
         selectedId={config.gpu?.id ?? null}
         onSelect={setGpu}

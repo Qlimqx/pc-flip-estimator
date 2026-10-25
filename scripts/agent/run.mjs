@@ -21,10 +21,11 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { genuineListings, summarizePrices, round2 } from '../lib/pricing.mjs'
 import { CATEGORIES, checkEntries, findDuplicates, itemKey, loadCatalogue, normalizeKey } from './lib/catalogue.mjs'
-import { confirmOnWikipedia, evaluateCandidate, MAX_ADDS_PER_RUN, tallyCandidates } from './lib/discovery.mjs'
+import { confirmOnWikipedia, evaluateCandidate, MAX_ADDS_PER_RUN, nearDuplicateOf, tallyCandidates } from './lib/discovery.mjs'
 import { EBAY_CATEGORIES, createEbayClient } from './lib/ebay.mjs'
 import { checkFormCoverage } from './lib/forms.mjs'
 import { notify } from './lib/notify.mjs'
+import { MAX_ATTEMPTS, MAX_REQUESTS_PER_RUN, TRUSTED_ASSOCIATIONS, loadRequests, parseRequest } from './lib/requests.mjs'
 import {
   RAM_PROBES,
   STORAGE_PROBES,
@@ -36,6 +37,7 @@ import {
   storageQuery,
 } from './lib/ramstorage.mjs'
 import { FINAL_STATUSES, computeStatus, publicStatus, renderMarkdown } from './lib/report.mjs'
+import { ARCHIVE_DIR, REVIEW_FILE, planReviewRotation } from './lib/rotate-review.mjs'
 import { acquireLock, createTransaction, mergeJsonl, readJsonStrict, readText } from './lib/store.mjs'
 import { decidePrice } from './lib/verify.mjs'
 import { formatParis, parisToUtc, parisYmd } from './lib/time.mjs'
@@ -95,6 +97,7 @@ export async function runAgent(opts = {}) {
     force = false,
     ebay: injectedEbay,
     confirm: injectedConfirm,
+    requests: injectedRequests,
     fsOps,
     checkpointEvery = CHECKPOINT_EVERY,
     minIntervalMs,
@@ -150,6 +153,7 @@ export async function runAgent(opts = {}) {
   const history = []
   const added = []
   const ramStorage = []
+  const requestResults = []
   let fatal = null
   let catalogue = null
   let ebay = null
@@ -212,6 +216,7 @@ export async function runAgent(opts = {}) {
       fatal,
       added: added.map((a) => ({ category: a.category, ...a.record, ...a.record.agent, annoncesVues: a.record.agent.annoncesVues, attributsEstimes: a.record.agent.attributsEstimes })),
       ramStorage,
+      requests: requestResults,
       manualReview: [
         ...manualReview,
         ...anomalies.map((i) => ({ kind: i.kind, key: i.key, nom: i.nom, reason: i.detail })),
@@ -225,16 +230,29 @@ export async function runAgent(opts = {}) {
       try {
         // PRICE_REVIEW.md : même format que l'ancien pipeline (la routine de
         // vérification IA lit la section « Rejetés »).
+        const reviewPath = path.join(root, REVIEW_FILE)
         if (priceReviewLines.rejected.length || priceReviewLines.flagged.length) {
-          const reviewPath = path.join(root, 'PRICE_REVIEW.md')
           const existing = (await readText(reviewPath, '# Écarts de prix à vérifier\n\n')) ?? ''
           const marker = `## ${day} (agent quotidien)`
           if (!existing.includes(marker)) {
             const lines = [marker, '']
             if (priceReviewLines.rejected.length) lines.push('### Rejetés (écart trop important, valeur inchangée)', '', ...priceReviewLines.rejected, '')
             if (priceReviewLines.flagged.length) lines.push('### Écarts notables acceptés (à vérifier)', '', ...priceReviewLines.flagged, '')
-            tx.stage('PRICE_REVIEW.md', existing + lines.join('\n'))
+            tx.stage(REVIEW_FILE, existing + lines.join('\n'))
           }
+        }
+        // Rotation : sections de plus de 30 jours -> docs/price-review-archive/.
+        // Non bloquante : en cas d'échec le fichier reste tel quel (avertissement).
+        try {
+          const reviewText = tx.peek(REVIEW_FILE) ?? (await readText(reviewPath, null))
+          if (reviewText !== null) {
+            const plan = await planReviewRotation({ root, text: reviewText, today: day })
+            for (const [rel, content] of Object.entries(plan.files)) tx.stage(rel, content)
+            if (plan.archivedCount > 0) log(`Agent : ${plan.archivedCount} section(s) de ${REVIEW_FILE} archivée(s) dans ${ARCHIVE_DIR}/.`)
+          }
+        } catch (err) {
+          report.warnings.push(`rotation de ${REVIEW_FILE} impossible : ${err.message}`)
+          if (report.status === 'termine') report.status = 'termine_avec_avertissements'
         }
         const historyText = await readText(path.join(root, historyRel), '')
         const merged = mergeJsonl(historyText, history, (r) => `${r.date}|${r.key}`)
@@ -456,6 +474,80 @@ export async function runAgent(opts = {}) {
       status: ebay.stats.circuitOpen ? 'indisponible (disjoncteur)' : counters.sourceUnavailable ? 'partiellement disponible' : 'disponible',
       detail: `${ebay.stats.calls} requêtes, ${ebay.stats.retries} nouvelle(s) tentative(s), ${ebay.stats.failures} échec(s) ; prix demandés d'occasion et neufs`,
     })
+
+    // --- 3b. demandes d'ajout faites depuis l'application ---
+    {
+      state.requests ??= {}
+      let pendingRequests = []
+      try {
+        const loaded = injectedRequests ? { requests: injectedRequests, note: null } : await loadRequests(env)
+        pendingRequests = loaded.requests
+        if (loaded.note) sources.push({ name: "Demandes d'ajout (issues GitHub)", status: 'non lues', detail: loaded.note })
+      } catch (err) {
+        warnings.push(`demandes d'ajout illisibles : ${err.message}`)
+      }
+      const known = new Map(catalogue.entries.map((e) => [`${e.category}:${normalizeKey(e.nom)}`, e.nom]))
+      const confirmRequest = injectedConfirm ?? ((core) => confirmOnWikipedia(core, { fetchImpl }))
+      let handled = 0
+      for (const req of pendingRequests) {
+        if (!TRUSTED_ASSOCIATIONS.has(req.authorAssociation)) continue // dépôt public : demandes d'inconnus ignorées
+        if (handled >= MAX_REQUESTS_PER_RUN || now() >= new Date(deadlineAt.getTime() - 6 * 60000)) break
+        handled += 1
+        const st = (state.requests[req.number] ??= { firstSeen: day, attempts: 0 })
+        const result = { number: req.number, demande: String(req.title).slice(0, 120), notify: false }
+        const parsed = parseRequest(req)
+        if (parsed.error) {
+          Object.assign(result, { outcome: 'non-reconnu', nom: '(inconnu)', reason: parsed.error, notify: st.lastReason !== parsed.error })
+          st.lastReason = parsed.error
+          requestResults.push(result)
+          continue
+        }
+        const cand = parsed.model
+        const key = `${cand.category}:${normalizeKey(cand.nom)}`
+        result.nom = cand.nom
+        if (known.has(key)) {
+          Object.assign(result, { outcome: 'deja-present', nom: known.get(key), notify: true })
+          requestResults.push(result)
+          continue
+        }
+        const verdict = await evaluateCandidate(
+          { ...cand, requested: true, listingCount: 0, sellerCount: 0, nearDuplicateOf: nearDuplicateOf(key, known) },
+          { search: (q, o) => ebay.search(q, o), confirm: confirmRequest, entries: catalogue.entries, today: day },
+        )
+        st.attempts += 1
+        if (verdict.verdict === 'ajouter') {
+          const record = verdict.record
+          const cat = cand.category
+          if (catalogue.entries.some((e) => e.category === cat && e.id === record.id)) {
+            Object.assign(result, { outcome: 'a-verifier', reason: `identifiant ${record.id} déjà utilisé`, notify: false })
+          } else {
+            catalogue.added[cat] = [...catalogue.added[cat], record]
+            catalogue.entries.push({
+              id: record.id, nom: record.nom, category: cat, origin: 'agent', marque: record.marque, socket: record.socket, vramGo: record.vramGo,
+              baseMin: record.min, baseMoyen: record.moyen, baseMax: record.max, baseDateMaj: record.dateMaj,
+              faciliteRevente: record.faciliteRevente, decoteAnciennete: record.decoteAnciennete, tier: record.tier,
+            })
+            known.set(key, record.nom)
+            state.items[`${cat}:${record.id}`] = { checkedOn: day, lastVerifiedOn: day, status: 'ajoute', pending: null }
+            added.push({ category: cat, record })
+            history.push({ date: day, key: `${cat}:${record.id}`, min: record.min, moyen: record.moyen, max: record.max, n: record.agent.echantillons, neuf: record.agent.prixNeufIndicatif, decision: 'ajoute' })
+            Object.assign(result, { outcome: 'ajoute', detail: `${record.moyen} €, fourchette ${record.min}–${record.max} €, ${record.agent.echantillons} annonces`, notify: true })
+          }
+        } else {
+          const reason = verdict.reasons.join(' ; ')
+          const giveUp = st.attempts >= MAX_ATTEMPTS && !verdict.retryable
+          Object.assign(result, { outcome: giveUp ? 'abandonne' : 'a-verifier', reason, notify: giveUp || st.lastReason !== reason })
+          st.lastReason = reason
+          manualReview.push({ kind: 'demande-non-aboutie', key, nom: cand.nom, reason: `demande #${req.number} : ${reason}` })
+        }
+        requestResults.push(result)
+      }
+      if (!dryRun && added.length > 0) {
+        for (const cat of Object.keys(CATEGORIES)) {
+          if (catalogue.added[cat].length) tx.stageJson(addedRels[cat], catalogue.added[cat])
+        }
+      }
+    }
 
     // --- 4. RAM / stockage ---
     {

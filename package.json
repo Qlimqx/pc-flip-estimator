@@ -12,6 +12,7 @@
     "test": "vitest run",
     "agent": "node scripts/agent/run.mjs",
     "agent:dry-run": "node scripts/agent/run.mjs --dry-run",
+    "review:rotate": "node scripts/agent/rotate-review.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
