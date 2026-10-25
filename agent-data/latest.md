@@ -2,9 +2,9 @@
 
 **Statut : Terminé avec avertissements**
 
-- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40225499194))
-- Début : 2026-10-25 20:19 (Paris) · Fin : 2026-10-25 20:20 (Paris) · Durée : 14 s
-- Échéance de travail : 2026-10-25 20:44 (Paris) · Terminé avant 10 h (Paris) : NON
+- Déclencheur : workflow_dispatch ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40226818698))
+- Début : 2026-10-25 20:36 (Paris) · Fin : 2026-10-25 20:36 (Paris) · Durée : 17 s
+- Échéance de travail : 2026-10-25 21:01 (Paris) · Terminé avant 10 h (Paris) : NON
 
 ## Bilan
 
@@ -38,7 +38,7 @@
 
 ## Demandes d'ajout (issues « composant-demande »)
 
-- #7 **AMD Ryzen 7 5700** : ajoute — 150 €, fourchette 127.5–172.5 €, 0 annonces
+- #8 **AMD Ryzen 7 5700** : ajoute — 150 €, fourchette 127.5–172.5 €, 0 annonces
 
 ## À vérifier manuellement
 

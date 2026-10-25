@@ -1918,6 +1918,12 @@
       "pending": null,
       "reason": "appliqué",
       "failures": 0
+    },
+    "cpu:ryzen-7-5700": {
+      "checkedOn": "2026-10-25",
+      "lastVerifiedOn": "2026-10-25",
+      "status": "ajoute",
+      "pending": null
     }
   },
   "missing": {
@@ -2000,6 +2006,11 @@
     }
   },
   "rates": {},
-  "updatedAt": "2026-10-25T19:20:07.785Z",
-  "requests": {}
+  "updatedAt": "2026-10-25T19:36:45.615Z",
+  "requests": {
+    "8": {
+      "firstSeen": "2026-10-25",
+      "attempts": 1
+    }
+  }
 }
