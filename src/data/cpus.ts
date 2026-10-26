@@ -793,10 +793,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 7 5700X',
     marque: 'AMD',
     socket: 'AM4',
-    min: 130,
-    moyen: 150,
-    max: 170,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-10-26 : flagué "borderline" les 2026-10-23/25 (cluster
+    // eBay.de 10-17% sous la base). Confirmé aujourd'hui : neuf actuel
+    // Materiel.net 219,95€ / Boulanger 189,99€ (x0,7 ~133-154€) + cluster
+    // eBay.de occasion 107-146€, convergents sous l'ancienne base.
+    min: 110,
+    moyen: 130,
+    max: 155,
+    dateMaj: '2026-10-26',
     faciliteRevente: 0.85,
     decoteAnciennete: 1.0,
     tier: 3,
@@ -1112,14 +1116,18 @@ const BASE_CPUS: CpuPricing[] = [
   },
   {
     id: 'i7-13700k',
-    // Vérifié en direct : ~370-550€ sur LeBonCoin, exemples autour de 370€.
+    // Corrigé le 2026-10-26 : la base (moyen 400€) avait fini par dépasser le
+    // prix du neuf actuel (comparateur-gamer.fr 381,07€, Amazon.fr KF 366,57€),
+    // ce qui est incohérent. Cluster eBay.de occasion 190-266€, sanity-check
+    // neuf x0,7 ~259-267€ cohérent avec ce cluster -- dérive la plus nette
+    // détectée dans la rotation du jour.
     nom: 'Intel Core i7-13700K',
     marque: 'Intel',
     socket: 'LGA1700',
-    min: 340,
-    moyen: 400,
-    max: 460,
-    dateMaj: '2026-08-25',
+    min: 230,
+    moyen: 265,
+    max: 300,
+    dateMaj: '2026-10-26',
     faciliteRevente: 0.72,
     decoteAnciennete: 1.0,
     tier: 5,

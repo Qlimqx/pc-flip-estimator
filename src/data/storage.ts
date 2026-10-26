@@ -66,6 +66,16 @@ export const STORAGE_TYPE_LABELS: Record<StorageType, string> = {
 // confirmer par une recherche LeBonCoin directe au prochain cycle (confiance
 // plus faible que d'habitude, pas de donnée occasion directe collectée ce
 // jour). ddr4/ddr5/ssd : voir ram.ts, corrigé le même jour pour la ddr5.
+//
+// Corrigé le 2026-10-26 : le relevé du 10-25 (0,11€/Go, extrapolé par ratio
+// DDR5 faute de donnée occasion directe) s'avère de nouveau trop haut --
+// avec le plancher à 45€, un NVMe 1To "bon état" est estimé ~120-125€, soit
+// au niveau ou au-dessus de plusieurs références neuves d'entrée de gamme
+// actuelles (Netac NV3000 1To ~85€, Crucial P5 Plus 1To ~110€), la même
+// anomalie "occasion >= neuf" déjà corrigée les 10-07/10-14/10-18. Faute de
+// nouvelle annonce occasion directe ce jour non plus, retour prudent vers le
+// dernier calibrage réellement basé sur des annonces concrètes (10-18) :
+// nvme ramené à 0,095€/Go, plancher 40€.
 export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
   hdd: {
     prixParGo: 0.018,
@@ -80,8 +90,8 @@ export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
     decoteAnciennete: 1.0,
   },
   nvme: {
-    prixParGo: 0.11,
-    plancher: 45,
+    prixParGo: 0.095,
+    plancher: 40,
     faciliteRevente: 0.8,
     decoteAnciennete: 1.05,
   },

@@ -1280,10 +1280,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 7900 GRE',
     marque: 'AMD',
     vramGo: 16,
-    min: 445,
-    moyen: 480,
-    max: 520,
-    dateMaj: '2026-08-24',
+    // Ajusté le 2026-10-26 : jamais revérifié depuis le 08-24. Pas d'annonce
+    // LeBonCoin "7900 GRE" exploitable (confiance modérée), mais neuf DE actuel
+    // ~799€ (gpuprix.com) et tendance eBay US $525->$660 en 5 mois (gpupoet.com,
+    // oct. 2026, soit ~488€->614€) pointent tous deux au-dessus de l'ancienne
+    // base -- ajustement modéré (~+12%).
+    min: 480,
+    moyen: 540,
+    max: 590,
+    dateMaj: '2026-10-26',
     faciliteRevente: 0.6,
     decoteAnciennete: 1.0,
     tier: 5,
@@ -1306,10 +1311,16 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 4070 Ti Super',
     marque: 'NVIDIA',
     vramGo: 16,
-    min: 640,
-    moyen: 680,
-    max: 725,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-10-26 : jamais revérifié individuellement depuis le
+    // calibrage initial du 08-24. Neuf FR actuel 1336-1464€ (gpupricehistory.com)
+    // -- la base avait largement décroché du marché. 3 annonces LeBonCoin carte
+    // seule 500/750/850€ (médiane ~750€) + tendance eBay US +23,1% sur la
+    // période (gpupoet.com, oct. 2026) convergent vers une fourchette nettement
+    // plus haute.
+    min: 750,
+    moyen: 870,
+    max: 1000,
+    dateMaj: '2026-10-26',
     faciliteRevente: 0.8,
     decoteAnciennete: 1.04,
     tier: 5,
