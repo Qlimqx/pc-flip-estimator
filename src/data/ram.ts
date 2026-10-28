@@ -84,6 +84,18 @@ export const RAM_TYPE_LABELS: Record<RamType, string> = {
 // actuels, dans la tolérance) -- inchangé. SSD SATA revérifié, données
 // insuffisantes pour trancher mais dans la fourchette plausible --
 // inchangé (voir storage.ts pour NVMe, corrigé ce même jour).
+//
+// Corrigé le 2026-10-28 : la pénurie DRAM continue de pousser la DDR5 à la
+// hausse. 2 sources convergentes : (1) annonces LeBonCoin directes -- kit
+// 32Go Crucial SODIMM 290€ (9,1€/Go), kit 32Go DDR5-6600 "état neuf" 400€
+// (12,5€/Go) ; (2) presse tech (Cowcotland/Overclocking.com/Grosbill,
+// oct. 2026) -- kits 32Go neufs cités à 400-480€ (contre 120-140€ mi-2025),
+// soit neuf×0,78 ≈ 9,75-11,7€/Go. ddr5 relevé de 8,5 à 11€/Go et le
+// plancher de 65 à 80€ (confiance modérée -- échantillon LeBonCoin limité,
+// prix demandés non confirmés vendus -- à reconfirmer dans 1-2 semaines).
+// ddr4/SSD/NVMe revérifiés ce même jour, toujours cohérents avec le marché
+// occasion réel malgré un écart de +44% à +57% signalé par un pipeline
+// séparé qui confond prix neuf et occasion -- voir storage.ts, inchangés.
 export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
   ddr3: {
     // DDR3 est aussi "touchée" par la pénurie selon la presse (marché de
@@ -103,8 +115,8 @@ export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
     decoteAnciennete: 1.0,
   },
   ddr5: {
-    prixParGo: 8.5,
-    plancher: 65,
+    prixParGo: 11,
+    plancher: 80,
     faciliteRevente: 0.85,
     decoteAnciennete: 1.1,
   },
