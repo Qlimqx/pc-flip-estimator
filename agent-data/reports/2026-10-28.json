@@ -1,0 +1,1081 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "runId": "2026-10-28-050459",
+  "trigger": "push",
+  "runUrl": "https://github.com/Qlimqx/pc-flip-estimator/actions/runs/40635885520",
+  "dryRun": false,
+  "status": "termine_avec_avertissements",
+  "startedAt": "2026-10-28T05:04:59.845Z",
+  "finishedAt": "2026-10-28T05:06:43.700Z",
+  "startedParis": "2026-10-28 06:04 (Paris)",
+  "finishedParis": "2026-10-28 06:06 (Paris)",
+  "durationSec": 104,
+  "deadlineParis": "2026-10-28 06:44 (Paris)",
+  "windowEndParis": "2026-10-28 09:45 (Paris)",
+  "startedInWindow": true,
+  "finishedBeforeTenParis": true,
+  "staleDays": 45,
+  "counts": {
+    "catalogue": 211,
+    "verified": 101,
+    "updated": 42,
+    "updatedToReview": 21,
+    "pending": 1,
+    "insufficient": 110,
+    "rejected": 60,
+    "sourceUnavailable": 0,
+    "ramStorageUnavailable": 0,
+    "unprocessed": 0,
+    "added": 0,
+    "missingDetected": 12,
+    "absentOrObsolete": 83,
+    "anomalies": 0,
+    "verifiedToday": 101,
+    "changedToday": 16
+  },
+  "sources": [
+    {
+      "name": "eBay Browse (FR)",
+      "status": "disponible",
+      "detail": "422 requêtes, 0 nouvelle(s) tentative(s), 0 échec(s) ; prix demandés d'occasion et neufs"
+    },
+    {
+      "name": "Wikipédia (confirmation d'existence)",
+      "status": "utilisée pour les candidats évalués",
+      "detail": "API de recherche MediaWiki, extraits contenant le modèle exact"
+    }
+  ],
+  "warnings": [
+    "60 prix rejeté(s) comme aberrants (valeur conservée)"
+  ],
+  "errors": [],
+  "fatal": null,
+  "added": [],
+  "ramStorage": [
+    {
+      "key": "ram:ddr3",
+      "status": "rejete",
+      "reason": "écart de 184 % à la référence (0.9 € -> 2.56 €), au-delà de 60 %",
+      "moyen": 2.56,
+      "sampleCount": 28
+    },
+    {
+      "key": "ram:ddr4",
+      "status": "mis-a-jour-a-verifier",
+      "reason": "appliqué mais écart de 44 % à la référence : relecture humaine conseillée",
+      "moyen": 5.7531,
+      "sampleCount": 12
+    },
+    {
+      "key": "ram:ddr5",
+      "status": "donnees-insuffisantes",
+      "reason": "moins de 4 annonces valides après filtrage : valeur conservée"
+    },
+    {
+      "key": "stockage:hdd",
+      "status": "rejete",
+      "reason": "écart de 149 % à la référence (0.018 € -> 0.0448 €), au-delà de 60 %",
+      "moyen": 0.0448,
+      "sampleCount": 29
+    },
+    {
+      "key": "stockage:ssd",
+      "status": "mis-a-jour-a-verifier",
+      "reason": "appliqué mais écart de 57 % à la référence : relecture humaine conseillée",
+      "moyen": 0.1572,
+      "sampleCount": 64
+    },
+    {
+      "key": "stockage:nvme",
+      "status": "mis-a-jour-a-verifier",
+      "reason": "appliqué mais écart de 44 % à la référence : relecture humaine conseillée",
+      "moyen": 0.1368,
+      "sampleCount": 33
+    }
+  ],
+  "requests": [],
+  "manualReview": [
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-4080",
+      "nom": "RTX 4080",
+      "reason": "écart de 80 % à la référence (950 € -> 1708.79 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rtx-4080-super",
+      "nom": "RTX 4080 Super",
+      "reason": "appliqué mais écart de 37 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "cpu:ryzen-9-3900x",
+      "nom": "AMD Ryzen 9 3900X",
+      "reason": "appliqué mais écart de 33 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:i7-3770k",
+      "nom": "Intel Core i7-3770K",
+      "reason": "écart de 94 % à la référence (48 € -> 93.28 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:i5-3570k",
+      "nom": "Intel Core i5-3570K",
+      "reason": "écart de 145 % à la référence (30 € -> 73.5 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rtx-4060",
+      "nom": "RTX 4060",
+      "reason": "appliqué mais écart de 52 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-4070-super",
+      "nom": "RTX 4070 Super",
+      "reason": "écart de 126 % à la référence (610 € -> 1375.87 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "cpu:ryzen-7-5800x",
+      "nom": "AMD Ryzen 7 5800X",
+      "reason": "appliqué mais écart de 30 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-4060-ti",
+      "nom": "RTX 4060 Ti",
+      "reason": "écart de 126 % à la référence (340 € -> 769.53 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-5060-ti",
+      "nom": "RTX 5060 Ti",
+      "reason": "écart de 77 % à la référence (510 € -> 904.3 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-5080",
+      "nom": "RTX 5080",
+      "reason": "écart de 164 % à la référence (1200 € -> 3163.37 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rtx-5090",
+      "nom": "RTX 5090",
+      "reason": "appliqué mais écart de 48 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-3060",
+      "nom": "RTX 3060",
+      "reason": "écart de 166 % à la référence (235 € -> 624.17 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-4070-ti",
+      "nom": "RTX 4070 Ti",
+      "reason": "écart de 69 % à la référence (720 € -> 1215.03 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:ryzen-7-7700",
+      "nom": "AMD Ryzen 7 7700",
+      "reason": "écart de 109 % à la référence (180 € -> 376.56 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-3060-ti",
+      "nom": "RTX 3060 Ti",
+      "reason": "écart de 88 % à la référence (220 € -> 414.7 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rtx-3070",
+      "nom": "RTX 3070",
+      "reason": "appliqué mais écart de 35 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:ryzen-5-3600",
+      "nom": "AMD Ryzen 5 3600",
+      "reason": "écart de 149 % à la référence (58 € -> 144.21 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-3070-ti",
+      "nom": "RTX 3070 Ti",
+      "reason": "écart de 94 % à la référence (290 € -> 562.85 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-3080",
+      "nom": "RTX 3080",
+      "reason": "écart de 63 % à la référence (380 € -> 618.7 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:ryzen-5-3600x",
+      "nom": "AMD Ryzen 5 3600X",
+      "reason": "écart de 103 % à la référence (60 € -> 121.86 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rx-9070-xt",
+      "nom": "RX 9070 XT",
+      "reason": "écart de 128 % à la référence (580 € -> 1323.39 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-3080-ti",
+      "nom": "RTX 3080 Ti",
+      "reason": "écart de 82 % à la référence (480 € -> 871.55 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:ryzen-7-3800x",
+      "nom": "AMD Ryzen 7 3800X",
+      "reason": "écart de 86 % à la référence (98 € -> 182.7 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-3050",
+      "nom": "RTX 3050",
+      "reason": "écart de 137 % à la référence (150 € -> 355.78 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rx-6600",
+      "nom": "RX 6600",
+      "reason": "appliqué mais écart de 38 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rtx-2060",
+      "nom": "RTX 2060",
+      "reason": "appliqué mais écart de 56 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rx-6700-xt",
+      "nom": "RX 6700 XT",
+      "reason": "appliqué mais écart de 51 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rx-6750-xt",
+      "nom": "RX 6750 XT",
+      "reason": "écart de 85 % à la référence (265 € -> 490.69 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-3090",
+      "nom": "RTX 3090",
+      "reason": "écart de 249 % à la référence (900 € -> 3138.56 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rtx-2070",
+      "nom": "RTX 2070",
+      "reason": "appliqué mais écart de 47 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-2070-super",
+      "nom": "RTX 2070 Super",
+      "reason": "écart de 108 % à la référence (158 € -> 329.15 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:i5-10400f",
+      "nom": "Intel Core i5-10400F",
+      "reason": "écart de 92 % à la référence (75 € -> 143.97 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-1660-super",
+      "nom": "GTX 1660 Super",
+      "reason": "écart de 122 % à la référence (102 € -> 226.9 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-1660-ti",
+      "nom": "GTX 1660 Ti",
+      "reason": "écart de 154 % à la référence (108 € -> 274.4 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rtx-2080",
+      "nom": "RTX 2080",
+      "reason": "appliqué mais écart de 41 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-2080-super",
+      "nom": "RTX 2080 Super",
+      "reason": "écart de 99 % à la référence (230 € -> 457.69 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:rx-6900-xt",
+      "nom": "RX 6900 XT",
+      "reason": "appliqué mais écart de 59 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "cpu:ryzen-5-2600x",
+      "nom": "AMD Ryzen 5 2600X",
+      "reason": "appliqué mais écart de 30 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "cpu:ryzen-3-3200g",
+      "nom": "AMD Ryzen 3 3200G",
+      "reason": "appliqué mais écart de 29 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:ryzen-7-2700x",
+      "nom": "AMD Ryzen 7 2700X",
+      "reason": "écart de 187 % à la référence (38 € -> 109.08 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "cpu:i5-9400f",
+      "nom": "Intel Core i5-9400F",
+      "reason": "appliqué mais écart de 41 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rx-5700-xt",
+      "nom": "RX 5700 XT",
+      "reason": "écart de 86 % à la référence (165 € -> 306.35 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-1660",
+      "nom": "GTX 1660",
+      "reason": "écart de 90 % à la référence (88 € -> 167.1 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rtx-2080-ti",
+      "nom": "RTX 2080 Ti",
+      "reason": "écart de 169 % à la référence (230 € -> 618.7 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:ryzen-5-1600",
+      "nom": "AMD Ryzen 5 1600",
+      "reason": "écart de 90 % à la référence (33 € -> 62.58 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:i3-10100f",
+      "nom": "Intel Core i3-10100F",
+      "reason": "écart de 63 % à la référence (42 € -> 68.3 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "cpu:i9-9900k",
+      "nom": "Intel Core i9-9900K",
+      "reason": "appliqué mais écart de 56 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-1650",
+      "nom": "GTX 1650",
+      "reason": "écart de 155 % à la référence (82 € -> 208.7 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-1070",
+      "nom": "GTX 1070",
+      "reason": "écart de 132 % à la référence (100 € -> 231.56 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-1070-ti",
+      "nom": "GTX 1070 Ti",
+      "reason": "écart de 135 % à la référence (115 € -> 270.61 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-1080-ti",
+      "nom": "GTX 1080 Ti",
+      "reason": "écart de 132 % à la référence (180 € -> 417.47 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:gtx-1080",
+      "nom": "GTX 1080",
+      "reason": "appliqué mais écart de 34 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "cpu:i3-8100",
+      "nom": "Intel Core i3-8100",
+      "reason": "appliqué mais écart de 28 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-1050-ti",
+      "nom": "GTX 1050 Ti",
+      "reason": "écart de 75 % à la référence (70 € -> 122.52 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rx-580",
+      "nom": "RX 580",
+      "reason": "écart de 74 % à la référence (72 € -> 125.5 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rx-590",
+      "nom": "RX 590",
+      "reason": "écart de 98 % à la référence (85 € -> 168.35 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "cpu:i7-4790k",
+      "nom": "Intel Core i7-4790K",
+      "reason": "appliqué mais écart de 44 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rx-570",
+      "nom": "RX 570",
+      "reason": "écart de 173 % à la référence (55 € -> 150.38 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "cpu:i5-4590",
+      "nom": "Intel Core i5-4590",
+      "reason": "appliqué mais écart de 36 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-970",
+      "nom": "GTX 970",
+      "reason": "écart de 77 % à la référence (42 € -> 74.25 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-980",
+      "nom": "GTX 980",
+      "reason": "écart de 158 % à la référence (55 € -> 141.97 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:rx-560",
+      "nom": "RX 560",
+      "reason": "écart de 144 % à la référence (33 € -> 80.39 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-960",
+      "nom": "GTX 960",
+      "reason": "écart de 160 % à la référence (42 € -> 109 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-950",
+      "nom": "GTX 950",
+      "reason": "écart de 491 % à la référence (28 € -> 165.57 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-750-ti",
+      "nom": "GTX 750 Ti",
+      "reason": "écart de 454 % à la référence (22 € -> 121.88 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:i5-2500k",
+      "nom": "Intel Core i5-2500K",
+      "reason": "écart de 79 % à la référence (12 € -> 21.5 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-760",
+      "nom": "GTX 760",
+      "reason": "écart de 387 % à la référence (25 € -> 121.8 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-770",
+      "nom": "GTX 770",
+      "reason": "écart de 134 % à la référence (27 € -> 63.1 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-780",
+      "nom": "GTX 780",
+      "reason": "écart de 174 % à la référence (42 € -> 115.1 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "cpu:fx-6300",
+      "nom": "AMD FX-6300",
+      "reason": "écart de 73 % à la référence (22 € -> 38.11 €), au-delà de 60 %"
+    },
+    {
+      "kind": "ecart-notable",
+      "key": "gpu:gt-1030",
+      "nom": "GT 1030",
+      "reason": "appliqué mais écart de 57 % à la référence : relecture humaine conseillée"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-660",
+      "nom": "GTX 660",
+      "reason": "écart de 108 % à la référence (19 € -> 39.44 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-670",
+      "nom": "GTX 670",
+      "reason": "écart de 130 % à la référence (22 € -> 50.62 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-680",
+      "nom": "GTX 680",
+      "reason": "écart de 239 % à la référence (36 € -> 122.15 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:r9-270x",
+      "nom": "R9 270X",
+      "reason": "écart de 102 % à la référence (23 € -> 46.35 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-460",
+      "nom": "GTX 460",
+      "reason": "écart de 149 % à la référence (12 € -> 29.82 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:gtx-560-ti",
+      "nom": "GTX 560 Ti",
+      "reason": "écart de 150 % à la référence (15 € -> 37.49 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "gpu:hd-7870",
+      "nom": "Radeon HD 7870",
+      "reason": "écart de 87 % à la référence (21 € -> 39.18 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "ram:ddr3",
+      "nom": "ram:ddr3",
+      "reason": "écart de 184 % à la référence (0.9 € -> 2.56 €), au-delà de 60 %"
+    },
+    {
+      "kind": "prix-rejete",
+      "key": "stockage:hdd",
+      "nom": "stockage:hdd",
+      "reason": "écart de 149 % à la référence (0.018 € -> 0.0448 €), au-delà de 60 %"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "gpu:gtx1060",
+      "nom": "GTX 1060",
+      "reason": "6 annonce(s), 5 vendeur(s) — variante proche d'un composant déjà au catalogue (« GTX 1060 3Go ») : doublon possible"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i56400",
+      "nom": "Intel Core i5-6400",
+      "reason": "5 annonce(s), 5 vendeur(s) — seulement 5 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i34130",
+      "nom": "Intel Core i3-4130",
+      "reason": "4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i76700",
+      "nom": "Intel Core i7-6700",
+      "reason": "4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i77700k",
+      "nom": "Intel Core i7-7700K",
+      "reason": "4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i911900f",
+      "nom": "Intel Core i9-11900F",
+      "reason": "4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i39100",
+      "nom": "Intel Core i3-9100",
+      "reason": "3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i34170",
+      "nom": "Intel Core i3-4170",
+      "reason": "3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i34160",
+      "nom": "Intel Core i3-4160",
+      "reason": "3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i32120",
+      "nom": "Intel Core i3-2120",
+      "reason": "3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i36320",
+      "nom": "Intel Core i3-6320",
+      "reason": "3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)"
+    },
+    {
+      "kind": "composant-manquant",
+      "key": "cpu:i58500",
+      "nom": "Intel Core i5-8500",
+      "reason": "3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)"
+    }
+  ],
+  "absentOrObsolete": [
+    {
+      "key": "cpu:i5-2500k",
+      "nom": "Intel Core i5-2500K",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:i7-2600k",
+      "nom": "Intel Core i7-2600K",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:fx-8320",
+      "nom": "AMD FX-8320",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:fx-9590",
+      "nom": "AMD FX-9590",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:i5-4460",
+      "nom": "Intel Core i5-4460",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "cpu:ryzen-3-1300x",
+      "nom": "AMD Ryzen 3 1300X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-7-1700",
+      "nom": "AMD Ryzen 7 1700",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-7-1800x",
+      "nom": "AMD Ryzen 7 1800X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:i3-10100f",
+      "nom": "Intel Core i3-10100F",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "cpu:ryzen-3-3300x",
+      "nom": "AMD Ryzen 3 3300X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-7-2700",
+      "nom": "AMD Ryzen 7 2700",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:i5-11400f",
+      "nom": "Intel Core i5-11400F",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "cpu:ryzen-5-4600g",
+      "nom": "AMD Ryzen 5 4600G",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-9-3950x",
+      "nom": "AMD Ryzen 9 3950X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-5-5500",
+      "nom": "AMD Ryzen 5 5500",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-5-5600x",
+      "nom": "AMD Ryzen 5 5600X",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "cpu:i5-11600k",
+      "nom": "Intel Core i5-11600K",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:i5-12400f",
+      "nom": "Intel Core i5-12400F",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "cpu:i9-11900k",
+      "nom": "Intel Core i9-11900K",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-9-5950x",
+      "nom": "AMD Ryzen 9 5950X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:i5-12600k",
+      "nom": "Intel Core i5-12600K",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:i7-12700k",
+      "nom": "Intel Core i7-12700K",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "cpu:i9-12900k",
+      "nom": "Intel Core i9-12900K",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "cpu:i9-12900ks",
+      "nom": "Intel Core i9-12900KS",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:i5-13500",
+      "nom": "Intel Core i5-13500",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:i5-14400f",
+      "nom": "Intel Core i5-14400F",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-9-7900x3d",
+      "nom": "AMD Ryzen 9 7900X3D",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-9-7950x",
+      "nom": "AMD Ryzen 9 7950X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-9-7950x3d",
+      "nom": "AMD Ryzen 9 7950X3D",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-7-9800x3d",
+      "nom": "AMD Ryzen 7 9800X3D",
+      "detail": "prix vieux de 63 jours (2026-08-26)"
+    },
+    {
+      "key": "cpu:core-ultra-9-285k",
+      "nom": "Intel Core Ultra 9 285K",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-9-9950x",
+      "nom": "AMD Ryzen 9 9950X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "cpu:ryzen-9-9950x3d",
+      "nom": "AMD Ryzen 9 9950X3D",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-460",
+      "nom": "GTX 460",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-560-ti",
+      "nom": "GTX 560 Ti",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-570",
+      "nom": "GTX 570",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-580",
+      "nom": "GTX 580",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:hd-7850",
+      "nom": "Radeon HD 7850",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:hd-7870",
+      "nom": "Radeon HD 7870",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-660",
+      "nom": "GTX 660",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:hd-7950",
+      "nom": "Radeon HD 7950",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-670",
+      "nom": "GTX 670",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:hd-7970",
+      "nom": "Radeon HD 7970",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:r9-270x",
+      "nom": "R9 270X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-760",
+      "nom": "GTX 760",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:r9-280x",
+      "nom": "R9 280X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-770",
+      "nom": "GTX 770",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:r9-290",
+      "nom": "R9 290",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:r9-290x",
+      "nom": "R9 290X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-780-ti",
+      "nom": "GTX 780 Ti",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:r9-fury",
+      "nom": "R9 Fury",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:r9-fury-x",
+      "nom": "R9 Fury X",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-950",
+      "nom": "GTX 950",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-970",
+      "nom": "GTX 970",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-980",
+      "nom": "GTX 980",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:rx-460",
+      "nom": "RX 460",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:rx-470",
+      "nom": "RX 470",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:rx-550",
+      "nom": "RX 550",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:rx-560",
+      "nom": "RX 560",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:vega-56",
+      "nom": "Radeon Vega 56",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:vega-64",
+      "nom": "Radeon Vega 64",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-1630",
+      "nom": "GTX 1630",
+      "detail": "prix vieux de 64 jours (2026-08-25)"
+    },
+    {
+      "key": "gpu:gtx-750-ti",
+      "nom": "GTX 750 Ti",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:gtx-1650-super",
+      "nom": "GTX 1650 Super",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:gtx-1660-super",
+      "nom": "GTX 1660 Super",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:gtx-1660-ti",
+      "nom": "GTX 1660 Ti",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:gtx-1080-ti",
+      "nom": "GTX 1080 Ti",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rtx-2070-super",
+      "nom": "RTX 2070 Super",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rtx-2080-ti",
+      "nom": "RTX 2080 Ti",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rtx-3070-ti",
+      "nom": "RTX 3070 Ti",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rx-6800",
+      "nom": "RX 6800",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rx-6800-xt",
+      "nom": "RX 6800 XT",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:arc-a750",
+      "nom": "Intel Arc A750",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:arc-a770",
+      "nom": "Intel Arc A770",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rx-7600",
+      "nom": "RX 7600",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rtx-4060-ti",
+      "nom": "RTX 4060 Ti",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:arc-b570",
+      "nom": "Intel Arc B570",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:arc-b580",
+      "nom": "Intel Arc B580",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rx-7700-xt",
+      "nom": "RX 7700 XT",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rx-7800-xt",
+      "nom": "RX 7800 XT",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rx-9070",
+      "nom": "RX 9070",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rtx-5060",
+      "nom": "RTX 5060",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    },
+    {
+      "key": "gpu:rtx-5070-ti",
+      "nom": "RTX 5070 Ti",
+      "detail": "prix vieux de 65 jours (2026-08-24)"
+    }
+  ],
+  "limits": [
+    "Les prix eBay sont des prix DEMANDÉS (annonces actives), jamais des prix de vente constatés.",
+    "Aucune API de fabricant ou de boutique neuve n'est connectée : le prix neuf est le prix demandé eBay (état « Neuf »), indicatif.",
+    "Cartes mères, alimentations, boîtiers et refroidissements ne sont valorisés que par forfait (secondary.ts) : non vérifiables modèle par modèle.",
+    "Les attributs des composants ajoutés (tier, facilité de revente, décote, socket) sont hérités d'un composant voisin et marqués comme estimés."
+  ]
+}

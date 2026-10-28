@@ -3,7 +3,7 @@
     "min": 65.82,
     "moyen": 94.05,
     "max": 104.7,
-    "dateMaj": "2026-10-27",
+    "dateMaj": "2026-10-28",
     "sampleCount": 6,
     "rawCount": 9
   },
@@ -40,11 +40,11 @@
     "rawCount": 16
   },
   "gtx-1080": {
-    "min": 170.61,
-    "moyen": 200.72,
-    "max": 230.83,
-    "dateMaj": "2026-10-27",
-    "sampleCount": 10,
+    "min": 159.72,
+    "moyen": 187.9,
+    "max": 216.08,
+    "dateMaj": "2026-10-28",
+    "sampleCount": 11,
     "rawCount": 50
   },
   "gtx-1660": {
@@ -59,7 +59,7 @@
     "min": 94.3,
     "moyen": 107.03,
     "max": 114.06,
-    "dateMaj": "2026-10-27",
+    "dateMaj": "2026-10-28",
     "sampleCount": 4,
     "rawCount": 10
   },
@@ -67,41 +67,41 @@
     "min": 16.14,
     "moyen": 21.5,
     "max": 33.99,
-    "dateMaj": "2026-10-27",
+    "dateMaj": "2026-10-28",
     "sampleCount": 11,
     "rawCount": 16
   },
   "rtx-2060": {
-    "min": 177.4,
-    "moyen": 208.7,
-    "max": 240,
-    "dateMaj": "2026-10-27",
-    "sampleCount": 24,
+    "min": 186.24,
+    "moyen": 219.1,
+    "max": 251.96,
+    "dateMaj": "2026-10-28",
+    "sampleCount": 27,
     "rawCount": 45
   },
   "rtx-2060-super": {
     "min": 161.9,
     "moyen": 187.9,
     "max": 208.7,
-    "dateMaj": "2026-10-27",
+    "dateMaj": "2026-10-28",
     "sampleCount": 7,
     "rawCount": 9
   },
   "rtx-2070": {
     "min": 177.5,
-    "moyen": 208.7,
+    "moyen": 208.18,
     "max": 242.35,
-    "dateMaj": "2026-10-27",
-    "sampleCount": 7,
+    "dateMaj": "2026-10-28",
+    "sampleCount": 8,
     "rawCount": 27
   },
   "rtx-2080": {
-    "min": 186.86,
-    "moyen": 260.18,
-    "max": 363.7,
-    "dateMaj": "2026-10-27",
-    "sampleCount": 6,
-    "rawCount": 30
+    "min": 221.59,
+    "moyen": 260.7,
+    "max": 299.8,
+    "dateMaj": "2026-10-28",
+    "sampleCount": 8,
+    "rawCount": 28
   },
   "rtx-3060": {
     "min": 208.7,
@@ -121,10 +121,10 @@
   },
   "rtx-3070": {
     "min": 271.1,
-    "moyen": 358.6,
+    "moyen": 350.95,
     "max": 484.15,
-    "dateMaj": "2026-10-27",
-    "sampleCount": 33,
+    "dateMaj": "2026-10-28",
+    "sampleCount": 32,
     "rawCount": 50
   },
   "rtx-3080": {
@@ -136,20 +136,20 @@
     "rawCount": 50
   },
   "rtx-4060": {
-    "min": 333.1,
-    "moyen": 358.6,
-    "max": 560.45,
-    "dateMaj": "2026-10-27",
-    "sampleCount": 4,
+    "min": 322.9,
+    "moyen": 363.7,
+    "max": 640.49,
+    "dateMaj": "2026-10-28",
+    "sampleCount": 5,
     "rawCount": 11
   },
   "rtx-4080-super": {
     "min": 1209.28,
-    "moyen": 1332.7,
-    "max": 2515.67,
-    "dateMaj": "2026-10-26",
+    "moyen": 1230.7,
+    "max": 1434.7,
+    "dateMaj": "2026-10-28",
     "sampleCount": 4,
-    "rawCount": 5
+    "rawCount": 6
   },
   "rtx-4090": {
     "min": 2046.7,
@@ -163,16 +163,16 @@
     "min": 6326.7,
     "moyen": 7836.7,
     "max": 9684.19,
-    "dateMaj": "2026-10-27",
+    "dateMaj": "2026-10-28",
     "sampleCount": 4,
-    "rawCount": 5
+    "rawCount": 6
   },
   "rx-480": {
-    "min": 101.95,
-    "moyen": 146.3,
-    "max": 167.1,
-    "dateMaj": "2026-10-27",
-    "sampleCount": 4,
+    "min": 115.52,
+    "moyen": 135.9,
+    "max": 156.29,
+    "dateMaj": "2026-10-28",
+    "sampleCount": 5,
     "rawCount": 9
   },
   "rx-5700": {
@@ -195,9 +195,9 @@
     "min": 198,
     "moyen": 255.66,
     "max": 312.69,
-    "dateMaj": "2026-10-27",
+    "dateMaj": "2026-10-28",
     "sampleCount": 14,
-    "rawCount": 30
+    "rawCount": 29
   },
   "rx-6600-xt": {
     "min": 192.87,
@@ -217,11 +217,11 @@
   },
   "rx-6700-xt": {
     "min": 333.1,
-    "moyen": 394.3,
-    "max": 624.64,
-    "dateMaj": "2026-10-27",
-    "sampleCount": 7,
-    "rawCount": 11
+    "moyen": 421.99,
+    "max": 728.51,
+    "dateMaj": "2026-10-28",
+    "sampleCount": 8,
+    "rawCount": 10
   },
   "rx-6750-xt": {
     "min": 312.7,
@@ -233,10 +233,10 @@
   },
   "rx-6900-xt": {
     "min": 516.7,
-    "moyen": 663.8,
-    "max": 1116.8,
-    "dateMaj": "2026-10-27",
-    "sampleCount": 8,
+    "moyen": 669.69,
+    "max": 1050.59,
+    "dateMaj": "2026-10-28",
+    "sampleCount": 9,
     "rawCount": 10
   }
 }
