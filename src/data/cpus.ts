@@ -1054,10 +1054,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i5-14400F',
     marque: 'Intel',
     socket: 'LGA1700',
-    min: 165,
-    moyen: 190,
-    max: 215,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-10-30 : neuf actuel ~173-184€ (Rue du Commerce,
+    // Materiel.net) -- l'ancien moyen (190€) dépassait même le neuf le moins
+    // cher, incohérent. LeBonCoin (plusieurs annonces CPU seul) 125-170€,
+    // sanity-check neuf×0,7 ≈ 123-129€ cohérent avec ce cluster.
+    min: 120,
+    moyen: 150,
+    max: 180,
+    dateMaj: '2026-10-30',
     faciliteRevente: 0.75,
     decoteAnciennete: 1.0,
     tier: 4,
@@ -1137,10 +1141,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 9 7900X3D',
     marque: 'AMD',
     socket: 'AM5',
-    min: 310,
-    moyen: 348,
-    max: 385,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-10-30 : neuf confirmé 569,95€ (LDLC et Materiel.net,
+    // concordants), mais annonces LeBonCoin CPU seul (hors bundle) à 200€ et
+    // 300€ -- le ratio neuf×0,7 (~400€) ne colle pas, dépréciation accélérée
+    // typique d'un flagship X3D 2023 concurrencé par la génération 9000X3D.
+    min: 220,
+    moyen: 265,
+    max: 310,
+    dateMaj: '2026-10-30',
     faciliteRevente: 0.75,
     decoteAnciennete: 1.05,
     tier: 5,
@@ -1180,10 +1188,15 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 9 7950X',
     marque: 'AMD',
     socket: 'AM5',
-    min: 340,
-    moyen: 385,
-    max: 430,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-10-30 : marché neuf résiduel peu fiable (fin de vie,
+    // remplacé par le 9950X) ; donnée occasion solide -- zeus-pc.com cite
+    // ~300€ sur LeBonCoin (12 annonces), confirmé par un cluster LeBonCoin
+    // direct 290-350€ (CPU seul, bundle à 800€ exclu). Ancien moyen (385€)
+    // ~17% trop haut.
+    min: 280,
+    moyen: 320,
+    max: 370,
+    dateMaj: '2026-10-30',
     faciliteRevente: 0.68,
     decoteAnciennete: 1.03,
     tier: 5,
