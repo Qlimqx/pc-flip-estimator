@@ -1,12 +1,12 @@
 {
   "nvme": {
-    "prixParGo": 0.13,
-    "dateMaj": "2026-10-30",
-    "sampleCount": 34
+    "prixParGo": 0.131,
+    "dateMaj": "2026-10-31",
+    "sampleCount": 35
   },
   "ssd": {
-    "prixParGo": 0.156,
-    "dateMaj": "2026-10-30",
-    "sampleCount": 66
+    "prixParGo": 0.157,
+    "dateMaj": "2026-10-31",
+    "sampleCount": 67
   }
 }
