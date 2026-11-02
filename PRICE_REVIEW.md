@@ -3607,3 +3607,29 @@ Constat de départ : la liste "### Rejetés" ci-dessus contient 57 entrées, don
 - **Intel Core i5-4460** (cpu) : 25.54€ → 25.54€ (28% vs référence)
 - **Intel Core i5-4590** (cpu) : 31.9€ → 31.9€ (-36% vs référence)
 - **GT 1030** (gpu) : 94.05€ → 94.05€ (57% vs référence)
+
+### Vérifié par agent IA le 2026-11-02
+
+**Constat de départ** : la liste "### Rejetés" ci-dessus contient 58 entrées, à nouveau quasiment toutes dans le même sens (eBay propose systématiquement des prix très supérieurs à la base) sur tout le catalogue — même schéma systémique déjà diagnostiqué les 2026-10-29/30/31 et 2026-11-01 (bug probable côté pipeline `daily-agent`, pas un vrai mouvement de marché généralisé).
+
+**24 entrées CPU/GPU vérifiées par recherche web réelle (6 sous-agents parallèles WebSearch), couvrant la totalité du matériel « récent » (RTX toute gamme, RX 5000+, Intel 10e gén.+, Ryzen 3000+) présent dans les rejets du jour** — budget du jour entièrement consommé par cette Priorité 1, pas de pioche dans la liste rotative Priorité 2 aujourd'hui :
+
+`rtx-4070`, `rtx-4070-super`, `rtx-4060-ti`, `rtx-5060-ti`, `rtx-5080`, `rtx-3060`, `rtx-4070-ti`, `ryzen-7-7700`, `rtx-3060-ti`, `ryzen-5-3600`, `rtx-3070-ti`, `rtx-3080`, `ryzen-5-3600x`, `rx-9070-xt`, `rtx-3080-ti`, `ryzen-7-3800x`, `rtx-3050`, `rx-6750-xt`, `rtx-3090`, `rtx-2070-super`, `i5-10400f`, `i3-10100f`, `rx-5700-xt`, `rtx-2080-ti`.
+
+**Résultat : aucune correction nécessaire aujourd'hui.** Les 24 fourchettes actuelles sont toutes restées dans la tolérance ~15% une fois comparées à des annonces d'occasion FR réelles (LeBonCoin en priorité, eBay.fr/eBay.de et Amazon occasion en complément), confirmant que les rejets eBay du jour sont bien des faux positifs (prix neuf gonflés par la pénurie DRAM/GDDR en cours, ou annonces aberrantes/bundles captés par le pipeline mécanique) plutôt qu'une vraie dérive occasion. Les sous-agents notent au passage que le ratio de sanity-check neuf×0,7 est actuellement peu fiable sur plusieurs cartes récentes (le marché du neuf s'envole bien plus vite que l'occasion sous l'effet de la pénurie mémoire) : il a été pondéré en conséquence plutôt qu'appliqué aveuglément.
+
+**Points de vigilance (dans la tolérance, pas de correction, mais tendance haussière convergente à surveiller au prochain cycle)** :
+- `rtx-3070-ti` : 258/290/322€ actuel vs ~285/320/355€ estimé (+10-14%), 5 annonces LeBonCoin indépendantes toutes au-dessus du min actuel. Sous le seuil des 15%, laissé inchangé, mais à re-vérifier bientôt.
+- `rtx-4060-ti` (305/340/375€, jamais revérifié depuis le 08-24) : annonces convergentes vers ~310/355/400€ (+4 à +7%), dans la tolérance.
+- `rtx-2070-super` (128/158/186€, jamais revérifié depuis le 08-24) : annonces vers ~140/170/205€ (+8 à +10%), dans la tolérance.
+- `rx-9070-xt` : prix neuf FR en forte hausse fin octobre (comparateur-gamer.fr, +20% sur la médiane neuf en quelques jours) mais aucune donnée occasion FR fraîche trouvée pour confirmer un effet sur l'occasion — à recontrôler sous 1-2 semaines.
+
+**RAM/stockage** : formules actuelles conservées sans modification (DDR4 4€/Go, DDR5 11€/Go, SSD SATA 0,10€/Go, NVMe 0,095€/Go, HDD 0,018€/Go). Recherche web rapide : kits DDR5 32Go neufs actuellement ~400-577€ selon la source (overclocking.com, jechange.fr, grosbill.com, oct. 2026), cohérent avec le calibrage occasion du 2026-10-28 (11€/Go, basé sur des annonces LeBonCoin réelles 290-400€/32Go) une fois le ratio occasion/neuf appliqué — pas de signal de nouvel écart >20%. Pas de donnée NVMe/SSD plus récente que le calibrage du 2026-10-26 trouvée. Aucune modification.
+
+**⚠️ Signalement récurrent (non résolu, 6e jour consécutif)** : le pipeline `daily-agent` (`scripts/agent/run.mjs`) continue de produire un biais haussier massif sur la quasi-totalité du catalogue (58 rejets encore aujourd'hui) et applique en live, dans `src/data/priceOverrides/*.json` (hors périmètre de cet agent), des prix probablement faux sur une vingtaine de composants de la section "Écarts notables acceptés" ci-dessus — la même liste que les jours précédents (`ryzen-7-5800x`, `rtx-3070`, `rx-6600`, `rtx-2060`, `rx-6700-xt`, `rtx-2070`, `rtx-2080`, `rx-6900-xt`, etc.), déjà confirmée fausse par recherche web indépendante le 2026-11-01 pour `ryzen-7-5800x` (override live 208,7€ vs occasion implicite réelle ~161€), `rx-6700-xt` (override 400,91€ vs LeBonCoin 250-300€) et `rx-6900-xt` (override 669,69€ vs LeBonCoin 360-450€). Aucune correction côté pipeline détectée depuis ces signalements des 2026-10-31 et 2026-11-01. Nécessite une intervention humaine sur `scripts/agent/` (hors périmètre de cet agent, qui ne touche que `BASE_CPUS`/`BASE_GPUS`/`ram.ts`/`storage.ts`) — signalé séparément à l'utilisateur par notification.
+
+**Limite méthodologique** : accès direct à LeBonCoin/eBay/LDLC bloqué par la liste blanche réseau de cet environnement ; recherche appuyée sur des extraits WebSearch (pages de catégorie indexées, dates de publication parfois incertaines), pas sur une lecture directe des annonces individuelles.
+
+**Méthodologie** : 6 sous-agents parallèles WebSearch, synthèse et écritures faites par l'agent orchestrateur, seuil de tolérance ~15% (aucune modification sous ce seuil aujourd'hui). `npm install`, `npm run build` et `npm test` relancés pour confirmer l'état du dépôt (188 tests passés).
+
+**Curseur de rotation Priorité 2** : non utilisé aujourd'hui (budget entièrement consommé par la Priorité 1). `verification-cursor.json` : `lastIndex` inchangé à **62**, `lastRunDate` mis à jour à 2026-11-02.
