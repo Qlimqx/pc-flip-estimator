@@ -1,21 +1,21 @@
-# Rapport de l'agent quotidien — 2026-11-02
+# Rapport de l'agent quotidien — 2026-11-03
 
 **Statut : Terminé avec avertissements**
 
-- Déclencheur : push ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/41391924389))
-- Début : 2026-11-02 06:05 (Paris) · Fin : 2026-11-02 06:06 (Paris) · Durée : 106 s
-- Échéance de travail : 2026-11-02 06:45 (Paris) · Terminé avant 10 h (Paris) : oui
+- Déclencheur : push ([exécution](https://github.com/Qlimqx/pc-flip-estimator/actions/runs/41581773760))
+- Début : 2026-11-03 06:05 (Paris) · Fin : 2026-11-03 06:06 (Paris) · Durée : 102 s
+- Échéance de travail : 2026-11-03 06:45 (Paris) · Terminé avant 10 h (Paris) : oui
 
 ## Bilan
 
 | Indicateur | Valeur |
 |---|---|
 | Composants du catalogue analysés | 211 |
-| Prix vérifiés (données reçues) | 93 |
-| Prix mis à jour | 34 (dont 17 à relire) |
-| En attente de confirmation (saut > 15 %) | 3 |
-| Données insuffisantes (valeur conservée) | 118 |
-| Rejetés (écart aberrant, valeur conservée) | 58 |
+| Prix vérifiés (données reçues) | 94 |
+| Prix mis à jour | 37 (dont 19 à relire) |
+| En attente de confirmation (saut > 15 %) | 2 |
+| Données insuffisantes (valeur conservée) | 117 |
+| Rejetés (écart aberrant, valeur conservée) | 57 |
 | Source indisponible | 0 |
 | Non traités | 0 |
 | Composants ajoutés | 0 |
@@ -30,106 +30,107 @@
 
 ## Avertissements
 
-- 58 prix rejeté(s) comme aberrants (valeur conservée)
+- 57 prix rejeté(s) comme aberrants (valeur conservée)
 
 ## RAM et stockage (€/Go)
 
-- **ram:ddr3** : rejete (mesuré 3.1563 €/Go, 24 annonces) — écart de 251 % à la référence (0.9 € -> 3.1563 €), au-delà de 60 %
-- **ram:ddr4** : mis-a-jour (mesuré 4.5656 €/Go, 12 annonces) — appliqué
+- **ram:ddr3** : rejete (mesuré 3.3431 €/Go, 21 annonces) — écart de 271 % à la référence (0.9 € -> 3.3431 €), au-delà de 60 %
+- **ram:ddr4** : mis-a-jour (mesuré 4.5063 €/Go, 11 annonces) — appliqué
 - **ram:ddr5** : donnees-insuffisantes — moins de 4 annonces valides après filtrage : valeur conservée
-- **stockage:hdd** : rejete (mesuré 0.0433 €/Go, 36 annonces) — écart de 141 % à la référence (0.018 € -> 0.0433 €), au-delà de 60 %
-- **stockage:ssd** : mis-a-jour-a-verifier (mesuré 0.1572 €/Go, 68 annonces) — appliqué mais écart de 57 % à la référence : relecture humaine conseillée
-- **stockage:nvme** : mis-a-jour-a-verifier (mesuré 0.1378 €/Go, 33 annonces) — appliqué mais écart de 45 % à la référence : relecture humaine conseillée
+- **stockage:hdd** : rejete (mesuré 0.044 €/Go, 34 annonces) — écart de 144 % à la référence (0.018 € -> 0.044 €), au-delà de 60 %
+- **stockage:ssd** : mis-a-jour-a-verifier (mesuré 0.1572 €/Go, 69 annonces) — appliqué mais écart de 57 % à la référence : relecture humaine conseillée
+- **stockage:nvme** : mis-a-jour-a-verifier (mesuré 0.1409 €/Go, 34 annonces) — appliqué mais écart de 48 % à la référence : relecture humaine conseillée
 
 ## À vérifier manuellement
 
-- **RTX 4070** [prix-rejete] : écart de 136 % à la référence (430 € -> 1015.89 €), au-delà de 60 %
+- **RTX 4080** [prix-rejete] : écart de 80 % à la référence (950 € -> 1708.79 €), au-delà de 60 %
+- **AMD Ryzen 9 3900X** [ecart-notable] : appliqué mais écart de 33 % à la référence : relecture humaine conseillée
+- **Intel Core i7-3770K** [prix-rejete] : écart de 92 % à la référence (48 € -> 92.22 €), au-delà de 60 %
+- **GTX 670** [prix-rejete] : écart de 485 % à la référence (22 € -> 128.7 €), au-delà de 60 %
 - **RTX 4070 Super** [prix-rejete] : écart de 126 % à la référence (610 € -> 1375.87 €), au-delà de 60 %
-- **AMD Ryzen 7 5800X** [ecart-notable] : appliqué mais écart de 30 % à la référence : relecture humaine conseillée
-- **RTX 4060 Ti** [prix-rejete] : écart de 153 % à la référence (340 € -> 861.77 €), au-delà de 60 %
-- **RTX 5060 Ti** [prix-rejete] : écart de 70 % à la référence (510 € -> 865.35 €), au-delà de 60 %
-- **RTX 5080** [prix-rejete] : écart de 191 % à la référence (1200 € -> 3491.36 €), au-delà de 60 %
-- **RTX 3060** [prix-rejete] : écart de 217 % à la référence (235 € -> 745.55 €), au-delà de 60 %
+- **RTX 5060 Ti** [prix-rejete] : écart de 77 % à la référence (510 € -> 904.3 €), au-delà de 60 %
+- **RTX 4060 Ti** [prix-rejete] : écart de 126 % à la référence (340 € -> 770.06 €), au-delà de 60 %
+- **RTX 5080** [prix-rejete] : écart de 164 % à la référence (1200 € -> 3163.37 €), au-delà de 60 %
+- **RTX 3060** [prix-rejete] : écart de 166 % à la référence (235 € -> 624.96 €), au-delà de 60 %
 - **RTX 4070 Ti** [prix-rejete] : écart de 69 % à la référence (720 € -> 1215.03 €), au-delà de 60 %
 - **AMD Ryzen 7 7700** [prix-rejete] : écart de 109 % à la référence (180 € -> 376.56 €), au-delà de 60 %
-- **RTX 3060 Ti** [prix-rejete] : écart de 88 % à la référence (220 € -> 414.7 €), au-delà de 60 %
+- **RTX 3060 Ti** [prix-rejete] : écart de 107 % à la référence (220 € -> 455.5 €), au-delà de 60 %
 - **RTX 3070** [ecart-notable] : appliqué mais écart de 40 % à la référence : relecture humaine conseillée
 - **AMD Ryzen 5 3600** [prix-rejete] : écart de 149 % à la référence (58 € -> 144.21 €), au-delà de 60 %
-- **RTX 3070 Ti** [prix-rejete] : écart de 85 % à la référence (290 € -> 537.34 €), au-delà de 60 %
+- **RTX 3070 Ti** [prix-rejete] : écart de 93 % à la référence (290 € -> 560 €), au-delà de 60 %
 - **RTX 3080** [prix-rejete] : écart de 63 % à la référence (380 € -> 618.7 €), au-delà de 60 %
 - **AMD Ryzen 5 3600X** [prix-rejete] : écart de 103 % à la référence (60 € -> 121.86 €), au-delà de 60 %
-- **RX 9070 XT** [prix-rejete] : écart de 194 % à la référence (580 € -> 1706.11 €), au-delà de 60 %
-- **RTX 3080 Ti** [prix-rejete] : écart de 96 % à la référence (480 € -> 942.05 €), au-delà de 60 %
+- **RX 9070 XT** [prix-rejete] : écart de 132 % à la référence (580 € -> 1345.4 €), au-delà de 60 %
+- **RTX 3080 Ti** [prix-rejete] : écart de 82 % à la référence (480 € -> 871.55 €), au-delà de 60 %
 - **AMD Ryzen 7 3800X** [prix-rejete] : écart de 86 % à la référence (98 € -> 182.7 €), au-delà de 60 %
-- **RTX 3050** [prix-rejete] : écart de 134 % à la référence (150 € -> 350.78 €), au-delà de 60 %
+- **RTX 3050** [prix-rejete] : écart de 126 % à la référence (150 € -> 338.27 €), au-delà de 60 %
 - **RX 6600** [ecart-notable] : appliqué mais écart de 27 % à la référence : relecture humaine conseillée
-- **RTX 2060** [ecart-notable] : appliqué mais écart de 49 % à la référence : relecture humaine conseillée
+- **RTX 2060** [ecart-notable] : appliqué mais écart de 56 % à la référence : relecture humaine conseillée
+- **RX 6600 XT** [ecart-notable] : appliqué mais écart de 30 % à la référence : relecture humaine conseillée
 - **RX 6700 XT** [ecart-notable] : appliqué mais écart de 35 % à la référence : relecture humaine conseillée
-- **RX 6750 XT** [prix-rejete] : écart de 96 % à la référence (265 € -> 519.89 €), au-delà de 60 %
-- **RTX 3090** [prix-rejete] : écart de 428 % à la référence (900 € -> 4748.51 €), au-delà de 60 %
 - **RTX 2070** [ecart-notable] : appliqué mais écart de 47 % à la référence : relecture humaine conseillée
+- **RTX 3090** [prix-rejete] : écart de 283 % à la référence (900 € -> 3447.96 €), au-delà de 60 %
 - **RTX 2070 Super** [prix-rejete] : écart de 111 % à la référence (158 € -> 333.1 €), au-delà de 60 %
 - **Intel Core i5-10400F** [prix-rejete] : écart de 92 % à la référence (75 € -> 143.97 €), au-delà de 60 %
-- **GTX 1660 Super** [prix-rejete] : écart de 122 % à la référence (102 € -> 226.9 €), au-delà de 60 %
-- **GTX 1660 Ti** [prix-rejete] : écart de 210 % à la référence (108 € -> 335.05 €), au-delà de 60 %
+- **GTX 1660 Ti** [prix-rejete] : écart de 154 % à la référence (108 € -> 274.74 €), au-delà de 60 %
+- **GTX 1660 Super** [prix-rejete] : écart de 125 % à la référence (102 € -> 229.5 €), au-delà de 60 %
 - **RTX 2080** [ecart-notable] : appliqué mais écart de 41 % à la référence : relecture humaine conseillée
-- **RX 6900 XT** [ecart-notable] : appliqué mais écart de 58 % à la référence : relecture humaine conseillée
-- **AMD Ryzen 5 2600X** [ecart-notable] : appliqué mais écart de 39 % à la référence : relecture humaine conseillée
+- **RX 6900 XT** [ecart-notable] : appliqué mais écart de 59 % à la référence : relecture humaine conseillée
+- **AMD Ryzen 5 2600X** [ecart-notable] : appliqué mais écart de 35 % à la référence : relecture humaine conseillée
 - **AMD Ryzen 3 3200G** [ecart-notable] : appliqué mais écart de 27 % à la référence : relecture humaine conseillée
 - **AMD Ryzen 7 2700X** [prix-rejete] : écart de 187 % à la référence (38 € -> 109.08 €), au-delà de 60 %
 - **Intel Core i5-9400F** [ecart-notable] : appliqué mais écart de 41 % à la référence : relecture humaine conseillée
-- **GTX 1660** [prix-rejete] : écart de 90 % à la référence (88 € -> 167.1 €), au-delà de 60 %
-- **RX 5700 XT** [prix-rejete] : écart de 98 % à la référence (165 € -> 326.95 €), au-delà de 60 %
-- **RTX 2080 Ti** [prix-rejete] : écart de 135 % à la référence (280 € -> 657.54 €), au-delà de 60 %
+- **GTX 1660** [prix-rejete] : écart de 108 % à la référence (88 € -> 182.7 €), au-delà de 60 %
+- **RTX 2080 Ti** [prix-rejete] : écart de 121 % à la référence (280 € -> 618.7 €), au-delà de 60 %
 - **AMD Ryzen 5 1600** [prix-rejete] : écart de 90 % à la référence (33 € -> 62.58 €), au-delà de 60 %
+- **RX 5700 XT** [prix-rejete] : écart de 98 % à la référence (165 € -> 326.95 €), au-delà de 60 %
 - **Intel Core i3-10100F** [prix-rejete] : écart de 81 % à la référence (42 € -> 76.04 €), au-delà de 60 %
 - **Intel Core i9-9900K** [prix-rejete] : écart de 86 % à la référence (205 € -> 380.76 €), au-delà de 60 %
-- **GTX 1650** [prix-rejete] : écart de 149 % à la référence (82 € -> 203.85 €), au-delà de 60 %
-- **GTX 1070** [prix-rejete] : écart de 179 % à la référence (100 € -> 279.44 €), au-delà de 60 %
-- **GTX 1070 Ti** [prix-rejete] : écart de 161 % à la référence (115 € -> 300.28 €), au-delà de 60 %
-- **GTX 1080** [prix-rejete] : écart de 62 % à la référence (140 € -> 226.68 €), au-delà de 60 %
-- **GTX 1080 Ti** [prix-rejete] : écart de 150 % à la référence (180 € -> 449.97 €), au-delà de 60 %
+- **GTX 1650** [prix-rejete] : écart de 143 % à la référence (82 € -> 199 €), au-delà de 60 %
+- **GTX 1070 Ti** [prix-rejete] : écart de 135 % à la référence (115 € -> 270.61 €), au-delà de 60 %
+- **GTX 1070** [prix-rejete] : écart de 132 % à la référence (100 € -> 231.64 €), au-delà de 60 %
+- **GTX 1080** [ecart-notable] : appliqué mais écart de 55 % à la référence : relecture humaine conseillée
+- **GTX 1080 Ti** [prix-rejete] : écart de 132 % à la référence (180 € -> 417.23 €), au-delà de 60 %
 - **Intel Core i7-8700** [ecart-notable] : appliqué mais écart de 31 % à la référence : relecture humaine conseillée
 - **Intel Core i3-8100** [ecart-notable] : appliqué mais écart de 36 % à la référence : relecture humaine conseillée
-- **GTX 1050 Ti** [prix-rejete] : écart de 68 % à la référence (70 € -> 117.7 €), au-delà de 60 %
-- **RX 580** [prix-rejete] : écart de 74 % à la référence (72 € -> 125.5 €), au-delà de 60 %
-- **RX 590** [prix-rejete] : écart de 98 % à la référence (85 € -> 168.35 €), au-delà de 60 %
+- **GTX 1050 Ti** [prix-rejete] : écart de 75 % à la référence (70 € -> 122.76 €), au-delà de 60 %
+- **RX 580** [prix-rejete] : écart de 78 % à la référence (72 € -> 128.1 €), au-delà de 60 %
 - **Intel Core i7-4790K** [ecart-notable] : appliqué mais écart de 44 % à la référence : relecture humaine conseillée
-- **RX 570** [prix-rejete] : écart de 132 % à la référence (55 € -> 127.75 €), au-delà de 60 %
-- **Intel Core i5-4460** [ecart-notable] : appliqué mais écart de 28 % à la référence : relecture humaine conseillée
+- **RX 590** [prix-rejete] : écart de 98 % à la référence (85 € -> 168.35 €), au-delà de 60 %
+- **RX 570** [prix-rejete] : écart de 142 % à la référence (55 € -> 132.95 €), au-delà de 60 %
 - **Intel Core i5-4590** [ecart-notable] : appliqué mais écart de 36 % à la référence : relecture humaine conseillée
-- **GTX 970** [prix-rejete] : écart de 86 % à la référence (42 € -> 78.18 €), au-delà de 60 %
-- **GTX 980** [prix-rejete] : écart de 154 % à la référence (55 € -> 139.75 €), au-delà de 60 %
-- **GTX 980 Ti** [prix-rejete] : écart de 118 % à la référence (105 € -> 228.78 €), au-delà de 60 %
+- **GTX 970** [prix-rejete] : écart de 99 % à la référence (42 € -> 83.38 €), au-delà de 60 %
+- **GTX 980** [prix-rejete] : écart de 149 % à la référence (55 € -> 136.87 €), au-delà de 60 %
 - **RX 560** [prix-rejete] : écart de 144 % à la référence (33 € -> 80.39 €), au-delà de 60 %
-- **GTX 750 Ti** [prix-rejete] : écart de 577 % à la référence (22 € -> 148.84 €), au-delà de 60 %
-- **Intel Core i5-3570K** [prix-rejete] : écart de 173 % à la référence (30 € -> 81.9 €), au-delà de 60 %
+- **GTX 960** [ecart-notable] : appliqué mais écart de 52 % à la référence : relecture humaine conseillée
+- **GTX 750 Ti** [prix-rejete] : écart de 455 % à la référence (22 € -> 122.04 €), au-delà de 60 %
 - **Intel Core i5-2500K** [prix-rejete] : écart de 79 % à la référence (12 € -> 21.5 €), au-delà de 60 %
-- **GTX 760** [prix-rejete] : écart de 442 % à la référence (25 € -> 135.52 €), au-delà de 60 %
+- **Intel Core i5-3570K** [prix-rejete] : écart de 118 % à la référence (30 € -> 65.31 €), au-delà de 60 %
+- **GTX 760** [prix-rejete] : écart de 387 % à la référence (25 € -> 121.87 €), au-delà de 60 %
 - **GTX 770** [prix-rejete] : écart de 172 % à la référence (27 € -> 73.5 €), au-delà de 60 %
-- **GTX 780** [prix-rejete] : écart de 162 % à la référence (42 € -> 109.9 €), au-delà de 60 %
-- **AMD FX-6300** [prix-rejete] : écart de 73 % à la référence (22 € -> 38.11 €), au-delà de 60 %
+- **GTX 780** [prix-rejete] : écart de 174 % à la référence (42 € -> 115.1 €), au-delà de 60 %
 - **GT 1030** [ecart-notable] : appliqué mais écart de 57 % à la référence : relecture humaine conseillée
-- **GTX 660** [prix-rejete] : écart de 108 % à la référence (19 € -> 39.44 €), au-delà de 60 %
-- **GTX 680** [prix-rejete] : écart de 333 % à la référence (36 € -> 155.94 €), au-delà de 60 %
+- **AMD FX-6300** [prix-rejete] : écart de 73 % à la référence (22 € -> 38.11 €), au-delà de 60 %
+- **GTX 660** [prix-rejete] : écart de 98 % à la référence (19 € -> 37.57 €), au-delà de 60 %
+- **GTX 680** [prix-rejete] : écart de 291 % à la référence (36 € -> 140.8 €), au-delà de 60 %
 - **R9 270X** [prix-rejete] : écart de 102 % à la référence (23 € -> 46.35 €), au-delà de 60 %
-- **GTX 560 Ti** [prix-rejete] : écart de 150 % à la référence (15 € -> 37.49 €), au-delà de 60 %
 - **GTX 460** [prix-rejete] : écart de 149 % à la référence (12 € -> 29.82 €), au-delà de 60 %
+- **GTX 560 Ti** [prix-rejete] : écart de 150 % à la référence (15 € -> 37.49 €), au-delà de 60 %
 - **Radeon HD 7870** [prix-rejete] : écart de 77 % à la référence (21 € -> 37.1 €), au-delà de 60 %
-- **ram:ddr3** [prix-rejete] : écart de 251 % à la référence (0.9 € -> 3.1563 €), au-delà de 60 %
-- **stockage:hdd** [prix-rejete] : écart de 141 % à la référence (0.018 € -> 0.0433 €), au-delà de 60 %
-- **Intel Core i5-6400** [composant-manquant] : 5 annonce(s), 5 vendeur(s) — seulement 5 annonce(s) (minimum 6)
+- **ram:ddr3** [prix-rejete] : écart de 271 % à la référence (0.9 € -> 3.3431 €), au-delà de 60 %
+- **stockage:hdd** [prix-rejete] : écart de 144 % à la référence (0.018 € -> 0.044 €), au-delà de 60 %
 - **Intel Core i3-4150** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **Intel Core i3-2100** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
-- **Intel Core i5-8500** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **Intel Core i5-10500** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
+- **Intel Core i5-6400** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **Intel Core i7-7700K** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **Intel Core i7-6700** [composant-manquant] : 4 annonce(s), 4 vendeur(s) — seulement 4 annonce(s) (minimum 6)
 - **Intel Core i3-4160** [composant-manquant] : 3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)
 - **Intel Core i3-9100** [composant-manquant] : 3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)
 - **Intel Core i3-4170** [composant-manquant] : 3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)
 - **Intel Core i3-4130** [composant-manquant] : 3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)
-- **Intel Core i3-2120** [composant-manquant] : 3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)
+- **Intel Core i5-8500** [composant-manquant] : 3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)
+- **Intel Core i5-2320** [composant-manquant] : 3 annonce(s), 3 vendeur(s) — seulement 3 annonce(s) (minimum 6)
 
 ## Limites
 
