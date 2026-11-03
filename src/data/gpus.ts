@@ -718,10 +718,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 5600 XT',
     marque: 'AMD',
     vramGo: 6,
-    min: 95,
-    moyen: 120,
-    max: 145,
-    dateMaj: '2026-10-24',
+    // Recalibré le 2026-11-03 : annonces LeBonCoin (Gigabyte 6Go 130-200€,
+    // hors un outlier 400€ exclu) + ventes réelles rapportées sur le forum
+    // Cowcotland (XFX Thicc II ~250€, Sapphire Pulse ~220€) convergent sur
+    // ~130-250€, bien au-dessus du max précédent (145€).
+    min: 115,
+    moyen: 175,
+    max: 230,
+    dateMaj: '2026-11-03',
     faciliteRevente: 0.5,
     decoteAnciennete: 0.9,
     tier: 2,

@@ -76,10 +76,22 @@ export const STORAGE_TYPE_LABELS: Record<StorageType, string> = {
 // nouvelle annonce occasion directe ce jour non plus, retour prudent vers le
 // dernier calibrage réellement basé sur des annonces concrètes (10-18) :
 // nvme ramené à 0,095€/Go, plancher 40€.
+//
+// Corrigé le 2026-11-03 : hdd revérifié pour la première fois depuis le
+// 08-24 -- pénurie spécifique au disque dur mécanique (rachat massif des
+// capacités par les hyperscalers IA, distincte de la pénurie DRAM/NAND),
+// documentée par plusieurs sources presse indépendantes (winbuzzer.com,
+// tech4gamers.com, heise.de). 2 sources convergentes : (1) annonces
+// LeBonCoin HDD 2To occasion ~50-90€ (soit ~0,025-0,045€/Go, déjà +39% au
+//-dessus de l'ancien 0,018€/Go même au bas de la fourchette) ; (2) presse
+// tech confirmant la hausse (+10 à +50% selon la source, T2-T3 2026). hdd
+// relevé de 0,018 à 0,025€/Go (bas de la fourchette observée, prudence vu
+// l'échantillon limité) et le plancher de 8 à 10€. ddr4/ddr5/ssd/nvme
+// revérifiés ce même jour, dans la tolérance -- inchangés (voir ram.ts).
 export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
   hdd: {
-    prixParGo: 0.018,
-    plancher: 8,
+    prixParGo: 0.025,
+    plancher: 10,
     faciliteRevente: 0.35,
     decoteAnciennete: 0.85,
   },
