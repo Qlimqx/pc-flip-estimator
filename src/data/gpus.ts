@@ -119,10 +119,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 660',
     marque: 'NVIDIA',
     vramGo: 2,
-    min: 13,
-    moyen: 19,
-    max: 26,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-04 : 3 annonces LeBonCoin indépendantes pour la
+    // carte seule (22€, 30€ Asus, 40€, hors outlier MSI Twin Frozr à 75€) --
+    // médiane ~30€, nettement au-dessus de l'ancien moyen (19€).
+    min: 15,
+    moyen: 25,
+    max: 38,
+    dateMaj: '2026-11-04',
     faciliteRevente: 0.18,
     decoteAnciennete: 0.68,
     tier: 1,
@@ -197,10 +200,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 760',
     marque: 'NVIDIA',
     vramGo: 2,
-    min: 18,
-    moyen: 25,
-    max: 33,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-04 : 4 annonces LeBonCoin indépendantes pour la
+    // carte seule (35€ MSI Twin Frozr, 35€ Gigabyte Windforce, 40€, 49€) --
+    // cluster cohérent nettement au-dessus de l'ancien moyen (25€).
+    min: 22,
+    moyen: 38,
+    max: 52,
+    dateMaj: '2026-11-04',
     faciliteRevente: 0.2,
     decoteAnciennete: 0.7,
     tier: 1,
@@ -332,10 +338,12 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 970',
     marque: 'NVIDIA',
     vramGo: 4,
-    min: 32,
-    moyen: 42,
-    max: 54,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-04 : 2 annonces LeBonCoin indépendantes pour la
+    // carte seule à 50€ et 70€ (Zotac), au-dessus de l'ancien moyen (42€).
+    min: 35,
+    moyen: 55,
+    max: 80,
+    dateMaj: '2026-11-04',
     faciliteRevente: 0.3,
     decoteAnciennete: 0.75,
     tier: 1,
