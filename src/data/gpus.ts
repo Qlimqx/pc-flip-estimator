@@ -28,10 +28,18 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 460',
     marque: 'NVIDIA',
     vramGo: 1,
-    min: 8,
-    moyen: 12,
-    max: 17,
-    dateMaj: '2026-08-25',
+    // Recalibré le 2026-11-05 : base figée depuis le 08-25, légèrement sous
+    // le marché actuel -- eBay US occasion ~15-30$ et fourchette de forums
+    // FR (20-60€, avec consensus plutôt 20-40€ pour une carte sans défaut)
+    // convergent au-dessus de l'ancien moyen (12€). Pas d'annonce LeBonCoin
+    // FR datée exploitable trouvée ce jour -- ajustement prudent et modéré,
+    // nettement sous la valeur eBay rejetée par le pipeline (29.82€, prix
+    // demandé probablement tiré par les frais de port sur un article aussi
+    // bon marché).
+    min: 10,
+    moyen: 15,
+    max: 20,
+    dateMaj: '2026-11-05',
     faciliteRevente: 0.15,
     decoteAnciennete: 0.65,
     tier: 1,
@@ -510,10 +518,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 750 Ti',
     marque: 'NVIDIA',
     vramGo: 2,
-    min: 15,
-    moyen: 22,
-    max: 30,
-    dateMaj: '2026-08-24',
+    // Recalibré le 2026-11-05 : base figée depuis le 08-24. 2 annonces
+    // LeBonCoin indépendantes relevées ce jour (Gigabyte 35€ très bon état,
+    // modèle OC générique 30€) au-dessus de l'ancien moyen (22€) --
+    // nettement sous la valeur eBay rejetée par le pipeline (121.68€, hors
+    // marché).
+    min: 18,
+    moyen: 28,
+    max: 38,
+    dateMaj: '2026-11-05',
     faciliteRevente: 0.25,
     decoteAnciennete: 0.75,
     tier: 1,
@@ -568,10 +581,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 580',
     marque: 'AMD',
     vramGo: 8,
-    min: 55,
-    moyen: 72,
-    max: 92,
-    dateMaj: '2026-10-10',
+    // Recalibré le 2026-11-05 : 3 annonces LeBonCoin indépendantes de RX 580
+    // 8Go (ASUS 80€, MSI ARMOR OC 85€, générique 100€) toutes au-dessus de
+    // l'ancien max (92€) -- base relevée en conséquence, nettement sous la
+    // valeur eBay rejetée par le pipeline (128.1€).
+    min: 65,
+    moyen: 85,
+    max: 105,
+    dateMaj: '2026-11-05',
     faciliteRevente: 0.4,
     decoteAnciennete: 0.82,
     tier: 1,
@@ -890,10 +907,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 3050',
     marque: 'NVIDIA',
     vramGo: 8,
-    min: 110,
-    moyen: 150,
-    max: 190,
-    dateMaj: '2026-10-23',
+    // Recalibré le 2026-11-05 : 3 annonces LeBonCoin indépendantes (MSI
+    // Ventus 2X 8Go 170€, Zotac 8Go 200€, variante Low Profile 6Go 225€)
+    // toutes au-dessus de l'ancien max (190€) -- base relevée en
+    // conséquence, nettement sous la valeur eBay rejetée par le pipeline
+    // (346.94€).
+    min: 130,
+    moyen: 175,
+    max: 220,
+    dateMaj: '2026-11-05',
     faciliteRevente: 0.68,
     decoteAnciennete: 0.96,
     tier: 2,

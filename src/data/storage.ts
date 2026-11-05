@@ -88,16 +88,36 @@ export const STORAGE_TYPE_LABELS: Record<StorageType, string> = {
 // relevé de 0,018 à 0,025€/Go (bas de la fourchette observée, prudence vu
 // l'échantillon limité) et le plancher de 8 à 10€. ddr4/ddr5/ssd/nvme
 // revérifiés ce même jour, dans la tolérance -- inchangés (voir ram.ts).
+//
+// Corrigé le 2026-11-05 : le pipeline eBay quotidien a remesuré 0,0413€/Go
+// sur hdd (31 annonces -- rejeté par le pipeline car >60% au-dessus de la
+// base, mais c'est la base qui était restée au bas de la fourchette déjà
+// identifiée le 11-03) et 0,1572€/Go sur ssd (68 annonces) / 0,1444€/Go
+// sur nvme (34 annonces, déjà appliqués en override par le pipeline --
+// voir src/data/agent/storageOverrides.json, hors périmètre de cet agent).
+// Recoupement neuf indépendant (comparateur-gamer.fr) : SSD SATA 1To le
+// moins cher à 133€ (0,133€/Go), médian 240€ ; NVMe 1To mainstream
+// 107-180€ selon modèle (0,107-0,18€/Go). hdd relevé à 0,035€/Go (milieu
+// de la fourchette 0,025-0,045€/Go déjà identifiée le 11-03, cohérent avec
+// la remesure du jour) et plancher 10 -> 12€. ssd relevé à 0,115€/Go
+// (plancher 35 -> 38€), en restant prudemment sous le SSD SATA neuf
+// d'entrée de gamme le moins cher actuel (0,133€/Go) pour éviter le piège
+// "occasion >= neuf" déjà corrigé plusieurs fois dans ce fichier. nvme
+// laissé inchangé : la mesure du pipeline (0,1444€/Go) dépasserait le NVMe
+// neuf d'entrée de gamme actuel (Netac NV3000/Crucial P5 Plus
+// ~0,107-0,11€/Go), signe probable du même biais que les corrections du
+// 10-18/10-26 -- pas de donnée occasion directe LeBonCoin trouvée ce jour
+// pour trancher, à revérifier au prochain cycle.
 export const STORAGE_TYPE_PRICING: Record<StorageType, StorageTypePricing> = {
   hdd: {
-    prixParGo: 0.025,
-    plancher: 10,
+    prixParGo: 0.035,
+    plancher: 12,
     faciliteRevente: 0.35,
     decoteAnciennete: 0.85,
   },
   ssd: {
-    prixParGo: 0.1,
-    plancher: 35,
+    prixParGo: 0.115,
+    plancher: 38,
     faciliteRevente: 0.7,
     decoteAnciennete: 1.0,
   },

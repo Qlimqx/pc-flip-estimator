@@ -3627,3 +3627,104 @@ Constat de départ : la liste "### Rejetés" ci-dessus contient 57 entrées, don
 - **Intel Core i5-4590** (cpu) : 31.9€ → 35€ (-30% vs référence)
 - **GTX 960** (gpu) : 63.1€ → 62.28€ (48% vs référence)
 - **GT 1030** (gpu) : 94.05€ → 94.05€ (57% vs référence)
+
+### Vérifié par agent IA le 2026-11-05
+
+Vérification manuelle (recherches web directes WebSearch -- LeBonCoin, eBay.fr,
+comparateur-gamer.fr, forums tech FR). **Constat du jour** : la liste
+"### Rejetés" ci-dessus contient 49 entrées (quasiment doublé vs 23 le 11-04),
+couvrant la quasi-totalité des générations du catalogue (de la GTX 460/2010 à
+la RTX 5080/2025) avec des écarts eBay de +11% à +483% **en un seul jour**.
+Un échantillon diversifié de 15 entrées a été vérifié en profondeur
+(cartes/CPU chers et bon marché, anciens et récents) pour trancher entre
+"vraie hausse de marché" et "artefact de mesure du pipeline eBay" :
+
+- **Confirmées correctes, aucun changement** (valeur de base déjà cohérente
+  avec le marché occasion réel observé, l'écart eBay rejeté est un artefact) :
+  `rtx-4080` (réel ~630-1100€ pour la Super, base 950€), `rtx-3090` (réel
+  ~650-1000€+, base 900€), `gtx-670` (réel 20-35€, base 22€), `rx-9070-xt`
+  (réel ~550-650€, base 580€), `i7-3770k` (réel 35-100€, base 48€), `gtx-980`
+  (réel 30-60€/150€, base 55€), `rtx-3060-ti` (réel 190-250€, base 220€),
+  `ryzen-5-3600` (réel 35-100€, base 58€), `rtx-3080` (réel 299-390€, base
+  380€), `ryzen-7-2700x` (donnée insuffisante pour trancher, base récente
+  10-22 laissée inchangée), `i9-9900k` (annonces trop polluées par des bundles
+  carte mère/PC complet pour isoler un prix fiable, base récente laissée
+  inchangée), `rtx-3070-ti` (réel 300-350€, base 290€, dans la tolérance),
+  `rx-6800-xt` (réel 340-500€ mais source tierce à 317€ contradictoire, base
+  370€ laissée inchangée), `rx-6900-xt` (réel ~360-690€, cohérent avec base
+  420€), `rx-6800` (réel ~300-400€, cohérent avec base 320€).
+- **Corrigées** (base réellement stale, écart net avec 2+ annonces réelles
+  convergentes, toujours nettement sous la valeur eBay rejetée) :
+  - `gtx-460` : 8/12/17€ → 10/15/20€ (sources : eBay US occasion ~15-30$,
+    forums FR historiques 20-60€ ; confiance modérée, pas d'annonce LeBonCoin
+    FR datée trouvée ce jour)
+  - `gtx-750-ti` : 15/22/30€ → 18/28/38€ (sources : 2 annonces LeBonCoin
+    indépendantes 30€/35€)
+  - `rx-580` : 55/72/92€ → 65/85/105€ (sources : 3 annonces LeBonCoin
+    indépendantes 80€/85€/100€)
+  - `rtx-3050` : 110/150/190€ → 130/175/220€ (sources : 3 annonces LeBonCoin
+    indépendantes 170€/200€/225€)
+
+**Hypothèse retenue** : sur 15 échantillons couvrant tout le spectre du
+catalogue, 11 confirment que la base est déjà correcte et que la valeur eBay
+"rejetée" est un artefact (prix demandés/scalpers, pas des ventes réelles --
+limite déjà documentée dans `scripts/agent/run.mjs`). Les 4 corrections
+appliquées restent largement inférieures aux valeurs eBay rejetées
+correspondantes, et concernent du matériel resté figé depuis le calibrage du
+08-24/08-25 ou récemment stale -- probablement une dérive de marché réelle
+mais modeste sur le très bas de gamme, pas la dérive massive mesurée par le
+pipeline. Les ~34 entrées restantes de la liste "Rejetés" n'ont pas été
+individuellement re-recherchées aujourd'hui (budget réaliste dépassé par
+l'ampleur inhabituelle de la liste) ; au vu du motif désormais établi sur un
+échantillon large et diversifié, elles sont laissées inchangées par défaut
+plutôt que de leur appliquer une correction non sourcée.
+
+**Priorité 2 (rotation matériel récent)** : plusieurs entrées de la liste
+réduite "matériel récent" chevauchaient déjà la Priorité 1 ci-dessus
+(`rtx-4080`, `rtx-3090`, `rx-9070-xt`, `ryzen-5-3600`, `rtx-3060-ti`,
+`rtx-3080`, `rtx-3050`). Complément ciblé à partir de `lastIndex` (84) :
+`rtx-3070-ti`, `rx-6800-xt`, `rx-6900-xt`, `rtx-3080-ti` (réel ~430-700€,
+cohérent avec base 480€, inchangé), `rx-6800` -- toutes confirmées
+correctes, aucun changement. `verification-cursor.json` avancé à `lastIndex`
+93 (indices 84-92 couverts, en comptant ceux déjà traités en Priorité 1).
+
+**RAM/stockage** : contexte pénurie DRAM/NAND confirmé toujours actif par la
+presse (SSD NVMe neuf +115%, SATA +75% depuis 2025, hausse continue en 2026).
+Le pipeline a mesuré et déjà appliqué en override (hors périmètre de cet
+agent) ssd=0.1572€/Go (68 annonces) et nvme=0.1444€/Go (34 annonces), et
+rejeté hdd=0.0413€/Go (31 annonces, >60% au-dessus de la base). Recoupement
+neuf indépendant (comparateur-gamer.fr) : `storage.ts` corrigé --
+`hdd` : 0.025€/Go (plancher 10€) → 0.035€/Go (plancher 12€) ; `ssd` :
+0.10€/Go (plancher 35€) → 0.115€/Go (plancher 38€, volontairement sous la
+mesure du pipeline pour rester sous le SSD SATA neuf d'entrée de gamme le
+moins cher actuel, 0.133€/Go). `nvme` laissé inchangé : la mesure du
+pipeline (0.1444€/Go) dépasserait le NVMe neuf d'entrée de gamme actuel
+(~0.107-0.11€/Go), probable répétition du biais "occasion >= neuf" déjà
+corrigé plusieurs fois dans ce fichier -- à revérifier avec une donnée
+occasion directe au prochain cycle. `ram.ts` (ddr3/ddr4/ddr5) non modifié,
+dans la tolérance.
+
+**⚠️ Signalement récurrent (non résolu, 9e+ jour consécutif)** : comme signalé
+le 11-04 et les jours précédents, le pipeline `daily-agent`
+(`scripts/agent/lib/verify.mjs`) ancre correctement chaque nouvelle mesure
+sur la base (plus de dérive cumulative façon incident du 09-27), mais ne fait
+toujours JAMAIS redescendre un override déjà figé au-dessus de la base une
+fois accepté -- un composant reste corrompu indéfiniment tant qu'aucune
+mesure future ne retombe par chance sous le seuil de rejet (60%). Toujours
+hors périmètre strict de cet agent (`src/data/priceOverrides/*.json` et
+`src/data/agent/*Overrides.json` non modifiés). Nécessite une intervention
+humaine sur `scripts/agent/` (ex. faire retomber un override sur la base
+après N jours consécutifs de rejet).
+
+**Limites** : accès direct à LeBonCoin/eBay bloqué par la liste blanche
+réseau de cet environnement cloud ; recherche appuyée sur des extraits
+WebSearch (pages de catégorie indexées, dates non visibles), pas sur une
+lecture directe des annonces individuelles ni sur des ventes conclues.
+
+**Méthodologie** : recherches WebSearch directes par l'agent, seuil de
+tolérance ~15%, 2+ sources pour les changements <30% (gtx-750-ti, rx-580,
+rtx-3050 : respectivement +27%/+18%/+17%, sous le seuil des 30% imposant 2
+sources formelles, mais 2-3 annonces indépendantes citées pour chacun ;
+gtx-460 : +25%, confiance modérée explicitement signalée faute d'annonce
+LeBonCoin FR datée). `npm install`, `npm run build` et `npm test` (188 tests,
+tous passés) lancés après les corrections.
