@@ -97,5 +97,39 @@
       "vendeursDistincts": 0,
       "note": "Prix d'occasion fixé à 100 € par le propriétaire le 2026-10-25 (aucune annonce eBay exploitable)."
     }
+  },
+  {
+    "id": "ryzen-3-1200",
+    "nom": "AMD Ryzen 3 1200",
+    "marque": "AMD",
+    "min": 31.54,
+    "moyen": 37.1,
+    "max": 42.67,
+    "dateMaj": "2026-11-05",
+    "faciliteRevente": 0.55,
+    "decoteAnciennete": 0.9,
+    "tier": 1,
+    "socket": "AM4",
+    "agent": {
+      "ajouteLe": "2026-11-05",
+      "confiance": "faible",
+      "sources": [
+        "eBay Browse FR (annonces d'occasion, prix demandés)",
+        "en.wikipedia.org"
+      ],
+      "prixEstimeDepuisNeuf": false,
+      "prixSaisiParDemandeur": false,
+      "attributsEstimes": [
+        "tier",
+        "faciliteRevente",
+        "decoteAnciennete",
+        "socket"
+      ],
+      "voisinReference": "ryzen-3-3200g",
+      "echantillons": 6,
+      "prixNeufIndicatif": null,
+      "annoncesVues": 7,
+      "vendeursDistincts": 6
+    }
   }
 ]
