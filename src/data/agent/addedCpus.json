@@ -131,5 +131,39 @@
       "annoncesVues": 7,
       "vendeursDistincts": 6
     }
+  },
+  {
+    "id": "i7-6700",
+    "nom": "Intel Core i7-6700",
+    "marque": "Intel",
+    "min": 32.9,
+    "moyen": 47,
+    "max": 69.5,
+    "dateMaj": "2026-11-06",
+    "faciliteRevente": 0.25,
+    "decoteAnciennete": 0.7,
+    "tier": 1,
+    "socket": "LGA1151",
+    "agent": {
+      "ajouteLe": "2026-11-06",
+      "confiance": "moyenne",
+      "sources": [
+        "eBay Browse FR (annonces d'occasion, prix demandés)",
+        "en.wikipedia.org"
+      ],
+      "prixEstimeDepuisNeuf": false,
+      "prixSaisiParDemandeur": false,
+      "attributsEstimes": [
+        "tier",
+        "faciliteRevente",
+        "decoteAnciennete",
+        "socket"
+      ],
+      "voisinReference": "i7-3770k",
+      "echantillons": 9,
+      "prixNeufIndicatif": null,
+      "annoncesVues": 6,
+      "vendeursDistincts": 6
+    }
   }
 ]
