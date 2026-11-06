@@ -279,10 +279,14 @@ const BASE_GPUS: GpuPricing[] = [
     // Corrigé le 2026-10-21 : 2 annonces LeBonCoin indépendantes pour la
     // carte seule (hors variante Ti/3Go confondue) à 40€ et 63€, nettement
     // au-dessus de l'ancien moyen (33€) -- pas de prix neuf (discontinuée).
-    min: 30,
-    moyen: 42,
-    max: 55,
-    dateMaj: '2026-10-21',
+    //
+    // Corrigé le 2026-11-06 : 3 annonces LeBonCoin indépendantes (ASUS
+    // DirectCU II OC ~40€, ZOTAC ~40€, PNY OC 3Go 80€) convergent au-dessus
+    // du moyen précédent (42€, +31%).
+    min: 35,
+    moyen: 55,
+    max: 80,
+    dateMaj: '2026-11-06',
     faciliteRevente: 0.2,
     decoteAnciennete: 0.7,
     tier: 1,
@@ -555,10 +559,15 @@ const BASE_GPUS: GpuPricing[] = [
     // Corrigé le 2026-10-21 : 3 annonces LeBonCoin pour la carte seule
     // (dont MSI Gaming X) à 60/70/90€, médiane ~70€, au-dessus de l'ancien
     // moyen (55€).
+    //
+    // Corrigé le 2026-11-06 : LeBonCoin (MSI Gaming X 4Go) 90€, Rakuten
+    // occasion (MSI 4Go) 110€ -- 2 sources indépendantes au-dessus du
+    // moyen précédent (70€, +21%). Ratio neuf×0,7 (~170€ neuf résiduel
+    // rare) ≈ 119€, cohérent avec le haut de la nouvelle fourchette.
     min: 55,
-    moyen: 70,
-    max: 85,
-    dateMaj: '2026-10-21',
+    moyen: 85,
+    max: 110,
+    dateMaj: '2026-11-06',
     faciliteRevente: 0.4,
     decoteAnciennete: 0.82,
     tier: 1,
@@ -598,10 +607,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 590',
     marque: 'AMD',
     vramGo: 8,
-    min: 65,
-    moyen: 85,
-    max: 105,
-    dateMaj: '2026-10-14',
+    // Corrigé le 2026-11-06 : 3 annonces LeBonCoin indépendantes (Sapphire
+    // Nitro "état neuf" 90€, Gigabyte 8Go 110€, XFX 150€) convergent
+    // au-dessus de l'ancien moyen (85€, +24%).
+    min: 80,
+    moyen: 105,
+    max: 150,
+    dateMaj: '2026-11-06',
     faciliteRevente: 0.4,
     decoteAnciennete: 0.83,
     tier: 1,

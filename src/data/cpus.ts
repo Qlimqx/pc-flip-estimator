@@ -73,10 +73,13 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD FX-6300',
     marque: 'AMD',
     socket: 'AM3+',
-    min: 15,
-    moyen: 22,
-    max: 30,
-    dateMaj: '2026-10-24',
+    // Corrigé le 2026-11-06 : 3 annonces LeBonCoin indépendantes pour le CPU
+    // seul (20€, 30€ "6 cœurs socket AM3+", 35€ "Black Edition") convergent
+    // au-dessus de l'ancien moyen (22€). Pas de prix neuf (discontinué).
+    min: 18,
+    moyen: 27,
+    max: 35,
+    dateMaj: '2026-11-06',
     faciliteRevente: 0.18,
     decoteAnciennete: 0.72,
     tier: 1,
