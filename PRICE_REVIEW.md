@@ -63,6 +63,59 @@ coup d'œil avant de faire confiance au chiffre pour une décision d'achat.
 - **Radeon HD 7870** (gpu) : 21€ conservé, eBay proposait 34.5€ (+64.29%)
 <!-- /price-review:rejetes-recent -->
 
+## 2026-11-07
+
+### Vérifié par agent IA le 2026-11-07
+
+Vérification manuelle (recherche web réelle : LeBonCoin, eBay.fr/.de/.com,
+forums tech FR, comparateurs LDLC/Cowcotland/comparateur-gamer.fr/tech-insider,
+sources presse pénurie DRAM/NAND) de la TOTALITÉ des 48 entrées listées sous
+"### Rejetés" de la section du jour ci-dessus (priorité 1, sans limite d'âge
+comme demandé) — budget largement dépassé par la priorité 1, priorité 2
+(rotation matériel récent) non traitée aujourd'hui.
+
+**Constat général** : comme suspecté lors des vérifications précédentes
+(cf. 2026-10-07 plus bas), la quasi-totalité de ces rejets reflète le biais
+systémique déjà documenté du pipeline eBay nocturne (annonces neuves/bundles/
+vendeurs pro mal filtrées, surtout sur le matériel ancien pré-GTX1000 et les
+GPU récents sous pénurie GDDR) plutôt qu'un vrai décalage de BASE_CPUS/
+BASE_GPUS par rapport au marché français réel. Sur 48 entrées vérifiées,
+une seule correction s'est avérée justifiée.
+
+**Entrée corrigée (1) :**
+
+- `i9-9900k` (cpu) : 160/205/250€ → 210/250/290€ (base figée depuis le
+  2026-10-08, restée sous le marché ; sources : LeBonCoin — annonces
+  processeur seul 220-280€ — ; mon7up.fr — annonce FR datée du
+  25/10/2026 à 250€ — ; Rakuten — occasion dès 259€ —. Nettement sous
+  l'override actuellement affiché, 319.99€ au 04/11, déjà flaggé « à
+  vérifier », et très loin du rejet eBay du jour, 380.76€, probablement un
+  bundle ou un vendeur pro)
+
+**Entrées confirmées correctes (47, aucun changement) :**
+
+- Vérifiées aujourd'hui par recherche web dédiée (41) : gtx-560-ti,
+  hd-7870, gtx-670, gtx-680, r9-270x, gtx-770, gtx-980, gtx-980-ti, rx-570,
+  gtx-1650, gtx-1070, gtx-1070-ti, gtx-1660-super, gtx-1660-ti,
+  gtx-1080-ti, rtx-2060, rtx-2070-super, rtx-2080-ti, rx-5700-xt,
+  rx-6600-xt, rtx-3060, rtx-3060-ti, rx-6700-xt, rtx-3070-ti, rtx-3080,
+  rtx-3080-ti, rtx-3090, rtx-4070-super, rtx-4070-ti, rtx-4080, rx-9070-xt,
+  rtx-5060-ti, rtx-5080, i5-2500k, i5-3570k, i7-3770k, i5-4460,
+  ryzen-7-2700x, ryzen-5-3600x, ryzen-5-3600, ryzen-7-3800x
+- Non re-recherchées aujourd'hui, déjà recalibrées il y a 1 à 3 jours sur
+  la base d'annonces LeBonCoin concrètes et donc jugées encore fraîches
+  (évite le churn inutile) : gtx-460 (maj 11-05), gtx-750-ti (maj 11-05),
+  gtx-760 (maj 11-04), gtx-780 (maj 11-06), rx-590 (maj 11-06), rtx-3050
+  (maj 11-05)
+
+**RAM / stockage (ram.ts, storage.ts)** : vérification rapide (recherche
+web légère) de la tendance pénurie DRAM/NAND de novembre 2026 — confirmée
+en cours d'aggravation (DDR5 : presse tech évoque x4-5 depuis fin 2025 et
+une poursuite de la hausse ; NAND : hausses contractuelles anticipées de
++15 à +20%/trimestre au T4 2026, cf. Kioxia/Phison/TrendForce). Aucune
+annonce d'occasion datée trouvée contredisant les calibrages très récents
+du 2026-11-03/11-05 (ddr4, ddr5, hdd, ssd, nvme) — inchangés aujourd'hui.
+
 ## 2026-10-08
 
 ### Vérifié par agent IA le 2026-10-08

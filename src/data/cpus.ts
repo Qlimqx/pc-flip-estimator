@@ -595,10 +595,17 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i9-9900K',
     marque: 'Intel',
     socket: 'LGA1151',
-    min: 160,
-    moyen: 205,
-    max: 250,
-    dateMaj: '2026-10-08',
+    // Corrigé le 2026-11-07 : base figée depuis le 10-08 à 205€, restée
+    // sous le marché -- 3 sources FR convergentes (LeBonCoin, annonce
+    // mon7up.fr datée du 25/10/2026, Rakuten occasion) situent le
+    // processeur seul autour de 220-280€ (~250€ en médiane), nettement
+    // sous l'override actuel (319.99€, appliqué le 11-04 et flaggé "à
+    // vérifier") et très loin du rejet eBay du jour (380.76€, probablement
+    // bundle/vendeur pro).
+    min: 210,
+    moyen: 250,
+    max: 290,
+    dateMaj: '2026-11-07',
     faciliteRevente: 0.5,
     decoteAnciennete: 0.9,
     tier: 3,
