@@ -61,6 +61,75 @@ coup d'œil avant de faire confiance au chiffre pour une décision d'achat.
 - **Radeon HD 7870** (gpu) : 21€ conservé, eBay proposait 34.5€ (+64.29%)
 <!-- /price-review:rejetes-recent -->
 
+### Vérifié par agent IA le 2026-11-08
+
+Vérification manuelle (recherche web réelle via 6 agents de recherche en
+parallèle : LeBonCoin, eBay.fr/.de/.com, Vinted, comparateur-gamer.fr,
+Cowcotland, dropreference.com, LDLC/TopAchat/Materiel.net/Amazon.fr/
+PCComponentes) portant sur les 46 entrées "### Rejetés" ci-dessus
+(priorité 1) + la rotation priorité 2 (curseur de l'index 109 à 18, en
+sautant 7 entrées déjà traitées en priorité 1 aujourd'hui/hier) + un
+contrôle RAM/stockage.
+
+**Constat priorité 1** : 42 des 46 rejets d'aujourd'hui portent sur des
+références déjà vérifiées hier (2026-11-07, recherche web dédiée) ou
+recalibrées il y a 2-4 jours sur base d'annonces LeBonCoin concrètes --
+non re-recherchées aujourd'hui pour éviter un churn redondant (<72h,
+même schéma de rejet récurrent du pipeline eBay déjà documenté). Seules
+4 entrées non couvertes récemment ont fait l'objet d'une recherche
+fraîche : `gtx-950`, `rtx-4070`, `i5-9400f`, `i7-4790k`.
+
+**Entrées corrigées (3) :**
+
+- `i5-9400f` (cpu) : 42/53/64€ → 35/45/58€ (base figée depuis le 08-24,
+  légèrement surestimée ; LeBonCoin 4 annonces CPU seul 30/35/40/55€
+  moyenne ~40€, Vinted vendu 30,96€, eBay ~45€)
+- `i7-10700kf` (cpu, rotation priorité 2) : 140/170/200€ → 110/135/165€
+  (incohérence interne détectée : le KF, sans iGPU, était coté plus cher
+  que le K avec iGPU (moyen 140€) ; eBay.de vente conclue ~140€ et
+  annonce en cours ~120€ confirment un marché réel sous l'ancienne base)
+- `ryzen-5-5500` (cpu, rotation priorité 2) : 78/92/108€ → 55/68/80€
+  (fourchette intenable : CPU encore vendu neuf 75-100€ sur
+  Amazon.fr/PCComponentes/TopAchat, l'occasion ne peut pas coûter autant ;
+  vente LeBonCoin conclue à 70€ confirme la baisse)
+
+**Entrées confirmées correctes par recherche fraîche aujourd'hui (21) :**
+
+- Priorité 1 (3) : `gtx-950`, `rtx-4070`, `i7-4790k`
+- Priorité 2, rotation index 109→116 puis 0→17 (18, hors `i7-10700kf` et
+  `ryzen-5-5500` corrigés ci-dessus) : `rx-9070`, `rtx-5060`, `rtx-5070`,
+  `rtx-5070-ti`, `rtx-5090`, `i3-10100f`, `ryzen-3-3200g`, `ryzen-3-3100`,
+  `ryzen-3-3300x`, `i5-10400f`, `i5-11400f`, `i5-10600k`, `ryzen-5-4600g`,
+  `i7-10700k`, `i9-10900k`, `ryzen-7-3700x`, `ryzen-9-3900x` (fourchette
+  haute à surveiller, écart ~13-15% avec les annonces relevées, proche de
+  la tolérance), `ryzen-9-3950x`
+
+**Entrées confirmées correctes, non re-recherchées (42, déjà vérifiées
+<72h, pattern de rejet pipeline récurrent et déjà documenté) :**
+
+`rtx-4070-super`, `rtx-5060-ti`, `rtx-5080`, `rtx-3060`, `rtx-4070-ti`,
+`rtx-3060-ti`, `ryzen-5-3600`, `rtx-3070-ti`, `rtx-4080`, `rtx-3080`,
+`ryzen-5-3600x`, `rx-9070-xt`, `rtx-3080-ti`, `ryzen-7-3800x`, `rtx-3050`,
+`rx-6600-xt`, `rtx-3090`, `rtx-2070-super`, `gtx-1660-super`,
+`gtx-1660-ti`, `ryzen-7-2700x`, `rx-5700-xt`, `rtx-2080-ti`, `gtx-1650`,
+`gtx-1070`, `gtx-1070-ti`, `gtx-1080-ti`, `rx-590`, `rx-570`, `gtx-980`,
+`gtx-980-ti`, `gtx-750-ti`, `i5-3570k`, `i5-2500k`, `gtx-760`, `gtx-770`,
+`gtx-780`, `gtx-680`, `r9-270x`, `gtx-460`, `gtx-560-ti`, `hd-7870`
+
+**RAM/stockage** : contrôle rapide (recherche web légère) confirmant que
+les formules actuelles (ddr4, ddr5, hdd, ssd sata, ssd nvme, recalibrées
+le 2026-11-05) restent cohérentes avec le marché neuf français observé
+fin octobre/début novembre 2026 (comparateur-gamer.fr, Cowcotland,
+Clubic, dropreference.com) une fois le ratio occasion/neuf appliqué --
+aucune donnée trouvée ne justifie une correction (>20%). Aucun changement
+aujourd'hui. Note : la réserve déjà documentée sur le SSD NVMe (tarif
+occasion proche du bas de gamme neuf) persiste mais sans nouvelle donnée
+pour la trancher.
+
+**Curseur de rotation Priorité 2** : avancé de l'index 109 à l'index 18
+(prochain cycle reprendra sur `ryzen-5-5600`, après avoir bouclé la fin
+de la liste réduite [117] : `rx-9070` à `rtx-5090`).
+
 ## 2026-11-07
 
 ### Vérifié par agent IA le 2026-11-07

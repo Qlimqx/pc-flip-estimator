@@ -431,10 +431,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i5-9400F',
     marque: 'Intel',
     socket: 'LGA1151',
-    min: 42,
-    moyen: 53,
-    max: 64,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-08 : base figée depuis le 08-24, légèrement
+    // surestimée. LeBonCoin (CPU seul, 4 annonces indépendantes 30/35/40/
+    // 55€, moyenne ~40€) + Vinted (vendu 30,96€) + eBay (~45€) situent le
+    // marché réel sous l'ancien moyen (53€).
+    min: 35,
+    moyen: 45,
+    max: 58,
+    dateMaj: '2026-11-08',
     faciliteRevente: 0.55,
     decoteAnciennete: 0.9,
     tier: 2,
@@ -645,10 +649,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i7-10700KF',
     marque: 'Intel',
     socket: 'LGA1200',
-    min: 140,
-    moyen: 170,
-    max: 200,
-    dateMaj: '2026-10-07',
+    // Corrigé le 2026-11-08 : incohérence interne détectée -- le KF (sans
+    // iGPU) était coté plus cher que le K (avec iGPU, moyen 140€). eBay.de
+    // (vente conclue ~140€, annonce en cours ~120€) confirme un marché
+    // réel sous l'ancienne base, désormais aligné juste sous le K.
+    min: 110,
+    moyen: 135,
+    max: 165,
+    dateMaj: '2026-11-08',
     faciliteRevente: 0.55,
     decoteAnciennete: 0.93,
     tier: 3,
@@ -751,10 +759,15 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 5 5500',
     marque: 'AMD',
     socket: 'AM4',
-    min: 78,
-    moyen: 92,
-    max: 108,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-08 : fourchette intenable -- le CPU est encore
+    // vendu neuf entre 75€ et 100€ (Amazon.fr 84,90€, PCComponentes
+    // 75,38€, TopAchat 99,99€ avec ventirad), donc l'occasion ne peut pas
+    // coûter autant voire plus cher. Vente LeBonCoin conclue à 70€
+    // (très bon état) confirme la baisse.
+    min: 55,
+    moyen: 68,
+    max: 80,
+    dateMaj: '2026-11-08',
     faciliteRevente: 0.78,
     decoteAnciennete: 0.98,
     tier: 3,
