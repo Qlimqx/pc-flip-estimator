@@ -418,10 +418,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 7 2700X',
     marque: 'AMD',
     socket: 'AM4',
-    min: 28,
-    moyen: 38,
-    max: 48,
-    dateMaj: '2026-10-22',
+    // Corrigé le 2026-11-09 : 2 annonces LeBonCoin indépendantes du CPU
+    // seul (50€ "très bon état" ; 70€ avec ventirad Wraith Prism + boîte,
+    // CPU seul estimé ~55-60€) -- médiane nettement au-dessus de l'ancien
+    // moyen (38€).
+    min: 32,
+    moyen: 48,
+    max: 62,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.55,
     decoteAnciennete: 0.9,
     tier: 2,

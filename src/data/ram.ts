@@ -96,6 +96,23 @@ export const RAM_TYPE_LABELS: Record<RamType, string> = {
 // ddr4/SSD/NVMe revérifiés ce même jour, toujours cohérents avec le marché
 // occasion réel malgré un écart de +44% à +57% signalé par un pipeline
 // séparé qui confond prix neuf et occasion -- voir storage.ts, inchangés.
+//
+// Corrigé le 2026-11-09 (vérification quotidienne IA) : ddr4 revérifié, la
+// base (4€/Go, soit 64€ pour 16Go) est tombée sous le marché occasion réel
+// -- 3 sources convergentes ce jour : annonce LeBonCoin "RAM DDR4 16Go 2x8
+// CL16" à 95€, offre Rakuten occasion (SO-DIMM 16Go) "dès 99,99€", et un
+// retour de forum tech situant le 16Go occasion "souvent vers 80€" --
+// médiane ~90-95€ (~5,6-5,9€/Go), +40-48% au-dessus de l'ancien tarif.
+// ddr4 relevé à 5,5€/Go (prudence, légèrement sous la médiane observée) et
+// le plancher de 25 à 35€. ddr5 revérifié (cote Flipdeal 32Go ~380€ le
+// 21/10, soit ~11,9€/Go, explicitement qualifiée de "presque le prix du
+// neuf" donc pas directement comparable à un prix particulier -- reste
+// dans la tolérance du tarif actuel, signaux de marché contradictoires
+// cette semaine) -- inchangé. ssd/nvme revérifiés (NVMe 1To occasion
+// LeBonCoin ~70-100€ vs 95€ actuel, SSD SATA occasion ~90-100€ vs 115€
+// actuel) -- dans la tolérance, inchangés. hdd non revérifié aujourd'hui
+// (dernière vérification le 11-05, trop récente pour justifier une
+// nouvelle recherche web).
 export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
   ddr3: {
     // DDR3 est aussi "touchée" par la pénurie selon la presse (marché de
@@ -109,8 +126,8 @@ export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
     decoteAnciennete: 0.75,
   },
   ddr4: {
-    prixParGo: 4,
-    plancher: 25,
+    prixParGo: 5.5,
+    plancher: 35,
     faciliteRevente: 0.75,
     decoteAnciennete: 1.0,
   },

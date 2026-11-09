@@ -156,10 +156,12 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 670',
     marque: 'NVIDIA',
     vramGo: 2,
-    min: 16,
-    moyen: 22,
-    max: 29,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-09 : annonces LeBonCoin (ZOTAC 4Go 45€, Asus
+    // 20-33€) au-dessus de l'ancien moyen (22€).
+    min: 18,
+    moyen: 28,
+    max: 42,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.18,
     decoteAnciennete: 0.68,
     tier: 1,
@@ -337,10 +339,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 950',
     marque: 'NVIDIA',
     vramGo: 2,
-    min: 20,
-    moyen: 28,
-    max: 36,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-09 : 4 annonces LeBonCoin indépendantes pour la
+    // carte seule (35€, 50€ "bon état", 70€ Asus STRIX "très bon état",
+    // 85€ MSI) -- médiane ~60€, nettement au-dessus de l'ancien moyen (28€).
+    min: 30,
+    moyen: 50,
+    max: 75,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.25,
     decoteAnciennete: 0.72,
     tier: 1,
@@ -651,10 +656,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 1650',
     marque: 'NVIDIA',
     vramGo: 4,
-    min: 60,
-    moyen: 82,
-    max: 105,
-    dateMaj: '2026-10-24',
+    // Recalibré le 2026-11-09 : 2 annonces LeBonCoin datées indépendantes
+    // (Asus TUF "très bon état" 135€ ; MSI 110€, 19/09/2026) au-dessus de
+    // l'ancien moyen (82€) malgré la recalibration récente du 10-24.
+    min: 90,
+    moyen: 115,
+    max: 140,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.5,
     decoteAnciennete: 0.85,
     tier: 1,
@@ -729,10 +737,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 1660 Super',
     marque: 'NVIDIA',
     vramGo: 6,
-    min: 82,
-    moyen: 102,
-    max: 122,
-    dateMaj: '2026-08-24',
+    // Recalibré le 2026-11-09 : cluster eBay.fr/de pour la carte seule
+    // (MSI Ventus XS OC 95-220€, médiane ~140€) au-dessus de l'ancien
+    // moyen (102€, figé depuis le 08-24).
+    min: 110,
+    moyen: 140,
+    max: 180,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.6,
     decoteAnciennete: 0.9,
     tier: 2,
@@ -811,10 +822,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 1080 Ti',
     marque: 'NVIDIA',
     vramGo: 11,
-    min: 145,
-    moyen: 180,
-    max: 215,
-    dateMaj: '2026-08-24',
+    // Recalibré le 2026-11-09 : 3 annonces eBay (FR/DE) pour la carte
+    // seule (MSI Gaming X 180€ et 259€, Founders Edition 185€) +
+    // comparateur bestvaluegpu.com (~317€ occasion Europe) convergent
+    // nettement au-dessus de l'ancien moyen (180€, figé depuis le 08-24).
+    min: 190,
+    moyen: 240,
+    max: 300,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.5,
     decoteAnciennete: 0.88,
     tier: 3,
@@ -865,10 +880,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 2070 Super',
     marque: 'NVIDIA',
     vramGo: 8,
-    min: 128,
-    moyen: 158,
-    max: 186,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-09 : 2 annonces LeBonCoin indépendantes (Gigabyte
+    // 8Go "parfait état" 230€, carte seule 199€) + repère bestvaluegpu
+    // occasion eBay ~219€ convergent au-dessus de l'ancien moyen (158€,
+    // +27%).
+    min: 150,
+    moyen: 200,
+    max: 235,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.62,
     decoteAnciennete: 0.92,
     tier: 3,
@@ -950,10 +969,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 6600 XT',
     marque: 'AMD',
     vramGo: 8,
-    min: 220,
-    moyen: 260,
-    max: 310,
-    dateMaj: '2026-11-01',
+    // Recalibré le 2026-11-09 : cluster LeBonCoin carte seule (XFX ~220€,
+    // MSI Mech 2X ~300€, Sapphire Nitro+ ~450€) médiane ~300€, cohérent
+    // avec l'override eBay déjà accepté (336€) -- ancienne base (260€)
+    // légèrement sous le marché.
+    min: 240,
+    moyen: 300,
+    max: 355,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.65,
     decoteAnciennete: 0.97,
     tier: 3,
@@ -1083,10 +1106,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 3080',
     marque: 'NVIDIA',
     vramGo: 10,
-    min: 345,
-    moyen: 380,
-    max: 415,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-09 : 3 annonces LeBonCoin indépendantes pour la
+    // carte seule (ZOTAC AMP Holo "très bon état" 500€, autre carte 499€,
+    // Founders Edition 350€) -- médiane nettement au-dessus de l'ancien
+    // moyen (380€, figé depuis le 08-24).
+    min: 350,
+    moyen: 430,
+    max: 500,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.75,
     decoteAnciennete: 0.98,
     tier: 4,
@@ -1096,10 +1123,17 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 6900 XT',
     marque: 'AMD',
     vramGo: 16,
-    min: 385,
-    moyen: 420,
-    max: 460,
-    dateMaj: '2026-08-24',
+    // Recalibré le 2026-11-09 : base figée depuis le 08-24, nettement sous
+    // le marché -- prix neuf actuel ~700-900€ (gpuprix France,
+    // comparateur-gamer/Amazon.fr) implique un occasion ~525-630€ via le
+    // ratio 0.7, cohérent avec l'override eBay déjà accepté à 669,69€ le
+    // 2026-11-08 mais jamais reporté en base. Pas d'annonce LeBonCoin
+    // exploitable (carte rare en occasion), ajustement prudent basé sur
+    // le neuf.
+    min: 470,
+    moyen: 550,
+    max: 630,
+    dateMaj: '2026-11-09',
     faciliteRevente: 0.58,
     decoteAnciennete: 0.98,
     tier: 4,

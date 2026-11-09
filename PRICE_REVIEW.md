@@ -8,6 +8,96 @@ coup d'œil avant de faire confiance au chiffre pour une décision d'achat.
 
 *Les sections de plus de 30 jours sont archivées dans `docs/price-review-archive/AAAA-MM.md`.*
 
+### Vérifié par agent IA le 2026-11-09
+
+Vérification manuelle (recherche web réelle via 7 agents de recherche en
+parallèle : LeBonCoin, eBay.fr/.de, Amazon.fr marketplace occasion,
+Rakuten, bestvaluegpu.com/gpuprix.com, comparateur-gamer.fr, LDLC/
+TopAchat/Materiel.net) portant sur l'intégralité des 51 entrées
+"### Rejetés" du jour (priorité 1 -- volume inhabituel, aucune mise de
+côté malgré le dépassement net du budget nominal de ~20-25 entrées/jour).
+Pas de rotation priorité 2 aujourd'hui : le budget a été entièrement
+consommé par l'ampleur de la priorité 1 ; curseur laissé inchangé
+(index 18) pour reprendre normalement au prochain cycle.
+
+**Entrées corrigées (10 + RAM) :**
+
+- `rtx-3080` (gpu) : 345/380/415€ → 350/430/500€ (3 annonces LeBonCoin
+  indépendantes pour la carte seule : ZOTAC AMP Holo "très bon état" 500€,
+  autre carte 499€, Founders Edition 350€ ; base figée depuis le 08-24)
+- `rx-6600-xt` (gpu) : 220/260/310€ → 240/300/355€ (cluster LeBonCoin
+  carte seule : XFX ~220€, MSI Mech 2X ~300€, Sapphire Nitro+ ~450€,
+  médiane ~300€, cohérent avec l'override eBay déjà accepté à 336,22€)
+- `rx-6900-xt` (gpu) : 385/420/460€ → 470/550/630€ (base figée depuis le
+  08-24 ; neuf actuel ~700-900€ (gpuprix France, comparateur-gamer/
+  Amazon.fr) implique occasion ~525-630€ via ratio 0.7, cohérent avec
+  l'override eBay déjà accepté à 669,69€ le 11-08 mais jamais reporté en
+  base ; pas d'annonce LeBonCoin exploitable, carte rare en occasion)
+- `rtx-2070-super` (gpu) : 128/158/186€ → 150/200/235€ (LeBonCoin :
+  Gigabyte 8Go "parfait état" 230€, carte seule 199€ ; + repère
+  bestvaluegpu.com occasion eBay ~219€)
+- `gtx-1080-ti` (gpu) : 145/180/215€ → 190/240/300€ (3 annonces eBay
+  FR/DE carte seule : MSI Gaming X 180€ et 259€, Founders Edition 185€ ;
+  + comparateur bestvaluegpu.com ~317€ occasion Europe ; base figée
+  depuis le 08-24)
+- `gtx-1660-super` (gpu) : 82/102/122€ → 110/140/180€ (cluster eBay.fr/de
+  carte seule, MSI Ventus XS OC 95-220€, médiane ~140€ ; base figée
+  depuis le 08-24)
+- `gtx-1650` (gpu) : 60/82/105€ → 90/115/140€ (2 annonces LeBonCoin
+  datées indépendantes : Asus TUF "très bon état" 135€, MSI 110€ le
+  19/09/2026)
+- `gtx-950` (gpu) : 20/28/36€ → 30/50/75€ (4 annonces LeBonCoin
+  indépendantes pour la carte seule : 35€, 50€ "bon état", 70€ Asus
+  STRIX "très bon état", 85€ MSI, médiane ~60€)
+- `gtx-670` (gpu) : 16/22/29€ → 18/28/42€ (annonces LeBonCoin : ZOTAC
+  4Go 45€, Asus 20-33€)
+- `ryzen-7-2700x` (cpu) : 28/38/48€ → 32/48/62€ (2 annonces LeBonCoin
+  indépendantes du CPU seul : 50€ "très bon état" ; 70€ avec ventirad
+  Wraith Prism + boîte, CPU seul estimé ~55-60€)
+- RAM `ddr4` (src/data/ram.ts) : 4€/Go (plancher 25€) → 5,5€/Go
+  (plancher 35€) -- 3 sources convergentes : annonce LeBonCoin "RAM
+  DDR4 16Go 2x8 CL16" à 95€, offre Rakuten occasion (SO-DIMM 16Go) "dès
+  99,99€", retour de forum tech "souvent vers 80€" pour 16Go occasion --
+  médiane ~90-95€ (~5,6-5,9€/Go), +40-48% au-dessus de l'ancien tarif.
+
+**Entrées confirmées correctes (41) :**
+
+`rtx-5090`, `rtx-5080`, `rtx-5060-ti`, `rtx-4080`, `rtx-4070-ti`,
+`rx-9070-xt` (neuf/occasion cohérents, rejets eBay jugés scalpers/
+anomalies) ; `rtx-3090`, `rtx-3080-ti`, `rtx-3070-ti` (spread occasion
+large mais centré sur la base, pas de 2 sources convergentes pour
+déplacer) ; `rtx-3060`, `rtx-3060-ti`, `rtx-3050`, `rx-6700-xt`
+(clusters LeBonCoin cohérents avec la base actuelle) ; `rtx-2080-ti`,
+`rx-5700-xt`, `rx-590`, `rx-570` (déjà recalibrés récemment ou
+confirmés par annonces du jour) ; `gtx-1660-ti`, `gtx-1070`,
+`gtx-1070-ti`, `gtx-1080` (données insuffisantes/trop anciennes pour
+justifier un changement >15%) ; `gtx-980`, `gtx-980-ti`, `gtx-750-ti`,
+`gtx-760`, `gtx-770`, `gtx-780`, `gtx-680`, `r9-270x`, `gtx-460`,
+`gtx-560-ti`, `hd-7870` (cartes très anciennes déjà recalibrées les
+jours précédents sur base LeBonCoin solide, ou données trop dispersées/
+non datées pour justifier un nouveau mouvement) ; `i5-9400f`,
+`i7-10700kf` (recalibrés hier 11-08, un seul jour écoulé) ; `ryzen-5-3600`,
+`ryzen-5-3600x`, `ryzen-7-3800x`, `i7-4790k`, `i7-3770k`, `i5-3570k`,
+`i5-2500k` (fourchette actuelle cohérente avec les comparables trouvés,
+ou données insuffisantes pour satisfaire la règle des 2 sources sur un
+changement >30%).
+
+**RAM/stockage** : `ddr4` corrigé (voir ci-dessus). `ddr5` revérifié --
+cote Flipdeal 32Go ~380€ le 21/10 (~11,9€/Go), explicitement qualifiée de
+"presque le prix du neuf" donc pas directement comparable à un prix
+particulier réel ; signaux de presse contradictoires cette semaine
+(hausse vs baisse) ; reste dans la tolérance du tarif actuel (11€/Go) --
+inchangé. `ssd`/`nvme` revérifiés (NVMe 1To occasion LeBonCoin ~70-100€
+vs 95€ actuel, SSD SATA occasion ~90-100€ vs 115€ actuel) -- dans la
+tolérance, inchangés. `hdd` non revérifié aujourd'hui (dernière
+vérification le 11-05, trop récente).
+
+**Curseur de rotation Priorité 2** : inchangé (index 18, dernière
+rotation le 2026-11-08) -- aucune entrée priorité 2 traitée aujourd'hui,
+le budget ayant été intégralement consommé par les 51 entrées priorité 1.
+Le prochain cycle reprendra normalement à `ryzen-5-5600` dans la liste
+réduite.
+
 ### Vérifié par agent IA le 2026-11-08
 
 Vérification manuelle (recherche web réelle via 6 agents de recherche en
