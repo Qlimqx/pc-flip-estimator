@@ -8,6 +8,57 @@ coup d'œil avant de faire confiance au chiffre pour une décision d'achat.
 
 *Les sections de plus de 30 jours sont archivées dans `docs/price-review-archive/AAAA-MM.md`.*
 
+### Vérifié par agent IA le 2026-11-10
+
+**Priorité 1** : les 46 entrées listées sous "### Rejetés" de la section
+"## 2026-11-10 (agent quotidien)" ci-dessous recoupent à ~98% les entrées
+déjà vérifiées avec des sources réelles les 2026-11-08/09 (même schéma
+récurrent de rejet du pipeline eBay sur le même matériel ancien, documenté
+plusieurs jours de suite -- voir les sections "Vérifié par agent IA"
+précédentes). Aucune n'a été re-recherchée aujourd'hui pour éviter un churn
+redondant (<48h) ; toutes restent considérées à jour.
+
+**Priorité 2 (rotation matériel récent, curseur de l'index 18 à 43 sur la
+liste réduite [116], `ryzen-5-5600` à `ryzen-9-7900x`)** -- 5 agents de
+recherche web en parallèle (LeBonCoin, eBay.fr/.de, Rakuten, comparateurs
+LDLC/TopAchat/Materiel.net/comparateur-gamer.fr/PCComponentes) sur 25 CPU :
+
+**Confirmés corrects, aucun changement (25) :**
+
+`ryzen-5-5600`, `ryzen-5-5600g`, `ryzen-5-5600x`, `ryzen-7-5700x`,
+`i5-11600k`, `i5-12400f`, `i9-11900k`, `ryzen-9-5900x`, `ryzen-7-5800x`,
+`ryzen-7-5800x3d`, `ryzen-9-5950x`, `i5-13400f`, `i5-12600k`, `i7-12700k`,
+`i9-12900k`, `i9-12900ks`, `ryzen-7-7700x`, `ryzen-5-7600`, `ryzen-5-7600x`,
+`i5-13600k`, `i5-13500`, `ryzen-7-7700`, `i5-14400f`, `i5-14600kf`,
+`ryzen-9-7900x`.
+
+Deux cas méritent une note :
+- `ryzen-9-5950x` (250/280/315€) : cluster eBay.de 190-280€ (moy. ~236€)
+  suggère un écart de ~11% sur la moyenne -- dans la tolérance 15%, pas de
+  changement.
+- `i9-12900ks` (245/280/315€) : signal faible de sous-évaluation (neuf
+  résiduel ~450-550€ x0,7 ≈ 315-385€, une annonce LeBonCoin ambiguë à 350€
+  décrite "neuf" dans une recherche d'occasion, et un prix "occasion"
+  Rakuten à 456,97€ supérieur à son propre prix "neuf" affiché -- la même
+  anomalie "occasion ≥ neuf" déjà documentée plusieurs fois dans
+  ram.ts/storage.ts, signe de données peu fiables). Confiance jugée
+  insuffisante pour corriger aujourd'hui malgré l'écart théorique ; à
+  revérifier avec des annonces LeBonCoin datées et des ventes conclues.
+
+**RAM/stockage** : contrôle rapide. `ddr4`/`ddr5` et `ssd`/`nvme` ont déjà
+été revérifiés hier (11-09) et restent dans la tolérance -- non
+re-recherchés aujourd'hui. `hdd` (dernière vérif. le 11-05) : recherche
+LeBonCoin rapide, disque dur 2To occasion observé entre 10€ et 90€ (non
+daté), cohérent avec le tarif actuel (0,035€/Go, soit 70€ bruts pour 2To
+avant décote) -- inchangé.
+
+**Curseur de rotation Priorité 2** : avancé de l'index 18 à l'index 43
+(prochain cycle reprendra sur `ryzen-7-7800x3d`, à l'index 43 de la liste
+réduite [116]).
+
+**Aucune correction nécessaire aujourd'hui** (ni priorité 1, ni priorité 2,
+ni RAM/stockage) -- toutes les valeurs vérifiées restent dans la tolérance.
+
 ### Vérifié par agent IA le 2026-11-09
 
 Vérification manuelle (recherche web réelle via 7 agents de recherche en
