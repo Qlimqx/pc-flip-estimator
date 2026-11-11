@@ -49,10 +49,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 560 Ti',
     marque: 'NVIDIA',
     vramGo: 1,
-    min: 10,
-    moyen: 15,
-    max: 20,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-11 : base figée depuis le 08-25, sous le marché.
+    // 3 sources convergentes (carte discontinuée) : resaleprices.com moyenne
+    // ~23€ (32 annonces, 19-28$), Vinted 25€ "très bon état", eBay.de EVGA
+    // 1Go GDDR5 ~23€.
+    min: 14,
+    moyen: 20,
+    max: 27,
+    dateMaj: '2026-11-11',
     faciliteRevente: 0.15,
     decoteAnciennete: 0.65,
     tier: 1,
@@ -114,10 +118,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'Radeon HD 7870',
     marque: 'AMD',
     vramGo: 2,
-    min: 15,
-    moyen: 21,
-    max: 28,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-11 : base figée depuis le 08-25, sous le marché.
+    // resaleprices.com moyenne ~31€ (36 annonces, 27-38$) + une vente
+    // conclue réelle eBay.de (carte 2Go) à 35€.
+    min: 18,
+    moyen: 27,
+    max: 36,
+    dateMaj: '2026-11-11',
     faciliteRevente: 0.15,
     decoteAnciennete: 0.66,
     tier: 1,
@@ -197,10 +204,13 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'R9 270X',
     marque: 'AMD',
     vramGo: 2,
-    min: 16,
-    moyen: 23,
-    max: 30,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-11 : base figée depuis le 08-25, légèrement sous
+    // le marché. LeBonCoin ask 25€, ventes eBay (XFX 2Go ~28€, Sapphire
+    // 2Go ~33€) convergent au-dessus de l'ancien moyen (23€).
+    min: 18,
+    moyen: 27,
+    max: 35,
+    dateMaj: '2026-11-11',
     faciliteRevente: 0.18,
     decoteAnciennete: 0.68,
     tier: 1,
@@ -1012,10 +1022,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 3060 Ti',
     marque: 'NVIDIA',
     vramGo: 8,
-    min: 190,
-    moyen: 220,
-    max: 250,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-11 : base figée depuis le 08-24. 2 sources
+    // indépendantes au-dessus de l'ancien moyen (220€) : vente LeBonCoin
+    // conclue à 310€ (8Go), LDLC occasion (revendeur certifié) Gigabyte
+    // GAMING OC 8G à 319,95€.
+    min: 220,
+    moyen: 270,
+    max: 320,
+    dateMaj: '2026-11-11',
     faciliteRevente: 0.78,
     decoteAnciennete: 0.99,
     tier: 3,
@@ -1467,10 +1481,17 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 4090',
     marque: 'NVIDIA',
     vramGo: 24,
-    min: 2000,
-    moyen: 2150,
-    max: 2350,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-11 : base figée depuis le 08-24. Production
+    // arrêtée fin 2024 + pénurie mémoire 2026 tirent le marché vers le
+    // haut. LeBonCoin (cartes seules) : entrée de gamme 1350-1700€, milieu
+    // 1999-2250€, haut de gamme FE/ROG Strix 2800-3300€ ; estimation
+    // tech-insider.org 2300-3000€ d'occasion, marché allemand ~2104€. Le
+    // moyen (2150€) restait correct mais le plafond (2350€) sous-estimait
+    // nettement le haut de gamme.
+    min: 2050,
+    moyen: 2350,
+    max: 2900,
+    dateMaj: '2026-11-11',
     faciliteRevente: 0.85,
     decoteAnciennete: 1.05,
     tier: 5,
@@ -1566,10 +1587,19 @@ const BASE_GPUS: GpuPricing[] = [
     // OC, "quasi neuve") à 1050€ ; sanity-check neufx0,7 ~ 1295€, cohérent
     // avec la fourchette corrigée. L'ancienne base (980€, maj 10-07) était
     // devenue stale face à cette hausse neuf réelle et documentée.
-    min: 1000,
-    moyen: 1200,
-    max: 1400,
-    dateMaj: '2026-10-16',
+    //
+    // Corrigé le 2026-11-11 : pénurie mondiale de mémoire GDDR7 (production
+    // réorientée vers la HBM/IA) confirmée par plusieurs sources (oct-nov
+    // 2026) -- la RTX 5080 a disparu du site Nvidia US fin octobre, neuf
+    // France désormais >1800€ (economiematin.fr 02/11, noobfeed.com,
+    // tech-insider.org), contre ~969-1339€ en août (tech-insider.org) ;
+    // confirmé par generation-nt.com/cowcotland.com/clubic.com/galaxus.fr
+    // sur la pénurie généralisée GDDR7. L'occasion (~70-80% du neuf) doit
+    // suivre proportionnellement.
+    min: 1300,
+    moyen: 1550,
+    max: 1800,
+    dateMaj: '2026-11-11',
     faciliteRevente: 0.85,
     decoteAnciennete: 1.07,
     tier: 5,
@@ -1586,10 +1616,17 @@ const BASE_GPUS: GpuPricing[] = [
     // directe trouvée (carte haut de gamme rare en revente) ; sanity-check
     // neufx0,7 ~ 4600-5950€ utilisé comme repère prudent plutôt que les
     // 8336€ proposés par eBay (non corroborés).
-    min: 4600,
-    moyen: 5300,
-    max: 6000,
-    dateMaj: '2026-10-16',
+    //
+    // Corrigé le 2026-11-11 : même pénurie GDDR7 que la RTX 5080 (voir
+    // ci-dessus). Cowcotland : prix neuf qui a "quasi doublé en 12 mois",
+    // +1000€ depuis le 26/06 (3799€ -> 4799€, >5000€ en Allemagne) ;
+    // gpuprix.com (maj 22/10) situe le neuf le moins cher en France à
+    // 6041€ ; fiches LDLC actuelles à 5899-6499€ -- le plafond actuel
+    // (6000€) est déjà dépassé par le neuf le moins cher du marché.
+    min: 5200,
+    moyen: 5800,
+    max: 6500,
+    dateMaj: '2026-11-11',
     faciliteRevente: 0.85,
     decoteAnciennete: 1.08,
     tier: 5,

@@ -8,6 +8,113 @@ coup d'œil avant de faire confiance au chiffre pour une décision d'achat.
 
 *Les sections de plus de 30 jours sont archivées dans `docs/price-review-archive/AAAA-MM.md`.*
 
+### Vérifié par agent IA le 2026-11-11
+
+Vérification manuelle (recherche web réelle via 6 agents en parallèle :
+LeBonCoin, Vinted, eBay.fr/.de/.ca, LDLC occasion, resaleprices.com,
+comparateur-gamer.fr/Cowcotland/gpuprix.com/tech-insider.org/
+economiematin.fr/noobfeed.com pour le neuf) sur les 46 entrées "###
+Rejetés" de la section "## 2026-11-11 (agent quotidien)" ci-dessous
+(priorité 1, volume largement supérieur au budget nominal ~20-25/jour --
+aucune mise de côté, conformément à la consigne). Pas de rotation
+priorité 2 aujourd'hui : budget entièrement consommé par la priorité 1 ;
+curseur laissé inchangé (index 43).
+
+**Entrées corrigées (7) :**
+
+- `gtx-560-ti` (gpu) : 10/15/20€ → 14/20/27€ (base figée depuis le 08-25 ;
+  resaleprices.com moyenne ~23€/32 annonces, Vinted 25€, eBay.de EVGA
+  1Go ~23€)
+- `hd-7870` (gpu) : 15/21/28€ → 18/27/36€ (base figée depuis le 08-25 ;
+  resaleprices.com moyenne ~31€/36 annonces + vente conclue eBay.de 35€)
+- `r9-270x` (gpu) : 16/23/30€ → 18/27/35€ (base figée depuis le 08-25 ;
+  LeBonCoin ask 25€, ventes eBay XFX ~28€ et Sapphire ~33€)
+- `rtx-3060-ti` (gpu) : 190/220/250€ → 220/270/320€ (base figée depuis le
+  08-24 ; vente LeBonCoin conclue 310€, LDLC occasion certifié Gigabyte
+  GAMING OC 8G 319,95€)
+- `rtx-4090` (gpu) : 2000/2150/2350€ → 2050/2350/2900€ (base figée depuis
+  le 08-24 ; production arrêtée fin 2024 + pénurie mémoire 2026 -- le
+  plafond sous-estimait nettement le haut de gamme FE/ROG Strix, 2800-
+  3300€ sur LeBonCoin, tech-insider.org 2300-3000€ d'occasion)
+- `rtx-5080` (gpu) : 1000/1200/1400€ → 1300/1550/1800€ (pénurie GDDR7
+  confirmée par plusieurs sources datées oct-nov 2026 : disparition du
+  site Nvidia US fin octobre, neuf France >1800€ selon economiematin.fr
+  02/11 et noobfeed.com, contre ~969-1339€ en août ; generation-nt.com/
+  cowcotland.com/clubic.com/galaxus.fr confirment la pénurie généralisée)
+- `rtx-5090` (gpu) : 4600/5300/6000€ → 5200/5800/6500€ (même pénurie
+  GDDR7 ; Cowcotland : neuf "quasi doublé en 12 mois" (3799€→4799€,
+  >5000€ Allemagne) ; gpuprix.com (22/10) neuf le moins cher en France à
+  6041€ ; fiches LDLC actuelles à 5899-6499€, au-dessus de l'ancien
+  plafond)
+
+**Entrées confirmées correctes (39), par sous-ensemble :**
+
+- Cartes très anciennes déjà cohérentes avec le marché résiduel observé
+  (resaleprices.com, Vinted, eBay.de/.ca) : `gtx-770`, `gtx-980`,
+  `gtx-680`, `gtx-460`, `gtx-660`, `gtx-670`, `gtx-760`, `gtx-780`,
+  `gtx-950`, `gtx-750-ti`, `rx-590`.
+- GPU Pascal/Turing confirmés par clusters LeBonCoin/eBay cohérents :
+  `gtx-1070`, `gtx-1070-ti`, `gtx-1080`, `gtx-1660-ti`, `gtx-1650`,
+  `gtx-1080-ti`, `rtx-2070-super`, `rtx-2080-ti`.
+- GPU Ampere/RDNA2/récents confirmés (clusters cohérents ou écart sous le
+  seuil de tolérance, pénurie GDDR/DRAM prise en compte) : `rtx-3070-ti`,
+  `rtx-3060`, `rtx-3080-ti`, `rtx-3050`, `rtx-3090`, `rtx-4080`,
+  `rx-5700-xt`, `rx-570`, `rx-6700-xt`. `rtx-4070-ti` et `rx-9070-xt` :
+  inchangés mais **à surveiller** (données neuf contradictoires selon la
+  source pour le premier ; carte encore très récente et en forte demande
+  pour le second -- aucune des deux ne satisfait la règle des 2 sources
+  pour un changement).
+- CPU confirmés (clusters LeBonCoin/eBay cohérents avec la base) :
+  `ryzen-5-3600`, `ryzen-7-3800x`, `ryzen-7-2700x`, `i5-9400f`,
+  `i7-10700kf`, `i7-4790k`, `i7-3770k`, `i5-3570k`, `i5-2500k`.
+- `rtx-5060-ti` : inchangé (asks LeBonCoin "neuves jamais ouvertes" à
+  500-580€ encadrent le haut de la fourchette actuelle, l'occasion réelle
+  devrait rester sous ce niveau).
+
+**RAM/stockage** : vérification légère (2 recherches ciblées). La pénurie
+DRAM/NAND continue de s'aggraver nettement (DDR4 spot +172% selon Goldman
+Sachs, DDR5 "5,6x le prix de 2025" selon overclocking.com, NAND TLC
+doublé en 6 mois selon Phison/Tom's Hardware, capacité 2026 déjà vendue
+selon Phison/Kioxia) mais aucune donnée d'occasion FR datée et précise
+trouvée aujourd'hui pour trancher un changement par rapport aux tarifs
+actuels (ddr4 5,5€/Go, ddr5 11€/Go, ssd 0,115€/Go, nvme 0,095€/Go,
+recalibrés les 11-05/11-09). Point de vigilance : un relevé Tom's
+Hardware du 16/10 cité par 24matins situe un kit DDR4-3200 16Go neuf à
+~96€ (6€/Go), très proche du tarif occasion actuel (5,5€/Go) -- l'écart
+occasion/neuf semble se resserrer sous l'effet de la pénurie, à surveiller
+de près au prochain cycle avant de corriger sans donnée occasion directe.
+Aucun changement appliqué aujourd'hui.
+
+**⚠️ Signalement : bug de fusion override/base toujours actif et en
+aggravation.** Vérification directe des fichiers
+`src/data/priceOverrides/{cpu,gpu}Overrides.json` ce jour (hors périmètre
+de cet agent) : ~25 CPU et ~29 GPU ont un override live 20% à 109%
+au-dessus de leur `BASE_CPUS`/`BASE_GPUS` vérifiée, certains mis à jour
+ce matin même par le pipeline mécanique (`gt-1030` 94,05€ vs base 60€,
+`rtx-3080` 618,70€ vs base 430€, `rx-6600-xt` 478,20€ vs base 300€,
+`i9-9900k` 380,76€ vs base 250€) et d'autres figés depuis des semaines
+(`ryzen-7-7700` 376,56€ vs base 180€ depuis le 10-10, `ryzen-7-9700x`
+410,87€ vs base 205€ depuis le 10-02, `ryzen-7-3800x` 182,70€ vs base 98€
+depuis le 10-23). Cause identifiée (déjà documentée les 2026-10-29 à
+11-06, puis absente des rapports 11-07 à 11-10 malgré un problème
+toujours actif) : `src/data/{cpus,gpus}.ts` fusionne un override existant
+par-dessus la base sans condition de date, et `scripts/agent/lib/
+verify.mjs` ne fait jamais redescendre un override déjà trop haut quand
+il est ensuite rejeté -- il reste figé indéfiniment, et chaque acceptation
+(écart <60% à la base) peut repousser l'override plus haut si le biais
+eBay persiste. Nécessite une intervention humaine sur le code (hors
+périmètre strict de cet agent) -- signalé par notification séparée à
+l'utilisateur aujourd'hui, étant donné la durée (2+ semaines) et
+l'aggravation mesurée.
+
+**Méthodologie** : 6 sous-agents de recherche web parallèles (4 lots de
+recherche complète sur les entrées jamais ré-vérifiées ou figées depuis
+le 08-24/08-25, 2 lots de vérification légère sur les entrées déjà
+recalibrées récemment avec de bonnes sources). Seuil de tolérance ~15%,
+2+ sources indépendantes exigées et obtenues pour les 7 changements
+appliqués. `npm install`, `npm run build` et `npm test` (188 tests, tous
+passés) lancés après les corrections.
+
 ### Vérifié par agent IA le 2026-11-10
 
 **Priorité 1** : les 46 entrées listées sous "### Rejetés" de la section
