@@ -1,17 +1,17 @@
 {
   "hdd": {
-    "prixParGo": 0.041,
-    "dateMaj": "2026-11-11",
-    "sampleCount": 30
+    "prixParGo": 0.043,
+    "dateMaj": "2026-11-12",
+    "sampleCount": 31
   },
   "nvme": {
     "prixParGo": 0.146,
-    "dateMaj": "2026-11-11",
-    "sampleCount": 35
+    "dateMaj": "2026-11-12",
+    "sampleCount": 33
   },
   "ssd": {
     "prixParGo": 0.157,
-    "dateMaj": "2026-11-11",
-    "sampleCount": 69
+    "dateMaj": "2026-11-12",
+    "sampleCount": 67
   }
 }
