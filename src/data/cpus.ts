@@ -1302,10 +1302,15 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 5 9600X',
     marque: 'AMD',
     socket: 'AM5',
-    min: 140,
-    moyen: 175,
-    max: 210,
-    dateMaj: '2026-10-22',
+    // Recalibré le 2026-11-12 : le neuf a nettement baissé depuis le
+    // lancement -- tracker hebdo Cowcotland 169,90€ (semaine du 30/10 au
+    // 06/11), confirmé par comparateur-gamer.fr/Amazon.fr (189,51€, 29/09)
+    // et achatmoinscher.com/Cdiscount (180,28€) -- soit neuf x0,7 ≈ 119-134€,
+    // nettement sous l'ancienne base (moyen=175€, figée depuis le 10-22).
+    min: 110,
+    moyen: 135,
+    max: 160,
+    dateMaj: '2026-11-12',
     faciliteRevente: 0.82,
     decoteAnciennete: 1.06,
     tier: 4,
@@ -1315,16 +1320,16 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core Ultra 5 245K',
     marque: 'Intel',
     socket: 'LGA1851',
-    // Recalibré le 2026-10-13 : la base d'août dépassait le prix du NEUF
-    // actuel (~195-275€ comparateurs FR/DE, dont un "plus bas prix jamais
-    // vu" à 190,80€ pour le 245KF) -- incohérence manifeste pour une
-    // fourchette d'occasion. Aucune annonce LeBonCoin directe trouvée ;
-    // repositionné via sanity-check neuf x0,7 (confiance modérée, à
-    // reconfirmer avec une recherche LeBonCoin ciblée).
-    min: 170,
-    moyen: 200,
-    max: 235,
-    dateMaj: '2026-10-13',
+    // Recalibré le 2026-11-12 : neuf stable ~200-204€ toute l'année 2026
+    // (Cowcotland, comparateur-gamer.fr 26/07) -- confirme que le calibrage
+    // du 10-13 (resté ancré sur le neuf x0,7 sans donnée occasion directe)
+    // était trop haut. Seule donnée occasion trouvée : Cybertek (reconditionné
+    // pro, garantie) à 188,91€, logiquement au-dessus d'un pair-à-pair --
+    // utilisé comme repère haut, pas comme moyenne.
+    min: 125,
+    moyen: 150,
+    max: 180,
+    dateMaj: '2026-11-12',
     faciliteRevente: 0.6,
     decoteAnciennete: 1.02,
     tier: 4,
@@ -1384,17 +1389,18 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 7 9800X3D',
     marque: 'AMD',
     socket: 'AM5',
-    // Recalibré le 2026-08-26 : la valeur du 24/08 était déjà périmée 2
-    // jours plus tard -- vérifié en direct, le neuf réel est tombé à
-    // ~496-507€ (TopAchat/Materiel.net), ~422€ chez Amazon (variante
-    // 9850X3D), et même le "neuf scellé" sur LeBonCoin se négocie
-    // maintenant 320-400€. CPU très récent, marché qui bouge vite --
-    // ce genre d'entrée mérite une revérification plus fréquente que la
-    // moyenne.
-    min: 260,
-    moyen: 300,
-    max: 350,
-    dateMaj: '2026-08-26',
+    // Recalibré le 2026-11-12 : le marché s'est redressé depuis l'incident
+    // du 08-26 -- le neuf FR est remonté à ~410-450€ (Grosbill, Cowcotland,
+    // comparateur-gamer.fr/PCComponentes/CDiscount, relevés août-oct. 2026)
+    // et l'occasion suit à 350-390€ (LeBonCoin : vente conclue 355€, annonce
+    // "bon état" 380€ ; eBay.de occasion 390€) -- ce CPU gaming très demandé
+    // retient ~85-90% de sa valeur neuve, pas 70%. L'ancienne base (moyen
+    // 300€, figée depuis la correction du 08-26) est maintenant trop basse.
+    // CPU très récent, marché qui bouge vite -- à revérifier fréquemment.
+    min: 310,
+    moyen: 355,
+    max: 400,
+    dateMaj: '2026-11-12',
     faciliteRevente: 0.97,
     decoteAnciennete: 1.08,
     tier: 5,

@@ -8,6 +8,122 @@ coup d'œil avant de faire confiance au chiffre pour une décision d'achat.
 
 *Les sections de plus de 30 jours sont archivées dans `docs/price-review-archive/AAAA-MM.md`.*
 
+### Vérifié par agent IA le 2026-11-12
+
+**Priorité 1** : les 40 entrées listées sous "### Rejetés" de la section
+"## 2026-11-12 (agent quotidien)" ci-dessous recoupent à 39/40 des entrées
+déjà vérifiées avec des sources réelles les 2026-11-08/09/11 (même schéma
+récurrent de rejet du pipeline eBay sur le même matériel ancien, documenté
+plusieurs jours de suite -- voir les sections "Vérifié par agent IA"
+précédentes). Non re-recherchées aujourd'hui pour éviter un churn redondant
+(<24-72h), elles restent considérées à jour. Seule `rtx-4060-ti` est
+nouvelle dans cette liste et sans vérification récente (base figée depuis
+le 08-24) : recherche fraîche effectuée (LeBonCoin : Gigabyte EAGLE 8Go
+"comme neuve" 309€, MSI Gaming X 8Go "très bon état" 290€ ; resaleprices.com
+~280€ moyenne US ; neuf très volatil 550-950€ selon la source, pénurie
+GDDR6). **GARDER** (305/340/375€, occasion observée 280-400€ centrée
+~330-350€, dans la tolérance).
+
+**Priorité 2 (rotation matériel récent, curseur de l'index 43 à 65 sur la
+liste réduite [116])** -- 5 agents de recherche web en parallèle (LeBonCoin,
+eBay.fr/.de, Cowcotland, comparateur-gamer.fr, achatmoinscher.com,
+resaleprices.com, bestvaluegpu.com, racingtech.fr) sur 22 CPU + 1 GPU en
+double (rtx-4060-ti déjà traité en priorité 1, rx-5500-xt/rx-5600-xt en
+priorité 2) :
+
+**Entrées corrigées (5) :**
+
+- `ryzen-5-9600x` (cpu) : 140/175/210€ → 110/135/160€ (neuf nettement
+  baissé depuis le lancement : Cowcotland 169,90€ semaine 30/10-06/11,
+  confirmé par comparateur-gamer.fr/Amazon.fr 189,51€ le 29/09 et
+  achatmoinscher.com/Cdiscount 180,28€ ; base figée depuis le 10-22)
+- `core-ultra-5-245k` (cpu) : 170/200/235€ → 125/150/180€ (neuf stable
+  ~200-204€ toute l'année selon Cowcotland/comparateur-gamer.fr 26/07,
+  confirmant que le calibrage du 10-13 était resté ancré sur neuf x0,7
+  sans donnée occasion directe ; seule donnée occasion = Cybertek
+  reconditionné pro 188,91€, utilisée comme repère haut)
+- `ryzen-7-9800x3d` (cpu) : 260/300/350€ → 310/355/400€ -- **composant de
+  l'incident du 08-26**, revérifié avec un soin particulier : le marché
+  s'est redressé depuis, neuf FR remonté à ~410-450€ (Grosbill, Cowcotland,
+  comparateur-gamer.fr/PCComponentes/CDiscount) et occasion à 350-390€
+  (LeBonCoin vente conclue 355€, annonce "bon état" 380€ ; eBay.de occasion
+  390€) -- ce CPU gaming très demandé retient ~85-90% de sa valeur neuve,
+  pas 70% ; l'ancienne base (figée depuis la correction du 08-26) est
+  maintenant trop basse
+- `rx-5500-xt` (gpu) : 65/85/105€ → 90/125/180€ (3 sources convergentes :
+  LeBonCoin ASRock Challenger D 8Go OC 115€ et Gigabyte OC 8Go 200€,
+  resaleprices.com moyenne 111$/~103€ sur 74 annonces, bestvaluegpu.com
+  occasion eBay zone EU ~118,71€ ; base figée depuis le 10-25)
+- `rx-5600-xt` (gpu) : 115/175/230€ → 95/130/190€ (3 sources convergentes
+  sous le calibrage du 11-03 : racingtech.fr médiane 110€ sur 27 annonces
+  LeBonCoin, bestvaluegpu.com occasion eBay zone EU ~144€, cluster
+  LeBonCoin/eBay.de 100-200€ pour la variante 6Go réelle -- les annonces
+  "8Go" rencontrées sont des erreurs d'étiquetage, cette carte n'existant
+  qu'en 6Go)
+
+**Entrées confirmées correctes, aucun changement (15) :**
+
+`ryzen-7-7800x3d`, `i7-13700kf`, `i9-13900kf`, `i9-13900k` (clusters
+LeBonCoin/eBay/Cybertek cohérents avec la base) ; `ryzen-9-7950x`,
+`i7-14700kf`, `i7-14700k`, `ryzen-9-7950x3d`, `i9-14900kf` (occasion
+LeBonCoin/zeus-pc cohérente ; **point méthodologique important** : le
+ratio neuf×0,7 n'est plus fiable en ce moment -- le neuf de plusieurs CPU
+AM5/LGA1700 haut de gamme a flambé sous l'effet indirect de la pénurie
+mémoire (ex. 7950X 579,90€→809,90€ selon Cowcotland) sans que l'occasion
+ne suive, il faut donc privilégier l'observation directe de l'occasion) ;
+`i9-14900k`, `ryzen-9-9900x`, `core-ultra-9-285k`, `ryzen-9-9950x`
+(preuve insuffisante pour un changement, à revérifier avec une recherche
+LeBonCoin plus ciblée) ; `ryzen-9-9950x3d` (chute brutale du prix neuf la
+semaine du 30/10-06/11 non encore confirmée sur plusieurs semaines, à
+surveiller).
+
+**Entrées dans la tolérance (±15%), non modifiées pour éviter le churn (2) :**
+
+- `ryzen-7-9700x` : 205€ moyen vs ~180€ suggéré par le neuf×0,7 (écart
+  ~12%, sous le seuil)
+- `core-ultra-7-265k` : 255€ moyen vs ~220€ suggéré (écart ~14%, sous le
+  seuil)
+
+**Entrée à surveiller, changement NON appliqué (1) :**
+
+- `ryzen-9-7900x3d` : neuf confirmé en forte hausse par 3 sources
+  indépendantes (comparateur-gamer.fr/Amazon.fr 525,70€ le 09/11 contre
+  442€ le 29/10, soit +19% en 11 jours ; PowerPlanetOnline 505,95€ ; LDLC
+  569,95€), ce qui impliquerait via neuf×0,7 une occasion ~370-380€ contre
+  265€ en base. **Changement non appliqué** : la seule annonce LeBonCoin
+  trouvée (803€) est un outlier manifeste écarté, et le point méthodologique
+  ci-dessus (ratio neuf×0,7 peu fiable actuellement, l'occasion ne suit pas
+  toujours la flambée du neuf) s'applique particulièrement ici en l'absence
+  de toute donnée occasion directe exploitable -- confiance insuffisante
+  pour un changement de +43% sur la seule base d'une inférence. À
+  revérifier en priorité au prochain cycle avec une recherche LeBonCoin/
+  eBay plus ciblée.
+
+**RAM/stockage** : vérification complète (DDR4, DDR5, SSD SATA, NVMe, HDD).
+`ddr4` (5,5€/Go) confirmé par annonces LeBonCoin 16Go 90-95€ (~5,6-5,9€/Go)
+-- **clôture du point de vigilance soulevé le 11-11** : le signal Tom's
+Hardware/24matins du 16/10 (kit neuf ~96€/16Go, ~6€/Go) semblait indiquer
+un resserrement occasion/neuf, mais un relevé plus large et plus récent
+(comparateur-gamer.fr, 06/11/2026, médiane 164€ pour 16Go neuf soit
+~10-11€/Go) montre que l'écart s'est en fait re-creusé -- inchangé. `ddr5`
+(11€/Go) confirmé avec une précision inhabituelle par 3 annonces LeBonCoin
+convergentes (Crucial SODIMM 5600 290€, G.Skill Trident Z Neo 6000 400€,
+kit générique 6000 380€ -- moyenne ~11,15€/Go) -- inchangé. `ssd`/`nvme`/
+`hdd` revérifiés légèrement, tous dans la tolérance (±20%) malgré des
+données LeBonCoin partielles (mélange neuf/occasion dans les résultats) --
+inchangés.
+
+**Curseur de rotation Priorité 2** : avancé de l'index 43 à l'index 65
+(prochain cycle reprendra sur `rx-5700`, à l'index 65 de la liste réduite
+[116]).
+
+**Méthodologie** : 5 agents de recherche web indépendants en parallèle
+(LeBonCoin, eBay.fr/.de, Cowcotland, comparateur-gamer.fr, achatmoinscher.com,
+resaleprices.com, bestvaluegpu.com, racingtech.fr, zeus-pc.com, Cybertek).
+Seuil de tolérance ~15%, 2+ sources indépendantes exigées pour tout
+changement >30% (satisfait pour `rx-5500-xt`). `npm install`, `npm run
+build` et `npm test` (188 tests, tous passés) lancés après les corrections.
+
 ### Vérifié par agent IA le 2026-11-11
 
 Vérification manuelle (recherche web réelle via 6 agents en parallèle :

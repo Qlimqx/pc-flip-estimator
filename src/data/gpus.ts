@@ -695,10 +695,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 5500 XT',
     marque: 'AMD',
     vramGo: 8,
-    min: 65,
-    moyen: 85,
-    max: 105,
-    dateMaj: '2026-10-25',
+    // Recalibré le 2026-11-12 : 3 sources convergentes au-dessus de l'ancien
+    // moyen (85€) -- LeBonCoin (ASRock Challenger D 8Go OC 115€, Gigabyte OC
+    // 8Go 200€), resaleprices.com (moyenne 111$/~103€ sur 74 annonces),
+    // bestvaluegpu.com (occasion eBay zone EU ~118,71€).
+    min: 90,
+    moyen: 125,
+    max: 180,
+    dateMaj: '2026-11-12',
     faciliteRevente: 0.45,
     decoteAnciennete: 0.88,
     tier: 2,
@@ -776,14 +780,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 5600 XT',
     marque: 'AMD',
     vramGo: 6,
-    // Recalibré le 2026-11-03 : annonces LeBonCoin (Gigabyte 6Go 130-200€,
-    // hors un outlier 400€ exclu) + ventes réelles rapportées sur le forum
-    // Cowcotland (XFX Thicc II ~250€, Sapphire Pulse ~220€) convergent sur
-    // ~130-250€, bien au-dessus du max précédent (145€).
-    min: 115,
-    moyen: 175,
-    max: 230,
-    dateMaj: '2026-11-03',
+    // Recalibré le 2026-11-12 : 3 sources indépendantes redescendent sous le
+    // calibrage du 11-03 -- racingtech.fr (27 annonces LeBonCoin, médiane
+    // 110€), bestvaluegpu.com (occasion eBay zone EU ~144€), LeBonCoin/
+    // eBay.de (cluster 6Go 100-200€, les annonces "8Go" étant des erreurs
+    // d'étiquetage, cette carte n'existant qu'en 6Go).
+    min: 95,
+    moyen: 130,
+    max: 190,
+    dateMaj: '2026-11-12',
     faciliteRevente: 0.5,
     decoteAnciennete: 0.9,
     tier: 2,
