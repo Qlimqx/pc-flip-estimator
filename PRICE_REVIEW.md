@@ -8,6 +8,123 @@ coup d'œil avant de faire confiance au chiffre pour une décision d'achat.
 
 *Les sections de plus de 30 jours sont archivées dans `docs/price-review-archive/AAAA-MM.md`.*
 
+### Vérifié par agent IA le 2026-11-13
+
+**Note préalable** : au démarrage de cette session, deux commits
+(`ff8fa2d`/`1f69efd`, "declenchement quotidien 2026-11-13" / "vérification
+quotidienne des prix 2026-11-13") produits par les deux autres automatismes
+documentés dans `docs/AGENT.md` (routine "déclencheur agent prix" + agent
+GitHub Actions `scripts/agent/run.mjs`) étaient présents localement en HEAD
+détaché, non encore poussés sur `origin/main` -- travail hors du périmètre
+de cette routine (`priceOverrides/*.json`, `agent-data/`, etc.), donc non
+utilisé ni modifié. Le `git push` de cette session a ensuite été rejeté
+(non-fast-forward) : ces deux commits avaient atterri sur `origin/main`
+entre-temps (poussés par l'autre automatisme pendant que cette routine
+travaillait) ; rebase propre effectué, sans conflit, sur la version
+définitive.
+
+**Priorité 1** : la section "### Rejetés" la plus récente est donc en fait
+"## 2026-11-13 (agent quotidien)" (arrivée après le rebase ci-dessus, pas
+visible au moment où la recherche ci-dessous a été planifiée). Elle
+recoupe largement la liste du 2026-11-12 (même matériel ancien déjà
+vérifié ces derniers jours) ainsi que 9 des GPU récents traités aujourd'hui
+en Priorité 2 ci-dessous (`rtx-5060-ti`, `rtx-3060`, `rtx-4070-ti`,
+`rx-9070-xt` [corrigé, voir plus bas], `rtx-3080-ti`, `rtx-3090`,
+`rx-5700-xt`, `rtx-2080-ti`, `rtx-4060-ti` déjà confirmé le 11-12). Restent
+non couverts aujourd'hui dans cette liste : `rtx-5080` et `rtx-2070-super`
+(dateMaj respectifs 11-11 et 11-09, encore relativement récents, budget
+journalier déjà consommé par ailleurs) et le reste = matériel ancien
+(GTX/Radeon HD, CPU pré-Zen2/pré-10e gén) hors du périmètre "matériel
+récent" de cette routine, protégé par le seuil de rejet 60% du pipeline
+eBay -- à couvrir par rotation si besoin, non re-recherché aujourd'hui pour
+éviter le churn redondant sur du matériel déjà vérifié à plusieurs reprises.
+
+**Priorité 2 (rotation matériel récent)** -- liste réduite reconstruite
+aujourd'hui (114 entrées : 53 GPU + 61 CPU récents selon les filtres de
+génération/gamme) ; plutôt qu'une position stricte de curseur (qui dérive
+d'un jour à l'autre selon la reconstruction, comme noté les jours
+précédents), ciblage par ancienneté de `dateMaj` dans cette liste réduite --
+21 composants vérifiés via 4 agents de recherche web en parallèle (LeBonCoin,
+eBay.fr/.de, Amazon.fr occasion, LDLC/TopAchat/Materiel.net/Cowcotland/
+comparateur-gamer.fr/gpudojo.com/resaleprices.com) :
+
+**Entrée corrigée (1) :**
+
+- `rx-9070-xt` (gpu) : 520/580/650€ → 580/660/760€ (carte RDNA4 récente
+  encore vendue neuve à prix fort, et son prix neuf a lui-même augmenté :
+  Cowcotland situe le neuf stable à 799,90€ en sept. 2026 contre
+  ~585-650€ mi-2026 ; occasion "très bon état" relevée à 685€
+  (Dealabs/Amazon) et "comme neuf" 584€ en avril, pré-hausse -- décote
+  occasion faible cohérente avec une carte récente toujours en vente neuve ;
+  base figée depuis le 10-27)
+
+**Entrées confirmées correctes, aucun changement (20) :**
+
+`rtx-3070-ti`, `rtx-3060`, `rtx-3080-ti`, `rtx-3090`, `rtx-2080-ti` (clusters
+LeBonCoin cohérents avec la base, voir détail sources dans le rapport
+agent) ; `rtx-4070-ti`, `rx-5700-xt` (occasion LeBonCoin + eBay.de alignées
+sur la base) ; `rx-6600`, `rx-6800-xt`, `ryzen-5-5600x` (sanity check
+neuf×0,7 cohérent, occasion dans la tolérance) ; `i5-12600k`, `i7-12700k`,
+`i5-11600k`, `ryzen-7-3700x` (données occasion directes insuffisantes mais
+sanity check neuf×0,7 cohérent) ; `rtx-5060-ti`, `rx-7700-xt` (données trop
+insuffisantes pour trancher, cartes respectivement très récente et en fin de
+vie) ; `rtx-2070`, `rtx-5070-ti`, `i9-12900k`, `ryzen-9-3900x` (voir alertes
+ci-dessous -- gardés aujourd'hui par manque de preuve suffisante, mais
+signal de sous-évaluation à surveiller en priorité).
+
+**Alertes prioritaires pour le prochain cycle (signal détecté, preuve
+insuffisante aujourd'hui pour corriger selon la méthodologie — moins de 4
+annonces occasion directes exploitables ou source non vérifiable) :**
+
+- `rtx-5070-ti` : hausse spectaculaire et très récente du prix neuf
+  multi-sources (Tom's Hardware, Cowcotland, tech-insider, Notebookcheck --
+  jusqu'à +79% vs MSRP US début novembre 2026, pénurie mémoire GDDR7/HBM),
+  mais aucune annonce LeBonCoin "carte seule" exploitable trouvée ce jour --
+  **à revérifier en urgence sous 48-72h**.
+- `rtx-2070` : seulement 2 annonces LeBonCoin trouvées (190€/220€), toutes
+  deux au-dessus du max actuel (168€) de +13 à +31% ; base jamais
+  revérifiée depuis le 08-24.
+- `i9-12900k` : sanity check neuf×0,7 (~290-311€) ~13-18% au-dessus de la
+  moyenne base (260€), mais aucune annonce occasion fiable isolée trouvée.
+- `ryzen-9-3900x` : signal ~28% de sous-évaluation via une synthèse
+  WebSearch (4 annonces citées) mais sans lien d'annonce individuelle
+  vérifiable -- traité comme non fiable au sens strict de la méthodologie.
+
+**RAM/stockage** : `ddr4` (5,5€/Go), `ddr5` (11€/Go) et `nvme` (0,095€/Go)
+confirmés cohérents par recherche LeBonCoin directe (annonces filtrées
+occasion réelle, pas de confusion neuf/occasion) -- inchangés. `ssd` et
+`hdd` : signal de baisse détecté (respectivement ~-39% et ~-30% vs les
+tarifs actuels) sur des annonces LeBonCoin en partie "vendu", mais
+échantillon réduit (SSD : majoritairement 500Go, pas de confirmation en
+1To) et en contradiction avec le contexte presse (pénurie DRAM/NAND qui se
+poursuit, décélère mais ne s'inverse pas selon TrendForce/Cowcotland/Phison,
+mi-novembre 2026) -- **pas appliqué aujourd'hui**, à revérifier au prochain
+cycle avec un échantillon élargi (1To, annonces "vendu" confirmées) avant de
+trancher une baisse qui contredirait la tendance macro.
+
+**Curseur de rotation Priorité 2** : `verification-cursor.json` mis à jour
+avec `lastIndex: 21` (nombre de composants traités aujourd'hui dans le
+cycle de ciblage par ancienneté -- la liste réduite étant reconstruite
+chaque jour avec une composition légèrement différente, voir note
+ci-dessus, le curseur sert ici de marqueur de progression plutôt que d'un
+index fixe et stable ; les composants les plus anciens en `dateMaj` dans la
+liste réduite restent le point de départ naturel du prochain cycle,
+notamment le backlog 2026-08-24/08-25 encore à traiter : `rtx-2070`
+[alerte ci-dessus], `rx-6650-xt`, `rx-6750-xt`, `rx-7600`, `rx-7800-xt`,
+`rx-9070`, `rtx-5060`, `i3-10100f`, `ryzen-3-3200g`, `ryzen-3-3300x`,
+`i5-11400f`, `ryzen-5-4600g`, `ryzen-9-3950x`, `i9-11900k`, `i5-12400f`,
+`i9-12900ks`, `core-ultra-9-285k`, `ryzen-9-9950x`, `ryzen-9-9950x3d`).
+
+**Méthodologie** : 4 agents de recherche web indépendants en parallèle
+(LeBonCoin via WebSearch, eBay.fr/.de, Amazon.fr occasion, comparateurs prix
+neufs) + 1 agent dédié RAM/stockage. Limite récurrente notée par plusieurs
+agents : LeBonCoin n'étant pas scrapable, les résultats via WebSearch sont
+des synthèses de page de résultats sans lien direct vers chaque annonce
+individuelle -- confiance réduite en conséquence sur les échantillons les
+plus fins ; gpuprix.com inaccessible (ENOTFOUND) pour certains agents.
+Aucun fichier `priceOverrides/*.json` ni fichier du pipeline eBay/agent
+GitHub Actions modifié (hors périmètre de cette routine).
+
 ### Vérifié par agent IA le 2026-11-12
 
 **Priorité 1** : les 40 entrées listées sous "### Rejetés" de la section
