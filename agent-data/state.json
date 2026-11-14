@@ -8,9 +8,9 @@
       "neuf": {
         "moyen": 485.76,
         "sampleCount": 14,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-5800x3d": {
@@ -20,9 +20,9 @@
       "neuf": {
         "moyen": 447.99,
         "sampleCount": 8,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-7800x3d": {
@@ -30,18 +30,18 @@
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
-        "moyen": 390.04,
-        "sampleCount": 18,
-        "on": "2026-11-13"
+        "moyen": 384.08,
+        "sampleCount": 19,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-4060": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-10-28",
       "failures": 0,
       "lastChangedOn": "2026-10-28"
@@ -51,11 +51,11 @@
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
-        "moyen": 1461.04,
-        "sampleCount": 27,
-        "on": "2026-11-13"
+        "moyen": 1428.64,
+        "sampleCount": 25,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-5070-ti": {
@@ -64,25 +64,25 @@
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
         "moyen": 1857.93,
-        "sampleCount": 20,
-        "on": "2026-11-13"
+        "sampleCount": 22,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-4070": {
-      "status": "donnees-insuffisantes",
+      "status": "rejete",
       "pending": null,
-      "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "reason": "écart de 138 % à la référence (430 € -> 1022.36 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
       "failures": 0,
-      "lastVerifiedOn": "2026-11-10"
+      "lastVerifiedOn": "2026-11-14"
     },
     "gpu:rtx-4070-super": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-08",
       "failures": 0
     },
@@ -93,9 +93,9 @@
       "neuf": {
         "moyen": 217.64,
         "sampleCount": 14,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-5-5600x": {
@@ -103,11 +103,11 @@
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
-        "moyen": 277.83,
+        "moyen": 279.68,
         "sampleCount": 11,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-5700x": {
@@ -118,11 +118,11 @@
       },
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
-        "moyen": 244.65,
-        "sampleCount": 14,
-        "on": "2026-11-13"
+        "moyen": 249.84,
+        "sampleCount": 12,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "lastVerifiedOn": "2026-11-04"
     },
@@ -131,39 +131,39 @@
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
-        "moyen": 361.45,
-        "sampleCount": 20,
-        "on": "2026-11-13"
+        "moyen": 343.69,
+        "sampleCount": 19,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-02",
       "failures": 0,
       "lastChangedOn": "2026-10-28"
     },
     "gpu:rtx-4060-ti": {
-      "status": "rejete",
+      "status": "donnees-insuffisantes",
       "pending": null,
-      "reason": "écart de 124 % à la référence (340 € -> 762.44 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
+      "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "lastVerifiedOn": "2026-11-13",
       "neuf": {
         "moyen": 583.54,
         "sampleCount": 4,
-        "on": "2026-10-30"
+        "on": "2026-11-14"
       }
     },
     "gpu:rtx-4090": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "lastVerifiedOn": "2026-11-12",
       "neuf": {
         "moyen": 5231.32,
         "sampleCount": 4,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       }
     },
     "gpu:rtx-5060": {
@@ -171,37 +171,37 @@
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
-        "moyen": 806.06,
-        "sampleCount": 18,
-        "on": "2026-11-13"
+        "moyen": 816.85,
+        "sampleCount": 19,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-5060-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 77 % à la référence (510 € -> 904.3 €), au-delà de 60 %",
+      "reason": "écart de 70 % à la référence (510 € -> 865.35 €), au-delà de 60 %",
       "neuf": {
-        "moyen": 990.58,
-        "sampleCount": 38,
-        "on": "2026-11-13"
+        "moyen": 1006.82,
+        "sampleCount": 39,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-5080": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 104 % à la référence (1550 € -> 3155.77 €), au-delà de 60 %",
+      "reason": "écart de 112 % à la référence (1550 € -> 3291.07 €), au-delà de 60 %",
       "neuf": {
-        "moyen": 2929.51,
-        "sampleCount": 39,
-        "on": "2026-11-13"
+        "moyen": 2912.99,
+        "sampleCount": 41,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-5090": {
@@ -209,12 +209,12 @@
       "pending": null,
       "reason": "appliqué mais écart de 57 % à la référence : relecture humaine conseillée",
       "neuf": {
-        "moyen": 11852.31,
-        "sampleCount": 20,
-        "on": "2026-11-13"
+        "moyen": 11647.74,
+        "sampleCount": 19,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-13"
     },
@@ -225,9 +225,9 @@
       "neuf": {
         "moyen": 232.57,
         "sampleCount": 6,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-5-9600x": {
@@ -237,9 +237,9 @@
       "neuf": {
         "moyen": 365.82,
         "sampleCount": 15,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-9700x": {
@@ -249,29 +249,29 @@
       "neuf": {
         "moyen": 389.69,
         "sampleCount": 16,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-3060": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 129 % à la référence (235 € -> 537.1 €), au-delà de 60 %",
+      "reason": "écart de 221 % à la référence (235 € -> 753.63 €), au-delà de 60 %",
       "neuf": {
-        "moyen": 836.85,
-        "sampleCount": 30,
-        "on": "2026-11-13"
+        "moyen": 831.23,
+        "sampleCount": 29,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-13400f": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-7700x": {
@@ -281,24 +281,24 @@
       "neuf": {
         "moyen": 385.48,
         "sampleCount": 7,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-4070-ti": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 69 % à la référence (720 € -> 1215.03 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-4070-ti-super": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-5-5500": {
@@ -308,9 +308,9 @@
       "neuf": {
         "moyen": 139.66,
         "sampleCount": 7,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-5-7600x": {
@@ -320,9 +320,9 @@
       "neuf": {
         "moyen": 204.05,
         "sampleCount": 10,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-7700": {
@@ -332,45 +332,45 @@
       "neuf": {
         "moyen": 501.79,
         "sampleCount": 8,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-03",
       "failures": 0
     },
     "gpu:rtx-3060-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 65 % à la référence (270 € -> 445.3 €), au-delà de 60 %",
+      "reason": "écart de 61 % à la référence (270 € -> 435.1 €), au-delà de 60 %",
       "neuf": {
-        "moyen": 678.79,
-        "sampleCount": 10,
-        "on": "2026-11-13"
+        "moyen": 680.03,
+        "sampleCount": 12,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-3070": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "reason": "appliqué mais écart de 48 % à la référence : relecture humaine conseillée",
+      "reason": "appliqué mais écart de 40 % à la référence : relecture humaine conseillée",
       "neuf": {
         "moyen": 800.45,
         "sampleCount": 8,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-13"
+      "lastChangedOn": "2026-11-14"
     },
     "cpu:ryzen-5-3600": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 149 % à la référence (58 € -> 144.21 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-12400f": {
@@ -380,16 +380,16 @@
       "neuf": {
         "moyen": 201.15,
         "sampleCount": 10,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-5900x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "lastVerifiedOn": "2026-10-28",
       "lastChangedOn": "2026-10-28"
@@ -398,7 +398,7 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-14400f": {
@@ -408,9 +408,9 @@
       "neuf": {
         "moyen": 317.69,
         "sampleCount": 13,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-14600kf": {
@@ -420,16 +420,16 @@
       "neuf": {
         "moyen": 386.75,
         "sampleCount": 10,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-7900x3d": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-9900x": {
@@ -439,55 +439,55 @@
       "neuf": {
         "moyen": 615.42,
         "sampleCount": 11,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-9950x3d": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "neuf": {
         "moyen": 860.04,
         "sampleCount": 6,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       }
     },
     "gpu:rtx-3070-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 95 % à la référence (290 € -> 566.35 €), au-delà de 60 %",
+      "reason": "écart de 96 % à la référence (290 € -> 568.95 €), au-delà de 60 %",
       "neuf": {
         "moyen": 904.8,
         "sampleCount": 9,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-3080": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "reason": "appliqué mais écart de 50 % à la référence : relecture humaine conseillée",
+      "reason": "appliqué mais écart de 56 % à la référence : relecture humaine conseillée",
       "neuf": {
-        "moyen": 1200.1,
-        "sampleCount": 13,
-        "on": "2026-11-13"
+        "moyen": 1185.05,
+        "sampleCount": 14,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-13"
+      "lastChangedOn": "2026-11-14"
     },
     "gpu:rtx-4080": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-11",
       "failures": 0
     },
@@ -495,7 +495,7 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-07",
       "failures": 0,
       "lastChangedOn": "2026-10-30"
@@ -504,7 +504,7 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-10",
       "failures": 0
     },
@@ -515,9 +515,9 @@
       "neuf": {
         "moyen": 431.18,
         "sampleCount": 5,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-7900x": {
@@ -527,23 +527,23 @@
       "neuf": {
         "moyen": 408.94,
         "sampleCount": 9,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-13700kf": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-13700k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-14700kf": {
@@ -553,9 +553,9 @@
       "neuf": {
         "moyen": 495.82,
         "sampleCount": 6,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-14700k": {
@@ -565,45 +565,45 @@
       "neuf": {
         "moyen": 527.07,
         "sampleCount": 6,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-7950x3d": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-7800-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "lastVerifiedOn": "2026-10-31"
     },
     "gpu:rx-9070-xt": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 124 % à la référence (580 € -> 1300.05 €), au-delà de 60 %",
+      "reason": "écart de 167 % à la référence (660 € -> 1760.17 €), au-delà de 60 %",
       "neuf": {
         "moyen": 1418.12,
-        "sampleCount": 25,
-        "on": "2026-11-13"
+        "sampleCount": 27,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-3700x": {
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-05"
     },
@@ -614,9 +614,9 @@
       "neuf": {
         "moyen": 266.88,
         "sampleCount": 4,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-12700k": {
@@ -626,16 +626,16 @@
       "neuf": {
         "moyen": 424.64,
         "sampleCount": 10,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-9950x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "neuf": {
         "moyen": 901.01,
@@ -646,21 +646,21 @@
     "gpu:rtx-3080-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 77 % à la référence (480 € -> 849 €), au-delà de 60 %",
+      "reason": "écart de 107 % à la référence (480 € -> 995.04 €), au-delà de 60 %",
       "neuf": {
         "moyen": 1844.42,
         "sampleCount": 9,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-7700-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-9070": {
@@ -668,26 +668,26 @@
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
-        "moyen": 1277.91,
-        "sampleCount": 16,
-        "on": "2026-11-13"
+        "moyen": 1221.43,
+        "sampleCount": 15,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-11400f": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-3800x": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 86 % à la référence (98 € -> 182.7 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 94 % à la référence (98 € -> 189.98 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-10-23"
     },
@@ -695,14 +695,14 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-7950x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-3050": {
@@ -710,12 +710,12 @@
       "pending": null,
       "reason": "écart de 108 % à la référence (175 € -> 364.22 €), au-delà de 60 %",
       "neuf": {
-        "moyen": 484.52,
-        "sampleCount": 41,
-        "on": "2026-11-13"
+        "moyen": 483.44,
+        "sampleCount": 43,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-6600": {
@@ -725,10 +725,10 @@
       "neuf": {
         "moyen": 624.23,
         "sampleCount": 5,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-12"
     },
@@ -739,16 +739,16 @@
       "neuf": {
         "moyen": 680.9,
         "sampleCount": 11,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-3900x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-03",
       "failures": 0,
       "lastChangedOn": "2026-11-03"
@@ -760,9 +760,9 @@
       "neuf": {
         "moyen": 333.46,
         "sampleCount": 10,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i9-12900k": {
@@ -771,39 +771,39 @@
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
         "moyen": 600.26,
-        "sampleCount": 11,
-        "on": "2026-11-13"
+        "sampleCount": 10,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i9-13900kf": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i9-13900k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:core-ultra-7-265k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-2060": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 49 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-10"
     },
@@ -811,7 +811,7 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-09",
       "failures": 0,
       "lastChangedOn": "2026-11-05"
@@ -819,24 +819,24 @@
     "gpu:rx-6600-xt": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "reason": "appliqué mais écart de 55 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "appliqué mais écart de 48 % à la référence : relecture humaine conseillée",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-12"
+      "lastChangedOn": "2026-11-14"
     },
     "gpu:rx-6650-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-6700-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-11",
       "failures": 0,
       "lastChangedOn": "2026-11-02"
@@ -845,28 +845,28 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "lastVerifiedOn": "2026-11-02"
     },
     "gpu:rtx-3090": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 229 % à la référence (900 € -> 2956.51 €), au-delà de 60 %",
+      "reason": "écart de 196 % à la référence (900 € -> 2665.77 €), au-delà de 60 %",
       "neuf": {
         "moyen": 1970.2,
         "sampleCount": 4,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-7600-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i9-14900kf": {
@@ -876,9 +876,9 @@
       "neuf": {
         "moyen": 687.02,
         "sampleCount": 17,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i9-14900k": {
@@ -888,24 +888,24 @@
       "neuf": {
         "moyen": 691,
         "sampleCount": 10,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:core-ultra-9-285k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-2070": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 39 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-10"
     },
@@ -913,50 +913,50 @@
       "status": "rejete",
       "pending": null,
       "reason": "écart de 65 % à la référence (200 € -> 329.11 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-6800": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-6800-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-3090-ti": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-7900-xtx": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-3-3300x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-10400f": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-04",
       "failures": 0
     },
@@ -964,21 +964,21 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-9-3950x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-11600k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:core-ultra-5-245k": {
@@ -986,62 +986,62 @@
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
       "neuf": {
-        "moyen": 361.66,
+        "moyen": 374.17,
         "sampleCount": 6,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-1660-super": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "reason": "appliqué mais écart de 35 % à la référence : relecture humaine conseillée",
+      "reason": "appliqué mais écart de 34 % à la référence : relecture humaine conseillée",
       "neuf": {
-        "moyen": 365,
-        "sampleCount": 7,
-        "on": "2026-11-13"
+        "moyen": 333.13,
+        "sampleCount": 8,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-13"
+      "lastChangedOn": "2026-11-14"
     },
     "gpu:rx-7900-gre": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-7900-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-3-3100": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-1660-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 141 % à la référence (108 € -> 260.7 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 96 % à la référence (108 € -> 211.82 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-2080": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 41 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-01"
     },
@@ -1049,41 +1049,41 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-10-30",
       "failures": 0
     },
     "gpu:rx-6900-xt": {
-      "status": "mis-a-jour-a-verifier",
+      "status": "mis-a-jour",
       "pending": null,
-      "reason": "appliqué mais écart de 26 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "appliqué",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-13"
+      "lastChangedOn": "2026-11-14"
     },
     "gpu:rx-6950-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-5-2600": {
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-12"
     },
     "cpu:ryzen-5-2600x": {
-      "status": "mis-a-jour-a-verifier",
+      "status": "rejete",
       "pending": null,
-      "reason": "appliqué mais écart de 39 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 72 % à la référence (52 € -> 89.55 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-05"
     },
@@ -1094,10 +1094,10 @@
       "neuf": {
         "moyen": 123.65,
         "sampleCount": 9,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-13"
     },
@@ -1105,23 +1105,23 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-2700x": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 127 % à la référence (48 € -> 109.08 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-9400f": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 77 % à la référence (45 € -> 79.63 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-06"
     },
@@ -1129,15 +1129,15 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-10700kf": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 82 % à la référence (135 € -> 246.15 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-06"
     },
@@ -1145,36 +1145,36 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i9-10900k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i9-11900k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i9-12900ks": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-1660": {
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-13"
     },
@@ -1182,23 +1182,23 @@
       "status": "rejete",
       "pending": null,
       "reason": "écart de 102 % à la référence (165 € -> 333.1 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rtx-2080-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 133 % à la référence (280 € -> 652.73 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 142 % à la référence (280 € -> 677.97 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-5-1600": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-04",
       "failures": 0
     },
@@ -1206,20 +1206,20 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i3-10100f": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 59 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "neuf": {
         "moyen": 129.99,
         "sampleCount": 4,
-        "on": "2026-10-30"
+        "on": "2026-11-14"
       },
       "lastChangedOn": "2026-11-06"
     },
@@ -1227,17 +1227,17 @@
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-05"
+      "lastChangedOn": "2026-11-14"
     },
     "cpu:i5-9600k": {
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-12"
     },
@@ -1245,132 +1245,129 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-04",
       "failures": 0,
       "lastChangedOn": "2026-11-04"
     },
     "cpu:i9-9900k": {
-      "status": "en-attente-confirmation",
-      "pending": {
-        "moyen": 319.99,
-        "on": "2026-11-13"
-      },
-      "reason": "saut de 16 % (380.76 € -> 319.99 €) : appliqué seulement s'il est confirmé au prochain run",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "status": "mis-a-jour-a-verifier",
+      "pending": null,
+      "reason": "appliqué mais écart de 28 % à la référence : relecture humaine conseillée",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-11"
+      "lastChangedOn": "2026-11-14"
     },
     "gpu:gtx-1060-6gb": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-10-27",
       "failures": 0
     },
     "gpu:gtx-1650": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 77 % à la référence (115 € -> 203.52 €), au-delà de 60 %",
+      "reason": "écart de 81 % à la référence (115 € -> 208.37 €), au-delà de 60 %",
       "neuf": {
-        "moyen": 385.02,
-        "sampleCount": 5,
-        "on": "2026-11-13"
+        "moyen": 380.02,
+        "sampleCount": 6,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-1650-super": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-1070": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 131 % à la référence (100 € -> 230.57 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 203 % à la référence (100 € -> 303.07 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-1070-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 133 % à la référence (115 € -> 268.12 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 135 % à la référence (115 € -> 270.61 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-5600-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-5700": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "lastVerifiedOn": "2026-11-12",
       "lastChangedOn": "2026-11-12"
     },
     "gpu:gtx-1080": {
-      "status": "mis-a-jour-a-verifier",
+      "status": "rejete",
       "pending": null,
-      "reason": "appliqué mais écart de 57 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 79 % à la référence (140 € -> 250.04 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-13"
     },
     "gpu:gtx-1080-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 71 % à la référence (240 € -> 409.61 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 94 % à la référence (240 € -> 465.7 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:arc-b570": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "neuf": {
         "moyen": 522.34,
         "sampleCount": 4,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       }
     },
     "gpu:arc-b580": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:ryzen-7-1800x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-8600k": {
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-05"
     },
@@ -1378,8 +1375,8 @@
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-05"
     },
@@ -1387,14 +1384,14 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-6700k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "lastVerifiedOn": "2026-11-04",
       "lastChangedOn": "2026-11-03"
@@ -1403,7 +1400,7 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-04",
       "failures": 0,
       "lastChangedOn": "2026-11-02"
@@ -1412,38 +1409,38 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-5500-xt": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:arc-a750": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-7500": {
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-13"
+      "lastChangedOn": "2026-11-14"
     },
     "cpu:i5-7600k": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 29 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-05"
     },
@@ -1451,8 +1448,8 @@
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-05"
     },
@@ -1460,78 +1457,78 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-6500": {
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-10"
+      "lastChangedOn": "2026-11-14"
     },
     "cpu:i5-6600k": {
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-13"
+      "lastChangedOn": "2026-11-14"
     },
     "cpu:i3-8100": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 39 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-08"
     },
     "gpu:gtx-1050-ti": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "reason": "appliqué mais écart de 45 % à la référence : relecture humaine conseillée",
+      "reason": "appliqué mais écart de 38 % à la référence : relecture humaine conseillée",
       "neuf": {
-        "moyen": 495.28,
-        "sampleCount": 5,
-        "on": "2026-11-13"
+        "moyen": 541.47,
+        "sampleCount": 4,
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-13"
+      "lastChangedOn": "2026-11-14"
     },
     "gpu:rx-580": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "reason": "appliqué mais écart de 51 % à la référence : relecture humaine conseillée",
+      "reason": "appliqué mais écart de 48 % à la référence : relecture humaine conseillée",
       "neuf": {
         "moyen": 214.86,
         "sampleCount": 20,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-13"
+      "lastChangedOn": "2026-11-14"
     },
     "gpu:rx-590": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 60 % à la référence (105 € -> 168.35 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-4790k": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 92 % à la référence (58 € -> 111.4 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-05"
     },
@@ -1539,8 +1536,8 @@
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-10-28"
     },
@@ -1548,50 +1545,50 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:vega-64": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-1630": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-570": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 132 % à la référence (55 € -> 127.75 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 113 % à la référence (55 € -> 117.25 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-4770k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-470": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-4460": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
       "lastVerifiedOn": "2026-11-07",
       "lastChangedOn": "2026-10-31"
@@ -1600,8 +1597,8 @@
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 30 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-05"
     },
@@ -1609,25 +1606,25 @@
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 34 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-10"
     },
     "gpu:gtx-980": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 90 % à la référence (55 € -> 104.7 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 163 % à la référence (55 € -> 144.74 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-980-ti": {
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-11"
     },
@@ -1635,7 +1632,7 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:rx-560": {
@@ -1647,18 +1644,18 @@
         "sampleCount": 4,
         "on": "2026-11-10"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-03",
       "failures": 0
     },
     "gpu:gtx-960": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "reason": "appliqué mais écart de 50 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "appliqué mais écart de 49 % à la référence : relecture humaine conseillée",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
-      "lastChangedOn": "2026-11-13"
+      "lastChangedOn": "2026-11-14"
     },
     "gpu:rx-550": {
       "status": "donnees-insuffisantes",
@@ -1667,132 +1664,133 @@
       "neuf": {
         "moyen": 191.99,
         "sampleCount": 8,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-3770k": {
-      "status": "rejete",
-      "pending": null,
-      "reason": "écart de 92 % à la référence (48 € -> 92.22 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "status": "en-attente-confirmation",
+      "pending": {
+        "moyen": 74.67,
+        "on": "2026-11-14"
+      },
+      "reason": "saut de 56 % (48 € -> 74.67 €) : appliqué seulement s'il est confirmé au prochain run",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-950": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 185 % à la référence (50 € -> 142.43 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 217 % à la référence (50 € -> 158.58 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-750-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 347 % à la référence (28 € -> 125.25 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 437 % à la référence (28 € -> 150.25 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i7-2600k": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-3570k": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 103 % à la référence (30 € -> 61.03 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 145 % à la référence (30 € -> 73.5 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:r9-fury": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:r9-fury-x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:i5-2500k": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 79 % à la référence (12 € -> 21.5 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:fx-8320": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "cpu:fx-8350": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-760": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 215 % à la référence (38 € -> 119.65 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 256 % à la référence (38 € -> 135.46 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-770": {
-      "status": "en-attente-confirmation",
-      "pending": {
-        "moyen": 38.5,
-        "on": "2026-11-13"
-      },
-      "reason": "saut de 43 % (27 € -> 38.5 €) : appliqué seulement s'il est confirmé au prochain run",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
-      "failures": 0
+      "status": "mis-a-jour-a-verifier",
+      "pending": null,
+      "reason": "appliqué mais écart de 43 % à la référence : relecture humaine conseillée",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
+      "failures": 0,
+      "lastChangedOn": "2026-11-14"
     },
     "gpu:r9-290": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:r9-290x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-780": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 109 % à la référence (55 € -> 115.1 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 100 % à la référence (55 € -> 109.9 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-780-ti": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gt-1030": {
@@ -1802,10 +1800,10 @@
       "neuf": {
         "moyen": 162.04,
         "sampleCount": 33,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       },
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-10-25"
     },
@@ -1813,8 +1811,8 @@
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 41 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-08"
     },
@@ -1822,163 +1820,160 @@
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-660": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 63 % à la référence (25 € -> 40.85 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0,
       "lastChangedOn": "2026-11-06"
     },
     "gpu:gtx-670": {
-      "status": "rejete",
+      "status": "donnees-insuffisantes",
       "pending": null,
-      "reason": "écart de 351 % à la référence (28 € -> 126.35 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
+      "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-11-13",
       "failures": 0
     },
     "gpu:gtx-680": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 236 % à la référence (36 € -> 120.95 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 188 % à la référence (36 € -> 103.66 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:r9-270x": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 72 % à la référence (27 € -> 46.35 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:r9-280x": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:hd-7950": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:hd-7970": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-460": {
       "status": "rejete",
       "pending": null,
       "reason": "écart de 99 % à la référence (15 € -> 29.82 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-560-ti": {
       "status": "rejete",
       "pending": null,
-      "reason": "écart de 72 % à la référence (20 € -> 34.32 €), au-delà de 60 %",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "reason": "écart de 80 % à la référence (20 € -> 35.91 €), au-delà de 60 %",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-570": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:gtx-580": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:hd-7850": {
       "status": "donnees-insuffisantes",
       "pending": null,
       "reason": "moins de 4 annonces valides après filtrage : valeur conservée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0
     },
     "gpu:hd-7870": {
       "status": "mis-a-jour-a-verifier",
       "pending": null,
       "reason": "appliqué mais écart de 28 % à la référence : relecture humaine conseillée",
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "failures": 0,
-      "lastVerifiedOn": "2026-11-13",
+      "lastVerifiedOn": "2026-11-14",
       "lastChangedOn": "2026-11-13"
     },
     "gpu:hd-6870": {
-      "status": "en-attente-confirmation",
-      "pending": {
-        "moyen": 20.43,
-        "on": "2026-11-13"
-      },
-      "reason": "saut de 25 % (27.33 € -> 20.43 €) : appliqué seulement s'il est confirmé au prochain run",
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
-      "failures": 0,
-      "lastChangedOn": "2026-11-09"
-    },
-    "ram:ddr3": {
-      "checkedOn": "2026-11-13",
-      "status": "rejete",
-      "pending": null,
-      "lastVerifiedOn": "2026-11-13"
-    },
-    "ram:ddr4": {
-      "checkedOn": "2026-11-13",
       "status": "mis-a-jour",
       "pending": null,
-      "lastVerifiedOn": "2026-11-13",
-      "lastChangedOn": "2026-11-13"
+      "reason": "appliqué",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
+      "failures": 0,
+      "lastChangedOn": "2026-11-14"
+    },
+    "ram:ddr3": {
+      "checkedOn": "2026-11-14",
+      "status": "rejete",
+      "pending": null,
+      "lastVerifiedOn": "2026-11-14"
+    },
+    "ram:ddr4": {
+      "checkedOn": "2026-11-14",
+      "status": "mis-a-jour",
+      "pending": null,
+      "lastVerifiedOn": "2026-11-14",
+      "lastChangedOn": "2026-11-14"
     },
     "ram:ddr5": {
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "status": "donnees-insuffisantes",
       "pending": null
     },
     "stockage:hdd": {
-      "checkedOn": "2026-11-13",
-      "status": "mis-a-jour",
+      "checkedOn": "2026-11-14",
+      "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "lastVerifiedOn": "2026-11-13",
-      "lastChangedOn": "2026-11-13"
+      "lastVerifiedOn": "2026-11-14",
+      "lastChangedOn": "2026-11-14"
     },
     "stockage:ssd": {
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "lastVerifiedOn": "2026-11-13",
-      "lastChangedOn": "2026-11-13"
+      "lastVerifiedOn": "2026-11-14",
+      "lastChangedOn": "2026-11-14"
     },
     "stockage:nvme": {
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "status": "mis-a-jour-a-verifier",
       "pending": null,
-      "lastVerifiedOn": "2026-11-13",
-      "lastChangedOn": "2026-11-13"
+      "lastVerifiedOn": "2026-11-14",
+      "lastChangedOn": "2026-11-14"
     },
     "cpu:i3-7100": {
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
@@ -1986,15 +1981,15 @@
       "lastChangedOn": "2026-11-05"
     },
     "cpu:i3-6100": {
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
       "failures": 0
     },
     "cpu:ryzen-7-5700": {
-      "checkedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
       "lastVerifiedOn": "2026-10-25",
       "status": "donnees-insuffisantes",
       "pending": null,
@@ -2003,20 +1998,20 @@
       "neuf": {
         "moyen": 266.36,
         "sampleCount": 5,
-        "on": "2026-11-13"
+        "on": "2026-11-14"
       }
     },
     "cpu:ryzen-3-1200": {
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
       "failures": 0
     },
     "cpu:i7-6700": {
-      "checkedOn": "2026-11-13",
-      "lastVerifiedOn": "2026-11-13",
+      "checkedOn": "2026-11-14",
+      "lastVerifiedOn": "2026-11-14",
       "status": "mis-a-jour",
       "pending": null,
       "reason": "appliqué",
@@ -2044,13 +2039,13 @@
     },
     "gpu:gtx1060": {
       "firstSeen": "2026-10-23",
-      "lastSeen": "2026-11-13",
-      "listingCount": 5
+      "lastSeen": "2026-11-14",
+      "listingCount": 4
     },
     "cpu:i34130": {
       "firstSeen": "2026-10-23",
-      "lastSeen": "2026-11-13",
-      "listingCount": 4
+      "lastSeen": "2026-11-14",
+      "listingCount": 5
     },
     "cpu:i56600": {
       "firstSeen": "2026-10-23",
@@ -2059,12 +2054,12 @@
     },
     "cpu:i56400": {
       "firstSeen": "2026-10-23",
-      "lastSeen": "2026-11-09",
-      "listingCount": 3
+      "lastSeen": "2026-11-14",
+      "listingCount": 4
     },
     "cpu:i77700k": {
       "firstSeen": "2026-10-23",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-14",
       "listingCount": 4
     },
     "cpu:i911900f": {
@@ -2095,12 +2090,12 @@
     },
     "cpu:i39100": {
       "firstSeen": "2026-10-25",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-14",
       "listingCount": 3
     },
     "cpu:i32100": {
       "firstSeen": "2026-10-25",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-14",
       "listingCount": 4
     },
     "cpu:i34170": {
@@ -2116,7 +2111,7 @@
     },
     "cpu:i34160": {
       "firstSeen": "2026-10-27",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-14",
       "listingCount": 5
     },
     "cpu:i32120": {
@@ -2131,12 +2126,12 @@
     },
     "cpu:i58500": {
       "firstSeen": "2026-10-27",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-14",
       "listingCount": 5
     },
     "cpu:i34150": {
       "firstSeen": "2026-10-29",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-14",
       "listingCount": 4
     },
     "cpu:i72600": {
@@ -2161,13 +2156,13 @@
     },
     "cpu:i33240": {
       "firstSeen": "2026-11-04",
-      "lastSeen": "2026-11-10",
-      "listingCount": 4
+      "lastSeen": "2026-11-14",
+      "listingCount": 3
     },
     "cpu:i59500": {
       "firstSeen": "2026-11-04",
-      "lastSeen": "2026-11-13",
-      "listingCount": 3
+      "lastSeen": "2026-11-14",
+      "listingCount": 4
     },
     "cpu:i59400": {
       "firstSeen": "2026-11-06",
@@ -2186,7 +2181,7 @@
     },
     "cpu:i33220": {
       "firstSeen": "2026-11-11",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-14",
       "listingCount": 3
     },
     "cpu:i57400": {
@@ -2196,7 +2191,7 @@
     }
   },
   "rates": {},
-  "updatedAt": "2026-11-13T05:06:31.453Z",
+  "updatedAt": "2026-11-14T05:07:31.157Z",
   "requests": {
     "8": {
       "firstSeen": "2026-10-25",
