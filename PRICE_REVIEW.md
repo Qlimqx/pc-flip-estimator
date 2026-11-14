@@ -3965,3 +3965,18 @@ Vérification complète des 41 entrées de la section "Rejetés" ci-dessus (prio
 **RAM/Stockage** : recherche légère (LeBonCoin DDR5/NVMe, presse DRAM/NAND) — signaux contradictoires et peu de données "vendu" fiables (annonces non datées, écarts isolés non corroborés). ddr3/ddr4/ddr5/ssd/nvme/hdd confirmés dans la tolérance, aucun changement appliqué.
 
 npm install, npm run build et npm test (188 tests) passés après les corrections.
+
+### Vérifié par agent IA le 2026-11-14 (session 2 — priorité 2, matériel récent)
+
+Second passage le même jour (nouveau déclenchement 2026-11-14 20:41) : la priorité 1 du jour était déjà entièrement traitée ce matin (voir sous-section ci-dessus), donc cette session a traité la priorité 2 laissée de côté (curseur index 21). Liste "matériel récent" reconstruite (CPU Intel 10e gén.+/AMD Ryzen 3000+, GPU RTX toutes générations/RX 5000+) = 117 entrées (64 CPU + 53 GPU). 22 entrées traitées à partir de l'index 21 (curseur avancé à 43), via 3 lots de recherche web indépendants en parallèle (LeBonCoin, eBay.fr/.de, Amazon/Rakuten occasion, LDLC/TopAchat/Materiel.net/PCcomponentes/comparateur-gamer.fr pour le neuf).
+
+**Confirmées correctes (aucun changement)** : ryzen-7-5700x, i5-12400f, ryzen-9-5900x, ryzen-7-5800x, ryzen-7-5800x3d, ryzen-9-5950x, i5-13400f, i5-12600k, i7-12700k, i9-12900k, i9-12900ks, ryzen-7-7700x, ryzen-5-7600, ryzen-5-7600x, i5-13600k, i5-13500, ryzen-7-7700, i5-14400f, i5-14600kf, ryzen-9-7900x, i5-11600k (incertitude mineure sur les données occasion, mais sanity check neuf cohérent).
+
+**Corrigées** :
+- **i9-11900k** (cpu) : 158/188/218€ → 190/220/255€ (sources : 4 annonces LeBonCoin indépendantes CPU seul à 220€, 250€, 290€, 310€ ; neuf devenu rare ~449-473€ chez IgorsLab.de/Ledenicheur ; Rakuten occasion 399,99€ et Cdiscount reconditionné 499-510€ comme repères retail haut). Entrée non retouchée depuis le 2026-08-25, le marché occasion s'est tendu avec la rareté du neuf (produit arrêté).
+
+**Points de vigilance pour un prochain cycle** (données insuffisantes pour trancher aujourd'hui, pas de changement appliqué) : i5-13500 (prix neuf en hausse possible, contexte pénurie CPU/DDR5 fin 2026, pas de source occasion directe) ; i9-12900ks (quasi aucune donnée FR fiable, neuf comme occasion) ; i5-12600k et i7-12700k (données occasion limitées à la variante KF plutôt qu'au modèle exact).
+
+RAM/Stockage non re-vérifié dans cette session (déjà fait ce matin, voir ci-dessus).
+
+npm run build et npm test (188 tests) passés après la correction.

@@ -863,10 +863,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i9-11900K',
     marque: 'Intel',
     socket: 'LGA1200',
-    min: 158,
-    moyen: 188,
-    max: 218,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-14 : 4 annonces Leboncoin indépendantes (CPU seul)
+    // à 220/250/290/310€ (médiane ~265€), neuf devenu rare (~449-473€ chez
+    // IgorsLab.de/Ledenicheur), nettement au-dessus de l'ancienne base
+    // (vérifiée le 08-25).
+    min: 190,
+    moyen: 220,
+    max: 255,
+    dateMaj: '2026-11-14',
     faciliteRevente: 0.55,
     decoteAnciennete: 0.95,
     tier: 4,
