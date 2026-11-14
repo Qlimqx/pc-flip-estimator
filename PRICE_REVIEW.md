@@ -3949,3 +3949,19 @@ tous passés) lancés après les corrections.
 - **GT 1030** (gpu) : 94.05€ → 94.05€ (57% vs référence)
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
+
+### Vérifié par agent IA le 2026-11-14
+
+Vérification complète des 41 entrées de la section "Rejetés" ci-dessus (priorité 1, via 4 lots de recherche web indépendants en parallèle — LeBonCoin, eBay.fr/.de, Amazon/Rakuten occasion, LDLC/TopAchat/Materiel.net/Cowcotland/comparateur-gamer.fr/gpuprix.com/resaleprices.com/GPUDojo/VideoCardPrices/bestvaluegpu.com pour le neuf et les repères marché). Confirmation que le pipeline eBay génère des faux positifs systématiques sur ce lot (mauvais matching de variantes/suffixes, bundles PC complets, annonces hors France) : 39 entrées sur 41 confirmées correctes, 2 corrections réelles identifiées.
+
+**Confirmées correctes (aucun changement)** : rtx-4070, rtx-5080, rtx-5060-ti, rtx-3060, rtx-3060-ti, rtx-4070-ti, rtx-3080-ti, rtx-3050, rtx-3090, rx-9070-xt, rtx-2070-super, rtx-2080-ti, rx-5700-xt, ryzen-5-3600, ryzen-7-3800x, ryzen-5-2600x, ryzen-7-2700x, i5-9400f, i7-10700kf, gtx-1660-ti, gtx-1650, gtx-1070, gtx-1070-ti, gtx-1080, rx-590, rx-570, i7-4790k, i5-3570k, i5-2500k, gtx-980, gtx-950, gtx-750-ti, gtx-760, gtx-780, gtx-660, gtx-680, r9-270x, gtx-460, gtx-560-ti.
+
+**Corrigées** :
+- **gtx-1080-ti** (gpu) : 190/240/300€ → 140/180/220€ (sources : resaleprices.com — 220 annonces, moyenne ~158€/172$ ; GPUDojo 159-225$ ; VideoCardPrices bas ~120$ ; vente eBay.de réelle conclue 180€). Le calibrage du 2026-11-09 s'appuyait sur un échantillon de seulement 3 annonces incluant un outlier haut (259€) qui avait trop tiré la moyenne.
+- **rtx-3070-ti** (gpu) : 258/290/322€ → 270/320/365€ (sources : 4 annonces LeBonCoin indépendantes de cartes seules — Palit GameRock "très bon état" 350€, MSI 300€, Gigabyte Gaming OC 300€, Founders Edition "état neuf" 350€). Entrée jamais retouchée depuis le 2026-08-24, légèrement sous le marché réel actuel.
+
+**Priorité 2** : non traitée aujourd'hui, budget entièrement consommé par la priorité 1 (41 entrées vérifiées vs ~20-25 attendues) — curseur de rotation inchangé (index 21), comme lors du cycle du 2026-11-11 qui avait fait le même choix pour la même raison.
+
+**RAM/Stockage** : recherche légère (LeBonCoin DDR5/NVMe, presse DRAM/NAND) — signaux contradictoires et peu de données "vendu" fiables (annonces non datées, écarts isolés non corroborés). ddr3/ddr4/ddr5/ssd/nvme/hdd confirmés dans la tolérance, aucun changement appliqué.
+
+npm install, npm run build et npm test (188 tests) passés après les corrections.

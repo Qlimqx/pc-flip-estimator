@@ -837,14 +837,17 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 1080 Ti',
     marque: 'NVIDIA',
     vramGo: 11,
-    // Recalibré le 2026-11-09 : 3 annonces eBay (FR/DE) pour la carte
-    // seule (MSI Gaming X 180€ et 259€, Founders Edition 185€) +
-    // comparateur bestvaluegpu.com (~317€ occasion Europe) convergent
-    // nettement au-dessus de l'ancien moyen (180€, figé depuis le 08-24).
-    min: 190,
-    moyen: 240,
-    max: 300,
-    dateMaj: '2026-11-09',
+    // Recorrigé le 2026-11-14 : le calibrage du 11-09 s'appuyait sur un
+    // échantillon de 3 annonces dont un outlier haut (259€) qui a trop
+    // tiré la moyenne. Revérifié sur un échantillon bien plus large :
+    // resaleprices.com (220 annonces, moyenne ~158€/172$, fourchette
+    // 151-179$) + GPUDojo (159-225$) + VideoCardPrices (bas ~120$) +
+    // vente eBay.de réelle conclue à 180€ -- toutes sources convergent
+    // vers ~140-220€, nettement sous 190/240/300.
+    min: 140,
+    moyen: 180,
+    max: 220,
+    dateMaj: '2026-11-14',
     faciliteRevente: 0.5,
     decoteAnciennete: 0.88,
     tier: 3,
@@ -1086,10 +1089,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 3070 Ti',
     marque: 'NVIDIA',
     vramGo: 8,
-    min: 258,
-    moyen: 290,
-    max: 322,
-    dateMaj: '2026-08-24',
+    // Recalibré le 2026-11-14 : entrée jamais retouchée depuis le 08-24,
+    // retombée sous le marché réel. 4 annonces LeBonCoin indépendantes de
+    // cartes seules convergent vers 300-350€ (Palit GameRock "très bon
+    // état" 350€, MSI 300€, Gigabyte Gaming OC 300€, Founders Edition
+    // "état neuf" 350€).
+    min: 270,
+    moyen: 320,
+    max: 365,
+    dateMaj: '2026-11-14',
     faciliteRevente: 0.75,
     decoteAnciennete: 0.98,
     tier: 4,
