@@ -3934,3 +3934,21 @@ npm run build et npm test (188 tests) passés après la correction.
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **GT 1030** (gpu) : 94.05€ → 94.05€ (57% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
+
+### Vérifié par agent IA le 2026-11-15
+
+Vérification des 42 entrées listées ci-dessus sous "Rejetés" (priorité 1), via recherche web réelle (LeBonCoin, eBay.fr/.de, resaleprices.com, gpudojo.com, bestvaluegpu.com, Rakuten, TechSpot, LDLC/Materiel.net/comparateur-gamer.fr pour le neuf). Conclusion générale : les propositions eBay rejetées étaient quasi systématiquement surestimées (prix neuf/scalpés, variantes Super/Ti/non-K confondues, bundles multi-composants, frais de port disproportionnés sur petits articles) -- seules 4 entrées sur 42 nécessitaient réellement une correction de la base.
+
+**Corrigées :**
+- rtx-2070 (gpu) : moyen 142€ → 155€ (sources : LeBonCoin 150€, resaleprices.com ~155€, bestvaluegpu.com ~151€, gpudojo.de/uk dès 160€/£157)
+- i7-4790k (cpu) : moyen 58€ → 75€ (sources : Rakuten France ~95-140€, eBay.de ~50-79€, TechSpot tracker ~90€ médian)
+- gtx-1070 (gpu) : moyen 100€ → 88€ (sources : resaleprices.com $88/286 annonces, gpudojo.com dès $72, bestvaluegpu.com ~$69, eBay $79-100)
+- gtx-1070-ti (gpu) : moyen 115€ → 98€ (sources : resaleprices.com $96/82 annonces, gpudojo.com eBay $99,99 du 21/10, eBay.de £100)
+
+**Confirmées sans changement (valeur actuelle cohérente, propositions eBay rejetées à juste titre) :** gtx-670, rtx-5080, rtx-3060-ti, rtx-3070-ti, rx-9070-xt, rtx-3050, rtx-2070-super, ryzen-7-2700x, i5-9400f, i7-10700kf, rtx-2080-ti, gtx-1650, gtx-1080-ti, rx-590, gtx-950, gtx-750-ti, gtx-760, gtx-780, gtx-660, r9-270x, gtx-460, gtx-560-ti (déjà revérifiées très récemment, sourcing conservé tel quel), ryzen-5-3600, ryzen-5-2600x, i5-3570k, i5-2500k, rx-570, gtx-680, gtx-980, gtx-960, gtx-1080, rx-5700-xt, rtx-3060, rtx-3080-ti, rtx-3090, rtx-4070-ti, rtx-5060-ti (points de vigilance : marché GDDR7 volatil, à resurveiller), gtx-1660-ti, rtx-2080 (vérification bonus par cohérence avec rtx-2080-ti), gtx-770 (vérification bonus, confirmé 20/27/35).
+
+**Signal faible, non corrigé aujourd'hui (données insuffisantes pour franchir le seuil de preuve) :** ryzen-7-3800x -- indices convergents (Cowcotland, eBay.de) suggérant une moyenne légèrement haute (98€ vs ~60-80€ observé), mais aucune annonce LeBonCoin française datée trouvée pour corroborer avec 2 sources indépendantes solides. À revérifier lors d'un prochain cycle.
+
+RAM/stockage (ram.ts, storage.ts) : vérification légère effectuée (recherche web sur la pénurie DRAM/NAND en cours) -- formules cohérentes avec le marché actuel (DDR5 32Go neuf toujours ~400-580€, SSD 1To neuf dès ~133-190€), dernière recalibration déjà récente (ddr4/ddr5 le 11-09, ssd/nvme/hdd le 11-05). Aucun changement.
+
+Priorité 2 (matériel récent, rotation verification-cursor.json) non traitée aujourd'hui : le volume de la priorité 1 (42 entrées rejetées) a consommé le budget de vérification du jour. Curseur inchangé, sera repris au prochain cycle avec du budget disponible.
