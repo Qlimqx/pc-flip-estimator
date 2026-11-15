@@ -195,10 +195,14 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i7-4790K',
     marque: 'Intel',
     socket: 'LGA1150',
-    min: 30,
-    moyen: 58,
-    max: 100,
-    dateMaj: '2026-10-24',
+    // Corrigé le 2026-11-15 : 3 sources indépendantes et contemporaines
+    // (Rakuten France occasion ~95-140€, eBay.de occasion ~50-79€, TechSpot
+    // tracker ~90€ médian) convergent au-dessus de l'ancienne moyenne (58€)
+    // -- le 4790K reste recherché comme meilleur CPU mainstream DDR3.
+    min: 40,
+    moyen: 75,
+    max: 115,
+    dateMaj: '2026-11-15',
     faciliteRevente: 0.35,
     decoteAnciennete: 0.8,
     tier: 2,

@@ -885,10 +885,16 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 2070',
     marque: 'NVIDIA',
     vramGo: 8,
-    min: 115,
-    moyen: 142,
-    max: 168,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-15 : base figée depuis le 08-24. 3 sources
+    // indépendantes convergent au-dessus de l'ancien moyen (142€) :
+    // LeBonCoin (carte seule, état "bon", 150€), resaleprices.com (moyenne
+    // ~155€ convertie), bestvaluegpu.com (~151€) et gpudojo.de/uk (occasion
+    // dès 160€/£157). Cohérent avec la RTX 2070 Super (corrigée le 11-09 à
+    // moyen=200€) : 155/200 ≈ 77,5%, écart Super/non-Super plausible.
+    min: 125,
+    moyen: 155,
+    max: 185,
+    dateMaj: '2026-11-15',
     faciliteRevente: 0.62,
     decoteAnciennete: 0.92,
     tier: 3,
