@@ -712,10 +712,14 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 1070',
     marque: 'NVIDIA',
     vramGo: 8,
-    min: 80,
-    moyen: 100,
-    max: 120,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-15 : base figée depuis le 08-24, légèrement
+    // surestimée. 4 sources convergentes (resaleprices.com moyenne $88 sur
+    // 286 annonces, gpudojo.com dès $72, bestvaluegpu.com ~$69, plusieurs
+    // ventes eBay $79-100) situent le marché réel sous l'ancien moyen (100€).
+    min: 75,
+    moyen: 88,
+    max: 105,
+    dateMaj: '2026-11-15',
     faciliteRevente: 0.5,
     decoteAnciennete: 0.88,
     tier: 2,
@@ -725,10 +729,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 1070 Ti',
     marque: 'NVIDIA',
     vramGo: 8,
-    min: 92,
-    moyen: 115,
-    max: 138,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-15 : base figée depuis le 08-24, légèrement
+    // surestimée. resaleprices.com (moyenne $96, 82 annonces) + gpudojo.com
+    // (eBay $99,99, relevé 21/10) + eBay.de (£100 ~114€) convergent sous
+    // l'ancien moyen (115€). Cohérence relative préservée : 1070 (88) <
+    // 1070 Ti (98) < 1080 (140).
+    min: 85,
+    moyen: 98,
+    max: 118,
+    dateMaj: '2026-11-15',
     faciliteRevente: 0.5,
     decoteAnciennete: 0.88,
     tier: 2,
