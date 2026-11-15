@@ -165,5 +165,39 @@
       "annoncesVues": 6,
       "vendeursDistincts": 6
     }
+  },
+  {
+    "id": "i3-4160",
+    "nom": "Intel Core i3-4160",
+    "marque": "Intel",
+    "min": 5.89,
+    "moyen": 8.96,
+    "max": 12.94,
+    "dateMaj": "2026-11-15",
+    "faciliteRevente": 0.2,
+    "decoteAnciennete": 0.65,
+    "tier": 1,
+    "socket": "LGA1150",
+    "agent": {
+      "ajouteLe": "2026-11-15",
+      "confiance": "moyenne",
+      "sources": [
+        "eBay Browse FR (annonces d'occasion, prix demandés)",
+        "en.wikipedia.org"
+      ],
+      "prixEstimeDepuisNeuf": false,
+      "prixSaisiParDemandeur": false,
+      "attributsEstimes": [
+        "tier",
+        "faciliteRevente",
+        "decoteAnciennete",
+        "socket"
+      ],
+      "voisinReference": "i3-6100",
+      "echantillons": 13,
+      "prixNeufIndicatif": null,
+      "annoncesVues": 6,
+      "vendeursDistincts": 5
+    }
   }
 ]
