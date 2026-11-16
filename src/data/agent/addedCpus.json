@@ -199,5 +199,39 @@
       "annoncesVues": 6,
       "vendeursDistincts": 5
     }
+  },
+  {
+    "id": "i5-8500",
+    "nom": "Intel Core i5-8500",
+    "marque": "Intel",
+    "min": 30.65,
+    "moyen": 36.06,
+    "max": 41.47,
+    "dateMaj": "2026-11-16",
+    "faciliteRevente": 0.4,
+    "decoteAnciennete": 0.85,
+    "tier": 2,
+    "socket": "LGA1151",
+    "agent": {
+      "ajouteLe": "2026-11-16",
+      "confiance": "moyenne",
+      "sources": [
+        "eBay Browse FR (annonces d'occasion, prix demandés)",
+        "en.wikipedia.org"
+      ],
+      "prixEstimeDepuisNeuf": false,
+      "prixSaisiParDemandeur": false,
+      "attributsEstimes": [
+        "tier",
+        "faciliteRevente",
+        "decoteAnciennete",
+        "socket"
+      ],
+      "voisinReference": "i5-6600k",
+      "echantillons": 11,
+      "prixNeufIndicatif": null,
+      "annoncesVues": 6,
+      "vendeursDistincts": 5
+    }
   }
 ]
