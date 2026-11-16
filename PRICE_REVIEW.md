@@ -3889,3 +3889,20 @@ Priorité 2 (matériel récent, rotation verification-cursor.json) non traitée 
 - **GT 1030** (gpu) : 94.05€ → 94.05€ (57% vs référence)
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
+
+### Vérifié par agent IA le 2026-11-16
+
+Vérification quotidienne (recherche web réelle, pas le pipeline eBay mécanique) des 37 entrées listées ci-dessus sous "Rejetés" pour ce jour, réparties sur 6 lots de recherche. Budget du jour entièrement consommé par la Priorité 1 (37 entrées) ; aucune entrée Priorité 2 (matériel récent, cursor) traitée aujourd'hui.
+
+**Confirmées correctes (aucun changement, valeur déjà cohérente avec le marché FR réel vérifié ce jour)** : RTX 4070, RTX 4070 Ti, RTX 5080, RX 9070 XT, RTX 3060, RTX 3070 Ti, RTX 3080 Ti, RTX 3050, RTX 3090, RTX 2070 Super, GTX 1660 Ti, RX 5700 XT, RTX 2080 Ti, GTX 1650, GTX 1070, GTX 1070 Ti, GTX 1080 Ti, RX 590, RX 570, GTX 980, GTX 960, GTX 950, GTX 750 Ti, GTX 760, GTX 660, GTX 680, R9 270X, GTX 560 Ti, Intel Core i5-2500K, AMD Ryzen 5 3600, AMD Ryzen 7 3800X, AMD Ryzen 5 2600X, AMD Ryzen 7 2700X, Intel Core i5-9400F, Intel Core i7-10700KF.
+
+Dans la quasi-totalité de ces cas, les écarts eBay de +60% à +440% signalés par le pipeline se sont révélés être des artefacts (mauvaise variante/région, annonces en USD, vendeurs pro/reconditionnés, frais de port gonflant le prix sur des articles bon marché) plutôt qu'un réel mouvement de marché -- confirmé par recoupement LeBonCoin + agrégateurs (resaleprices.com, gpudojo.com, bestvaluegpu.com, videocardprices.com) + eBay.de/eBay.fr annonces individuelles filtrées sur la bonne référence produit.
+
+**Corrigées** :
+
+- **GTX 460** (gpu) : 10/15/20€ → 12/20/28€ (moyen +33%). Sources : resaleprices.com (moyenne US ~24$/~22€, fourchette "fair" 20-30$/~18-28€, 39 annonces) + plusieurs ventes eBay individuelles filtrées sur la carte seule (16-35$/~15-33€ : EVGA 1Go testée, Gigabyte GV-N4600C-1GI, PNY 1Go). L'ajustement prudent du 11-05 était resté sous le consensus 20-40€ déjà identifié ce jour-là par manque d'annonce LeBonCoin FR datée ; confirmé aujourd'hui par 2 sources indépendantes.
+- **RTX 5060 Ti** (gpu) : 450/510/580€ → 580/660/760€ (moyen +29%). Sources : tech-insider.org (02/11/2026, PNY RTX 5060 Ti 16Go à 799,99$ sur le store US Nvidia, +87% vs MSRP 429$) + TweakTown/NoobFeed/TechPowerUp (médiane US passée de 429$ à ~800-805$) + relevés directs LDLC.com/Materiel.net (ASUS Dual/Prime, MSI Ventus 2X OC Plus, Gigabyte Aero OC à 819,95-839,95€ neuf, modèles haut de gamme jusqu'à 999,95-1079,95€, contre ~550-600€ avant pénurie). Base figée depuis le 10-07, jamais réévaluée depuis la pénurie mondiale de mémoire GDDR7 qui affecte toute la gamme RTX 50 (même cause documentée pour la RTX 5080). Occasion relevée proportionnellement (~70-85% du neuf actuel).
+
+RAM/stockage (`ram.ts`/`storage.ts`) : vérification légère effectuée (DDR4/DDR5 16-32Go, SSD SATA et NVMe 1To, neuf France via LDLC/Materiel.net/comparateur-gamer.fr) -- formules déjà réévaluées très récemment (9-16 novembre selon le poste) et toujours cohérentes avec les relevés du jour (occasion reste sous le neuf d'entrée de gamme actuel dans tous les cas). Aucune correction nécessaire aujourd'hui.
+
+Priorité 2 (cursor matériel récent) : non avancé ce jour (`lastIndex` reste à 43), le budget journalier ayant été entièrement consommé par la Priorité 1.

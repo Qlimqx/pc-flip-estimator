@@ -36,10 +36,19 @@ const BASE_GPUS: GpuPricing[] = [
     // nettement sous la valeur eBay rejetée par le pipeline (29.82€, prix
     // demandé probablement tiré par les frais de port sur un article aussi
     // bon marché).
-    min: 10,
-    moyen: 15,
-    max: 20,
-    dateMaj: '2026-11-05',
+    //
+    // Vérifié le 2026-11-16 (agent IA quotidien) : le consensus 20-40€ déjà
+    // identifié le 11-05 est confirmé par 2 sources indépendantes --
+    // resaleprices.com (moyenne US ~24$/~22€, fourchette "fair" 20-30$/
+    // ~18-28€, 39 annonces) et plusieurs ventes eBay individuelles (16-35$/
+    // ~15-33€, ex. EVGA 1Go testée, Gigabyte GV-N4600C-1GI, PNY 1Go) --
+    // l'ajustement prudent du 11-05 (moyen 15€) était resté sous ce
+    // consensus ; moyen relevé à 20€, toujours nettement sous la valeur
+    // eBay rejetée par le pipeline (29.82€).
+    min: 12,
+    moyen: 20,
+    max: 28,
+    dateMaj: '2026-11-16',
     faciliteRevente: 0.15,
     decoteAnciennete: 0.65,
     tier: 1,
@@ -1570,10 +1579,21 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 5060 Ti',
     marque: 'NVIDIA',
     vramGo: 16,
-    min: 450,
-    moyen: 510,
-    max: 580,
-    dateMaj: '2026-10-07',
+    // Corrigé le 2026-11-16 (agent IA quotidien) : base figée depuis le
+    // 10-07, non réévaluée depuis la pénurie mondiale de mémoire GDDR7
+    // (même cause que la RTX 5080, voir plus haut) qui a fait grimper le
+    // neuf France de cette carte 16Go de ~550-600€ à 819,95-839,95€ chez
+    // LDLC/Materiel.net (ASUS Dual/Prime, MSI Ventus 2X OC Plus, Gigabyte
+    // Aero OC), voire 999,95-1079,95€ sur les modèles haut de gamme ;
+    // confirmé par tech-insider.org (02/11, PNY à 799,99$ sur le store US
+    // Nvidia, +87% vs MSRP 429$) et TweakTown/NoobFeed/TechPowerUp (médiane
+    // US passée de 429$ à ~800-805$). Occasion relevée proportionnellement
+    // (~70-85% du neuf actuel), nettement sous la valeur eBay rejetée par
+    // le pipeline (865.35€) mais corroborant sa direction.
+    min: 580,
+    moyen: 660,
+    max: 760,
+    dateMaj: '2026-11-16',
     faciliteRevente: 0.85,
     decoteAnciennete: 1.06,
     tier: 5,
