@@ -842,10 +842,16 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 1080',
     marque: 'NVIDIA',
     vramGo: 8,
-    min: 112,
-    moyen: 140,
-    max: 168,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-17 (vérification quotidienne IA) : base jamais
+    // réévaluée depuis sa création (08-24). 2 sources convergentes :
+    // eBay.de (carte EVGA Gaming ACX 3.0, occasion, vendue 134,90€) et
+    // LeBonCoin (MSI GTX 1080 8Go, annonce à 100€). Moyenne ~117€, sous
+    // l'ancien moyen (140€). Rejette le signal du pipeline eBay (262€,
+    // +88%) non corroboré par ces relevés directs.
+    min: 95,
+    moyen: 122,
+    max: 150,
+    dateMaj: '2026-11-17',
     faciliteRevente: 0.5,
     decoteAnciennete: 0.88,
     tier: 3,
@@ -877,10 +883,16 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 2060',
     marque: 'NVIDIA',
     vramGo: 6,
-    min: 110,
-    moyen: 140,
-    max: 170,
-    dateMaj: '2026-10-20',
+    // Corrigé le 2026-11-17 (vérification quotidienne IA) : légère dérive
+    // haussière confirmée par plusieurs sources indépendantes -- LeBonCoin
+    // (cartes 6Go seules) 130€/170€, eBay.de vente conclue 110€ -- médiane
+    // au-dessus de l'ancien moyen (140€). Hausse modérée (+10-15%),
+    // nettement sous le signal du pipeline eBay (224€, retenu comme trop
+    // haut par rapport aux relevés directs).
+    min: 115,
+    moyen: 155,
+    max: 195,
+    dateMaj: '2026-11-17',
     faciliteRevente: 0.65,
     decoteAnciennete: 0.92,
     tier: 2,
@@ -1041,10 +1053,16 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 3060',
     marque: 'NVIDIA',
     vramGo: 12,
-    min: 200,
-    moyen: 235,
-    max: 275,
-    dateMaj: '2026-10-07',
+    // Corrigé le 2026-11-17 (vérification quotidienne IA) : hausse
+    // confirmée par 4 annonces LeBonCoin indépendantes (RTX 3060 12Go
+    // seule) à 220€/230€/250€/300€, et par la pénurie GDDR6 documentée
+    // (NVIDIA a relancé la production de la 3060 12Go en 2026 faute
+    // d'alternative -- neuf désormais 390-530€ contre ~280-340€ avant,
+    // neuf×0,7 implique ~275-370€ occasion, cohérent avec les annonces).
+    min: 220,
+    moyen: 260,
+    max: 310,
+    dateMaj: '2026-11-17',
     faciliteRevente: 0.82,
     decoteAnciennete: 0.99,
     tier: 3,
@@ -1227,10 +1245,21 @@ const BASE_GPUS: GpuPricing[] = [
     // 1300€ ; eBay.de (vendeurs FR) : ASUS TUF Gaming vendue ~680€ (08/2026).
     // Transactions réelles regroupées 680-1300€, nettement au-dessus de
     // l'ancienne fourchette 600/730/870€.
-    min: 650,
-    moyen: 900,
-    max: 1300,
-    dateMaj: '2026-10-18',
+    //
+    // Re-corrigé le 2026-11-17 (vérification quotidienne IA) : la demande
+    // IA locale continue de pousser les prix, confirmée par 2 sources
+    // indépendantes -- annonces LeBonCoin cartes seules (FE 740€, MSI
+    // Gaming X Trio 1000€, cartes haut de gamme jusqu'à 1200-1900€) et
+    // plusieurs guides matériel IA/LLM local (fluence.network, pulse.bot,
+    // d-central.tech, convly.ai) documentant un coût GPU en hausse pour les
+    // builds dual-3090 entre janvier et mai 2026. Fourchette relevée
+    // conservée proche des valeurs "typiques" citées (850-1000$) plutôt que
+    // des extrêmes ; le signal du pipeline eBay (3011€) reste un outlier
+    // non corroboré (aucune annonce trouvée au-delà de ~1900€).
+    min: 700,
+    moyen: 950,
+    max: 1600,
+    dateMaj: '2026-11-17',
     faciliteRevente: 0.65,
     decoteAnciennete: 0.97,
     tier: 5,
@@ -1429,10 +1458,17 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 4070 Ti',
     marque: 'NVIDIA',
     vramGo: 12,
-    min: 650,
-    moyen: 720,
-    max: 800,
-    dateMaj: '2026-10-22',
+    // Corrigé le 2026-11-17 (vérification quotidienne IA) : hausse modérée
+    // confirmée par Materiel.net occasion (Gigabyte GAMING OC, modèle de
+    // base, 841,46€) et 2 annonces LeBonCoin (700€/800€, "très bon état",
+    // non bundle) -- cohérent avec la pénurie GDDR6/GDDR7 qui pousse aussi
+    // le neuf à la hausse. Hausse limitée à <15% ; le signal du pipeline
+    // eBay (1240€) mélange probablement des annonces 4070 Ti Super
+    // (confusion fréquente de variante sur LeBonCoin/eBay).
+    min: 680,
+    moyen: 770,
+    max: 870,
+    dateMaj: '2026-11-17',
     faciliteRevente: 0.8,
     decoteAnciennete: 1.03,
     tier: 5,
