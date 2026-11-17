@@ -115,13 +115,22 @@ export const RAM_TYPE_LABELS: Record<RamType, string> = {
 // nouvelle recherche web).
 export const RAM_TYPE_PRICING: Record<RamType, RamTypePricing> = {
   ddr3: {
-    // DDR3 est aussi "touchée" par la pénurie selon la presse (marché de
-    // niche, pas de production DDR3 pure mais dérivée de lignes DRAM
-    // partagées), mais sans chiffre précis vérifié -- bond modéré appliqué
-    // par cohérence avec DDR4/DDR5, à ajuster si une annonce réelle
-    // montre un écart.
-    prixParGo: 0.9,
-    plancher: 6,
+    // Corrigé le 2026-11-17 (vérification quotidienne IA) : le pipeline eBay
+    // a rejeté 3,1825€/Go (+254%) faute de recoupement, mais 4 relevés
+    // marketplace indépendants du jour (Pixmania, Darty Marketplace, Rue du
+    // Commerce, Fnac Marketplace -- barrettes reconditionnées/occasion 1 à
+    // 4Go) montrent un €/Go implicite nettement au-dessus de l'ancien tarif
+    // (~4,5-5,5€/Go sur 4Go, ~6,5-7€/Go sur 2Go, ~9-10,5€/Go sur 1Go -- ces
+    // petits modules sont dominés par un effet de plancher/frais de port,
+    // donc pas directement comparables à un prix par Go sur un module plus
+    // gros, d'où une hausse prudente plutôt qu'un alignement complet sur ces
+    // chiffres). Pas d'annonce LeBonCoin peer-to-peer directe trouvée ce
+    // jour (marché de niche, volume faible) -- prixParGo relevé de 0,9 à
+    // 1,3€/Go et le plancher de 6 à 8€, nettement sous les 3,18€/Go du
+    // pipeline faute de confirmation indépendante sur un module de taille
+    // courante (8Go), à revérifier si une annonce LeBonCoin directe apparaît.
+    prixParGo: 1.3,
+    plancher: 8,
     faciliteRevente: 0.3,
     decoteAnciennete: 0.75,
   },
