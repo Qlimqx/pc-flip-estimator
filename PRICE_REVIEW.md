@@ -3870,3 +3870,34 @@ Priorité 2 (cursor matériel récent) : non avancé ce jour (`lastIndex` reste 
 - **GT 1030** (gpu) : 94.05€ → 94.05€ (57% vs référence)
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
+
+### Vérifié par agent IA le 2026-11-17
+
+Priorité 1 (41 entrées rejetées par le pipeline eBay le jour même, voir section "### Rejetés" ci-dessus) : 19 entrées vérifiées par recherche web réelle (LDLC/TopAchat/Materiel.net/Amazon.fr pour le neuf, LeBonCoin/eBay.de/eBay.fr/Amazon occasion/Materiel.net occasion pour l'occasion, variantes filtrées précisément -- pas de confusion Ti/Super/capacité VRAM). Budget journalier (~20-25) entièrement consommé par la priorité 1 vu le volume inhabituel de rejets (41, contre une poignée les jours précédents) ; priorité 2 non avancée aujourd'hui (voir plus bas).
+
+**Corrigées (5)** :
+- **GTX 1080** (gpu) : 112/140/168€ → 95/122/150€ (sources : eBay.de EVGA Gaming ACX 3.0 occasion vendue 134,90€, LeBonCoin MSI 8Go 100€)
+- **RTX 2060** (gpu) : 110/140/170€ → 115/155/195€ (sources : LeBonCoin 130€/170€, eBay.de vente conclue 110€)
+- **RTX 3060** (gpu) : 200/235/275€ → 220/260/310€ (sources : 4 annonces LeBonCoin 220-300€ cartes 12Go seules, pénurie GDDR6 documentée -- NVIDIA a relancé la production de la 3060 12Go en 2026, neuf 390-530€ contre 280-340€ avant)
+- **RTX 4070 Ti** (gpu) : 650/720/800€ → 680/770/870€ (sources : Materiel.net occasion Gigabyte GAMING OC 841,46€, 2 annonces LeBonCoin 700€/800€)
+- **RTX 3090** (gpu) : 650/900/1300€ → 700/950/1600€ (sources : annonces LeBonCoin 740-1900€ selon modèle, demande IA/LLM local 24Go VRAM documentée par plusieurs guides matériel indépendants -- fluence.network, pulse.bot, d-central.tech, convly.ai)
+
+**Confirmées correctes, pas de changement (14)** -- l'écart eBay correspondait à du bruit (variante confondue, bundle, annonce NOS/neuf mal classée, échantillon trop fin) :
+- RTX 4060 Ti (8Go confirmé par 2 annonces LeBonCoin 300-309€, le 400€/370€ trouvés étaient la variante 16Go)
+- GTX 1660 Ti (LeBonCoin 110€, quasi identique au moyen actuel)
+- GTX 980 (resaleprices.com moyenne ~50€, LeBonCoin 38€, cohérent avec 42/55/68 -- le rejet eBay ressemble à une confusion avec la 980 Ti)
+- RX 9070 XT (neuf 549-880€ selon gamme, occasion pro 685-720€ -- fourchette actuelle 580/660/760 reste défendable, données bruitées pour cette carte récente)
+- RTX 2080 Ti (LeBonCoin carte standard 220€/280€ vs cartes AIB premium 450-700€ -- le rejet eBay vient des AIB haut de gamme, pas représentatif)
+- RTX 3080 Ti (LeBonCoin 360-650€, fourchette actuelle 415/480/545 cohérente)
+- RX 5700 XT (LeBonCoin 140-250€, proche de la fourchette actuelle 115/165/225)
+- RX 570 (LeBonCoin 50-80€, moyen actuel 55€ confirmé par 2 annonces)
+- GTX 680 (eBay.de vente conclue ~21€, revendeur ~30€, cohérent avec 22/36/50)
+- AMD Ryzen 5 2600X (LeBonCoin 40€/60€, cohérent avec 42/52/63)
+- Intel Core i5-2500K (eBay.de ~9-15€ vendu, cohérent avec 8/12/17 -- les annonces LeBonCoin à 30€ sont des prix demandés non vendus, non fiables pour ce CPU de 15 ans)
+- AMD Ryzen 7 3800X (eBay.de vendu ~68-70€, cohérent avec le bas de la fourchette 70/98/130)
+- Intel Core i5-3570K (LeBonCoin 25-27€, cohérent avec 20/30/45 -- le rejet eBay (74€) correspond au haut de la fourchette eBay.de, probablement du neuf scellé mal classé)
+- AMD Ryzen 5 3600 (LeBonCoin cluster 60-75€, cohérent avec le moyen actuel 58€, déjà revérifié le 10-08)
+
+RAM/stockage (`ram.ts`/`storage.ts`) : vérification effectuée. DDR4/DDR5/SSD SATA/NVMe/HDD confirmés cohérents avec le marché du jour (neuf d'entrée de gamme NVMe 1To ~110-133€, le relevé du pipeline (0,14-0,157€/Go, soit >140€/1To) dépasserait ce neuf d'entrée de gamme -- piège "occasion ≥ neuf" déjà identifié plusieurs fois dans storage.ts, non suivi). DDR3 corrigé : 0,9€/Go (plancher 6€) → 1,3€/Go (plancher 8€) -- 4 relevés marketplace indépendants (Pixmania, Darty Marketplace, Rue du Commerce, Fnac Marketplace) montrent un €/Go implicite nettement au-dessus de l'ancien tarif sur des petits modules reconditionnés ; correction prudente et partielle, nettement sous les 3,18€/Go rejetés par le pipeline faute de confirmation indépendante sur un module de taille courante.
+
+Priorité 2 (cursor matériel récent) : non avancée ce jour (`lastIndex` reste à 43), le budget journalier ayant été entièrement consommé par la priorité 1 (41 rejets ce jour, bien au-delà du volume habituel). 22 entrées de la priorité 1 restent à vérifier (parmi les 41 rejets du jour) -- elles seront re-proposées par le pipeline eBay si l'écart persiste lors d'un prochain run.
