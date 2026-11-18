@@ -3853,3 +3853,24 @@ Priorité 2 (cursor matériel récent) : non avancée ce jour (`lastIndex` reste
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **GTX 460** (gpu) : 20€ → 29.82€ (49% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
+
+### Vérifié par agent IA le 2026-11-18
+
+Aucune correction nécessaire aujourd'hui : toutes les entrées examinées se sont révélées cohérentes (±15-20%) avec une vraie recherche web (LeBonCoin, eBay.fr/.de, Amazon occasion, neuf LDLC/TopAchat/Materiel.net/comparateur-gamer), malgré les écarts importants signalés par le pipeline eBay dans la section "Rejetés" ci-dessus — ces signaux n'ont pas été corroborés par des sources indépendantes fiables et semblent refléter du bruit/mauvaises annonces côté eBay plutôt qu'un vrai mouvement de marché.
+
+**Priorité 1 — entrées "Rejetés" du jour vérifiées individuellement (recherche web complète), confirmées inchangées :**
+rx-560, gtx-1660-ti, gtx-680, gtx-980, rx-570, rx-5700-xt, rtx-2080-ti, rtx-3080-ti, rtx-4070, ryzen-5-3600, ryzen-7-3800x, ryzen-5-2600x, i5-3570k, i5-2500k
+
+**Priorité 1 — entrées "Rejetés" du jour déjà vérifiées sérieusement dans les jours précédents (commentaire sourcé daté <15 jours présent dans la base), non re-recherchées pour éviter le gaspillage sur du matériel dont le prix bouge peu sur si peu de temps :**
+gtx-560-ti, gtx-660, r9-270x, gtx-760, gtx-950, gtx-750-ti, rx-590, gtx-1650, gtx-1070, gtx-1080, gtx-1080-ti, rtx-2070-super, rtx-3050, rtx-3060, rtx-3070-ti, rtx-3090, rtx-4070-ti, rx-9070-xt, rtx-5080, ryzen-7-2700x, i5-9400f, i7-10700kf
+
+**Priorité 2 — lot tournant "matériel récent" (curseur index 43→51), recherche web complète, confirmées inchangées :**
+i9-13900kf, i7-14700kf, ryzen-9-7950x3d
+
+**Priorité 2 — lot tournant, déjà vérifiées récemment (commentaire sourcé <3 semaines), non re-recherchées :**
+ryzen-9-7900x3d, i9-13900k, ryzen-9-7950x, i7-14700k
+
+**RAM / Stockage (sanity-check léger) — confirmées cohérentes :**
+ddr4, ddr5, hdd, ssd (SATA), nvme
+
+Curseur `verification-cursor.json` avancé de 43 à 51 (lastRunDate 2026-11-18).
