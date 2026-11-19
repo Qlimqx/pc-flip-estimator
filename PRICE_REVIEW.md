@@ -3839,3 +3839,18 @@ Curseur `verification-cursor.json` avancé de 43 à 51 (lastRunDate 2026-11-18).
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **GTX 460** (gpu) : 29.82€ → 29.82€ (49% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
+
+### Vérifié par agent IA le 2026-11-19
+
+Vérification manuelle (recherche web réelle, multi-sources) de 21 entrées CPU/GPU selon la méthodologie habituelle (priorité aux "Rejetés" du pipeline eBay du jour listés ci-dessus, filtrage sur le matériel récent ou jamais réévalué, puis rotation `verification-cursor.json` sur le matériel récent, index 51 → 5).
+
+**Confirmées correctes (aucun changement, valeur déjà cohérente avec le marché — la plupart des rejets eBay ci-dessus sont dus à de la contamination par bundles PC complets ou confusion de variante, pas à un vrai mouvement de marché) :**
+rtx-3080-ti, rtx-4070, rtx-5080, rx-9070-xt, rtx-2080-ti, rx-5700-xt, gtx-1660-ti, rtx-5090, gtx-980, gtx-680, rx-570, rx-5500-xt, rx-5600-xt, rx-5700, rtx-2060, ryzen-5-3600, ryzen-7-3800x, ryzen-5-2600x, i5-3570k
+
+**Corrigées :**
+- **rx-560** (gpu) : moyen 33€ → 40€ (min 25→30, max 42→55). Sources : resaleprices.com (moyenne ~46€/75 annonces), LeBonCoin (carte seule 50€), eBay.de (Gigabyte 70€, ASRock ~56€, ASUS Strix ~70€). Hausse modérée confirmée, nettement sous le signal eBay rejeté (82.99€, jugé trop extrême).
+- **i5-2500k** (cpu) : moyen 12€ → 18€ (min 8→8, max 17→30). Sources : LeBonCoin (CPU+boîte+ventirad "très bon état" 30€), eBay.de vendeurs pro testés/garantis (~54-59€, exclu du haut car non comparable à une vente particulier). Distribution bimodale (nu/usé vs boîte complète) mal couverte par l'ancienne fourchette trop basse.
+
+**RAM/stockage (point C) :** vérification légère effectuée (DDR4, DDR5, SSD SATA, NVMe). Aucun décalage net (>20%) trouvé par rapport aux formules actuelles de `ram.ts`/`storage.ts` compte tenu des fourchettes neuf/occasion relevées aujourd'hui (DDR4 16Go occasion ~50-95€ vs 88€ actuel ; DDR5 32Go neuf 447-577€ ×0.7 ≈ 313-404€ vs 352€ actuel ; NVMe/SSD neuf toujours en hausse sous pénurie NAND mais pas de donnée occasion directe contredisant les tarifs actuels) — aucune modification.
+
+**P1 non traités aujourd'hui (budget quotidien insuffisant pour couvrir tous les "Rejetés" ci-dessus, dont beaucoup de très vieux GPU/CPU à faible valeur) :** RX 6600 XT, GTX 780, GTX 670, RTX 3060, RTX 4070 Ti, RTX 3070 Ti, RTX 3050, RTX 3090, RTX 2070 Super, GTX 1650, GTX 1070, GTX 1070 Ti, GTX 1080, GTX 1080 Ti, RX 580, RX 590, GTX 960, GTX 950, GTX 750 Ti, i5-3570K (CPU, traité ✓ voir ci-dessus), GTX 760, GTX 660, GTX 680 (traité ✓), R9 270X, GTX 560 Ti, AMD Ryzen 7 2700X, Intel Core i5-9400F, Intel Core i7-10700KF — la plupart ont déjà été vérifiés et confirmés corrects lors de cycles précédents (dateMaj récente, cf. commentaires dans `gpus.ts`/`cpus.ts`), les rejets eBay répétés sur ces entrées sont un bruit connu (contamination bundle/variante) déjà documenté. À reprendre en priorité lors d'un prochain cycle si le budget le permet.

@@ -474,10 +474,17 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 560',
     marque: 'AMD',
     vramGo: 4,
-    min: 25,
-    moyen: 33,
-    max: 42,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-19 (vérification quotidienne IA) : base figée depuis
+    // le 08-25, légèrement sous le marché. resaleprices.com (agrégateur eBay,
+    // moyenne ~46€ sur 75 annonces) + LeBonCoin (annonce carte seule 50€) +
+    // eBay.de (Gigabyte 70€, ASRock ~56€, ASUS Strix ~70€) convergent ~15-25%
+    // au-dessus de l'ancien moyen (33€) -- correction modérée, nettement sous
+    // la valeur eBay rejetée par le pipeline (82.99€, jugée trop extrême/
+    // probable variante premium ou scalper).
+    min: 30,
+    moyen: 40,
+    max: 55,
+    dateMaj: '2026-11-19',
     faciliteRevente: 0.3,
     decoteAnciennete: 0.78,
     tier: 1,

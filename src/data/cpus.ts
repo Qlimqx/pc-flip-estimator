@@ -47,10 +47,20 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i5-2500K',
     marque: 'Intel',
     socket: 'LGA1155',
+    // Corrigé le 2026-11-19 (vérification quotidienne IA) : base figée depuis
+    // le 08-25 (moyen 12€), ne couvrait que le bas d'une distribution en
+    // réalité bimodale. eBay.de particuliers usés sans boîte : 7/9/9.5€ (bas
+    // de fourchette, cohérent avec l'ancien). Mais 2 sources indépendantes
+    // situent un haut de fourchette net : LeBonCoin (CPU + boîte + ventirad
+    // d'origine, "très bon état", 30€) et eBay.de vendeurs pro
+    // testés/garantis (~54-59€, exclu du haut car non comparable à une vente
+    // particulier). Fourchette élargie pour refléter les deux pôles réels
+    // (nu/usé vs boîte complète) ; la mesure eBay rejetée par le pipeline
+    // (21.5€) tombe justement entre les deux, cohérente avec cette révision.
     min: 8,
-    moyen: 12,
-    max: 17,
-    dateMaj: '2026-08-25',
+    moyen: 18,
+    max: 30,
+    dateMaj: '2026-11-19',
     faciliteRevente: 0.2,
     decoteAnciennete: 0.65,
     tier: 1,
