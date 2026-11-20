@@ -3790,3 +3790,23 @@ rtx-3080-ti, rtx-4070, rtx-5080, rx-9070-xt, rtx-2080-ti, rx-5700-xt, gtx-1660-t
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **GTX 460** (gpu) : 29.82€ → 29.82€ (49% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
+
+### Vérifié par agent IA le 2026-11-20
+
+Vérification manuelle (recherche web réelle, multi-sources, via 5 sous-agents en parallèle) de 25 entrées CPU/GPU selon la méthodologie habituelle : priorité absolue aux "Rejetés" eBay du jour listés ci-dessus (19 des 34 traités, voir détail des non-traités plus bas), puis rotation `verification-cursor.json` sur le matériel récent (index 5 → 14).
+
+**Corrigées :**
+- **gtx-980** (gpu) : moyen 55€ → 42€ (min 42→30, max 68→58). Jamais réévaluée individuellement depuis la création de la base (08-25). Sources : LeBonCoin (MSI Gaming 4G "très bon état", 38€) + 3 ventes eBay.de conclues (EVGA SC 45€, ASUS Strix 36,86€, Founders Edition 42,63€) — toutes sous l'ancien moyen (-24%).
+- **rx-570** (gpu) : moyen 55€ → 65€ (min 40→45, max 70→85). Sources : 5+ annonces LeBonCoin carte seule 8Go (50€, 69€, 70€, 70€, 80€) + Vinted (ASUS ROG Strix, 65€) — médiane réelle ~70€ (+27% vs ancien moyen). Carte discontinuée, pas de prix neuf fiable.
+- **rtx-2080-ti** (gpu) : max 350€ → 480€ (moyen 280→300, min inchangé 220). Cluster bas LeBonCoin (280-285€) confirme le min, mais 3 sources indépendantes situent les modèles haut de gamme bien plus haut (MSI 450€, ASUS ROG Strix "très bon état" 550€, Zotac AMP Extreme 700€) — le marché réel dépasse l'ancien plafond.
+
+**Confirmées correctes (aucun changement, valeur déjà cohérente avec le marché) :**
+rtx-4070, rtx-5080, rtx-4070-ti, rtx-3070-ti, rtx-3080-ti (la moins fraîche du lot, 12% au-dessus de la médiane observée mais dans la tolérance — à revérifier en priorité au prochain cycle), rx-9070-xt, rtx-3050, rtx-3090, rtx-2070-super, rx-5700-xt, rtx-2070, rtx-2080, rtx-2080-super (légère pression à la hausse observée, à surveiller), rx-6600, rx-6600-xt, rx-590, i5-3570k, ryzen-7-2700x, rtx-2060-super, gtx-1660-ti, gtx-1650, gtx-1080-ti.
+
+**P1 non traités aujourd'hui (budget quotidien insuffisant pour les 34 "Rejetés" du jour) :**
+- *Override eBay actif et récent (prix affiché déjà couvert par le pipeline, correction de la base non prioritaire) :* RTX 3060, AMD Ryzen 5 3600, AMD Ryzen 7 3800X, AMD Ryzen 5 2600X, Intel Core i5-9400F, Intel Core i7-10700KF, GTX 1070, GTX 1070 Ti, GTX 1080, GTX 660.
+- *Pas d'override, non traités par manque de budget (très vieilles cartes à faible valeur, pattern de "bruit" eBay déjà documenté lors de cycles précédents) :* GTX 750 Ti, GTX 760, GTX 680, R9 270X, GTX 560 Ti. À reprendre en priorité lors d'un prochain cycle.
+
+**RAM/stockage (point C) :** vérification légère effectuée (DDR4, NVMe). LeBonCoin DDR4 16Go occasion : 95€, 90€ (Vinted 40€) — cohérent avec la base actuelle (5,5€/Go ≈ 88€). LeBonCoin/Rakuten NVMe 1To occasion : 50€ (bas), ~109€ (Rakuten, "dès") — cohérent avec la base actuelle (0,095€/Go = 95€) malgré la pénurie NAND qui continue de pousser le neuf à la hausse (+303% en un an selon la presse). Aucun écart net (>20%) trouvé — aucune modification.
+
+verification-cursor.json avancé de 5 à 14.

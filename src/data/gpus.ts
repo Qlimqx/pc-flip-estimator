@@ -389,10 +389,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'GTX 980',
     marque: 'NVIDIA',
     vramGo: 4,
-    min: 42,
-    moyen: 55,
-    max: 68,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-20 (vérification quotidienne IA) : jamais réévaluée
+    // individuellement depuis la création de la base (08-25). 4 sources
+    // convergentes carte seule : LeBonCoin (MSI Gaming 4G "très bon état"
+    // 38€) + 3 ventes eBay.de conclues (EVGA SC 45€, ASUS Strix 36,86€,
+    // Founders Edition 42,63€) -- toutes sous l'ancien moyen (-24%).
+    min: 30,
+    moyen: 42,
+    max: 58,
+    dateMaj: '2026-11-20',
     faciliteRevente: 0.3,
     decoteAnciennete: 0.75,
     tier: 1,
@@ -608,10 +613,15 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 570',
     marque: 'AMD',
     vramGo: 4,
-    min: 40,
-    moyen: 55,
-    max: 70,
-    dateMaj: '2026-10-23',
+    // Corrigé le 2026-11-20 (vérification quotidienne IA) : 5+ annonces
+    // LeBonCoin carte seule 8Go (50€, 69€, 70€, 70€, 80€) + Vinted (ASUS
+    // ROG Strix, 65€) -- médiane réelle ~70€, nettement au-dessus de
+    // l'ancien moyen (55€, +27%). Pas de prix neuf fiable (carte
+    // discontinuée).
+    min: 45,
+    moyen: 65,
+    max: 85,
+    dateMaj: '2026-11-20',
     faciliteRevente: 0.35,
     decoteAnciennete: 0.8,
     tier: 1,
@@ -984,10 +994,16 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RTX 2080 Ti',
     marque: 'NVIDIA',
     vramGo: 11,
+    // Corrigé le 2026-11-20 (vérification quotidienne IA) : fourchette
+    // élargie côté haut -- cluster bas LeBonCoin 280-285€ (confirme le min
+    // inchangé) mais 3 sources indépendantes situent les modèles haut de
+    // gamme nettement plus haut (MSI 450€, ASUS ROG Strix "très bon état"
+    // 550€, Zotac AMP Extreme 700€) : le marché réel dépasse l'ancien
+    // plafond (350€).
     min: 220,
-    moyen: 280,
-    max: 350,
-    dateMaj: '2026-11-01',
+    moyen: 300,
+    max: 480,
+    dateMaj: '2026-11-20',
     faciliteRevente: 0.55,
     decoteAnciennete: 0.9,
     tier: 3,
