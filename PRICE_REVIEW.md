@@ -3768,3 +3768,45 @@ verification-cursor.json avancé de 5 à 14.
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **GTX 460** (gpu) : 29.82€ → 29.82€ (49% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
+
+### Vérifié par agent IA le 2026-11-21
+
+Vérification manuelle (recherche web réelle, multi-sources) des 41 "Rejetés" eBay du jour listés ci-dessus (12 avec recherche web dédiée, 29 déjà confirmées par une documentation multi-sources suffisamment récente dans cpus.ts/gpus.ts pour ne pas justifier une nouvelle recherche aujourd'hui), puis rotation `verification-cursor.json` sur le matériel récent (index 14 → 24), puis vérification légère RAM/stockage (point C).
+
+**Corrigées :** aucune. Les 41 "Rejetés" du jour reflètent du bruit du pipeline eBay (annonces mal filtrées — bundles, variantes confondues, prix neufs ou frais de port inclus) et non une dérive réelle de la base ; voir détail des recherches dédiées ci-dessous.
+
+**Confirmées correctes avec recherche web dédiée aujourd'hui :**
+- **rtx-3080-ti** (gpu) : annonces carte seule LeBonCoin/eBay 360€/430€/545€ — cohérent avec la base (415/480/545). Entrée la moins fraîche du lot signalée hier (10-07) ; revérifiée, aucun changement.
+- **gtx-1660-ti** (gpu) : désaccord initial détecté (gpuprix.com cite un prix neuf suspect ~400-430€, impliquant ~280-300€ d'occasion via le ratio 0,7) mais creusé : annonces d'occasion directes convergentes (LeBonCoin MSI 110€, eBay.de MSI Ventus 140€, ask eBay.fr 186,75€) restent proches de la base (88/108/128) — le signal "neuf" semble être un reliquat de stock à prix gonflé, pas un mouvement de marché généralisé. Base inchangée.
+- **rx-5700-xt** (gpu) : annonces LeBonCoin 100-250€ (majorité 140-180€) — cohérent avec la base (115/165/225). Inchangée.
+- **rx-9070-xt** (gpu) : neuf actuel 740-1070€ selon modèle (LDLC) ; sanity-check ×0,7 ≈ 518-749€, cohérent avec la base (580/660/760). Inchangée.
+- **gtx-680** (gpu) : resaleprices.com US ~40€ moyen, repères FR 30-100€ — cohérent avec la base (22/36/50). Inchangée.
+- **i5-3570k** (cpu) : vente eBay.de conclue 25€, estimation générale 20-40€ — cohérent avec la base (20/30/45). Inchangée.
+- **ryzen-5-2600** (cpu) : annonces LeBonCoin 30-55€ — cohérent avec la base (35/46/57). Inchangée.
+- **ryzen-5-2600x** (cpu) : pas de donnée 2026 directe trouvée, seules des références très anciennes (pré-Ryzen 3000) écartées comme non pertinentes — base (42/52/63) jugée plausible, inchangée par prudence.
+- **gtx-750-ti** (gpu) : annonces LeBonCoin 25-32€ — cohérent avec la base (18/28/38) ; le tracker gpuprix.com citant 217€ est écarté comme aberrant (aucune annonce réelle ne corrobore ce chiffre). Inchangée.
+- **gtx-760** (gpu) : signal contradictoire (annonces non datées à 15-25€ vs sourcing du 11-04, mieux documenté, à 35-49€ sur 4 annonces indépendantes) — la documentation existante plus rigoureuse est privilégiée. Inchangée.
+- **r9-270x** (gpu) : LeBonCoin 25€, eBay ~27-30€ — quasi identique au sourcing du 11-11 (25-33€). Inchangée.
+- **gtx-560-ti** (gpu) : eBay moyenne $25 (~23€), fourchette $19-28 — identique au sourcing du 11-11. Inchangée.
+
+**Confirmées correctes (sourcing existant déjà suffisamment récent et multi-sources, pas de nouvelle recherche nécessaire) :**
+rx-6600-xt, gtx-670, gtx-780, rtx-5080, rtx-4070-ti, rtx-3060, rtx-3060-ti, rtx-3070-ti, rtx-3050, rtx-3090, rtx-2070-super, rtx-2080-ti, gtx-1650, gtx-1070-ti, gtx-1070, gtx-1080, gtx-1080-ti, rx-580, rx-590, rx-570, gtx-980, gtx-960, i5-9400f, i7-10700kf, i7-6700 (addedCpus.json), ryzen-7-2700x.
+
+**Priorité 2 (rotation matériel récent, index 14→24) — recherche web dédiée :**
+- **ryzen-5-3600** (cpu) : LeBonCoin 53-75€ (Vinted vendu 53€) — cohérent avec la base (40/58/75). Inchangée.
+- **ryzen-7-3800x** (cpu) : aucune donnée fiable datée de 2026 trouvée (seule une annonce isolée de 2025 à 60€, sous l'ancien min) — base (70/98/130) jugée plausible par défaut d'évidence contraire suffisante, inchangée par prudence.
+- **ryzen-9-3900x** (cpu) : aucune donnée fiable de 2026 trouvée (argus/estimations trop anciennes) — base (148/172/198) inchangée par prudence.
+- **ryzen-9-3950x** (cpu) : annonce eBay.fr pro ~216€ — cohérent avec la base (182/212/242). Inchangée.
+- **ryzen-5-5600x** (cpu) : neuf actuel ~171-176€ (09/11), sanity-check ×0,7 ≈ 120€ — correspond exactement au moyen actuel (120€). Inchangée.
+- **i5-11600k** (cpu) : revente StockX ~103€ — cohérent avec la base (88/108/128). Inchangée.
+- **ryzen-5-5600** (cpu) : pas de donnée occasion directe fiable trouvée (annonces trouvées = échanges/PC complets non comparables) — base (72/85/100) inchangée par prudence.
+- **ryzen-5-5600g** (cpu) : 1 seule source (eBay pro ~104€, proche du min actuel) — insuffisant pour un changement, inchangée.
+- **i5-12400f** (cpu) **[À SURVEILLER]** : neuf actuel ~140-156€ (plusieurs comparateurs, nov. 2026) très proche du moyen occasion actuel (135€) — l'écart occasion/neuf s'est resserré de façon suspecte. Pas de donnée LeBonCoin peer-to-peer directe trouvée pour trancher (seules des offres marketplace Rakuten à 150-154€, probablement non représentatives du marché particulier comme déjà documenté pour i5-10400f). Base inchangée aujourd'hui par manque de preuve directe suffisante, mais à revérifier en priorité au prochain cycle avec une recherche LeBonCoin ciblée.
+
+(ryzen-5-5500 et ryzen-7-5700x, également dans cette tranche d'index, disposaient déjà d'un sourcing daté du 11-08/10-26 — non re-vérifiés aujourd'hui.)
+
+**RAM/stockage (point C) :** vérification légère effectuée. DDR5 32Go occasion : annonces LeBonCoin très dispersées (150-440€, un ask à 460€ mentionné) mais l'ordre de grandeur de la base (11€/Go × 32Go = 352€) reste cohérent au vu de cette dispersion. NVMe/SSD 1To : signaux contradictoires sur le neuf (Corsair MP600 Core XT 189,99€ vs Kingston NV3 Black Friday 44,99-86,97€, Netac NV3000 113€) et occasion trouvée ~100€ (Lexar 1To, SATA Intenso 1To), cohérent avec la base actuelle (nvme 0,095€/Go = 95€, ssd 0,115€/Go). Aucun écart net (>20%) confirmé par une donnée occasion directe — aucune modification.
+
+**Build/tests :** `npm run build` exécuté avec succès (aucun fichier de prix .ts modifié aujourd'hui, seul PRICE_REVIEW.md et verification-cursor.json mis à jour).
+
+verification-cursor.json avancé de 14 à 24.
