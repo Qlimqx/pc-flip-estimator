@@ -3752,3 +3752,48 @@ verification-cursor.json avancé de 14 à 24.
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **GTX 460** (gpu) : 29.82€ → 29.82€ (49% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
+
+### Vérifié par agent IA le 2026-11-22
+
+Vérification manuelle (recherche web réelle, multi-sources) : échantillon ciblé parmi les "Rejetés"/"écarts notables" eBay du jour les moins récemment documentés (8 entrées, choisies parmi les 68 flaguées car leur `dateMaj` n'avait pas été revérifiée depuis fin août/mi-octobre), rotation `verification-cursor.json` sur le matériel récent (index 24 → 36, 12 entrées CPU), puis vérification RAM/stockage (point C).
+
+**Corrigées :** aucune.
+
+**Observation générale sur les "Rejetés" du jour (39 entrées) :** comme les 11-20/11-21, l'essentiel reflète du bruit du pipeline eBay (annonces mal filtrées) plutôt qu'une dérive réelle. Exemple concret trouvé aujourd'hui : plusieurs annonces remontées pour "RTX 4070 Super" sont en réalité des RTX 4070 **Ti** Super (modèle plus cher) mal filtrées par la requête eBay — explique une bonne partie de l'écart +66% rejeté ce jour. Les entrées très anciennes/bon marché (GTX 980, GTX 750 Ti, GTX 1070, etc.) avaient déjà été revérifiées individuellement ces derniers jours (voir leurs commentaires dateMaj dans gpus.ts, 11-05 à 11-20) et restent cohérentes.
+
+**Confirmées correctes avec recherche web dédiée aujourd'hui :**
+- **rtx-4070-super** (gpu) : annonces LeBonCoin carte seule (hors lots mal étiquetés "Ti Super") convergent ~510-680€ (Zotac 510-550€, MSI 680€, FE 600€) — cohérent avec la base (550/610/700). Entrée stale depuis le 10-15, revérifiée, inchangée.
+- **rtx-4080-super** (gpu) : annonces LeBonCoin 630-1300€, cluster dominant 850-900€ ; un guide situe la "zone intéressante avec preuve d'achat" à 850-980€ — cohérent avec la base (820/900/1000). Stale depuis le 10-07, revérifiée, inchangée.
+- **gtx-770** (gpu) : 2 annonces Vinted (26€ carte 4Go, 35€ Zotac 2Go) quasi identiques à la base (20/27/35). Inchangée.
+- **i3-9100f** (cpu) : annonce Vinted 30€ (très bon état) cohérente avec la base (32€ moyen) ; une offre Rakuten à 54,86€ écartée comme prix marketplace pro surévalué (biais déjà documenté dans l'intro de cpus.ts pour l'i5-10400F). Inchangée.
+- **i5-7500** (cpu) : occasion Rakuten "dès 39,99€", dans la fourchette haute de la base (25/33/42). Inchangée.
+
+**À surveiller (évidence insuffisante ou contradictoire pour trancher aujourd'hui, pas de modification) :**
+- **rtx-3070** (gpu, stale depuis le 08-24) : signaux contradictoires — un tracker donne un neuf remonté à 519-681€ (possible pénurie GDDR6 affectant aussi l'Ampere, comme déjà noté pour la RTX 3060) ce qui impliquerait une occasion ~360-480€ par ratio, mais un commentaire de forum isolé évoque des ventes eBay occasion "à plus de 230€" seulement. Aucune annonce LeBonCoin directe trouvée. Base (230/260/292) inchangée par prudence, à revérifier avec une recherche LeBonCoin ciblée.
+- **rx-6600** (gpu, stale depuis le 08-24) : données très bruitées/contradictoires (trackers gpuprix donnant des médianes 12 mois vs 3 mois incohérentes entre elles) ; annonces LeBonCoin RX 6600 **XT** (modèle différent) 150-450€ non directement transposables. Base (155/185/215) inchangée.
+- **gtx-1650-super** (gpu, stale depuis le 08-24) : 2 annonces Vinted (60€, 65€) légèrement sous la base (65/82/98) ; gpuprix.com donne un prix neuf de 773€ manifestement aberrant (déjà vu pour gtx-1660-ti le 11-21, source jugée peu fiable). Échantillon trop limité pour corriger. Inchangée.
+- **i3-8100** (cpu, stale depuis le 08-25) : 2 annonces Vinted basses (10-12€) contre une base à 22/28/36 — écart important mais enjeu financier négligeable et source unique (Vinted) ; inchangée par prudence, à surveiller.
+- **i3-10100f** (cpu, stale depuis le 08-24) : aucune donnée occasion directe trouvée aujourd'hui ; override eBay actif (66,65€, +59% vs base 42€) déjà signalé "écart notable" par le pipeline. Base inchangée faute de preuve directe, à revérifier en priorité au prochain cycle.
+- **ryzen-3-3200g** (cpu, stale depuis le 08-25) : neuf toujours commercialisé à 60-70€ (RueDuCommerce, 28/10/2026) ; ratio x0,7 impliquerait ~42-49€ d'occasion contre 38€ actuel (base) — écart ~15-29%, pas de donnée occasion directe pour corroborer. Inchangée.
+- **ryzen-7-5800x3d** (cpu, priorité 2) : écart neuf/occasion resserré comme déjà repéré pour l'i5-12400F le 11-21 — neuf ~335-400€ (comparateur-gamer, sept. 2026) très proche du moyen occasion actuel (335€). Seule donnée occasion trouvée (400-450€, avis Dealabs isolé et non daté précisément) est incohérente (supérieure au neuf, probablement lié à la ruée sur l'édition 10e anniversaire relancée par AMD). Base inchangée, à revérifier avec une recherche LeBonCoin directe.
+- **ryzen-9-5950x** (cpu, priorité 2, stale depuis le 08-25) : neuf désormais ~323-349€ (3 relevés comparateur-gamer, juil.-sept. 2026) ; ratio x0,7 implique ~226-244€ contre 280€ actuel (base), écart ~15-19% mais uniquement dérivé du neuf, aucune annonce occasion directe. Inchangée.
+- **ryzen-7-7700x** (cpu, priorité 2) : neuf 208,90€ (Cowcotland, sept. 2026) ; ratio x0,7 implique ~146€ contre 180€ actuel (base), écart ~23% mais sans donnée occasion directe. Inchangée.
+
+**Confirmées correctes sans changement (priorité 2, rotation index 24→36) :**
+- **i9-11900k** : aucune donnée de marché 2026 trouvée (produit retiré de la vente partout) ; base (190/220/255) jugée plausible par défaut, inchangée.
+- **ryzen-9-5900x** : 1 annonce LeBonCoin processeur seul à 270€ (baissée depuis 301,99€) — cohérent avec la base (280€ moyen). Inchangée.
+- **ryzen-7-5800x** : aucune donnée fiable datée 2026 trouvée (seule une référence de forum non datée) ; base (140/160/185) inchangée par prudence.
+- **i5-13400f** : neuf 218,88€ (Rakuten) ; ratio x0,7 ≈ 153€, cohérent avec le moyen actuel (145€). Inchangée.
+- **i5-12600k** : aucune donnée directe trouvée ; base (130/155/180) jugée plausible par comparaison avec l'i5-12400F (occasion dès ~125€, tier inférieur). Inchangée.
+- **i7-12700k** : neuf 329,99€ (comparateur-gamer, sept. 2026) ; ratio x0,7 ≈ 231€, cohérent avec le moyen actuel (212€, 9% d'écart). Inchangée.
+- **i9-12900k** : neuf 414-444€ selon relevé (comparateur-gamer, juil.-oct. 2026) ; ratio x0,7 ≈ 290-311€ contre 260€ actuel (~15% d'écart, à la limite de la tolérance) ; une offre occasion Rakuten à 144,97€ écartée comme incohérente (trop basse face au neuf constaté). Inchangée par prudence.
+- **i9-12900ks** : aucune donnée trouvée ; base (245/280/315) inchangée.
+- **ryzen-5-7600** : données contradictoires (7600X à 169,90€ neuf vs 7600 non-X listé plus cher à 219,95€, incohérent) ; base (100/130/160) inchangée faute de signal fiable.
+
+(ryzen-9-5900x, ryzen-7-5800x, ryzen-7-5800x3d, ryzen-9-5950x font partie du même lot que les 4 ci-dessus marqués "à surveiller" ; listés une seule fois dans leur section respective.)
+
+**RAM/stockage (point C) :** vérification effectuée avec recherche dédiée. DDR5 32Go occasion ~380€ demandé (Flipdeal, 21/10/2026) soit ~11,9€/Go, cohérent avec la base (11€/Go). DDR4 32Go occasion ~150-169€ (~4,7-5,3€/Go), légèrement sous la base (5,5€/Go) mais dans la tolérance. **NVMe** : 2 points occasion directs trouvés (SSD NVMe M.2 SK Hynix 512Go "comme neuf" 70€ soit 0,137€/Go ; 1 annonce PS5/Lexar 1To à 100€ soit 0,10€/Go, source moins fiable car possiblement confondue avec une offre neuve) suggèrent un tarif légèrement supérieur à la base actuelle (0,095€/Go), et la presse confirme une pénurie NAND persistante (+137 à +303% sur le neuf selon les sources, GamersNexus/Phison/Cowcotland). **Non modifié malgré ce signal** : le neuf NVMe 1To d'entrée de gamme le moins cher trouvé aujourd'hui (Kingston NV3, promo Black Friday, 86,97€ soit 0,087€/Go ; Netac NV3000 113,02€ soit 0,113€/Go) est déjà très proche voire sous la fourchette occasion suggérée par mes 2 points — relever la base recréerait l'anomalie "occasion ≥ neuf" déjà corrigée à plusieurs reprises dans ce fichier (10-07/10-14/10-18/10-26/11-05, voir commentaires storage.ts). Preuve directe jugée encore trop mince (1 seule annonce fiable) pour trancher, à revérifier au prochain cycle avec davantage d'annonces LeBonCoin NVMe. SSD/HDD non revérifiés en détail aujourd'hui (déjà vérifiés par le pipeline ce jour, dans la tolérance habituelle), inchangés.
+
+**Build/tests :** `npm run build` et `npm test` exécutés avec succès (aucun fichier de prix .ts modifié aujourd'hui, seuls PRICE_REVIEW.md et verification-cursor.json mis à jour).
+
+`verification-cursor.json` avancé de 24 à 36.
