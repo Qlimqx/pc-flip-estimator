@@ -559,49 +559,46 @@ pour la trancher.
 de la liste réduite [117] : `rx-9070` à `rtx-5090`).
 
 <!-- price-review:rejetes-recent -->
-## 2026-11-23 (agent quotidien)
+## 2026-11-24 (agent quotidien)
 
 ### Rejetés (écart trop important, valeur inchangée)
 
-- **RX 5700** (gpu) : 182.18€ conservé, eBay proposait 257.2€ (+41.18%)
-- **GTX 780** (gpu) : 55€ conservé, eBay proposait 119.78€ (+117.78%)
-- **GTX 670** (gpu) : 28€ conservé, eBay proposait 127.77€ (+356.32%)
-- **RTX 4070 Super** (gpu) : 610€ conservé, eBay proposait 1014.68€ (+66.34%)
+- **R9 280X** (gpu) : 28€ conservé, eBay proposait 54.78€ (+95.64%)
+- **RX 560** (gpu) : 40€ conservé, eBay proposait 80.39€ (+100.98%)
 - **RTX 5080** (gpu) : 1550€ conservé, eBay proposait 3002.84€ (+93.73%)
-- **RTX 3060** (gpu) : 297.1€ conservé, eBay proposait 537.1€ (+80.78%)
-- **RTX 3060 Ti** (gpu) : 424.9€ conservé, eBay proposait 435.1€ (+2.4%)
+- **RTX 3060** (gpu) : 297.1€ conservé, eBay proposait 609.99€ (+105.31%)
 - **AMD Ryzen 5 3600** (cpu) : 89.4€ conservé, eBay proposait 107.43€ (+20.17%)
-- **RTX 3070 Ti** (gpu) : 320€ conservé, eBay proposait 577.9€ (+80.59%)
-- **RX 9070 XT** (gpu) : 660€ conservé, eBay proposait 1455.55€ (+120.54%)
-- **RTX 3080 Ti** (gpu) : 480€ conservé, eBay proposait 1263.31€ (+163.19%)
+- **RTX 3070 Ti** (gpu) : 320€ conservé, eBay proposait 669.7€ (+109.28%)
+- **RX 9070 XT** (gpu) : 660€ conservé, eBay proposait 1819.44€ (+175.67%)
+- **RTX 3080 Ti** (gpu) : 480€ conservé, eBay proposait 1008€ (+110%)
 - **AMD Ryzen 7 3800X** (cpu) : 182.7€ conservé, eBay proposait 189.98€ (+3.98%)
-- **RTX 3050** (gpu) : 175€ conservé, eBay proposait 348.88€ (+99.36%)
-- **RX 6600 XT** (gpu) : 440.56€ conservé, eBay proposait 465.7€ (+5.71%)
-- **RTX 3090** (gpu) : 950€ conservé, eBay proposait 2581.71€ (+171.76%)
+- **RTX 3050** (gpu) : 175€ conservé, eBay proposait 363.7€ (+107.83%)
+- **RTX 3090** (gpu) : 950€ conservé, eBay proposait 2461.24€ (+159.08%)
 - **RTX 2070 Super** (gpu) : 200€ conservé, eBay proposait 333.1€ (+66.55%)
-- **GTX 1660 Ti** (gpu) : 108€ conservé, eBay proposait 260.7€ (+141.39%)
+- **GTX 1660 Ti** (gpu) : 108€ conservé, eBay proposait 237.82€ (+120.2%)
 - **AMD Ryzen 5 2600** (cpu) : 52.7€ conservé, eBay proposait 98.02€ (+86%)
 - **AMD Ryzen 5 2600X** (cpu) : 72.46€ conservé, eBay proposait 90€ (+24.21%)
 - **AMD Ryzen 7 2700X** (cpu) : 48€ conservé, eBay proposait 109.08€ (+127.25%)
 - **Intel Core i5-9400F** (cpu) : 79.63€ conservé, eBay proposait 79.63€ (0%)
 - **RX 5700 XT** (gpu) : 165€ conservé, eBay proposait 333.1€ (+101.88%)
-- **RTX 2080 Ti** (gpu) : 300€ conservé, eBay proposait 656.55€ (+118.85%)
-- **GTX 1650** (gpu) : 115€ conservé, eBay proposait 204.82€ (+78.1%)
-- **GTX 1070** (gpu) : 152.85€ conservé, eBay proposait 231.64€ (+51.55%)
-- **GTX 1070 Ti** (gpu) : 130.7€ conservé, eBay proposait 270.61€ (+107.05%)
-- **GTX 1080** (gpu) : 221.77€ conservé, eBay proposait 257.44€ (+16.08%)
-- **GTX 1080 Ti** (gpu) : 180€ conservé, eBay proposait 414.17€ (+130.09%)
-- **RX 580** (gpu) : 130.7€ conservé, eBay proposait 156.7€ (+19.89%)
+- **RTX 2080 Ti** (gpu) : 300€ conservé, eBay proposait 720.7€ (+140.23%)
+- **GTX 1650** (gpu) : 115€ conservé, eBay proposait 198.74€ (+72.82%)
+- **GTX 1070** (gpu) : 152.85€ conservé, eBay proposait 240.97€ (+57.65%)
+- **GTX 1070 Ti** (gpu) : 130.7€ conservé, eBay proposait 303.17€ (+131.96%)
+- **RX 5700** (gpu) : 182.18€ conservé, eBay proposait 252.68€ (+38.7%)
+- **GTX 1080** (gpu) : 221.77€ conservé, eBay proposait 228.85€ (+3.19%)
+- **GTX 1080 Ti** (gpu) : 180€ conservé, eBay proposait 453.77€ (+152.09%)
+- **RX 580** (gpu) : 130.7€ conservé, eBay proposait 143.7€ (+9.95%)
 - **RX 590** (gpu) : 105€ conservé, eBay proposait 192.85€ (+83.67%)
-- **RX 570** (gpu) : 65€ conservé, eBay proposait 117.25€ (+80.38%)
-- **GTX 980** (gpu) : 42€ conservé, eBay proposait 167.8€ (+299.52%)
-- **GTX 960** (gpu) : 62.7€ conservé, eBay proposait 100€ (+59.49%)
+- **RX 570** (gpu) : 65€ conservé, eBay proposait 106.85€ (+64.38%)
+- **GTX 980** (gpu) : 42€ conservé, eBay proposait 216.92€ (+416.48%)
+- **GTX 960** (gpu) : 62.7€ conservé, eBay proposait 124.98€ (+99.33%)
 - **Intel Core i7-6700** (cpu) : 51.66€ conservé, eBay proposait 114.31€ (+121.27%)
-- **GTX 750 Ti** (gpu) : 28€ conservé, eBay proposait 132.13€ (+371.89%)
-- **Intel Core i5-3570K** (cpu) : 30€ conservé, eBay proposait 73.51€ (+145.03%)
-- **GTX 760** (gpu) : 38€ conservé, eBay proposait 119.99€ (+215.76%)
+- **GTX 750 Ti** (gpu) : 28€ conservé, eBay proposait 165.17€ (+489.89%)
+- **Intel Core i5-3570K** (cpu) : 30€ conservé, eBay proposait 91.88€ (+206.27%)
+- **GTX 760** (gpu) : 38€ conservé, eBay proposait 127.05€ (+234.34%)
 - **GTX 660** (gpu) : 39.44€ conservé, eBay proposait 40.85€ (+3.58%)
-- **GTX 680** (gpu) : 36€ conservé, eBay proposait 103.66€ (+187.94%)
+- **GTX 680** (gpu) : 36€ conservé, eBay proposait 129.8€ (+260.56%)
 - **R9 270X** (gpu) : 27€ conservé, eBay proposait 46.35€ (+71.67%)
 - **GTX 560 Ti** (gpu) : 20€ conservé, eBay proposait 35.91€ (+79.55%)
 <!-- /price-review:rejetes-recent -->
@@ -658,48 +655,6 @@ une poursuite de la hausse ; NAND : hausses contractuelles anticipées de
 +15 à +20%/trimestre au T4 2026, cf. Kioxia/Phison/TrendForce). Aucune
 annonce d'occasion datée trouvée contredisant les calibrages très récents
 du 2026-11-03/11-05 (ddr4, ddr5, hdd, ssd, nvme) — inchangés aujourd'hui.
-
-## 2026-10-24
-
-### Vérifié par agent IA le 2026-10-24
-
-Vérification manuelle (recherche web réelle via 3 agents de recherche en parallèle — LeBonCoin via WebSearch, eBay.fr/.de, LDLC/TopAchat/Materiel.net/Amazon.fr, Cowcotland/Clubic/Pause Hardware pour le contexte pénurie DRAM/NAND) ciblant en priorité les composants non encore revérifiés depuis le calibrage initial du 2026-08-24/25, complétée par une rotation Priorité 2 et un contrôle RAM/stockage.
-
-**Note de méthode sur le choix du périmètre** : la section "### Rejetés" la plus récente ("## 2026-10-23 (agent quotidien)", ~56 entrées CPU+GPU) recoupe à ~80% les entrées déjà vérifiées avec sources réelles dans les sections "Vérifié par agent IA" du 2026-10-22 et du 2026-10-23 ci-dessus (même matériel ancien rejeté nuit après nuit par le pipeline eBay pour la même raison structurelle : bruit de scraping, pas de dérive réelle du marché FR en 24-48h). Plutôt que de re-dépenser le budget du jour à re-rechercher à l'identique des conclusions déjà sourcées il y a 24-48h, j'ai concentré la recherche fraîche d'aujourd'hui sur : (a) les entrées de cette liste "Rejetés" qui n'avaient PAS encore été vérifiées avec des sources réelles (recherche de l'historique des sections précédentes), et (b) les entrées explicitement flaguées "à revérifier au prochain run" dans les notes des jours précédents. Les ~45 entrées restantes de la liste "Rejetés" du 2026-10-23, déjà vérifiées à fond les 2026-10-22/23 (voir sections ci-dessus, sources citées), ne sont PAS re-listées individuellement ici pour éviter la redondance, mais restent considérées comme à jour.
-
-**Priorité 1 -- 5 CPU anciens non revérifiés depuis le calibrage initial du 08-24/25, tous présents dans la liste "Rejetés" du 2026-10-23 :**
-
-**5 entrées corrigées (BASE_CPUS)** :
-- `i7-4790k` : 22/33/44€ → **30/58/100€** (6 annonces LeBonCoin "i7-4790K" processeur seul convergentes : 30€, 38€, 60€, 70€, 80€, 100€ — cluster central 60-80€ ; corroboré par eBay.de 55€ et eBay.co.uk ~61€)
-- `i7-3770k` : 15/22/30€ → **35/48/60€** (5 annonces LeBonCoin "i7-3770K" seul : Vienne 60€ ×2, Taillan-Médoc 40€, Manduel 50€, Paris 8e 40€ ; corroboré qualitativement par forum.hardware.fr où un vendeur à 115€ est jugé "cher" par la communauté)
-- `i5-3570k` : 10/15/21€ → **20/30/45€** (6 annonces LeBonCoin individuelles distinctes : Pessac 20€, Toulon 20€, Chambray-lès-Tours 25€, Bron 35€, Hesdigneul-lès-Béthune 45€)
-- `fx-6300` : 7/11/16€ → **15/22/30€** (annonces LeBonCoin : Bourgoin-Jallieu 15€, Téteghem-Coudekerque-Village 20€, Chadrac 20€, 2×30€ ; corroboré par FX-6350 à 45€ et FX-6300 Black Edition+ventirad à 50€)
-- `ryzen-7-3800x` : 108/128/148€ → **70/98/130€** (6-7 annonces LeBonCoin "Ryzen 7 3800X" seul, hors 3700X/3800XT : 70€, 95€, 100€, 130€ ×2 ; corroboré par forum CowcotLand, vente à 60€ sans ventirad)
-
-**Constat notable** : ces 4 CPU très anciens (4790K, 3770K, 3570K, FX-6300) étaient sous-évalués de façon systématique (+70% à +130% par rapport au marché LeBonCoin observé aujourd'hui) depuis leur calibrage initial du 08-24/25, jamais revérifiés individuellement depuis. Ce n'est PAS le même phénomène que la pollution eBay documentée pour les vieux GPU (bruit de scraping côté pipeline automatique) : ici, la base elle-même était restée figée sur une estimation initiale par interpolation jamais recoupée avec des annonces réelles. À garder en tête pour prioriser d'autres très vieux CPU/GPU jamais individuellement revérifiés depuis le 08-24/25 lors des prochaines rotations.
-
-**2 CPU flagués "à revérifier" dans les notes précédentes, revérifiés aujourd'hui, valeur conservée** :
-- `ryzen-5-1600` : conservé 25/33/42€ (8 annonces LeBonCoin convergentes, cluster central 30-35€, cohérent)
-- `ryzen-9-3900x` : conservé 148/172/198€ (signal contradictoire du run précédent résolu : 8 annonces LeBonCoin FR "processeur seul" 100-250€, moyenne 172,5€ quasi identique à la base ; le point à 250€ n'est pas un outlier isolé mais fait partie d'une distribution normale du marché FR, plus cher que les points eBay internationaux non-FR utilisés par erreur comme référence précédemment)
-
-**Priorité 1/2 combinées -- 9 GPU ciblés (gap de vérification + flagués par les notes des jours précédents + rotation matériel récent, curseur avancé de l'index 63 à 75)** :
-
-**2 entrées corrigées (BASE_GPUS)** :
-- `rx-5600-xt` : 78/96/115€ → **95/120/145€** (2 sources indépendantes convergentes : eBay.de annonce active vendeuse basée en France, MSI MECH OC 6Go bon état, 125€ ; eBay.de Allemagne, MSI MECH 6Go sans boîte, vente conclue 119€ après offre acceptée)
-- `gtx-1650` (standard, hors Super) : 55/70/85€ → **60/82/105€** (4 sources convergentes au-dessus de 75€ : LeBonCoin Pessac ~100€, eBay France Lanester 85€, eBay.de ~77-89€ ×2 ; signal de hausse modérée probablement lié à la raréfaction générale des vieilles cartes bas de gamme dans le contexte de pénurie mémoire)
-
-**7 entrées vérifiées, valeur de base conservée** :
-- `rx-560` (25/33/42€, non revérifié depuis 08-25) : cohérent, points occasion 25,81-48,57€ encadrent bien la fourchette
-- `gtx-1660` standard (70/88/105€, non revérifié depuis 08-24) : cohérent, cluster occasion 65-90€ sous les variantes Super/Ti observées à 100-115€
-- `rtx-5080` (1000/1200/1400€) : cohérent, sanity-check neuf actuel (1600-1829€, hausse confirmée Heise/LDLC/tracker eBay) ×0,7 ≈ 1120-1280€, encadre bien le moyen stocké ; 1 point LeBonCoin à 1050€ (carte "quasi neuve") cohérent ; tendance haussière à surveiller
-- `rtx-3090` (650/900/1300€) : cohérent, 4 annonces LeBonCoin carte seule 800-1300€ + tracker eBay international ~1100-1150€ ; tendance haussière confirmée (demande IA/LLM 24Go VRAM), un point LeBonCoin à 1400€ dépasse déjà le max — à revérifier en priorité au prochain run
-- `rtx-4060` (200/240/280€, corrigé le 10-23) : confirmé, 3 annonces FR/localisées indépendantes 200-250€ ; l'override eBay rejeté à 364€ (+52%) est confirmé comme une anomalie (probablement bundle ou modèle haut de gamme mal filtré)
-- `rx-9070-xt` (655/700/750€, non revérifié depuis 08-24 malgré rejets eBay systématiques à +80-140%) : confirmé, prix neuf actuel 749-769€ (hausse confirmée par pénurie GDDR) rend le sanity-check neuf×0,7 inapplicable (l'occasion récente reste proche du neuf en période de pénurie) ; 1 point occasion UK ~693€ cohérent ; les rejets eBay à +80-140% restent implausibles et confirmés comme pollution de données
-- `rx-5500-xt`, `rx-5700`, `rtx-2060`, `rtx-2060-super`, `rtx-2070`, `rtx-3070`, `rx-6800` (rotation Priorité 2) : tous cohérents avec la base actuelle, écarts <15-20% sur les sources trouvées (confiance variable, faible à élevée selon la carte — voir détail dans les rapports de recherche, `rx-6800` en particulier n'a aucune annonce directe de la variante non-XT, estimation indirecte seulement)
-
-**RAM/stockage** : contrôle par recherche web directe. Presse confirme une accélération de la pénurie DRAM (DDR4 spot +172% depuis janvier 2026 selon Clubic, +24% sur 3 mois en contrats selon Pause Hardware) et NAND, mais les annonces LeBonCoin occasion trouvées aujourd'hui restent dans la tolérance du calibrage actuel : DDR4 16Go occasion 60-75€ (HyperX Fury, G.Skill Ripjaws V) soit ~3,75-4,7€/Go contre 4€/Go stocké ; DDR5 32Go neuf référence Cowcotland 427-470€ (août-sept 2026), cohérent avec le contexte déjà intégré au calibrage 7€/Go du 10-17. Aucune donnée occasion NVMe/SSD datée trouvée (comme les jours précédents). **Aucune correction nécessaire** — à noter : le pipeline eBay automatisé (`daily-agent`) a lui-même flagué ddr4/ssd/nvme en "en-attente-confirmation" (sauts de +36 à +57% mesurés le 10-23 sur ses propres annonces eBay demandées) ; mes recherches LeBonCoin directes d'aujourd'hui ne confirment pas une hausse de cette ampleur sur le marché occasion FR réel, mais le sujet reste à surveiller de près étant donné l'accélération confirmée de la pénurie.
-
-**Méthodologie process** : recherche effectuée par 3 sous-agents parallèles (mandat strictement limité à WebSearch/WebFetch, aucune écriture de fichier ni commit autorisé), complétée par le contrôle RAM/stockage effectué directement par l'agent orchestrateur. Toutes les décisions finales et toutes les écritures dans `cpus.ts`/`gpus.ts`/`verification-cursor.json` ont été faites directement par l'agent orchestrateur après recoupement des rapports. `npm install` (dépendances absentes au démarrage de la session), build (`tsc -b && vite build`), lint (`oxlint`) et tests (`npx vitest run`, 117/117) passés avec succès après ces ajustements.
 
 ## 2026-10-25
 
@@ -3695,3 +3650,81 @@ Vérification manuelle (recherche web réelle, multi-sources) de la **TOTALITÉ*
 **Priorité 2 (rotation `verification-cursor.json`) :** non exécutée aujourd'hui -- la Priorité 1 seule (41 entrées "Rejetés", toutes traitées) dépassait déjà largement le budget quotidien habituel (~20-25 entrées). `lastIndex` inchangé à 36, `lastRunDate` mis à jour à 2026-11-23 pour garder une trace du run.
 
 **Build/tests :** `npm run build` et `npm test` exécutés avec succès (aucun fichier de prix .ts modifié aujourd'hui, seuls PRICE_REVIEW.md et verification-cursor.json mis à jour).
+## 2026-11-24 (agent quotidien)
+
+### Rejetés (écart trop important, valeur inchangée)
+
+- **R9 280X** (gpu) : 28€ conservé, eBay proposait 54.78€ (+95.64%)
+- **RX 560** (gpu) : 40€ conservé, eBay proposait 80.39€ (+100.98%)
+- **RTX 5080** (gpu) : 1550€ conservé, eBay proposait 3002.84€ (+93.73%)
+- **RTX 3060** (gpu) : 297.1€ conservé, eBay proposait 609.99€ (+105.31%)
+- **AMD Ryzen 5 3600** (cpu) : 89.4€ conservé, eBay proposait 107.43€ (+20.17%)
+- **RTX 3070 Ti** (gpu) : 320€ conservé, eBay proposait 669.7€ (+109.28%)
+- **RX 9070 XT** (gpu) : 660€ conservé, eBay proposait 1819.44€ (+175.67%)
+- **RTX 3080 Ti** (gpu) : 480€ conservé, eBay proposait 1008€ (+110%)
+- **AMD Ryzen 7 3800X** (cpu) : 182.7€ conservé, eBay proposait 189.98€ (+3.98%)
+- **RTX 3050** (gpu) : 175€ conservé, eBay proposait 363.7€ (+107.83%)
+- **RTX 3090** (gpu) : 950€ conservé, eBay proposait 2461.24€ (+159.08%)
+- **RTX 2070 Super** (gpu) : 200€ conservé, eBay proposait 333.1€ (+66.55%)
+- **GTX 1660 Ti** (gpu) : 108€ conservé, eBay proposait 237.82€ (+120.2%)
+- **AMD Ryzen 5 2600** (cpu) : 52.7€ conservé, eBay proposait 98.02€ (+86%)
+- **AMD Ryzen 5 2600X** (cpu) : 72.46€ conservé, eBay proposait 90€ (+24.21%)
+- **AMD Ryzen 7 2700X** (cpu) : 48€ conservé, eBay proposait 109.08€ (+127.25%)
+- **Intel Core i5-9400F** (cpu) : 79.63€ conservé, eBay proposait 79.63€ (0%)
+- **RX 5700 XT** (gpu) : 165€ conservé, eBay proposait 333.1€ (+101.88%)
+- **RTX 2080 Ti** (gpu) : 300€ conservé, eBay proposait 720.7€ (+140.23%)
+- **GTX 1650** (gpu) : 115€ conservé, eBay proposait 198.74€ (+72.82%)
+- **GTX 1070** (gpu) : 152.85€ conservé, eBay proposait 240.97€ (+57.65%)
+- **GTX 1070 Ti** (gpu) : 130.7€ conservé, eBay proposait 303.17€ (+131.96%)
+- **RX 5700** (gpu) : 182.18€ conservé, eBay proposait 252.68€ (+38.7%)
+- **GTX 1080** (gpu) : 221.77€ conservé, eBay proposait 228.85€ (+3.19%)
+- **GTX 1080 Ti** (gpu) : 180€ conservé, eBay proposait 453.77€ (+152.09%)
+- **RX 580** (gpu) : 130.7€ conservé, eBay proposait 143.7€ (+9.95%)
+- **RX 590** (gpu) : 105€ conservé, eBay proposait 192.85€ (+83.67%)
+- **RX 570** (gpu) : 65€ conservé, eBay proposait 106.85€ (+64.38%)
+- **GTX 980** (gpu) : 42€ conservé, eBay proposait 216.92€ (+416.48%)
+- **GTX 960** (gpu) : 62.7€ conservé, eBay proposait 124.98€ (+99.33%)
+- **Intel Core i7-6700** (cpu) : 51.66€ conservé, eBay proposait 114.31€ (+121.27%)
+- **GTX 750 Ti** (gpu) : 28€ conservé, eBay proposait 165.17€ (+489.89%)
+- **Intel Core i5-3570K** (cpu) : 30€ conservé, eBay proposait 91.88€ (+206.27%)
+- **GTX 760** (gpu) : 38€ conservé, eBay proposait 127.05€ (+234.34%)
+- **GTX 660** (gpu) : 39.44€ conservé, eBay proposait 40.85€ (+3.58%)
+- **GTX 680** (gpu) : 36€ conservé, eBay proposait 129.8€ (+260.56%)
+- **R9 270X** (gpu) : 27€ conservé, eBay proposait 46.35€ (+71.67%)
+- **GTX 560 Ti** (gpu) : 20€ conservé, eBay proposait 35.91€ (+79.55%)
+
+### Écarts notables acceptés (à vérifier)
+
+- **Intel Core i7-4790K** (cpu) : 111.4€ → 111.4€ (49% vs référence)
+- **RTX 5060 Ti** (gpu) : 904.3€ → 826.39€ (25% vs référence)
+- **RTX 5090** (gpu) : 9086.7€ → 9086.7€ (57% vs référence)
+- **RTX 4070 Ti** (gpu) : 1215.03€ → 1215.03€ (58% vs référence)
+- **RTX 3060 Ti** (gpu) : 424.9€ → 404.5€ (50% vs référence)
+- **RTX 3070** (gpu) : 404.5€ → 404.5€ (56% vs référence)
+- **RTX 3080** (gpu) : 669.7€ → 618.7€ (44% vs référence)
+- **RX 6600** (gpu) : 250.3€ → 250.3€ (35% vs référence)
+- **RTX 2060** (gpu) : 232.1€ → 224.3€ (45% vs référence)
+- **RTX 2060 Super** (gpu) : 204.3€ → 204.3€ (28% vs référence)
+- **RX 6700 XT** (gpu) : 379€ → 379€ (35% vs référence)
+- **RX 6600 XT** (gpu) : 440.56€ → 440.54€ (47% vs référence)
+- **RTX 2070** (gpu) : 207.66€ → 207.66€ (34% vs référence)
+- **GTX 1660 Super** (gpu) : 177.5€ → 177.5€ (27% vs référence)
+- **RTX 2080** (gpu) : 260.7€ → 260.7€ (41% vs référence)
+- **AMD Ryzen 3 3200G** (cpu) : 48.25€ → 48.25€ (27% vs référence)
+- **Intel Core i7-10700KF** (cpu) : 190€ → 190€ (41% vs référence)
+- **Intel Core i3-10100F** (cpu) : 66.65€ → 66.65€ (59% vs référence)
+- **Intel Core i7-9700K** (cpu) : 161.26€ → 209.72€ (50% vs référence)
+- **GTX 1650 Super** (gpu) : 117.18€ → 117.18€ (43% vs référence)
+- **Intel Core i5-7600K** (cpu) : 51.56€ → 51.56€ (29% vs référence)
+- **Intel Core i3-9100F** (cpu) : 41.28€ → 41.28€ (29% vs référence)
+- **Intel Core i3-8100** (cpu) : 17.17€ → 17.17€ (-39% vs référence)
+- **GTX 1050 Ti** (gpu) : 120.3€ → 115.1€ (35% vs référence)
+- **Intel Core i5-4590** (cpu) : 36.05€ → 36.05€ (-28% vs référence)
+- **GTX 970** (gpu) : 73.5€ → 73.5€ (34% vs référence)
+- **Intel Core i7-3770K** (cpu) : 67.83€ → 67.83€ (41% vs référence)
+- **Intel Core i3-4160** (cpu) : 6.5€ → 6.5€ (-27% vs référence)
+- **GTX 770** (gpu) : 39.9€ → 39.9€ (48% vs référence)
+- **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
+- **GT 1030** (gpu) : 89.1€ → 89.1€ (48% vs référence)
+- **GTX 460** (gpu) : 27.22€ → 27.22€ (36% vs référence)
+- **Radeon HD 7870** (gpu) : 34.5€ → 34.5€ (28% vs référence)
