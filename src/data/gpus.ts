@@ -245,10 +245,16 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'R9 280X',
     marque: 'AMD',
     vramGo: 3,
-    min: 20,
-    moyen: 28,
-    max: 37,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-25 (vérification quotidienne IA) : base figée
+    // depuis le 08-25, jamais réévaluée. 2 sources convergentes au-dessus
+    // de l'ancien moyen (28€) : vente eBay.de conclue (Sapphire Vapor-X
+    // Tri-X) ~45€, enchère terminée osta.ee (Sapphire Vapor-X) ~50€ --
+    // restaure un écart de tiering cohérent avec le R9 270X voisin (27€,
+    // corrigé le 11-11), que l'ancienne base avait presque effacé.
+    min: 24,
+    moyen: 35,
+    max: 48,
+    dateMaj: '2026-11-25',
     faciliteRevente: 0.18,
     decoteAnciennete: 0.68,
     tier: 1,

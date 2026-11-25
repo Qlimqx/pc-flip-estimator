@@ -3707,3 +3707,21 @@ Vérification manuelle (recherche web réelle, multi-sources) de la **TOTALITÉ*
 - **GT 1030** (gpu) : 89.1€ → 89.1€ (48% vs référence)
 - **GTX 460** (gpu) : 27.22€ → 27.22€ (36% vs référence)
 - **Radeon HD 7870** (gpu) : 34.5€ → 37.1€ (37% vs référence)
+
+### Vérifié par agent IA le 2026-11-25
+
+Toutes les entrées de la section "Rejetés" ci-dessus (43 entrées, lot complet du jour conformément à la priorité 1) ont été vérifiées par recherche web réelle (LeBonCoin, eBay.fr/.de, resaleprices.com, comparateurs neuf). 3 corrections de `BASE_CPUS`/`BASE_GPUS`, 40 confirmations.
+
+**Corrigées :**
+
+- **ryzen-7-3800x** : 98€ → 85€ (moyen). Sources : aucune annonce LeBonCoin "CPU seul" exploitable (que des PC complets) ; 2 ventes eBay.de conclues et testées convergentes à ~78€ et ~79€. L'override eBay rejeté (182.7€) reposait sur un échantillon non filtré de 5 annonces brutes, jugé peu fiable.
+- **i5-7500** : 33€ → 40€ (moyen). Sources : 6 annonces LeBonCoin indépendantes du CPU seul (30/35/40/49/50/60€, médiane ~42-45€) corroborées par l'override eBay (42.18€, dateMaj 2026-11-23, échantillon de 14 annonces filtrées sur 30 brutes).
+- **r9-280x** : 28€ → 35€ (moyen). Sources : vente eBay.de conclue (Sapphire Vapor-X Tri-X) ~45€, enchère terminée osta.ee (Sapphire Vapor-X) ~50€ -- restaure un écart de tiering cohérent avec le R9 270X voisin (27€).
+
+**Confirmées correctes (base déjà cohérente avec le marché réel, inchangée) :** rx-7600, gtx-780, gtx-670, rtx-5080, rtx-3060, ryzen-5-3600, rtx-3070-ti, rx-9070-xt, rtx-3080-ti, rtx-3050, rx-6600-xt (note : écart notable avec l'override eBay +47% vs base, à surveiller mais non corroboré par la recherche directe aujourd'hui), rtx-3090, rtx-2070-super, gtx-1660-ti, ryzen-5-2600, ryzen-5-2600x, ryzen-7-2700x, i5-9400f, rx-5700-xt, rtx-2080-ti, gtx-1650, gtx-1070, gtx-1070-ti, rx-5700, gtx-1080, gtx-1080-ti, rx-580, rx-590, rx-570, gtx-980, rx-560, gtx-960, i7-6700k, gtx-750-ti, i5-3570k, gtx-760, gtx-660, gtx-680, r9-270x, gtx-560-ti.
+
+**Priorité 2 (matériel récent) :** non traitée aujourd'hui -- le lot "Rejetés" de priorité 1 (43 entrées) dépassait déjà largement le budget quotidien habituel (~20-25 entrées). `verification-cursor.json` laissé inchangé (`lastIndex: 36`, `lastRunDate: 2026-11-23`).
+
+**RAM/stockage :** vérification légère effectuée (recherche web). DDR4 16Go occasion ~90-100€ sur LeBonCoin, cohérent avec le tarif actuel (5.5€/Go → 88€). DDR5 32Go occasion LeBonCoin 150-440€ (cluster réaliste ~390-440€) vs. 11€/Go → 352€ implicite -- écart ~11-25%, à la limite de la tolérance mais non net (annonces non datées, signal mixte) : laissé inchangé par prudence, à revérifier si la pénurie GDDR5/DDR5 continue de s'accélérer (neuf FR désormais ~405-577€/kit 32Go, en hausse continue). NVMe/SSD : aucune donnée occasion nouvelle trouvée contredisant les tarifs actuels -- inchangés.
+
+**Build/tests :** `npm install` + `npm run build` (tsc -b && vite build) et `npm test` (vitest, 188 tests) exécutés avec succès après les 3 corrections.

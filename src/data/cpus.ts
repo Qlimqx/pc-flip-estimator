@@ -302,10 +302,16 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'Intel Core i5-7500',
     marque: 'Intel',
     socket: 'LGA1151',
-    min: 25,
-    moyen: 33,
-    max: 42,
-    dateMaj: '2026-08-25',
+    // Corrigé le 2026-11-25 (vérification quotidienne IA) : base figée
+    // depuis le 08-25, jamais réévaluée. 6 annonces LeBonCoin indépendantes
+    // du CPU seul (30/35/40/49/50/60€, médiane ~42-45€) corroborées par
+    // l'override eBay (42.18€, dateMaj 11-23, échantillon solide de 14
+    // annonces filtrées sur 30 brutes) -- 2 sources convergentes, +27%
+    // au-dessus de l'ancien moyen (33€).
+    min: 30,
+    moyen: 40,
+    max: 50,
+    dateMaj: '2026-11-25',
     faciliteRevente: 0.42,
     decoteAnciennete: 0.86,
     tier: 2,
@@ -738,10 +744,16 @@ const BASE_CPUS: CpuPricing[] = [
     nom: 'AMD Ryzen 7 3800X',
     marque: 'AMD',
     socket: 'AM4',
-    min: 70,
-    moyen: 98,
-    max: 130,
-    dateMaj: '2026-10-24',
+    // Corrigé le 2026-11-25 (vérification quotidienne IA) : base jamais
+    // réévaluée individuellement depuis le 10-24. Aucune annonce LeBonCoin
+    // "CPU seul" exploitable trouvée (que des PC complets) ; 2 ventes
+    // eBay.de conclues et testées convergent à ~78€ et ~79€, sous l'ancien
+    // moyen (98€, -13%). L'override eBay rejeté (182.7€) reposait sur un
+    // échantillon non filtré de 5 annonces brutes, jugé peu fiable.
+    min: 65,
+    moyen: 85,
+    max: 110,
+    dateMaj: '2026-11-25',
     faciliteRevente: 0.68,
     decoteAnciennete: 0.95,
     tier: 3,
