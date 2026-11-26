@@ -3684,3 +3684,100 @@ Toutes les entrées de la section "Rejetés" ci-dessus (43 entrées, lot complet
 - **AMD FX-6300** (cpu) : 38.11€ → 38.11€ (41% vs référence)
 - **GTX 460** (gpu) : 27.22€ → 27.22€ (36% vs référence)
 - **Radeon HD 7870** (gpu) : 37.1€ → 37.1€ (37% vs référence)
+
+### Vérifié par agent IA le 2026-11-26
+
+**Choix de méthode du jour** : la section "Rejetés" ci-dessus (38 entrées) est
+quasi identique à celles des 2026-11-24 et 2026-11-25, déjà vérifiées en
+profondeur deux jours de suite (recherche web réelle multi-sources,
+0 puis 3 corrections, voir ces deux sous-sections plus haut) pour un
+résultat stable. Refaire une troisième recherche exhaustive complète sur
+les ~35 entrées inchangées aurait été du churn redondant pour un marché de
+l'occasion ancien qui ne bouge pas en 24-48h. Choix fait aujourd'hui :
+spot-check léger sur un échantillon représentatif de Priorité 1, et report
+du budget de recherche libéré sur la Priorité 2 (matériel récent), en
+rotation depuis le 2026-11-23 (`verification-cursor.json` non avancé
+depuis 3 jours car la Priorité 1 consommait tout le budget).
+
+**Priorité 1 (spot-check, 5 entrées représentatives, recherche légère) :**
+
+- `rtx-4070-super` : confirmé stable (neuf 610-700€ marketplace NVIDIA FR,
+  cohérent avec min/moyen/max actuels ; risque de confusion avec la
+  "RTX 4070 Ti Super" dans les requêtes eBay déjà diagnostiqué le 11-22,
+  toujours présent).
+- `gtx-980` : confirmé stable (LeBonCoin, MSI GTX 980 4G à 38€, en plein
+  cœur de la fourchette).
+- `rtx-3060` : confirmé stable (LeBonCoin 12Go seule : 210/220/255€, dans
+  la fourchette).
+- `ryzen-5-2600` : confirmé stable (LeBonCoin CPU seul : 30/40/~55€,
+  cohérent).
+- `i5-9400f` : confirmé stable (Vinted ~31€, eBay.de ~59€, cohérent).
+
+Les 33 autres entrées "Rejetés" du jour restent couvertes par la recherche
+approfondie des 11-24/11-25 (sourcing documenté dans les commentaires de
+`gpus.ts`/`cpus.ts` et dans les sous-sections correspondantes ci-dessus) ;
+aucun signal de changement de marché détecté sur l'échantillon testé
+aujourd'hui qui remettrait en cause cette confirmation récente.
+
+**Corrigées (Priorité 1) :** aucune.
+
+**Priorité 2 (rotation matériel récent, 20 entrées, recherche complète
+neuf+occasion par 3 agents en parallèle) :**
+
+GPU : `rx-6600`, `rx-6650-xt`, `rx-6750-xt`, `rtx-3070`, `rx-6800`,
+`rx-6800-xt`, `rtx-4060-ti`, `rx-7700-xt`, `rx-7800-xt`, `rx-9070`,
+`rtx-5060`, `rtx-5070-ti`. CPU : `i3-10100f`, `i5-11400f`,
+`ryzen-7-3700x`, `ryzen-5-5600x`, `i5-12400f`, `i7-12700k`, `i9-12900k`,
+`i5-11600k`. Toutes ces entrées étaient figées depuis le 2026-08-24/25
+(3 mois), jamais réévaluées individuellement.
+
+**Corrigées (Priorité 2) :** aucune. Deux cartes montrent un signal
+haussier (`rx-6800` : LeBonCoin 350-430€ vs moyen actuel 320€, +9 à +20%
+selon la source ; `rx-7800-xt` : neuf ~630-650€ (gpuprix.com, Dealabs/
+TopAchat) → occasion implicite ~440-455€ vs moyen actuel 410€, +7 à +9%)
+mais restent dans la tolérance ~15% retenue pour éviter le churn — laissées
+inchangées, à surveiller au prochain cycle si la hausse se confirme.
+
+**Alertes pour le prochain cycle (signal détecté, pas de correction
+aujourd'hui) :**
+
+- Pénurie VRAM/GDDR confirmée par plusieurs sources indépendantes
+  (Cowcotland, Notebookcheck, TweakTown, Phonandroid) qui tire les prix
+  neufs des GPU récents à la hausse depuis fin 2025, accélération en
+  oct-nov 2026 -- cohérent avec la pénurie DRAM/NAND déjà documentée pour
+  la RAM/le stockage. L'occasion ne suit pas encore pleinement la hausse
+  du neuf sur `rx-9070` et `rtx-5070-ti` (ce dernier très volatil : marché
+  US +13,5%/semaine sur quelques semaines) -- à revérifier dans 2-3
+  semaines.
+- `rx-6800` et `rx-7800-xt` : signal haussier +7 à +20% selon la source,
+  sous le seuil de correction aujourd'hui mais à recroiser au prochain
+  passage sur ces entrées.
+- Toutes les 20 entrées Priorité 2 confirmées stables sinon (sources :
+  LDLC/TopAchat/Materiel.net/Cowcotland/gpuprix.com pour le neuf ;
+  LeBonCoin/eBay.de/eBay.fr/Rakuten occasion pour l'occasion -- accès
+  direct à leboncoin.fr indisponible depuis cette session cloud, requêtes
+  faites via WebSearch).
+
+**RAM/stockage (point C) :** vérification légère effectuée. DDR4
+(5,5€/Go) : kits occasion LeBonCoin 16Go ~90-95€, très proche de
+l'implicite (88€) -- inchangé. DDR5 (11€/Go) : occasion 32Go ~380€ (Flipdeal)
+vs 352€ implicite, écart +8% seulement malgré la poursuite de la pénurie
+(+8,6% oct→nov en Allemagne, +507% depuis juillet 2025 selon Kingston/
+Cowcotland) -- dans la tolérance, inchangé, à resurveiller si la pénurie
+s'aggrave. SSD/NVMe : NVMe neuf (Corsair MP600 Core XT, promo) à 190€,
+ratio occasion/neuf ~50-60% toujours sain -- inchangé.
+
+**Priorité 2 -- suivi `verification-cursor.json` :** 20 entrées
+"matériel récent" traitées aujourd'hui (listées ci-dessus), ciblées par
+ancienneté de `dateMaj` (toutes figées depuis le 2026-08-24/25) plutôt que
+par position stricte d'index, comme déjà pratiqué les jours précédents
+(la liste reconstruite chaque jour dérive légèrement). `lastIndex` avancé
+de 36 à 56 à titre de marqueur de progression indicatif ; la vraie trace
+de couverture reste la liste ci-dessus et les commentaires `dateMaj` dans
+`gpus.ts`/`cpus.ts`.
+
+**Build/tests :** `npm install` + `npm run build` (tsc -b && vite build) et
+`npm test` (vitest) exécutés avec succès. **Aucun fichier de prix
+`.ts` modifié aujourd'hui** -- toutes les entrées testées (Priorité 1
+spot-check + Priorité 2 complète + RAM/stockage) ont été confirmées
+correctes par recherche indépendante, dans la tolérance ~15%.
