@@ -1451,12 +1451,22 @@ const BASE_CPUS: CpuPricing[] = [
   {
     id: 'ryzen-9-9950x',
     nom: 'AMD Ryzen 9 9950X',
+    // Corrigé le 2026-11-27 (vérification quotidienne IA, rotation matériel
+    // récent -- base figée depuis le 08-25, jamais réévaluée individuellement) :
+    // 3 sources indépendantes convergentes situent le marché nettement sous
+    // l'ancien moyen (470€) -- comparateur Zeus-PC donne explicitement "en
+    // occasion sur LeBonCoin, comptez environ 395€ (prix médian des annonces)" ;
+    // cluster d'annonces LeBonCoin directes 360-480€ ; eBay.de occasion ~419€
+    // (vente conclue ~430€). Sanity check cohérent : neuf ~508-520€
+    // (comparateur-gamer.fr, Geizhals.de) × 0.7 ≈ 356€, proche de la médiane
+    // Zeus-PC. Écart ~15% par rapport à l'ancienne base, comparable en nature
+    // (mais bien plus modéré) à l'incident du 9800X3D de 08-2026.
     marque: 'AMD',
     socket: 'AM5',
-    min: 420,
-    moyen: 470,
-    max: 520,
-    dateMaj: '2026-08-25',
+    min: 360,
+    moyen: 400,
+    max: 450,
+    dateMaj: '2026-11-27',
     faciliteRevente: 0.7,
     decoteAnciennete: 1.07,
     tier: 5,

@@ -3761,3 +3761,93 @@ correctes par recherche indépendante, dans la tolérance ~15%.
 - **R9 280X** (gpu) : 35€ → 54.78€ (57% vs référence)
 - **GTX 460** (gpu) : 27.22€ → 27.22€ (36% vs référence)
 - **Radeon HD 7870** (gpu) : 37.1€ → 37.1€ (37% vs référence)
+
+### Vérifié par agent IA le 2026-11-27
+
+**Priorité 1** (section "Rejetés" ci-dessus, 40 entrées) : recherche web
+indépendante (LeBonCoin, eBay.fr/.de, gpuprix.com/gpupricehistory.com,
+Cowcotland, rapports de marché IA/LLM pour les GPU forte VRAM) via 4 agents
+en parallèle sur un échantillon représentatif de 10 entrées, en priorisant
+le matériel "récent" (RTX/RX 5000+/Ryzen 3000+) et 2 pièces anciennes pour
+diversité :
+
+`rtx-3070-ti`, `rtx-3080-ti`, `rtx-3090`, `rx-9070-xt`, `rtx-2070-super`,
+`rtx-2080-ti`, `rx-5700-xt`, `gtx-1080-ti`, `ryzen-5-2600x`, `ryzen-5-3600`
+(10) : **toutes confirmées correctes, aucun changement.** Constat
+récurrent (déjà noté les jours précédents) : les écarts proposés par le
+pipeline eBay sur ces entrées sont systématiquement des outliers non
+corroborés par la recherche indépendante (échantillons eBay petits et
+très volatils jour à jour -- ex. RTX 3080 Ti : moyen remesuré passant de
+1250€ à 849€ à 1008€ à 849€ en 4 jours selon l'historique du pipeline --
+signe de contamination par annonces bruitées/variantes rares/bundles, pas
+d'un vrai mouvement de marché). Cas notable : `rx-9070-xt` -- la
+proposition eBay (occasion moyen ~1416-1882€) est structurellement
+impossible, une carte encore produite ne pouvant se vendre d'occasion
+au-dessus de son propre prix neuf (~930€ selon le tracker hebdomadaire
+Cowcotland) ; le "neuf" tracké par le pipeline lui-même semble corrompu.
+Les 30 autres entrées de la liste (matériel ancien GTX/Radeon HD/Ryzen
+1000-2000/Intel pré-10e gén) restent couvertes par les vérifications
+approfondies des jours précédents (11-24 à 11-26), non re-recherchées
+aujourd'hui pour éviter le churn redondant sur un marché qui ne bouge pas
+en 24-48h.
+
+**Priorité 2** (rotation matériel récent, 13 entrées, ciblées par
+ancienneté de `dateMaj` dans la liste réduite -- toutes figées depuis le
+2026-08-24/25, jamais réévaluées individuellement) :
+
+GPU : `rx-7600`. CPU : `ryzen-3-3200g`, `ryzen-3-3300x`, `ryzen-9-3900x`,
+`ryzen-9-3950x`, `ryzen-9-5950x`, `ryzen-9-7950x3d`, `ryzen-9-9950x`,
+`ryzen-9-9950x3d`, `i5-12600k`, `i9-12900ks`, `i5-13500`,
+`core-ultra-9-285k`.
+
+**Corrigée (1) :**
+
+- `ryzen-9-9950x` (cpu) : 420/470/520€ → 360/400/450€ (-15% sur le moyen).
+  3 sources indépendantes convergentes : comparateur Zeus-PC donnant
+  explicitement "en occasion sur LeBonCoin, comptez environ 395€ (prix
+  médian des annonces)" ; cluster d'annonces LeBonCoin directes 360-480€ ;
+  eBay.de occasion ~419€ (vente conclue ~430€). Sanity check cohérent :
+  neuf ~508-520€ (comparateur-gamer.fr, Geizhals.de) × 0.7 ≈ 356€, proche
+  de la médiane Zeus-PC. Dérive silencieuse de même nature (mais bien plus
+  modérée) que l'incident du Ryzen 7 9800X3D d'août 2026 -- base figée 3
+  mois sans réévaluation individuelle.
+
+**Confirmées correctes, aucun changement (10) :** `rx-7600`,
+`ryzen-3-3200g`, `ryzen-3-3300x`, `ryzen-9-3900x`, `ryzen-9-3950x`,
+`ryzen-9-5950x`, `i5-12600k`, `i5-13500`, `core-ultra-9-285k`,
+`ryzen-9-9950x3d`.
+
+**Alertes pour le prochain cycle (signal détecté, pas de correction
+aujourd'hui -- écart dans ou proche de la tolérance ~15%, ou confiance
+insuffisante pour trancher) :**
+
+- `ryzen-9-7950x3d` : signal baissier ~9% (occasion LeBonCoin/eBay
+  observée ~325-420€ vs moyen actuel 435€), dans la tolérance mais le
+  prix neuf a chuté nettement et récemment (Cowcotland : 877,90€ →
+  733,90€ en 1 semaine début novembre) -- à revérifier dans 2-3 semaines
+  si la baisse se répercute sur l'occasion.
+- `i9-12900ks` : signal baissier ~14% sur le moyen (280€ actuel vs
+  cluster ~200-230€ observé sur marketplace Jawa + agrégat eBay US/DE),
+  appuyé par un signal de prix neuf en forte baisse (Black Friday $239
+  selon TweakTown/Slickdeals). Confiance seulement moyenne faute de
+  donnée LeBonCoin/eBay.fr française directe (données US/DE converties
+  uniquement) -- non corrigé aujourd'hui, à recouper avec des sources
+  françaises au prochain cycle.
+
+**RAM/stockage (point C) :** vérification légère effectuée (recherche web
+sur la tendance générale, pas d'annonce LeBonCoin individuelle). DDR5 :
+la pénurie continue de s'aggraver (3DCenter : +8,6% oct→nov 2026 en
+Allemagne, +507% depuis juillet 2025) mais l'occasion FR reste alignée
+avec la cote Flipdeal déjà notée le 11-26 (~380€/32Go ≈ 11,9€/Go, dans la
+tolérance du tarif actuel 11€/Go) -- inchangé. NVMe/NAND : une note Bank
+of America (13/11) signale les prix spot NAND en baisse de 20% depuis
+mi-octobre avec une prévision de -5 à -10% sur les prix contractuels au
+T1 2027, mais le détail (Corsair MP600 Core XT 1To toujours à 189,99€ en
+promo Black Friday) ne reflète pas encore cette détente -- tarif actuel
+(0,095€/Go) toujours défendable, inchangé. DDR4/SSD SATA/HDD non
+revérifiés aujourd'hui (dernières vérifications trop récentes -- 11-09 et
+11-05 -- pour justifier une nouvelle recherche web).
+
+**Build/tests :** `npm install` + `npm run build` (tsc -b && vite build)
+et `npm test` (vitest, 188 tests) exécutés avec succès après la
+correction `ryzen-9-9950x`.
