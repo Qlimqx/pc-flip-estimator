@@ -1,10 +1,9 @@
 {
-  "lastIndex": 69,
-  "lastRunDate": "2026-11-27",
+  "lastIndex": 81,
+  "lastRunDate": "2026-11-28",
   "lastProcessed": [
-    "rx-7600", "ryzen-3-3200g", "ryzen-3-3300x", "ryzen-9-3900x",
-    "ryzen-9-3950x", "ryzen-9-5950x", "ryzen-9-7950x3d", "ryzen-9-9950x",
-    "ryzen-9-9950x3d", "i5-12600k", "i9-12900ks", "i5-13500",
-    "core-ultra-9-285k"
+    "rx-6600", "rx-6650-xt", "rx-6750-xt", "rtx-3070", "rx-6800",
+    "rx-6800-xt", "rtx-4060-ti", "rx-7700-xt", "rx-7800-xt", "rx-9070",
+    "i3-10100f", "i5-11400f"
   ]
 }

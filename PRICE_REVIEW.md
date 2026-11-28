@@ -3822,3 +3822,82 @@ correction `ryzen-9-9950x`.
 - **GTX 460** (gpu) : 27.22€ → 27.22€ (36% vs référence)
 - **R9 280X** (gpu) : 54.78€ → 54.78€ (57% vs référence)
 - **Radeon HD 7870** (gpu) : 37.1€ → 37.1€ (37% vs référence)
+
+### Vérifié par agent IA le 2026-11-28
+
+**Priorité 1** (section "Rejetés" ci-dessus, 38 entrées) : recherche web
+indépendante (LeBonCoin, eBay.fr/.de, forums Cowcotland/Dealabs,
+comparateurs gpuprix/resaleprices, sites neuf LDLC/Materiel.net/
+Amazon.fr) via 4 agents en parallèle, lot complet (hors `i7-6700`, hors
+périmètre -- voir note ci-dessous) :
+
+GPU : `rtx-4070-super`, `rtx-5080`, `rtx-3060`, `rtx-3070-ti`,
+`rx-9070-xt`, `rtx-3080-ti`, `rtx-3050`, `rx-7600`, `rtx-3090`,
+`rtx-2070-super`, `gtx-1660-ti`, `rtx-2080-ti`, `rx-5700-xt`, `gtx-1650`,
+`gtx-1070`, `gtx-1070-ti`, `rx-5700`, `gtx-1080`, `gtx-1080-ti`, `rx-580`,
+`rx-590`, `rx-570`, `gtx-980`, `gtx-960`, `gtx-750-ti`, `gtx-760`,
+`gtx-660`, `gtx-670`, `r9-270x`, `gtx-560-ti` (30). CPU : `ryzen-5-3600`,
+`ryzen-7-3800x`, `ryzen-5-2600`, `ryzen-5-2600x`, `ryzen-7-2700x`,
+`i5-9400f`, `i7-3770k`, `i5-3570k` (8).
+
+**Toutes confirmées correctes (37), aucun changement.** Une entrée a
+nécessité une vérification approfondie supplémentaire avant de trancher :
+
+- `rtx-5080` : un des agents de recherche a d'abord proposé une baisse
+  vers 900/1050/1250€ (sources : annonce LeBonCoin KFA2 "comme neuve" et
+  commentaire Dealabs, toutes deux ~1050€, non datées précisément).
+  Vérification complémentaire : le marché du neuf a fortement surchauffé
+  en octobre-novembre (pénurie DRAM) -- LDLC relevé à ~2130-2150€ le
+  09/11 (plus du double du MSRP 1059€, +380€ en 57 jours sur le même
+  site). Sanity check neuf(~2130€)×0.7 ≈ 1491€, cohérent avec la valeur
+  actuelle (1550€, dateMaj 11-11, déjà récente) et contredisant la
+  proposition de baisse -- les sources à 1050€ semblent dater d'avant la
+  flambée du neuf. **Inchangé.**
+
+**Hors périmètre :** `Intel Core i7-6700` figure dans la liste "Rejetés"
+mais vit dans `src/data/agent/addedCpus.json` (CPU ajouté par un autre
+sous-système agent), pas dans `BASE_CPUS` de `cpus.ts` -- hors du mandat
+de cet agent, qui ne touche que `cpus.ts`/`gpus.ts`/`ram.ts`/`storage.ts`.
+Non traité.
+
+**Priorité 2** (rotation matériel récent, 12 entrées, les plus anciennes
+`dateMaj` de la liste réduite -- figées depuis le 2026-08-24, jamais
+réévaluées individuellement) :
+
+GPU : `rx-6600`, `rx-6650-xt`, `rx-6750-xt`, `rtx-3070`, `rx-6800`,
+`rx-6800-xt`, `rtx-4060-ti`, `rx-7700-xt`, `rx-7800-xt`, `rx-9070`. CPU :
+`i3-10100f`, `i5-11400f`.
+
+**Corrigée (1) :**
+
+- `rx-9070` (gpu) : 555/600/645€ → 380/430/480€ (-28% sur le moyen).
+  L'ancienne fourchette était aberrante : quasi identique voire
+  supérieure au prix NEUF constaté (MSRP UE 629€ ; Cowcotland "la Radeon
+  RX 9070 presque au MSRP en France" ~636€ ; tracker gpuprix convergent
+  ~550-580€), ce qui est structurellement implausible pour une carte
+  d'occasion (même défaut que l'incident RX 9070 XT détecté le 11-27).
+  Sanity check neuf(~550-630€)×0.7 ≈ 385-440€, cohérent avec la nouvelle
+  fourchette.
+
+**Confirmées correctes, aucun changement (11) :** `rx-6600`,
+`rx-6650-xt`, `rx-6750-xt`, `rtx-3070`, `rx-6800`, `rx-6800-xt`,
+`rtx-4060-ti`, `rx-7700-xt`, `rx-7800-xt`, `i3-10100f`, `i5-11400f`.
+
+**RAM/stockage (point C) :** vérification légère effectuée. DDR5
+(11€/Go) : cohérent -- kits 32Go neufs relevés 499-577€ (pénurie en
+cours), sanity check occasion≈neuf×0.7≈350-406€ vs tarif actuel
+32×11=352€, en plein dans la fourchette. DDR4 (5.5€/Go) et SSD SATA
+(0.115€/Go) : pas de donnée contraire trouvée, dernières vérifications
+encore récentes (11-09/11-05) -- inchangés. NVMe (0.095€/Go, plancher
+40€) : **point de vigilance non corrigé** -- un NVMe 1To neuf (Corsair
+MP600 Core XT) relevé à 189,99€ même en promo Black Friday (vs
+~110-130€ il y a quelques mois), ce qui pousserait l'implicite occasion
+plus haut, mais aucune annonce occasion directe (LeBonCoin/eBay) trouvée
+aujourd'hui pour corroborer un changement précis -- risque de retomber
+dans le biais "occasion proche du neuf" déjà corrigé par le passé.
+Inchangé par prudence, à revérifier avec une recherche LeBonCoin ciblée
+au prochain cycle.
+
+**Build/tests :** `npm install` + `npm run build` (tsc -b && vite build)
+et `npm test` (vitest, 188 tests) exécutés avec succès après la
+correction `rx-9070`.

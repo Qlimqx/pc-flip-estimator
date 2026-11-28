@@ -1605,10 +1605,18 @@ const BASE_GPUS: GpuPricing[] = [
     nom: 'RX 9070',
     marque: 'AMD',
     vramGo: 16,
-    min: 555,
-    moyen: 600,
-    max: 645,
-    dateMaj: '2026-08-24',
+    // Corrigé le 2026-11-28 (vérification quotidienne IA, priorité 2 -- base
+    // figée depuis le 08-24, jamais revue individuellement) : l'ancienne
+    // fourchette (555/600/645) était aberrante -- quasi égale voire
+    // supérieure au prix NEUF constaté (MSRP UE 629€, Cowcotland "RX 9070
+    // presque au MSRP en France" ~636€, tracker gpuprix convergent
+    // ~550-580€), ce qui est implausible pour une carte d'occasion. Sanity
+    // check neuf(~550-630€) x0.7 ≈ 385-440€, cohérent avec la nouvelle
+    // fourchette.
+    min: 380,
+    moyen: 430,
+    max: 480,
+    dateMaj: '2026-11-28',
     faciliteRevente: 0.7,
     decoteAnciennete: 1.05,
     tier: 5,
